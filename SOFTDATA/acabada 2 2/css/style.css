@@ -1,0 +1,196 @@
+
+html,
+body{
+width:100% !important;
+overflow-x:hidden !important;
+font-family: 'Titillium Web', sans-serif;
+}
+
+
+
+
+
+header{
+
+background:linear-gradient(  rgba(0, 255, 17, 0.6),rgba(40, 255, 173, 0.6),rgba(0, 47, 187, 0.6)), url(img2/Banner-1.jpg);
+width: 100vw;
+height: 45vw;
+background-repeat: no-repeat;
+
+background-attachment: fixed;
+clip-path: polygon(0 0, 100% 0, 100% 64%, 0% 100%);
+background-size: cover;
+position: relative;
+animation: fanimado 90s infinite ;
+-webkit-animation: fanimado 90s infinite ;
+background-size: 250%;
+} 
+
+.text-container{
+
+    display: block;
+    width: 100%;
+    position: absolute;
+   color: white;
+   top: 30%;
+   left: 38%;
+}
+
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+#cambiado{
+background: linear-gradient(0.25turn, #81e84e, #16f21d, #d5ff02, #00fbee,  #3400ce);
+animation: fanimado 10s infinite ;
+-webkit-animation: fanimado 10s infinite ;
+background-size: 500%;
+}
+
+@keyframes fanimado{
+
+0%{
+background-position: 0% 50%;
+
+}
+50%{
+background-position: 100% 50%;
+}
+100%{
+background-position: 0% 50%;
+}
+
+} 
+
+#aviso{
+
+    font-size:44px;
+}
+
+
+.revision{
+
+font-size: 18px;
+
+}
+
+
+#aviso1{
+
+    font-size:39px;
+    color: rgb(255, 255, 255);
+   
+
+}
+.revision1{
+
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    }
+
+.negritaa{
+
+color: rgb(255, 255, 255);
+}
+
+.titulosss{
+font-size: 20px;
+font-weight: 600;
+color: #000000;
+
+}
+
+.textoss{
+
+font-size: 18px;
+color: rgb(106, 106, 106);
+
+}
+
+
+
+
+.botonp{
+position: relative;
+border: none;
+ left: 20%;
+ font-size: 18px;
+ width: 90px;
+ height: 50px;
+ border-radius: 10px;
+
+
+}
+.botonp:hover{
+
+
+background-color: #16f21d;
+ color: #ffffff;
+ font-size: 20px;
+}
+
+
+
+
+.navbar-brand {
+  font-size: 20px;
+  
+  font-weight: bold;
+}
+
+
+
+footer{
+width: 100%;
+padding: 1px ;
+padding-top: 0px;
+
+background-color: #000000;
+
+}
+
+.container__footer{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+max-width: 1200px;
+margin: auto;
+margin-top: 100px;
+}
+
+.box__footer{
+display: flex;
+flex-direction: column;
+padding: 40px;
+}
+
+.box__footer .logo img{
+width: 180px;
+}
+
+.box__footer .terms{
+max-width: 350px;
+margin-top: 20px;
+font-weight: 500;
+color: #ffffff;
+font-size: 18px;
+}
+
+.box__footer h2{
+margin-bottom: 25px;
+color: #ffffff;
+font-weight: 200;
+font-size: 17px;
+}
+
+
+.box__footer p{
+
+color: #ffffff;
+
+text-decoration: none;
+}
+

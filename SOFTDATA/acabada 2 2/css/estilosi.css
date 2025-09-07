@@ -1,0 +1,190 @@
+
+
+/*Esto es para hacer que no se salga de la poantalla */
+html,
+body{
+width:100% !important;
+overflow-x:hidden !important;
+font-family: 'Titillium Web', sans-serif;
+}
+
+/*Fondo del header*/
+ 
+/*
+body{
+
+    background-image: url(img2/Banner\ home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0;
+}
+*/
+body {
+   
+  
+    background-image: url("img2/Banner_proximamente@2x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+   
+  
+
+  }
+/*Hace que el header sea mas grande*/
+.luloi{
+
+  opacity: 0;
+}
+
+
+/*No hay barra para bajarle */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.meneno{
+    z-index: 30;
+    font-size: 75px;
+    font-weight: 600;
+    position: relative;
+    bottom:90px ;
+    letter-spacing: 4px;
+ 
+}
+.menene{
+    z-index: 30;
+    font-size: 60px;
+    font-weight: 600;
+ 
+}
+.cici{
+    border-radius: 50%;
+    background-color: rgb(33, 255, 37);
+
+
+    
+}
+.ciciu{
+    border-radius: 50%;
+    background-color: rgb(33, 255, 37);
+
+
+    
+}
+.cicino{
+    padding: 5px;
+    padding-left: 9px;
+    height: 39px !important;
+    width: 39px !important;
+
+}
+.cicine{
+    padding: 5px;
+    padding-left: 6px;
+    height: 39px !important;
+    width: 39px !important; 
+    background-color: rgb(33, 255, 37);
+
+ 
+}
+.ciciko{
+  
+    height: 39px !important;
+    width: 39px !important;
+
+}
+
+
+
+.fondoazul{
+    background-image: url("img2/Copia\ de\ Redes_linkedIn.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 25px;
+    border-radius: 50%;
+    background-color: rgb(6, 117, 221); 
+    width: 45px;
+    height: 45px;
+}
+
+.fondoazul2{
+    background-image: url("img2/Copia\ de\ Redes_whastapp.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 25px;
+    border-radius: 50%;
+    background-color: rgb(6, 221, 45); 
+    width: 45px;
+    height: 45px;
+}
+
+.fondoazul3{
+    background-image: url("img2/Iconos_telefono.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 25px;
+    border-radius: 50%;
+    background-color: rgb(6, 221, 45); 
+        width: 45px;
+    height: 45px;
+}
+
+.fondoazul4{
+    background-image: url("img2/Iconos_correo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 25px;
+    border-radius: 50%;
+    background-color: rgb(6, 221, 45); 
+    width: 45px;
+    height: 45px;
+}
+
+
+@keyframes fanimado{
+
+    0%{
+    background-position: 0% 50%;
+    
+    }
+    50%{
+    background-position: 50% 50%;
+    }
+    100%{
+    background-position: 50% 50%;
+    }
+    
+    } 
+    
+
+.preload{
+    background:  rgb(90, 89, 89) ;
+    background-image: url(img2/Groen\ Logo.png);
+    background-size: auto;
+    background-size: 50%;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 100;
+    position: fixed;
+    animation: fanimado 4s ;
+    -webkit-animation: fanimado 4s ;
+  }
+  
+.cover{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: transparent;
+    opacity: 0.1;
+    z-index:9;
+    position: absolute;
+    
+  }
