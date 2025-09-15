@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable="no">
+    <title>SoftData</title>
+    <link rel="icon" href="../img/Capturegfhfghfgh-removebg-preview.png">
+
+    <!-- GOOGLE FONT -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../main.js"></script>
+    <script src="../main3.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+
+    <!-- BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <!-- SCROOLL REVEAL JS LIBRARY CDN -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+</head>
+
+<body>
+    <style>
+        .sexo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000000;
+            position: relative;
+            right: 402px;
+        }
+        
+        .sexo2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000000;
+            position: relative;
+            right: 318px;
+        }
+        
+        .sexo3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000000;
+            position: relative;
+            right: 411px;
+        }
+    </style>
+    <style>
+        .namee {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 4px;
+        }
+        
+        .label-select {
+            font-weight: 600;
+            margin-top: 10px;
+            display: block;
+        }
+        
+        .section {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 6px;
+        }
+        
+        label {
+            position: relative;
+            right: 0px;
+            top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        #sectionGato {
+            width: 930px;
+            position: relative;
+            left: 165px;
+        }
+        
+        #sectionAve {
+            width: 930px;
+            position: relative;
+            left: 165px;
+        }
+        
+        #sectionReptil {
+            width: 930px;
+            position: relative;
+            left: 165px;
+        }
+    </style>
+    <section id="registro" class="pt-5">
+        <div class="container">
+            <h2 class="tu">Registro de Mascota</h2>
+            <form id="formMascota">
+
+                <!-- Campos comunes -->
+                <label class="label-select">Nombre de la mascota *</label>
+                <input class="namee" type="text" name="nombre_mascota" required>
+
+                <label class="label-select">Fecha de nacimiento *</label>
+                <input class="namee" type="date" name="fecha_nacimiento" required>
+
+                <label class="label-select">Sexo *</label>
+                <select class="namee" name="sexo" required>
+                    <option value="">Selecciona sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+
+                <label class="label-select">Foto de la mascota</label>
+                <input class="namee" type="file" name="foto" accept="image/*">
+
+                <!-- Selección especie -->
+                <label class="label-select">Tipo de mascota *</label>
+                <select class="namee" id="tipoMascota" required>
+                    <option value="">Selecciona especie</option>
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Ave">Ave</option>
+                    <option value="Reptil">Reptil</option>
+                </select>
+
+                <!-- Secciones dinámicas -->
+                <!-- Perro -->
+                <div id="sectionPerro" class="section">
+                    <label class="label-select">Raza *</label>
+                    <select class="namee" name="raza_perro">
+                        <option value="">Selecciona raza</option>
+                        <option>Affenspincher</option>
+<option>Afgano</option>
+<option>Airedale Terrier</option>
+<option>Akita</option>
+<option>Akita Americano</option>
+<option>Alco</option>
+<option>American Pitbull</option>
+<option>Antiguo Pastor Inglés</option>
+<option>Antiguo Pointer Danés</option>
+<option>Azawakh</option>
+<option>Basenji</option>
+<option>Basset de los Alpes</option>
+<option>Basset Hound</option>
+<option>Beagle</option>
+<option>Beauceron</option>
+<option>Bedlington Terrier</option>
+<option>Bernés de la Montaña</option>
+<option>Bichón Frise</option>
+<option>Bichoón Havanero</option>
+<option>Biewer yorkshire terrier</option>
+<option>Bloodhound</option>
+<option>Boloñés</option>
+<option>Border Collie</option>
+<option>Border Terrier</option>
+<option>Borzoi</option>
+<option>Boston Terrier</option>
+<option>Bouvier de Appenzeller</option>
+<option>Bouvier de Entlebucher</option>
+<option>Bouvier de Flandes</option>
+<option>Bouvier de las Ardenas</option>
+<option>Boxer</option>
+<option>Braco de Weimar</option>
+<option>Briard</option>
+<option>Bulldog Francés</option>
+<option>Bulldog inglés</option>
+<option>Bullmastiff</option>
+<option>Bull Terrier Inglés</option>
+<option>Bully</option>
+<option>Cairn terrier</option>
+<option>Calupoh</option>
+<option>Cavalier King Charles Spaniel</option>
+<option>Cazador de Alces Noruego</option>
+<option>Cazador de Alces Sueco</option>
+<option>Chihuahueño de Pelo Corto</option>
+<option>Chihuahueño de Pelo Largo</option>
+<option>Chow Chow</option>
+<option>Cirneco del Etna</option>
+<option>Clumber Spaniel</option>
+<option>Cobrador de la Bahía de Chesapeake</option>
+<option>Cobrador de Labrador</option>
+<option>Cobrador de Nueva Escocia</option>
+<option>Cobrador Dorado</option>
+<option>Cocker Spaniel Americano</option>
+<option>Cocker Spaniel Inglés</option>
+<option>Collie</option>
+<option>Coonhound</option>
+<option>Cotton de Tulear</option>
+<option>Crestado Chino</option>
+<option>Criollo</option>
+<option>Dachshund | Salchicha</option>
+<option>Dalmata</option>
+<option>Dandie Dinmont Terrier</option>
+<option>Deerhound</option>
+<option>Doberman</option>
+<option>Dogo argentino</option>
+<option>Dogo de Burdeos</option>
+<option>Esquimal americano</option>
+<option>Fila Brasileño</option>
+<option>Fila de San Miguel</option>
+<option>Fox Hound</option>
+<option>Fox Terrier</option>
+<option>Galgo Español</option>
+<option>Galgo Italiano</option>
+<option>Gigante de los Pirineos</option>
+<option>Golden Retriever</option>
+<option>Gran Boyero Suizo</option>
+<option>Gran Danés</option>
+<option>Gran Perro Japonés</option>
+<option>Greyhound</option>
+<option>Griffón Belga</option>
+<option>Griffón de Brabante</option>
+<option>Griffón de Bruselas</option>
+<option>Harrier</option>
+<option>Hovawart</option>
+<option>Husky Siberiano</option>
+<option>Irish soft coated wheaten terrier</option>
+<option>Jack Russell Terrier</option>
+<option>Jingo</option>
+<option>Kelpie</option>
+<option>Kerry Blue Terrier</option>
+<option>King Charles Spaniel</option>
+<option>Komondor</option>
+<option>Kromfohrlander</option>
+<option>Labradoodle</option>
+<option>Laika de Siberia</option>
+<option>Lakeland Terrie</option>
+<option>Lebrel Polaco</option>
+<option>Leonberger</option>
+<option>Lhasa Apso</option>
+<option>Lobero Irlandés</option>
+<option>Lundehund</option>
+<option>Magyar Agar</option>
+<option>Malamute de Alaska</option>
+<option>Maltés</option>
+<option>Manchester Terrier</option>
+<option>Mastín de los Pirineos</option>
+<option>Mastín Español</option>
+<option>Mastín Inglés</option>
+<option>Mastín italiano</option>
+<option>Mastín Italiano</option>
+<option>Mastín Napolitano</option>
+<option>Mastín Tibetano</option>
+<option>Norfolk Terrier</option>
+<option>Norwich Terrier</option>
+<option>Osero Careliano</option>
+<option>Otterhound</option>
+<option>Papillón</option>
+<option>Pastor Alemán</option>
+<option>Pastor Australiano</option>
+<option>Pastor Belga</option>
+<option>Pastor de Islandia</option>
+<option>Pastor de los Pirineos</option>
+<option>Pastor de Maremma</option>
+<option>Pastor de Shetland</option>
+<option>Pastor Holandés</option>
+<option>Pastor Noruego</option>
+<option>Pequeño Perro León</option>
+<option>Pequinés</option>
+<option>Perro de Aguas Americano</option>
+<option>Perro de Aguas de la Romagna</option>
+<option>Perro de Aguas Español</option>
+<option>Perro de Aguas Irlandés</option>
+<option>Perro de Aguas Portugués</option>
+<option>Perro de Canaan</option>
+<option>Perro de Groenlandia</option>
+<option>Perro de los Faraones</option>
+<option>Perro de los Visigodos</option>
+<option>Perro Finlandés de Laponia</option>
+<option>Perro Ganadero Australiano</option>
+<option>Perro Lobo Checoslovaco</option>
+<option>Perro Sueco de Laponia</option>
+<option>Phalene</option>
+<option>Pinscher</option>
+<option>Pinscher Austriaco</option>
+<option>Pinscher miniatura</option>
+<option>Podenco Canario</option>
+<option>Podenco Ibicenco</option>
+<option>Podenco Portugués</option>
+<option>Pointer Alemán</option>
+<option>Pointer Inglés</option>
+<option>Poodle De Juguete (Toy)</option>
+<option>Poodle Estándar</option>
+<option>Poodle Miniatura</option>
+<option>Poodle Minitoy</option>
+<option>Presa Canario</option>
+<option>Pug</option>
+<option>Puli</option>
+<option>Rhodesian Ridgeback</option>
+<option>Rottweiler</option>
+<option>Sabueso de Baviera</option>
+<option>Sabueso de Hannover</option>
+<option>Saluki</option>
+<option>Samoyedo</option>
+<option>San Bernardo</option>
+<option>Schnauzer Estándar</option>
+<option>Schnauzer Gigante</option>
+<option>Schnauzer Miniatura</option>
+<option>Setter Gordon</option>
+<option>Setter Inglés</option>
+<option>Setter Irlandés</option>
+<option>Shar pei</option>
+<option>Shiba</option>
+<option>Shih Tzu</option>
+<option>Silky Terrier</option>
+<option>Skye Terrier</option>
+<option>Sloughi</option>
+<option>Spaniel Bretón</option>
+<option>Spaniel Continental Miniatura</option>
+<option>Spaniel Francés</option>
+<option>Spaniel Japonés</option>
+<option>Spaniel Tibetano</option>
+<option>Spinone Italiano</option>
+<option>Spitz Alemán</option>
+<option>Spitz Alemán Toy / Pomerania</option>
+<option>Spitz Finlandés</option>
+<option>Spitz Japonés</option>
+<option>Springer Spaniel Galés</option>
+<option>Springer Spaniel Inglés</option>
+<option>Staffordshire Bull Terrier</option>
+<option>Staffordshire Terrier</option>
+<option>Staffordshire Terrier Americano</option>
+<option>Sussex Spaniel</option>
+<option>Terranova</option>
+<option>Terrier Australiano</option>
+<option>Terrier Escocés</option>
+<option>Terrier Japonés</option>
+<option>Terrier Negro Ruso</option>
+<option>Terrier Tibetano</option>
+<option>Thai Ridgeback</option>
+<option>Tosa</option>
+<option>Viszla</option>
+<option>Volpino Italiano</option>
+<option>Weimaraner</option>
+<option>Welsh Corgi</option>
+<option>West Highland White Terrier</option>
+<option>Whippet</option>
+<option>Xoloitzcuintle</option>
+<option>Xoloitzcuintle miniatura</option>
+<option>Yorkshire Terrier</option>
+
+                      
+                    </select>
+
+                    <label class="label-select">Color principal del perro</label>
+                    <select class="namee" name="color_principal_del_perro">
+                    <option value="">Selecciona opción</option>
+                    <option>Blanco</option>
+                    <option>Crema</option>
+                    <option>Café</option>
+                    <option>Amarillo</option>
+                    <option>Naranja</option>
+                    <option>Negro</option>
+                    <option>Gris</option>
+                    <option>Verde</option>
+                    <option>Dorado</option>
+                    <option>Azul</option>
+                    <option>Rojo</option>
+                    <option>Morado</option>
+                    <option>Rosa</option>
+                    </select>
+
+                    <label class="label-select">Color secundario del perro</label>
+                    <select class="namee" name="color_secundario_del_perro">
+                    <option value="">Selecciona opción</option>
+                    <option>Blanco</option>
+                    <option>Crema</option>
+                    <option>Café</option>
+                    <option>Amarillo</option>
+                    <option>Naranja</option>
+                    <option>Negro</option>
+                    <option>Gris</option>
+                    <option>Verde</option>
+                    <option>Dorado</option>
+                    <option>Azul</option>
+                    <option>Rojo</option>
+                    <option>Morado</option>
+                    <option>Rosa</option>
+                    </select>
+
+                    <label class="label-select">Tipo de pelo del perro</label>
+                    <select class="namee" name="tipo_de_pelo_del_perro">
+                        <option value="">Selecciona opción</option>
+                        <option>Liso</option>
+                        <option>Rizado</option>
+                        <option>Grueso</option>
+                        <option>Lanoso</option>
+                        <option>No tiene pelaje</option>
+                    </select>
+
+
+                    <label class="label-select">Patrón de pelo</label>
+                    <select class="namee" name="patron_de_pelo">
+                    <option value="">Selecciona opción</option>
+                    <option>Rayas</option>
+                    <option>Manchas</option>
+                    <option>Bicolor</option>
+                    <option>Tricolor</option>
+                    <option>Multicolor</option>
+                    <option>No aplica</option>
+                </select>
+
+
+                    <label class="label-select">Señas particulares</label>
+                    <input type="text" class="namee" name="senas_particulares" placeholder="Describe las señas particulares del perro">
+
+
+                    <label class="label-select">Tamaño *</label>
+                    <select class="namee" name="tamano_perro">
+                        <option value="">Selecciona tamaño</option>
+                        <option>Mini/Toy (hasta 4 kg)</option>
+                        <option>Pequeño (4-10 kg)</option>
+                        <option>Mediano (11-25 kg)</option>
+                        <option>Grande (26-44 kg)</option>
+                        <option>Gigante (más de 45 kg)</option>
+                    </select>
+
+                    <label class="label-select">Convive con más animales *</label>
+                    <select class="namee" name="convive_perro">
+                        <option value="">Selecciona opción</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+
+                    <label class="label-select">Tipo de alimento *</label>
+                    <select class="namee" name="alimento_perro">
+                        <option value="">Selecciona alimento</option>
+                        <option>Alimento seco (croquetas)</option>
+                        <option>Alimento húmedo (latas o sobres)</option>
+                        <option>Pollo o pavo cocido</option>
+                        <option>Arroz o pasta cocidos</option>
+                        <option>Verdura</option>
+                        <option>Otra…</option>
+                    </select>
+
+                    <label class="label-select">Marca del alimento</label>
+                    <input class="namee" type="text" name="marca_alimento_perro">
+
+                    <label class="label-select">Veces que come al día *</label>
+                    <select class="namee" name="veces_comida_perro">
+                        <option value="">Selecciona opción</option>
+                        <option>1 vez al día</option>
+                        <option>2 veces al día</option>
+                        <option>3 veces al día</option>
+                        <option>Libertad de horario</option>
+                    </select>
+
+                    <label class="label-select">Vacunas que tiene tu perrito *</label>
+                    <select class="namee" name="vacunas_del_perro">
+                        <option value="">Selecciona opción</option>
+                        <option>Rabia</option>
+                        <option>Moquillo</option>
+                        <option>Parvovirus</option>
+                        <option>No tengo conocimiento</option>
+                        <option>Ninguno</option>
+
+                    </select>
+
+                    <label class="label-select">Fecha de ultima colocacion de Rabia</label>
+                    <input class="namee" type="date" name="fecha_rabia" required>
+
+                    <label class="label-select">Fecha de ultima colocacion de Moquillo</label>
+                    <input class="namee" type="date" name="fecha_moquillo" required>
+
+                    <label class="label-select">Fecha de ultima colocacion de Parvovirus</label>
+                    <input class="namee" type="date" name="fecha_parvovirus" required>
+
+                    <label class="label-select">Tratamientos que a llevado *</label>
+                    <select class="namee" name="tratamientos_del_perro">
+                        <option value="">Selecciona opción</option>
+                        <option>Desparacitacion</option>
+                        <option>Lavado dental</option>
+                        <option>Esterilizacion</option>
+                        <option>Ninguno adicional</option>
+                        <option>No tengo conocimientos</option>
+
+                    </select>
+
+                    <label class="label-select">Ingrese el RUAC</label>
+                    <input class="namee" type="text" name="ruac" required>
+
+                    <label class="label-select">Tiene chip su perro</label>
+                    <select class="namee" name="chip_del_perro">
+                        <option value="">Selecciona opción</option>
+                        <option>Si</option>
+                        <option>No</option>
+                     
+
+                    </select>
+
+                    <label class="label-select">Numero de chip de su perro</label>
+                    <input class="namee" type="text" name="chip del perro" required>
+
+                    <label class="label-select">Tipo del chip del perro</label>
+                    <select class="namee" name="tipo_chip_perro">
+                        <option value="">Selecciona opción</option>
+                        <option>Microchip de identificación</option>
+                        <option>Dispositivos GPS</option>
+                        
+
+                    </select>
+
+                </div>
+        </div>
+
+        <!-- Gato -->
+        <div id="sectionGato" class="section">
+            <label class="label-select">Raza del gato</label>
+            <select class="namee" name="raza_del_gato">
+    <option value="">Selecciona opción</option>
+    <option>Abisinio</option>
+    <option>American shorthair (Pelo corto Americano)</option>
+    <option>American wirehair (gato americano de pelo áspero)</option>
+    <option>Angora turco</option>
+    <option>Australian Mist</option>
+    <option>Azul Británico (British Shorthair)</option>
+    <option>Azul ruso</option>
+    <option>Balinés</option>
+    <option>Bengala</option>
+    <option>Bobtail Americano</option>
+    <option>Bobtail Japonés</option>
+    <option>Bombay</option>
+    <option>Bosque de Noruega</option>
+    <option>Brazilian Shorthair (Brasileño pelo corto)</option>
+    <option>Burmés</option>
+    <option>Burmilla</option>
+    <option>California Spangled</option>
+    <option>Ceilán</option>
+    <option>Chartreux</option>
+    <option>Colorpoint Shorthair</option>
+    <option>Cornish rex</option>
+    <option>Criolla</option>
+    <option>Curl Americano</option>
+    <option>Cymric</option>
+    <option>Deutsch Langhaar</option>
+    <option>Devon Rex</option>
+    <option>Doméstico europeo</option>
+    <option>Dorado africano</option>
+    <option>Dragon Li</option>
+    <option>Exótico</option>
+    <option>Fold Japones</option>
+    <option>German Rex</option>
+    <option>Habana brown</option>
+    <option>Himalayo</option>
+    <option>Javanés</option>
+    <option>Khao Manee</option>
+    <option>Korat</option>
+    <option>LaPerm</option>
+    <option>Lykoi</option>
+    <option>Maine Coon</option>
+    <option>Manx</option>
+    <option>Mau Egipcio</option>
+    <option>Munchkin</option>
+    <option>Nebelung</option>
+    <option>Ocicat</option>
+    <option>Ojos azules</option>
+    <option>Oriental</option>
+    <option>Oriental</option>
+    <option>Oriental de pelo largo</option>
+    <option>Pelo corto Británico</option>
+    <option>Persa</option>
+    <option>Peterbald</option>
+    <option>Pixie Bob</option>
+    <option>Rabon Japones</option>
+    <option>Ragamuffin</option>
+    <option>Ragdoll</option>
+    <option>Sagrado de Birmania</option>
+    <option>Savannah</option>
+    <option>Scottish Fold</option>
+    <option>Selkirk rex</option>
+    <option>Serengeti</option>
+    <option>Seychellois</option>
+    <option>Siamés</option>
+    <option>Siamés Moderno</option>
+    <option>Siberiano</option>
+    <option>Siberiano</option>
+    <option>Singapura</option>
+    <option>Snowshoe</option>
+    <option>Somalí</option>
+    <option>Sphynx (Esfinge)</option>
+    <option>Tonkinés</option>
+    <option>Van Turco</option>
+</select>
+
+            <!-- Color principal del gato -->
+            <label class="label-select">Color principal *</label>
+            <select class="namee" name="color_principal_gato">
+    <option value="">Selecciona opción</option>
+    <option>Blanco</option>
+    <option>Crema</option>
+    <option>Café</option>
+    <option>Amarillo</option>
+    <option>Naranja</option>
+    <option>Negro</option>
+    <option>Gris</option>
+    <option>Verde</option>
+    <option>Dorado</option>
+    <option>Azul</option>
+    <option>Rojo</option>
+    <option>Morado</option>
+    <option>Rosa</option>
+</select>
+
+            <!-- Color secundario del gato -->
+            <label class="label-select">Color secundario</label>
+            <select class="namee" name="color_secundario_gato">
+    <option value="">Selecciona opción</option>
+    <option>Blanco</option>
+    <option>Crema</option>
+    <option>Café</option>
+    <option>Amarillo</option>
+    <option>Naranja</option>
+    <option>Negro</option>
+    <option>Gris</option>
+    <option>Verde</option>
+    <option>Dorado</option>
+    <option>Azul</option>
+    <option>Rojo</option>
+    <option>Morado</option>
+    <option>Rosa</option>
+</select>
+
+            <!-- Tipo de pelo del gato -->
+            <label class="label-select">Tipo de pelo *</label>
+            <select class="namee" name="tipo_pelo_gato">
+    <option value="">Selecciona opción</option>
+    <option>Liso</option>
+    <option>Rizado</option>
+    <option>Grueso</option>
+    <option>Lanoso</option>
+    <option>No tiene pelaje</option>
+</select>
+
+            <!-- Patrón de pelo del gato -->
+            <label class="label-select">Patrón de pelo</label>
+            <select class="namee" name="patron_pelo_gato">
+    <option value="">Selecciona opción</option>
+    <option>Rayas</option>
+    <option>Manchas</option>
+    <option>Bicolor</option>
+    <option>Tricolor</option>
+    <option>Multicolor</option>
+    <option>No aplica</option>
+</select>
+
+            <label class="label-select">Tamaño *</label>
+            <select class="namee" name="tamano_gato">
+                        <option value="">Selecciona tamaño</option>
+                        <option>Pequeño (menos de 4 kg)</option>
+                        <option>Mediano (4-7 kg)</option>
+                        <option>Grande (mayor a 7 kg)</option>
+                    </select>
+
+            <label class="label-select">Convive con más animales *</label>
+            <select class="namee" name="convive_gato">
+                        <option value="">Selecciona opción</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+
+            <label class="label-select">Alimento *</label>
+            <select class="namee" name="alimento_gato">
+                        <option value="">Selecciona alimento</option>
+                        <option>Alimento seco (croquetas)</option>
+                        <option>Alimento húmedo (latas o sobres)</option>
+                        <option>Pollo o pavo cocido</option>
+                        <option>Pescado cocido</option>
+                        <option>Otra…</option>
+                    </select>
+
+            <label class="label-select">Marca del alimento</label>
+            <input class="namee" type="text" name="marca_alimento_gato">
+
+            <label class="label-select">Veces que come al día *</label>
+            <select class="namee" name="veces_comida_gato">
+                        <option value="">Selecciona opción</option>
+                        <option>1 vez al día</option>
+                        <option>2 veces al día</option>
+                        <option>3 veces al día</option>
+                        <option>Libertad de horario</option>
+                    </select>
+
+            <!-- Vacunas que tiene tu gatito -->
+            <label class="label-select">Vacunas que tiene tu gatito *</label>
+            <select class="namee" name="vacunas_gatito">
+    <option value="">Selecciona opción</option>
+    <option>Trivalente Felina</option>
+    <option>Rabia</option>
+    <option>No tengo ese conocimiento</option>
+    <option>Ninguna</option>
+</select>
+
+            <!-- Trivalente Felina: Última colocación -->
+            <label class="label-select">Trivalente Felina: Última colocación</label>
+            <select class="namee" name="trivalente_fecha">
+    <option value="">Selecciona opción</option>
+    <option>Enero</option>
+    <option>Febrero</option>
+    <option>Marzo</option>
+    <option>Abril</option>
+    <option>Mayo</option>
+    <option>Junio</option>
+    <option>Julio</option>
+    <option>Agosto</option>
+    <option>Septiembre</option>
+    <option>Octubre</option>
+    <option>Noviembre</option>
+    <option>Diciembre</option>
+</select>
+
+            <!-- Rabia: Última colocación -->
+            <label class="label-select">Rabia: Última colocación</label>
+            <select class="namee" name="rabia_fecha">
+    <option value="">Selecciona opción</option>
+    <option>Enero</option>
+    <option>Febrero</option>
+    <option>Marzo</option>
+    <option>Abril</option>
+    <option>Mayo</option>
+    <option>Junio</option>
+    <option>Julio</option>
+    <option>Agosto</option>
+    <option>Septiembre</option>
+    <option>Octubre</option>
+    <option>Noviembre</option>
+    <option>Diciembre</option>
+</select>
+
+            <!-- Tratamientos que ha llevado -->
+            <label class="label-select">Tratamientos que ha llevado *</label>
+            <select class="namee" name="tratamientos_gatito">
+    <option value="">Selecciona opción</option>
+    <option>Desparasitacion</option>
+    <option>Lavado dental</option>
+    <option>Esterilización</option>
+    <option>Ninguno adicional</option>
+    <option>No tengo conocimiento de esta información</option>
+    <option>Otra…</option>
+</select>
+
+            <!-- Ingrese el RUAC de su gatito -->
+            <label class="label-select">Ingrese el RUAC de su gatito</label>
+            <select class="namee" name="ruac_gatito">
+    <option value="">Selecciona opción</option>
+    <option>RUAC 1</option>
+    <option>RUAC 2</option>
+    <option>RUAC 3</option>
+    <option>RUAC 4</option>
+</select>
+
+            <!-- Tiene chip su gato? -->
+            <label class="label-select">¿Tiene chip su gato? *</label>
+            <select class="namee" name="chip_gatito">
+    <option value="">Selecciona opción</option>
+    <option>Sí</option>
+    <option>No</option>
+</select>
+
+            <!-- Número de chip de su gatito -->
+            <label class="label-select">Número de chip de su gatito</label>
+            <select class="namee" name="numero_chip_gatito">
+    <option value="">Selecciona opción</option>
+    <option>0001</option>
+    <option>0002</option>
+    <option>0003</option>
+    <option>0004</option>
+</select>
+
+            <!-- Tipo de chip -->
+            <label class="label-select">Tipo de chip</label>
+            <select class="namee" name="tipo_chip_gatito">
+    <option value="">Selecciona opción</option>
+    <option>Microchip de identificación</option>
+    <option>Dispositivos GPS</option>
+</select>
+
+        </div>
+
+
+        <!-- Ave -->
+        <div id="sectionAve" class="section">
+            <label class="label-select">Especie *</label>
+            <select class="namee" name="especie_ave">
+    <option value="">Selecciona especie</option>
+    <option>Perico Australiano</option>
+    <option>Periquito Común</option>
+    <option>Ninfa (Carolina)</option>
+    <option>Agapornis (Inseparable)</option>
+    <option>Cotorrita Argentina</option>
+    <option>Perico Frente Naranja</option>
+    <option>Cacatúa Ninfa</option>
+    <option>Canario</option>
+    <option>Gallina</option>
+    <option>Gallina de guinea</option>
+    <option>Pato</option>
+    <option>Ganso</option>
+    <option>Paloma</option>
+    <option>Diamante Mandarín</option>
+    <option>Diamante de Gould</option>
+    <option>Jilguero</option>
+    <option>Calafate</option>
+    <option>Azulejo</option>
+    <option>Mainate</option>
+</select>
+
+
+            <label class="label-select">Tamaño *</label>
+            <select class="namee" name="tamano_ave">
+                        <option value="">Selecciona tamaño</option>
+                        <option>Mini (hasta 15 cm)</option>
+                        <option>Pequeña (16-25 cm)</option>
+                        <option>Mediana (26-40 cm)</option>
+                        <option>Grande (mayor a 40 cm)</option>
+                    </select>
+
+            <label class="label-select">Convive con otros animales *</label>
+            <select class="namee" name="convive_ave">
+                        <option value="">Selecciona opción</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+
+            <label class="label-select">Alimento *</label>
+            <select class="namee" name="alimento_ave">
+                        <option value="">Selecciona alimento</option>
+                        <option>Semillas y mezclas de granos</option>
+                        <option>Pellets o croquetas especializadas</option>
+                        <option>Frutas frescas</option>
+                        <option>Verduras y vegetales frescos</option>
+                        <option>Otra…</option>
+                    </select>
+
+            <label class="label-select">Marca del alimento</label>
+            <input class="namee" type="text" name="marca_alimento_ave">
+
+            <label class="label-select">Veces que come al día *</label>
+            <select class="namee" name="veces_comida_ave">
+                        <option value="">Selecciona opción</option>
+                        <option>1 vez al día</option>
+                        <option>2 veces al día</option>
+                        <option>3 veces al día</option>
+                        <option>Libertad de horario</option>
+                    </select>
+
+            <!-- Tratamientos que ha llevado -->
+            <label class="label-select">Tratamientos que ha llevado *</label>
+            <select class="namee" name="tratamientos_ave">
+    <option value="">Selecciona opción</option>
+    <option>Desparasitacion</option>
+    <option>Exámen copológico</option>
+    <option>Control de ácaros</option>
+    <option>Vitaminas</option>
+    <option>Ninguna de las anteriores</option>
+    <option>No tengo conocimiento de esta información</option>
+    <option>Otra…</option>
+</select>
+
+            <!-- Tipo de jaula en la que vive el ave -->
+            <label class="label-select">Tipo de jaula en la que vive el ave *</label>
+            <select class="namee" name="tipo_jaula_ave">
+    <option value="">Selecciona tipo de jaula</option>
+    <option>Jaula de interior</option>
+    <option>Jaula voladora</option>
+    <option>Jaula con comedor exterior para ave</option>
+    <option>Jaula con columpios y juguetes</option>
+    <option>Jaula doble/compartimentada</option>
+    <option>Pajarera de patio</option>
+    <option>Corral exterior</option>
+    <option>No tiene jaula (vuela libre)</option>
+</select>
+
+            <!-- Dimensiones aproximadas de la jaula -->
+            <label class="label-text">Dimensiones aproximadas de la jaula *</label>
+            <input type="text" class="namee" name="dimensiones_jaula_ave" placeholder="Ancho x Largo x Profundidad">
+
+            <!-- Tipo de plumas de su ave -->
+            <label class="label-select">Tipo de plumas de su ave *</label>
+            <select class="namee" name="tipo_plumas_ave">
+    <option value="">Selecciona tipo de plumas</option>
+    <option>Lisas</option>
+    <option>Rizadas/Encrespadas</option>
+    <option>Cresta/Copete</option>
+    <option>Cola larga</option>
+    <option>Cola corta</option>
+    <option>Plumas esponjosas</option>
+    <option>Plumas ajustadas al cuerpo</option>
+</select>
+            <!-- Color principal del ave -->
+            <label class="label-select">Color principal *</label>
+            <select class="namee" name="color_principal_ave">
+    <option value="">Selecciona opción</option>
+    <option>Blanco</option>
+    <option>Crema</option>
+    <option>Café</option>
+    <option>Amarillo</option>
+    <option>Naranja</option>
+    <option>Negro</option>
+    <option>Gris</option>
+    <option>Verde</option>
+    <option>Dorado</option>
+    <option>Azul</option>
+    <option>Rojo</option>
+    <option>Morado</option>
+    <option>Rosa</option>
+</select>
+
+            <!-- Color secundario del ave -->
+            <label class="label-select">Color secundario *</label>
+            <select class="namee" name="color_secundario_ave">
+    <option value="">Selecciona opción</option>
+    <option>Blanco</option>
+    <option>Crema</option>
+    <option>Café</option>
+    <option>Amarillo</option>
+    <option>Naranja</option>
+    <option>Negro</option>
+    <option>Gris</option>
+    <option>Verde</option>
+    <option>Dorado</option>
+    <option>Azul</option>
+    <option>Rojo</option>
+    <option>Morado</option>
+    <option>Rosa</option>
+</select>
+
+        </div>
+
+        <!-- Reptil -->
+        <div id="sectionReptil" class="section">
+            <label class="label-select">Tipo de reptil *</label>
+            <select class="namee" id="tipoReptil" name="tipo_reptil">
+                        <option value="">Selecciona tipo</option>
+                        <option value="Lagarto">Lagarto</option>
+                        <option value="Serpiente">Serpiente</option>
+                        <option value="Tortuga">Tortuga</option>
+                    </select>
+
+            <!-- Lagarto -->
+            <div id="sectionLagarto" class="section">
+                <label class="label-select">Especie *</label>
+                <select class="namee" name="especie_lagarto">
+                            <option value="">Selecciona especie</option>
+                            <option>Gecko Leopardo</option>
+                            <option>Gecko Crestado</option>
+                            <option>Dragón Barbudo</option>
+                            <option>Anolis Verde</option>
+                            <option>Esquinco de lengua azul</option>
+                        </select>
+
+                <label class="label-select">Tamaño *</label>
+                <select class="namee" name="tamano_lagarto">
+                            <option value="">Selecciona tamaño</option>
+                            <option>Mini (7-15 cm)</option>
+                            <option>Pequeño (16-25 cm)</option>
+                            <option>Mediano (26-45 cm)</option>
+                            <option>Grande (46-60 cm)</option>
+                        </select>
+
+                <!-- Fuente de calor del lagarto -->
+                <label class="label-select">Fuente de calor *</label>
+                <select class="namee" name="fuente_calor_lagarto">
+    <option value="">Selecciona opción</option>
+    <option>Lámpara de calor</option>
+    <option>Placa térmica</option>
+    <option>Cable calefactor</option>
+    <option>Piedra calefactora</option>
+    <option>Emisor de calor cerámico</option>
+    <option>Calentador de agua</option>
+    <option>No tiene fuente de calor</option>
+</select>
+
+                <!-- Alimentos que consume el lagarto -->
+                <label class="label-select">¿Qué alimentos consume tu lagarto? *</label>
+                <select class="namee" name="alimentos_lagarto">
+    <option value="">Selecciona opción</option>
+    <option>Grillos</option>
+    <option>Gusanos</option>
+    <option>Verduras</option>
+    <option>Frutas</option>
+    <option>Vegetales</option>
+    <option>Otra…</option>
+</select>
+
+                <!-- Marca del alimento -->
+                <label class="label-select">Ingrese marca de su alimento</label>
+                <input type="text" class="namee" name="marca_alimento_lagarto" placeholder="Si aplica">
+
+                <!-- Veces que come al día -->
+                <label class="label-select">¿Cuántas veces come al día? *</label>
+                <select class="namee" name="veces_comida_lagarto">
+    <option value="">Selecciona opción</option>
+    <option>1 vez al día</option>
+    <option>2 veces al día</option>
+    <option>3 veces al día</option>
+    <option>Libertad de horario, siempre tiene comida en su plato</option>
+</select>
+
+                <!-- Tratamientos que ha llevado -->
+                <label class="label-select">Tratamientos que ha llevado *</label>
+                <select class="namee" name="tratamientos_lagarto">
+    <option value="">Selecciona opción</option>
+    <option>Desparasitacion</option>
+    <option>Vitaminas</option>
+    <option>Baños de sol controlados</option>
+    <option>Ninguno de los anteriores</option>
+    <option>No tengo el conocimiento de esta información</option>
+    <option>Otra…</option>
+</select>
+
+                <!-- Tipo de terrario -->
+                <label class="label-select">Tipo de terrario en el que vive *</label>
+                <select class="namee" name="tipo_terrario_lagarto">
+    <option value="">Selecciona opción</option>
+    <option>Terrario tropical</option>
+    <option>Terrario desértico</option>
+    <option>Terrario de humedad media</option>
+    <option>Terrario vertical</option>
+    <option>Terrario horizontal</option>
+    <option>Bioactivo</option>
+</select>
+
+                <!-- Dimensiones aproximadas del terrario -->
+                <label class="label-select">Dimensiones aproximadas del terrario *</label>
+                <input type="text" class="namee" name="dimensiones_terrario_lagarto" placeholder="Ancho x largo x profundidad">
+
+            </div>
+
+            <!-- Serpiente -->
+            <div id="sectionSerpiente" class="section">
+                <label class="label-select">Especie *</label>
+                <select class="namee" name="especie_serpiente">
+                            <option value="">Selecciona especie</option>
+                            <option>Serpiente del Maíz</option>
+                            <option>Serpiente Rey de California</option>
+                            <option>Serpiente de Leche</option>
+                            <option>Serpiente Jarretera</option>
+                        </select>
+
+                <label class="label-select">Tamaño *</label>
+                <select class="namee" name="tamano_serpiente">
+                            <option value="">Selecciona tamaño</option>
+                            <option>Pequeña (30-60 cm)</option>
+                            <option>Mediana (61-120 cm)</option>
+                            <option>Grande (121-180 cm)</option>
+                        </select>
+
+                <!-- Fuente de calor de la serpiente -->
+                <label class="label-select">Fuente de calor que tiene tu serpiente *</label>
+                <select class="namee" name="fuente_calor_serpiente">
+    <option value="">Selecciona opción</option>
+    <option>Lámpara de calor</option>
+    <option>Placa térmica</option>
+    <option>Cable calefactor</option>
+    <option>Piedra calefactora</option>
+    <option>Emisor de calor cerámico</option>
+    <option>Calentador de agua</option>
+</select>
+
+                <!-- Alimentos que consume la serpiente -->
+                <label class="label-select">¿Qué alimentos consume su serpiente? *</label>
+                <select class="namee" name="alimentos_serpiente">
+    <option value="">Selecciona opción</option>
+    <option>Roedores</option>
+    <option>Aves pequeñas</option>
+    <option>Huevos</option>
+    <option>Alimento pre-matado (congelado)</option>
+    <option>Otra…</option>
+</select>
+
+                <!-- Marca del alimento -->
+                <label class="label-select">Ingrese marca de su alimento</label>
+                <input type="text" class="namee" name="marca_alimento_serpiente" placeholder="Si aplica">
+
+                <!-- Veces que come al día -->
+                <label class="label-select">¿Cuántas veces come al día? *</label>
+                <select class="namee" name="veces_comida_serpiente">
+    <option value="">Selecciona opción</option>
+    <option>1 vez al día</option>
+    <option>2 veces al día</option>
+    <option>3 veces al día</option>
+    <option>Libertad de horario, siempre tiene comida en su plato</option>
+</select>
+
+                <!-- Tratamientos que ha llevado -->
+                <label class="label-select">Tratamientos que ha llevado *</label>
+                <select class="namee" name="tratamientos_serpiente">
+    <option value="">Selecciona opción</option>
+    <option>Desparasitacion</option>
+    <option>Vitaminas</option>
+    <option>Baños de sol controlados</option>
+    <option>Ninguna de las anteriores</option>
+    <option>No tengo el conocimiento de esta información</option>
+    <option>Otra…</option>
+</select>
+
+                <!-- Tipo de terrario -->
+                <label class="label-select">Tipo de terrario en el que vive *</label>
+                <select class="namee" name="tipo_terrario_serpiente">
+    <option value="">Selecciona opción</option>
+    <option>Terrario desértico/seco</option>
+    <option>Terrario tropical/húmedo</option>
+    <option>Terrario de bosque</option>
+    <option>Rack system</option>
+    <option>Terrario de cristal con tapa segura</option>
+    <option>Terrario de plástico</option>
+</select>
+
+                <!-- Dimensiones aproximadas del terrario -->
+                <label class="label-select">Dimensiones aproximadas del terrario *</label>
+                <input type="text" class="namee" name="dimensiones_terrario_serpiente" placeholder="Ancho x largo x profundidad">
+
+            </div>
+
+            <!-- Tortuga -->
+            <div id="sectionTortuga" class="section">
+                <label class="label-select">Especie *</label>
+                <select class="namee" name="especie_tortuga">
+                            <option value="">Selecciona especie</option>
+                            <option>Tortuga de Orejas Rojas</option>
+                            <option>Tortuga de Orejas Amarillas</option>
+                            <option>Tortuga Pintada</option>
+                            <option>Tortuga Mapa</option>
+                        </select>
+
+                <label class="label-select">Tamaño *</label>
+                <select class="namee" name="tamano_tortuga">
+                            <option value="">Selecciona tamaño</option>
+                            <option>Pequeña (10-15 cm)</option>
+                            <option>Mediana (16-20 cm)</option>
+                            <option>Grande (26-35 cm)</option>
+                        </select>
+
+                <!-- Fuente de calor de la tortuga -->
+                <label class="label-select">Fuente de calor que tiene tu tortuga *</label>
+                <select class="namee" name="fuente_calor_tortuga">
+    <option value="">Selecciona opción</option>
+    <option>Lámpara de calor</option>
+    <option>Placa térmica</option>
+    <option>Cable calefactor</option>
+    <option>Piedra calefactora</option>
+    <option>Emisor de calor cerámico</option>
+    <option>Calentador de agua</option>
+</select>
+
+                <!-- Alimentos que consume la tortuga -->
+                <label class="label-select">¿Qué alimentos consume tu tortuga? *</label>
+                <select class="namee" name="alimentos_tortuga">
+    <option value="">Selecciona opción</option>
+    <option>Pellets</option>
+    <option>Peces</option>
+    <option>Vegetales acuáticos</option>
+    <option>Verduras</option>
+    <option>Frutas</option>
+    <option>Otra…</option>
+</select>
+
+                <!-- Marca del alimento -->
+                <label class="label-select">Ingrese marca de su alimento</label>
+                <input type="text" class="namee" name="marca_alimento_tortuga" placeholder="Si aplica">
+
+                <!-- Veces que come al día -->
+                <label class="label-select">¿Cuántas veces come al día? *</label>
+                <select class="namee" name="veces_comida_tortuga">
+    <option value="">Selecciona opción</option>
+    <option>1 vez al día</option>
+    <option>2 veces al día</option>
+    <option>3 veces al día</option>
+    <option>Libertad de horario, siempre tiene comida en su plato</option>
+</select>
+
+                <!-- Tratamientos que ha llevado -->
+                <label class="label-select">Tratamientos que ha llevado *</label>
+                <select class="namee" name="tratamientos_tortuga">
+    <option value="">Selecciona opción</option>
+    <option>Desparasitacion</option>
+    <option>Vitaminas</option>
+    <option>Baños de sol controlados</option>
+    <option>Ninguna de las anteriores</option>
+    <option>No tengo el conocimiento de esta información</option>
+    <option>Otra…</option>
+</select>
+
+                <!-- Tipo de terrario -->
+                <label class="label-select">Tipo de terrario en el que vive *</label>
+                <select class="namee" name="tipo_terrario_tortuga">
+    <option value="">Selecciona opción</option>
+    <option>Acuaterrario (70% agua, 30% tierra)</option>
+    <option>Terrario semi-acuático</option>
+    <option>Terrario terrestre</option>
+    <option>Recinto exterior con estanque</option>
+    <option>Tortuguera interior básica</option>
+    <option>Estanque interior con zona seca</option>
+</select>
+
+                <!-- Dimensiones aproximadas del terrario -->
+                <label class="label-select">Dimensiones aproximadas del terrario *</label>
+                <input type="text" class="namee" name="dimensiones_terrario_tortuga" placeholder="Ancho x largo x profundidad">
+
+            </div>
+        </div>
+
+        <br>
+        <center>
+            <button type="submit" class="sape p-2 mt-3">Registrarse</button>
+        </center>
+        </form>
+        </div>
+    </section>
+
+    <script>
+        const tipoMascota = document.getElementById("tipoMascota");
+        const sectionPerro = document.getElementById("sectionPerro");
+        const sectionGato = document.getElementById("sectionGato");
+        const sectionAve = document.getElementById("sectionAve");
+        const sectionReptil = document.getElementById("sectionReptil");
+        const tipoReptil = document.getElementById("tipoReptil");
+        const sectionLagarto = document.getElementById("sectionLagarto");
+        const sectionSerpiente = document.getElementById("sectionSerpiente");
+        const sectionTortuga = document.getElementById("sectionTortuga");
+
+        tipoMascota.addEventListener("change", function() {
+            sectionPerro.style.display = "none";
+            sectionGato.style.display = "none";
+            sectionAve.style.display = "none";
+            sectionReptil.style.display = "none";
+            sectionLagarto.style.display = "none";
+            sectionSerpiente.style.display = "none";
+            sectionTortuga.style.display = "none";
+
+            if (this.value === "Perro") sectionPerro.style.display = "block";
+            if (this.value === "Gato") sectionGato.style.display = "block";
+            if (this.value === "Ave") sectionAve.style.display = "block";
+            if (this.value === "Reptil") sectionReptil.style.display = "block";
+        });
+
+        tipoReptil.addEventListener("change", function() {
+            sectionLagarto.style.display = "none";
+            sectionSerpiente.style.display = "none";
+            sectionTortuga.style.display = "none";
+
+            if (this.value === "Lagarto") sectionLagarto.style.display = "block";
+            if (this.value === "Serpiente") sectionSerpiente.style.display = "block";
+            if (this.value === "Tortuga") sectionTortuga.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
