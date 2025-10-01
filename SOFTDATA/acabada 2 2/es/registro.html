@@ -50,6 +50,107 @@
 
 
     <body>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const estadoSelect = document.getElementById('estado_mascota');
+                const municipioSelect = document.getElementById('municipio_mascota');
+                const calleSelect = document.getElementById('calle_mascota');
+                const numeroInput = document.getElementById('numero_mascota');
+                const direccionFinal = document.getElementById('direccion_final');
+
+                // Inicializa el selector de ESTADO con las claves del JSON
+                function inicializarEstados() {
+                    for (const estado in datosDireccion) {
+                        const option = document.createElement('option');
+                        option.value = estado;
+                        option.textContent = estado;
+                        estadoSelect.appendChild(option);
+                    }
+                }
+
+                // Función para llenar el selector de MUNICIPIOS
+                estadoSelect.addEventListener('change', () => {
+                    const estadoSeleccionado = estadoSelect.value;
+
+                    // Limpiar y deshabilitar los selectores siguientes
+                    municipioSelect.innerHTML = '<option value="">-- Seleccione Municipio --</option>';
+                    calleSelect.innerHTML = '<option value="">-- Seleccione Calle --</option>';
+                    municipioSelect.disabled = true;
+                    calleSelect.disabled = true;
+
+                    if (estadoSeleccionado && datosDireccion[estadoSeleccionado]) {
+                        const municipios = datosDireccion[estadoSeleccionado];
+                        for (const municipio in municipios) {
+                            const option = document.createElement('option');
+                            option.value = municipio;
+                            option.textContent = municipio;
+                            municipioSelect.appendChild(option);
+                        }
+                        municipioSelect.disabled = false;
+                    }
+                    actualizarDireccion();
+                });
+
+                // Función para llenar el selector de CALLES
+                municipioSelect.addEventListener('change', () => {
+                    const estadoSeleccionado = estadoSelect.value;
+                    const municipioSeleccionado = municipioSelect.value;
+
+                    calleSelect.innerHTML = '<option value="">-- Seleccione Calle --</option>';
+                    calleSelect.disabled = true;
+
+                    if (municipioSeleccionado && datosDireccion[estadoSeleccionado][municipioSeleccionado]) {
+                        const calles = datosDireccion[estadoSeleccionado][municipioSeleccionado];
+                        calles.forEach(calle => {
+                            const option = document.createElement('option');
+                            option.value = calle;
+                            option.textContent = calle;
+                            calleSelect.appendChild(option);
+                        });
+                        calleSelect.disabled = false;
+                    }
+                    actualizarDireccion();
+                });
+
+                // Función para actualizar la dirección completa en tiempo real
+                function actualizarDireccion() {
+                    const estado = estadoSelect.value;
+                    const municipio = municipioSelect.value;
+                    const calle = calleSelect.value;
+                    const numero = numeroInput.value;
+
+                    const direccionCompleta = [estado, municipio, calle, numero].filter(Boolean).join(', ');
+                    direccionFinal.textContent = `Dirección seleccionada: ${direccionCompleta}`;
+                }
+
+                // Escuchar cambios en todos los campos para actualizar la visualización final
+                estadoSelect.addEventListener('change', actualizarDireccion);
+                municipioSelect.addEventListener('change', actualizarDireccion);
+                calleSelect.addEventListener('change', actualizarDireccion);
+                numeroInput.addEventListener('input', actualizarDireccion);
+
+                // Ejecutar al cargar la página
+                inicializarEstados();
+            });
+            const datosDireccion = {
+                "CDMX": {
+                    "Cuauhtémoc": ["Reforma", "Insurgentes", "Bucareli"],
+                    "Coyoacán": ["Miguel Ángel de Quevedo", "Universidad", "Taxqueña"],
+                },
+                "Jalisco": {
+                    "Guadalajara": ["Avenida Chapultepec", "Vallarta", "Juárez"],
+                    "Zapopan": ["Patria", "Acueducto", "Base Aérea"],
+                },
+                "Nuevo León": {
+                    "Monterrey": ["Constitución", "Venustiano Carranza", "Pino Suárez"],
+                    "San Pedro Garza García": ["Calzada San Pedro", "Gómez Morín", "Alfonso Reyes"],
+                },
+                "Yucatán": {
+                    "Mérida": ["Paseo de Montejo", "Calle 60", "Avenida Colón"],
+                    "Progreso": ["Malecón", "Calle 80"],
+                }
+            };
+        </script>
         <style>
             .sexo {
                 font-size: 18px;
@@ -124,17 +225,36 @@
                <option value="Otra">Rancho</option>
               <option value="Otra">Otra…</option>
             </select><br>
+                                <style>
+                                    .keukol {
+                                        position: relative;
+                                        right: 380px;
+                                    }
+                                </style>
+                                <p class="mt-3 keukol sexo2">Selecciona tu direccion</p>
+                                <select class="namee mt-2" name="estado" id="estado_mascota" required>
+        <option value="">-- Seleccione Estado --</option>
+    </select><br>
 
-                                <!-- Dirección -->
-                                <textarea class="namee mt-2" name="direccion" required placeholder="Dirección de donde vive la mascota Por favor ingrese: Estado o Ciudad, Municipio o Alcaldía, Calle y Número"></textarea><br>
+                                <select class="namee mt-2" name="municipio" id="municipio_mascota" required disabled>
+        <option value="">-- Seleccione Municipio --</option>
+    </select><br>
 
-                                <!-- Número de mascotas -->
-                                <input class="namee mt-2" type="number" name="num_mascotas" placeholder="Número de mascotas que tiene"><br><br>
-                                <input class="namee mt-2" type="password" name="password_usuario" placeholder="Ingrese su contraseña"><br><br>
+                                <select class="namee mt-2" name="calle" id="calle_mascota" required disabled>
+        <option value="">-- Seleccione Calle --</option>
+    </select><br>
 
-                                <!-- Botón -->
-                                <a href="registro_mascota.html" class="sape p-2 mt-3 d-none d-sm-inline-block">Registrarse</a>
-                                <a href="registro_mascota.html" class="sape2 p-2 mt-3 d-sm-none">Registrarse</a>
+                                <input type="text" class="namee mt-2" name="numero" id="numero_mascota" required placeholder=" Numero exterior o Interior Ej: 1400 Int 302"><br>
+                            </form>
+
+                            <p id="direccion_final" style="margin-top: 20px;">Dirección seleccionada: </p>
+                            <!-- Número de mascotas -->
+                            <input class="namee mt-2" type="number" name="num_mascotas" placeholder="Número de mascotas que tiene"><br><br>
+                            <input class="namee mt-2" type="password" name="password_usuario" placeholder="Ingrese su contraseña"><br><br>
+
+                            <!-- Botón -->
+                            <a href="registro_mascota.html" class="sape p-2 mt-3 d-none d-sm-inline-block">Registrarse</a>
+                            <a href="registro_mascota.html" class="sape2 p-2 mt-3 d-sm-none">Registrarse</a>
 
                             </form>
                         </div>
