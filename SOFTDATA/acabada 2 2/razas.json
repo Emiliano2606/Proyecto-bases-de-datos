@@ -1,0 +1,3660 @@
+[
+    {
+        "id_raza": 1,
+        "nombre": "POINTER INGLÉS",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra ingleses e irlandeses",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 2,
+        "nombre": "SETTER INGLÉS",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra ingleses e irlandeses",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 3,
+        "nombre": "KERRY BLUE TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 4,
+        "nombre": "CAIRN TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 5,
+        "nombre": "COCKER SPANIEL INGLÉS",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 6,
+        "nombre": "GORDON SETTER",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra ingleses e irlandeses",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 7,
+        "nombre": "AIREDALE TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 8,
+        "nombre": "AUSTRALIAN TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "AUSTRALIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 9,
+        "nombre": "BEDLINGTON TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 10,
+        "nombre": "BORDER TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 11,
+        "nombre": "BULL TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de tipo bull",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 12,
+        "nombre": "FOX TERRIER DE PELO LISO",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 13,
+        "nombre": "TERRIER DE JUGUETE INGLÉS (NEGRO Y FUEGO)",
+        "grupo": "Terriers",
+        "seccion": "Terriers de compañía",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 14,
+        "nombre": "SPITZ DE LOS VISIGODOS - VALLHUND SUECO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de guarda y pastoreo",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 15,
+        "nombre": "PERRO DE PASTOR BELGA",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "BÉLGICA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 16,
+        "nombre": "ANTIGUO PERRO DE PASTOR INGLÉS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 17,
+        "nombre": "GRIFÓN DEL NIVERNAIS",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 19,
+        "nombre": "BRIQUET GRIFON VENDEANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 20,
+        "nombre": "SABUESO DEL ARIEGE",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 21,
+        "nombre": "GASCON SAINTONGEOIS",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 22,
+        "nombre": "GRAN SABUESO AZUL DE GASCUÑA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 24,
+        "nombre": "SABUESO POITEVIN",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 25,
+        "nombre": "BILLY",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 28,
+        "nombre": "SABUESO ARTESIANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 30,
+        "nombre": "PORCELAINE",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 31,
+        "nombre": "PEQUEÑO SABUESO AZUL DE GASCUÑA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 32,
+        "nombre": "GRIFÓN AZUL DE GASCUÑA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 33,
+        "nombre": "GRAN BASSET GRIFÓN VENDEANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 34,
+        "nombre": "BASSET ARTESIANO DE NORMANDÍA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 35,
+        "nombre": "BASSET AZUL DE GASCUÑA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 36,
+        "nombre": "BASSET LEONADO DE BRETAÑA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 37,
+        "nombre": "PERRO DE AGUA PORTUGUÉS",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros de agua",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 38,
+        "nombre": "WELSH CORGI (CARDIGAN)",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros boyeros (excepto perros boyeros suizos)",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 39,
+        "nombre": "WELSH CORGI (PEMBROKE)",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros boyeros (excepto perros boyeros suizos)",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 40,
+        "nombre": "SOFT  COATED  WHEATEN  TERRIER IRLANDÉS",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 41,
+        "nombre": "PERRO DE PASTOR YUGOSLAVO DE CHARPLANINA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "MACEDONIA DEL NORTE, SERBIA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 42,
+        "nombre": "PERRO CAZADOR DE ALCES SUECO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 43,
+        "nombre": "BASENJI",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo",
+        "pais": "ÁFRICA CENTRAL",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 44,
+        "nombre": "PASTOR DE BEAUCE",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 45,
+        "nombre": "BOYERO DE MONTANA BERNES",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Perros tipo montaña y boyeros suizos",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 46,
+        "nombre": "PERRO BOYERO DE APPENZELL",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Perros tipo montaña y boyeros suizos",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 47,
+        "nombre": "PERRO BOYERO DE ENTLEBUCH",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Perros tipo montaña y boyeros suizos",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 48,
+        "nombre": "PERRO DE OSOS DE CARELIA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "FINLANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 49,
+        "nombre": "SPITZ FINLANDÉS",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "FINLANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 50,
+        "nombre": "TERRANOVA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "CANADÁ",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 51,
+        "nombre": "SABUESO FINLANDÉS",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FINLANDIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 52,
+        "nombre": "SABUESO POLACO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "POLONIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 53,
+        "nombre": "KOMONDOR",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 54,
+        "nombre": "KUVASZ",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 55,
+        "nombre": "PULI",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 56,
+        "nombre": "PUMI",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 57,
+        "nombre": "BRACO HÚNGARO DE PELO CORTO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 58,
+        "nombre": "GRAN BOYERO SUIZO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Perros tipo montaña y boyeros suizos",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 59,
+        "nombre": "SABUESO SUIZO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 60,
+        "nombre": "SABUESO SUIZO PEQUEÑO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 61,
+        "nombre": "SAN BERNARDO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 62,
+        "nombre": "SABUESO ESTIRIO DE PELO ÁSPERO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "AUSTRIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 63,
+        "nombre": "SABUESO AUSTRIACO NEGRO Y FUEGO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "AUSTRIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 64,
+        "nombre": "PINSCHER AUSTRIACO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "AUSTRIA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 65,
+        "nombre": "MALTESE",
+        "grupo": "Perros de compañía",
+        "seccion": "Bichons y razas semejantes",
+        "pais": "CUENCA MEDITERRÁNEA CENTRAL",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 66,
+        "nombre": "GRIFÓN LEONADO DE BRETAÑA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 67,
+        "nombre": "PEQUEÑO BASSET GRIFÓN VENDEANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 68,
+        "nombre": "SABUESO DEL TIROL",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "AUSTRIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 70,
+        "nombre": "LAKELAND TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 71,
+        "nombre": "MANCHESTER TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 72,
+        "nombre": "NORWICH TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 73,
+        "nombre": "SCOTTISH TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 74,
+        "nombre": "SEALYHAM TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 75,
+        "nombre": "SKYE TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 76,
+        "nombre": "STAFFORDSHIRE BULL TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de tipo bull",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 77,
+        "nombre": "SPANIEL CONTINENTAL ENANO DE COMPAÑÍA",
+        "grupo": "Perros de compañía",
+        "seccion": "Spaniel continental enano y otros",
+        "pais": "BÉLGICA, FRANCIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 78,
+        "nombre": "WELSH TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 80,
+        "nombre": "GRIFFON BRUXELLOIS",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros belgas de talla pequeña",
+        "pais": "BÉLGICA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 81,
+        "nombre": "GRIFFON BELGE",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros belgas de talla pequeña",
+        "pais": "BÉLGICA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 82,
+        "nombre": "PETIT BRABANÇON",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros belgas de talla pequeña",
+        "pais": "BÉLGICA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 83,
+        "nombre": "SCHIPPERKE",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "BÉLGICA",
+        "tamanos": [
+            "Toy"
+        ]
+    },
+    {
+        "id_raza": 84,
+        "nombre": "CHIEN DE SAINT HUBERT",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "BÉLGICA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 85,
+        "nombre": "WEST HIGHLAND WHITE TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 86,
+        "nombre": "YORKSHIRE TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de compañía",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Toy"
+        ]
+    },
+    {
+        "id_raza": 87,
+        "nombre": "PERRO DE PASTOR CATALÁN",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 88,
+        "nombre": "PERRO PASTOR DE SHETLAND",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 89,
+        "nombre": "PODENCO IBICENCO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo - Perros de caza",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 90,
+        "nombre": "PERDIGUERO DE BURGOS",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 91,
+        "nombre": "MASTÍN ESPAÑOL",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 92,
+        "nombre": "MASTÍN DEL PIRINEO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 93,
+        "nombre": "PERRO DE PASTOR PORTUGUÉS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 94,
+        "nombre": "PODENCO PORTUGUÉS",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo - Perros de caza",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 95,
+        "nombre": "SPANIEL BRETÓN",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 96,
+        "nombre": "RAFEIRO DEL ALENTEJO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 97,
+        "nombre": "SPITZ ALEMÁN",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz europeos",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 98,
+        "nombre": "PERRO DE MUESTRA ALEMÁN DE PELO DURO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 99,
+        "nombre": "WEIMARANER",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 100,
+        "nombre": "PERRO TEJONERO DE WESTFALIA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 101,
+        "nombre": "BULLDOG FRANCÉS",
+        "grupo": "Perros de compañía",
+        "seccion": "Molosoides de talla pequeña",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 102,
+        "nombre": "PEQUEÑO MÜNSTERLÄNDER",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 103,
+        "nombre": "TERRIER CAZADOR ALEMÁN",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 104,
+        "nombre": "PERDIGUERO ALEMÁN",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 105,
+        "nombre": "PERRO DE AGUA FRANCÉS",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros de agua",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 106,
+        "nombre": "SPANIEL AZUL DE PICARDIA",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 107,
+        "nombre": "GRIFÓN DE MUESTRA DE PELO DURO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 108,
+        "nombre": "SPANIEL PICARDO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 109,
+        "nombre": "CLUMBER SPANIEL",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 110,
+        "nombre": "COBRADOR DE PELO RIZADO",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros cobradores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 111,
+        "nombre": "COBRADOR DORADO",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros cobradores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 113,
+        "nombre": "PASTOR DE BRIE",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 114,
+        "nombre": "SPANIEL DE PONT-AUDEMER",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 115,
+        "nombre": "BRACO SAINT-GERMAIN",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 116,
+        "nombre": "DOGO DE BURDEOS",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 117,
+        "nombre": "DEUTSCH LANGHAAR",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 118,
+        "nombre": "GRAN MUNSTERLANDER",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 119,
+        "nombre": "BRACO ALEMÁN DE PELO CORTO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 120,
+        "nombre": "SETTER IRLANDÉS ROJO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra ingleses e irlandeses",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 121,
+        "nombre": "COBRADOR DE PELO LISO",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros cobradores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 122,
+        "nombre": "LABRADOR RETRIEVER",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros cobradores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 123,
+        "nombre": "FIELD SPANIEL",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 124,
+        "nombre": "PERRO DE AGUA IRLANDÉS",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros de agua",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 125,
+        "nombre": "SPRINGER SPANIEL INGLÉS",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 126,
+        "nombre": "SPRINGER SPANIEL GALÉS",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 127,
+        "nombre": "SUSSEX SPANIEL",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 128,
+        "nombre": "KING CHARLES SPANIEL",
+        "grupo": "Perros de compañía",
+        "seccion": "Spaniels ingleses de compañía",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 129,
+        "nombre": "SABUESO DE SMÅLAND",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 130,
+        "nombre": "PERRO TEJONERO SUECO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 131,
+        "nombre": "SABUESO SCHILLER",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 132,
+        "nombre": "SABUESO HAMILTON",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 133,
+        "nombre": "BRACO FRANCÉS - TIPO GASCUÑA",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 134,
+        "nombre": "BRACO FRANCÉS - TIPO PIRINEOS",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 135,
+        "nombre": "PERRO SUECO DE LAPONIA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de guarda y pastoreo",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 136,
+        "nombre": "CAVALIER KING CHARLES SPANIEL",
+        "grupo": "Perros de compañía",
+        "seccion": "Spaniels ingleses de compañía",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 137,
+        "nombre": "PERRO DE MONTAÑA DE LOS PIRINEOS",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 138,
+        "nombre": "PASTOR DE LOS PIRINEOS DE CARA RASA",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 139,
+        "nombre": "TERRIER IRLANDÉS",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 140,
+        "nombre": "BOSTON TERRIER",
+        "grupo": "Perros de compañía",
+        "seccion": "Molosoides de talla pequeña",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 141,
+        "nombre": "PERRO PASTOR DE LOS PIRINEOS DE PELO LARGO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 142,
+        "nombre": "TCHUVATCH ESLOVACO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ESLOVAQUIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 143,
+        "nombre": "DOBERMANN",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 144,
+        "nombre": "BOXER",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 145,
+        "nombre": "LEONBERGER",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 146,
+        "nombre": "PERRO CRESTADO RODESIANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Razas semejantes",
+        "pais": "SUDÁFRICA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 147,
+        "nombre": "ROTTWEILER",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 148,
+        "nombre": "TECKEL",
+        "grupo": "Teckels",
+        "seccion": "Molosoides",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 149,
+        "nombre": "BULLDOG",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 150,
+        "nombre": "SABUESO SERBIO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SERBIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 151,
+        "nombre": "SABUESO DE ISTRIA DE PELO CORTO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "CROACIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 152,
+        "nombre": "SABUESO DE ISTRIA DE PELO DURO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "CROACIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 153,
+        "nombre": "DÁLMATA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Razas semejantes",
+        "pais": "CROACIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 154,
+        "nombre": "SABUESO DEL VALLE DE SAVE",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "CROACIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 155,
+        "nombre": "SABUESO BOSNIO DE PELO CERDOSO - LLAMADO BARAK",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "BOSNIA Y HERZEGOVINA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 156,
+        "nombre": "COLLIE DE PELO LARGO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 157,
+        "nombre": "BULLMASTIFF",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 158,
+        "nombre": "GREYHOUND",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 159,
+        "nombre": "FOXHOUND INGLÉS",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 160,
+        "nombre": "LEBREL IRLANDÉS",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo duro",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 161,
+        "nombre": "BEAGLE",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 162,
+        "nombre": "WHIPPET",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 163,
+        "nombre": "BASSET HOUND",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 164,
+        "nombre": "LEBREL ESCOCÉS",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo duro",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 165,
+        "nombre": "ESPINONE",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 166,
+        "nombre": "PASTOR ALEMÁN",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 167,
+        "nombre": "COCKER SPANIEL AMERICANO",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 168,
+        "nombre": "DANDIE DINMONT TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 169,
+        "nombre": "FOX TERRIER DE PELO ALAMBRE",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 170,
+        "nombre": "PERRO DE CASTRO LABOREIRO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 171,
+        "nombre": "BOYERO DE LAS ARDENAS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros boyeros (excepto perros boyeros suizos)",
+        "pais": "BÉLGICA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 172,
+        "nombre": "CANICHE",
+        "grupo": "Perros de compañía",
+        "seccion": "Caniche",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 173,
+        "nombre": "PERRO DE LA SIERRA DE LA ESTRELA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 175,
+        "nombre": "SPANIEL FRANCÉS",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 176,
+        "nombre": "PASTOR DE PICARDÍA",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 177,
+        "nombre": "BRACO DEL ARIEGE",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 179,
+        "nombre": "BRACO DEL BORBONESADO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 180,
+        "nombre": "BRACO DE AUVERNIA",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 181,
+        "nombre": "SCHNAUZER GIGANTE",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 182,
+        "nombre": "SCHNAUZER",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 183,
+        "nombre": "SCHNAUZER MINIATURA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 184,
+        "nombre": "PINSCHER ALEMÁN",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 185,
+        "nombre": "PINSCHER MINIATURA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 186,
+        "nombre": "AFFENPINSCHER",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 187,
+        "nombre": "PERDIGUERO PORTUGUÉS",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 188,
+        "nombre": "SLOUGHI",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "MARRUECOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 189,
+        "nombre": "PERRO FINLANDÉS DE LAPONIA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de guarda y pastoreo",
+        "pais": "FINLANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 190,
+        "nombre": "HOVAWART",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 191,
+        "nombre": "BOYERO DE FLANDES",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros boyeros (excepto perros boyeros suizos)",
+        "pais": "BÉLGICA, FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 192,
+        "nombre": "KROMFOHRLÄNDER",
+        "grupo": "Perros de compañía",
+        "seccion": "Kromfohrländer",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 193,
+        "nombre": "BORZOI - LEBREL RUSO PARA LA CAZA",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo largo u ondulado",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 194,
+        "nombre": "PERRO DE PASTOR BERGAMASCO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 195,
+        "nombre": "VOLPINO ITALIANO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz europeos",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Toy"
+        ]
+    },
+    {
+        "id_raza": 196,
+        "nombre": "BOLOGNESE",
+        "grupo": "Perros de compañía",
+        "seccion": "Bichons y razas semejantes",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 197,
+        "nombre": "MASTÍN NAPOLITANO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 198,
+        "nombre": "SABUESO ITALIANO DE PELO DURO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 199,
+        "nombre": "CIRNECO DEL ETNA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo - Perros de caza",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 200,
+        "nombre": "PEQUEÑO LEBREL ITALIANO",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 201,
+        "nombre": "PERRO DE PASTOR DE LA MAREMMA Y DE LOS ABRUZOS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 202,
+        "nombre": "BRACO ITALIANO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 203,
+        "nombre": "SABUESO NORUEGO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "NORUEGA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 204,
+        "nombre": "SABUESO ESPAÑOL",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 205,
+        "nombre": "CHOW CHOW",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "CHINA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 206,
+        "nombre": "SPANIEL JAPONÉS",
+        "grupo": "Perros de compañía",
+        "seccion": "Spaniels japoneses y pekineses",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 207,
+        "nombre": "PEKINÉS",
+        "grupo": "Perros de compañía",
+        "seccion": "Spaniels japoneses y pekineses",
+        "pais": "CHINA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 208,
+        "nombre": "SHIH TZU",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros tibetanos",
+        "pais": "Tíbet (China)",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 209,
+        "nombre": "TERRIER TIBETANO",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros tibetanos",
+        "pais": "Tíbet (China)",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 211,
+        "nombre": "PERRO ESQUIMAL CANADIENSE",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de trineo",
+        "pais": "CANADÁ",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 212,
+        "nombre": "SAMOYEDO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de trineo",
+        "pais": "NORTE DE RUSIA, SIBERIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 213,
+        "nombre": "RASTREADOR DE HANNOVER",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros de rastro",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 214,
+        "nombre": "SABUESO HELÉNICO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "GRECIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 215,
+        "nombre": "BICHON DE PELO RIZADO",
+        "grupo": "Perros de compañía",
+        "seccion": "Bichons y razas semejantes",
+        "pais": "BÉLGICA, FRANCIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 216,
+        "nombre": "PUDELPOINTER",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 217,
+        "nombre": "RASTREADOR MONTAÑES DE BAVIERA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros de rastro",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 218,
+        "nombre": "CHIHUAHUEÑO",
+        "grupo": "Perros de compañía",
+        "seccion": "Chihuahueno",
+        "pais": "MÉXICO",
+        "tamanos": [
+            "Toy"
+        ]
+    },
+    {
+        "id_raza": 219,
+        "nombre": "SABUESO FRANCÉS TRICOLOR",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 220,
+        "nombre": "SABUESO FRANCÉS BLANCO Y NEGRO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 221,
+        "nombre": "PERRO DE AGUA FRISON",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros de agua",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 222,
+        "nombre": "PERDIGUERO FRISÓN",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 223,
+        "nombre": "PASTOR HOLANDÉS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 224,
+        "nombre": "PERDIGUERO DE DRENTE",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 225,
+        "nombre": "FILA BRASILEÑO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "BRASIL",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 226,
+        "nombre": "LANDSEER (TIPO EUROPEO CONTINENTAL)",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ALEMANIA, SUIZA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 227,
+        "nombre": "LHASA APSO",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros tibetanos",
+        "pais": "Tíbet (China)",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 228,
+        "nombre": "LEBREL AFGANO",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo largo u ondulado",
+        "pais": "AFGANISTÁN",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 229,
+        "nombre": "SABUESO TRICOLOR SERBIO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "SERBIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 230,
+        "nombre": "DOGO DEL TIBET",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "Tíbet (China)",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 231,
+        "nombre": "SPANIEL TIBETANO",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros tibetanos",
+        "pais": "Tíbet (China)",
+        "tamanos": [
+            "Toy"
+        ]
+    },
+    {
+        "id_raza": 232,
+        "nombre": "PERRO DE MUESTRA ALEMÁN DE PELO CERDOSO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 233,
+        "nombre": "PEQUEÑO PERRO LEÓN",
+        "grupo": "Perros de compañía",
+        "seccion": "Bichons y razas semejantes",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 234,
+        "nombre": "XOLOITZCUINTLE",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo",
+        "pais": "MÉXICO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 235,
+        "nombre": "GRAN DANÉS",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 236,
+        "nombre": "TERRIER SEDOSO AUSTRALIANO",
+        "grupo": "Terriers",
+        "seccion": "Terriers de compañía",
+        "pais": "AUSTRALIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 237,
+        "nombre": "BUHUND NORUEGO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de guarda y pastoreo",
+        "pais": "NORUEGA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 238,
+        "nombre": "MUDI",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 239,
+        "nombre": "BRACO HÚNGARO DE PELO DURO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 240,
+        "nombre": "LEBREL HÚNGARO",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 241,
+        "nombre": "SABUESO HÚNGARO - SABUESO DE TRANSILVANIA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "HUNGRÍA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 242,
+        "nombre": "CAZADOR DE ALCES NORUEGO GRIS",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "NORUEGA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 243,
+        "nombre": "MALAMUTE DE ALASKA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de trineo",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 244,
+        "nombre": "SABUESO ESLOVACO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ESLOVAQUIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 245,
+        "nombre": "GRIFÓN DE MUESTRA BOHEMIO DE PELO DURO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "REPÚBLICA CHECA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 246,
+        "nombre": "TERRIER CHECO",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REPÚBLICA CHECA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 247,
+        "nombre": "PERRO DE MONTAÑA DEL ATLAS (AÏDI)",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "MARRUECOS",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 248,
+        "nombre": "PERRO DEL FARAÓN",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo",
+        "pais": "MALTA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 249,
+        "nombre": "CA DE BOU",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 250,
+        "nombre": "BICHON HABANERO",
+        "grupo": "Perros de compañía",
+        "seccion": "Bichons y razas semejantes",
+        "pais": "CUBA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 251,
+        "nombre": "PERRO DE PASTOR POLACO DE LAS LLANURAS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "POLONIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 252,
+        "nombre": "PASTOR POLACO DE TATRA",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "POLONIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 253,
+        "nombre": "PUG",
+        "grupo": "Perros de compañía",
+        "seccion": "Molosoides de talla pequeña",
+        "pais": "CHINA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 254,
+        "nombre": "DACHSBRACKE DE LOS ALPES",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros de rastro",
+        "pais": "AUSTRIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 255,
+        "nombre": "AKITA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 257,
+        "nombre": "SHIBA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 259,
+        "nombre": "TERRIER JAPONÉS",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 260,
+        "nombre": "TOSA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 261,
+        "nombre": "HOKKAIDO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 262,
+        "nombre": "SPITZ JAPONÉS",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 263,
+        "nombre": "CHESAPEAKE BAY RETRIEVER",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros cobradores de caza",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 264,
+        "nombre": "MASTIFF",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 265,
+        "nombre": "LUNDEHUND NORUEGO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "NORUEGA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 266,
+        "nombre": "SABUESO DE HYGEN",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "NORUEGA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 267,
+        "nombre": "SABUESO HALDEN",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "NORUEGA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 268,
+        "nombre": "CAZADOR DE ALCES NORUEGO NEGRO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "NORUEGA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 269,
+        "nombre": "SALUKI",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo largo u ondulado",
+        "pais": "MEDIO ORIENTE",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 270,
+        "nombre": "HUSKY SIBERIANO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de trineo",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 271,
+        "nombre": "COLLIE BARBUDO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 272,
+        "nombre": "NORFOLK TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 273,
+        "nombre": "CANAAN DOG",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo",
+        "pais": "ISRAEL",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 274,
+        "nombre": "PERRO DE GROENLANDIA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de trineo",
+        "pais": "GROENLANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 275,
+        "nombre": "RASTREADOR BRASILEÑO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "BRASIL",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 276,
+        "nombre": "SPITZ DE NORRBOTTEN",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "SUECIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 277,
+        "nombre": "PERRO PASTOR CROATA",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "CROACIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 278,
+        "nombre": "PASTOR DE KARST",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ESLOVENIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 279,
+        "nombre": "SABUESO DE MONTAÑA DEL MONTENEGRO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "MONTENEGRO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 281,
+        "nombre": "ANTIGUO PERRO DE MUESTRA DANÉS",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "DINAMARCA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 282,
+        "nombre": "GRAN GRIFON VENDEANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 283,
+        "nombre": "COTON DE TULEAR",
+        "grupo": "Perros de compañía",
+        "seccion": "Bichons y razas semejantes",
+        "pais": "MADAGASCAR",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 284,
+        "nombre": "PASTOR FINLANDÉS DE LAPONIA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de guarda y pastoreo",
+        "pais": "FINLANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 285,
+        "nombre": "GALGO ESPAÑOL",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 286,
+        "nombre": "AMERICAN STAFFORDSHIRE TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de tipo bull",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 287,
+        "nombre": "BOYERO AUSTRALIANO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros boyeros (excepto perros boyeros suizos)",
+        "pais": "AUSTRALIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 288,
+        "nombre": "PERRO CRESTADO CHINO",
+        "grupo": "Perros de compañía",
+        "seccion": "Perros sin pelo",
+        "pais": "CHINA",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 289,
+        "nombre": "PERRO DE PASTOR ISLANDÉS",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de guarda y pastoreo",
+        "pais": "ISLANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 290,
+        "nombre": "BEAGLE-HARRIER",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 291,
+        "nombre": "EURÁSICO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 292,
+        "nombre": "DOGO ARGENTINO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ARGENTINA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 293,
+        "nombre": "AUSTRALIAN KELPIE",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "AUSTRALIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 294,
+        "nombre": "PERRO DE NUTRIA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 295,
+        "nombre": "HARRIER",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 296,
+        "nombre": "COLLIE DE PELO CORTO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 297,
+        "nombre": "BORDER COLLIE",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 298,
+        "nombre": "PERRO DE AGUA DE ROMAGNA",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros de agua",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 299,
+        "nombre": "SABUESO ALEMÁN",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ALEMANIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 300,
+        "nombre": "PERRO NEGRO Y FUEGO PARA LA CAZA DEL MAPACHE",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 301,
+        "nombre": "PERRO DE AGUA AMERICANO",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros de agua",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 302,
+        "nombre": "TERRIER GLEN DE IMAAL IRLANDÉS",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 303,
+        "nombre": "AMERICAN FOXHOUND",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 304,
+        "nombre": "LAIKA RUSO-EUROPEO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 305,
+        "nombre": "LAIKA DE SIBERIA ORIENTAL",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 306,
+        "nombre": "LAIKA DE SIBERIA OCCIDENTAL",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de cacería",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 307,
+        "nombre": "AZAWAKH",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "MALI",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 308,
+        "nombre": "PERRO SMOUS HOLANDÉS",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 309,
+        "nombre": "SHAR PEI",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "CHINA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 310,
+        "nombre": "PERRO SIN PELO DEL PERÚ",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo",
+        "pais": "PERÚ",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 311,
+        "nombre": "PERRO LOBO DE SAARLOOS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 312,
+        "nombre": "PERRO COBRADOR DE NUEVA ESCOCIA",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros cobradores de caza",
+        "pais": "CANADÁ",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 313,
+        "nombre": "SCHAPENDOES NEERLANDÉS",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 314,
+        "nombre": "NEDERLANDSE KOOIKERHONDJE",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros levantadores de caza",
+        "pais": "PAÍSES BAJOS",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 315,
+        "nombre": "BROHOLMER",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "DINAMARCA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 316,
+        "nombre": "SABUESO FRANCÉS BLANCO Y NARANJA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 317,
+        "nombre": "KAI",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 318,
+        "nombre": "KISHU",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 319,
+        "nombre": "SHIKOKU",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 320,
+        "nombre": "BRACO ESLOVACO DE PELO DURO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra continentales",
+        "pais": "ESLOVAQUIA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 321,
+        "nombre": "PERRO DE PASTOR MALLORQUĺN",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 322,
+        "nombre": "GRAN SABUESO ANGLO-FRANCÉS TRICOLOR",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 323,
+        "nombre": "GRAN SABUESO ANGLO-FRANCÉS BLANCO Y NEGRO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 324,
+        "nombre": "GRAN SABUESO ANGLO-FRANCÉS BLANCO Y NARANJA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 325,
+        "nombre": "SABUESO ANGLO-FRANCÉS DE TAMAÑO MEDIANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "FRANCIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 326,
+        "nombre": "PERRO DE PASTOR DE RUSIA MERIDIONAL",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 327,
+        "nombre": "TERRIER RUSO NEGRO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 328,
+        "nombre": "PERRO PASTOR DEL CÁUCASO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 329,
+        "nombre": "PODENCO CANARIO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo - Perros de caza",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 330,
+        "nombre": "SETTER IRLANDÉS ROJO Y BLANCO",
+        "grupo": "Perros de muestra",
+        "seccion": "Perros de muestra ingleses e irlandeses",
+        "pais": "IRLANDA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 331,
+        "nombre": "PERRO PASTOR KANGAL",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "TURQUÍA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 332,
+        "nombre": "PERRO LOBO CHECOSLOVACO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "CHECOSLOVAQUIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 333,
+        "nombre": "LEBREL POLACO",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo corto",
+        "pais": "POLONIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 334,
+        "nombre": "KOREA JINDO DOG",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "COREA (REPÚBLICA DE)",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 335,
+        "nombre": "PERRO PASTOR DE ASIA CENTRAL",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 336,
+        "nombre": "PERRO DE AGUA ESPAÑOL",
+        "grupo": "Perros cobradores de caza",
+        "seccion": "Perros de agua",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 337,
+        "nombre": "SABUESO ITALIANO DE PELO RASO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 338,
+        "nombre": "THAI RIDGEBACK DOG",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo - Perros de caza",
+        "pais": "TAILANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 339,
+        "nombre": "PARSON RUSSELL TERRIER",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 340,
+        "nombre": "FILA DE SAN MIGUEL",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 341,
+        "nombre": "TERRIER BRASILEÑO",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "BRASIL",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 342,
+        "nombre": "PERRO PASTOR AUSTRALIANO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 343,
+        "nombre": "CANE CORSO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 344,
+        "nombre": "AKITA AMERICANO",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "JAPÓN",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 345,
+        "nombre": "TERRIER JACK RUSSELL",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla pequeña",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Pequeño"
+        ]
+    },
+    {
+        "id_raza": 346,
+        "nombre": "PRESA CANARIO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Gigante"
+        ]
+    },
+    {
+        "id_raza": 347,
+        "nombre": "PASTOR BLANCO SUIZO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 348,
+        "nombre": "PERRO DE TAIWAN",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Tipo primitivo - Perros de caza",
+        "pais": "TAIWÁN",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 349,
+        "nombre": "PERRO PASTOR RUMANO DE MIORITZA",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "RUMANÍA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 350,
+        "nombre": "PERRO DE PASTOR RUMANO DE LOS CÁRPATOS \"CARPATIN\"",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "RUMANÍA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 351,
+        "nombre": "PASTOR AUSTRALIANO STUMPY TAIL",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros boyeros (excepto perros boyeros suizos)",
+        "pais": "AUSTRALIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 352,
+        "nombre": "PEQUEÑO PERRO RUSO",
+        "grupo": "Perros de compañía",
+        "seccion": "Spaniel continental enano y otros",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Toy"
+        ]
+    },
+    {
+        "id_raza": 353,
+        "nombre": "CIMARRÓN URUGUAYO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "URUGUAY",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 354,
+        "nombre": "GONCZY POLSKI",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "POLONIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 355,
+        "nombre": "PASTOR DE BOSNIA Y HERZEGOVINA - CROACIA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "BOSNIA Y HERZEGOVINA, CROACIA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 356,
+        "nombre": "PERRO DE GRANJA DANÉS Y SUECO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Tipo Pinscher y Schnauzer",
+        "pais": "DINAMARCA, SUECIA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 357,
+        "nombre": "PERRO DE PASTOR RUMANO DE BUCOVINA",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "RUMANÍA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 358,
+        "nombre": "THAI BANGKAEW DOG",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "TAILANDIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 359,
+        "nombre": "BULL TERRIER MINIATURA",
+        "grupo": "Terriers",
+        "seccion": "Terriers de tipo bull",
+        "pais": "REINO UNIDO",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 360,
+        "nombre": "LANCASHIRE HEELER",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "INGLATERRA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 361,
+        "nombre": "SEGUGIO MAREMMANO",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ITALIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 362,
+        "nombre": "PERRO KINTAMANI-BALI",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Spitz asiáticos y razas semejantes",
+        "pais": "INDONESIA",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 363,
+        "nombre": "RATONERO DE PRAGA",
+        "grupo": "Perros de compañía",
+        "seccion": "Spaniel continental enano y otros",
+        "pais": "REPÚBLICA CHECA",
+        "tamanos": [
+            "Toy"
+        ]
+    },
+    {
+        "id_raza": 364,
+        "nombre": "PERRO PASTOR BOHEMIO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "REPÚBLICA CHECA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 365,
+        "nombre": "LAIKA DE YAKUTIA",
+        "grupo": "Perros tipo spitz y tipo primitivo",
+        "seccion": "Perros nórdicos de trineo",
+        "pais": "RUSIA (FEDERACIÓN DE)",
+        "tamanos": [
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 366,
+        "nombre": "SABUESO DE ESTONIA",
+        "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
+        "seccion": "Perros tipo sabueso",
+        "pais": "ESTONIA",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 367,
+        "nombre": "PASTOR MINIATURA AMERICANO",
+        "grupo": "Perros de pastor y perros boyeros",
+        "seccion": "Perros de pastor",
+        "pais": "ESTADOS UNIDOS",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 368,
+        "nombre": "MASTÍN TRANSMONTANO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "PORTUGAL",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 369,
+        "nombre": "BULLDOG CONTINENTAL",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "SUIZA",
+        "tamanos": [
+            "Pequeño",
+            "Mediano"
+        ]
+    },
+    {
+        "id_raza": 370,
+        "nombre": "RATONERO VALENCIANO",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 371,
+        "nombre": "RATONERO BODEGUERO ANDALUZ",
+        "grupo": "Terriers",
+        "seccion": "Terriers de talla grande y media",
+        "pais": "ESPAÑA",
+        "tamanos": [
+            "Mediano",
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 372,
+        "nombre": "KAZAKH TAZY",
+        "grupo": "Lebreles",
+        "seccion": "Lebreles de pelo largo u ondulado",
+        "pais": "KAZAJISTÁN",
+        "tamanos": [
+            "Grande"
+        ]
+    },
+    {
+        "id_raza": 373,
+        "nombre": "PERRO PASTOR CUERVO RUMANO",
+        "grupo": "Perros tipo pinscher y schnauzer",
+        "seccion": "Molosoides",
+        "pais": "RUMANÍA",
+        "tamanos": [
+            "Grande"
+        ]
+    }
+]
