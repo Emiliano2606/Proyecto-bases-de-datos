@@ -274,20 +274,11 @@
                     </select>
 
                     <label class="label-select">Vacunas que tiene tu perrito *</label>
-                    <select class="namee" name="vacunas_perro" id="vacunas_perro">
-                        <option value="">Selecciona opción</option>
-                    
+                    <div id="lista-vacunas-checkbox">
+                    </div>
 
-                    </select>
-
-                    <label class="label-select">Fecha de ultima colocacion de Rabia</label>
-                    <input class="namee" type="date" name="fecha_rabia" required>
-
-                    <label class="label-select">Fecha de ultima colocacion de Moquillo</label>
-                    <input class="namee" type="date" name="fecha_moquillo" required>
-
-                    <label class="label-select">Fecha de ultima colocacion de Parvovirus</label>
-                    <input class="namee" type="date" name="fecha_parvovirus" required>
+                    <!-- Contenedor para fechas dinámicas -->
+                    <div id="fechas-vacunas-container"></div>
 
                     <label class="label-select">Tratamientos que a llevado *</label>
                     <select class="namee" name="tratamientos_del_perro">
@@ -1136,6 +1127,8 @@
     </script>
 
     <script src="../listado_razas.js"></script>
+    <script src="../vacunas-perros.js"></script>
+    
 </body>
 
 </html>
