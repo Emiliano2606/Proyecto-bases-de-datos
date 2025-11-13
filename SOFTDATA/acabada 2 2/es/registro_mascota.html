@@ -292,29 +292,81 @@
 
                     </select>
 
+                    <!-- Pregunta si tiene RUAC -->
+                    <label class="label-select">¿Su mascota cuenta con RUAC?</label>
+                    <select class="namee" id="tieneRUAC" required>
+  <option value="">Selecciona opción</option>
+  <option value="si">Sí</option>
+  <option value="no">No</option>
+</select>
+
+                    <!-- Campo RUAC (inicialmente deshabilitado) -->
                     <label class="label-select">Ingrese el RUAC</label>
-                    <input class="namee" type="text" name="ruac" required>
+                    <input class="namee" type="text" id="campoRUAC" name="ruac" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
 
-                    <label class="label-select">Tiene chip su perro</label>
-                    <select class="namee" name="chip_del_perro">
-                        <option value="">Selecciona opción</option>
-                        <option>Si</option>
-                        <option>No</option>
-                     
+                    <script>
+                        // Escuchar cambios en el selector
+                        const selectRUAC = document.getElementById("tieneRUAC");
+                        const inputRUAC = document.getElementById("campoRUAC");
 
-                    </select>
+                        selectRUAC.addEventListener("change", () => {
+                            if (selectRUAC.value === "si") {
+                                inputRUAC.disabled = false; // habilita el campo
+                                inputRUAC.required = true; // lo vuelve obligatorio
+                            } else {
+                                inputRUAC.disabled = true; // lo deshabilita
+                                inputRUAC.required = false; // ya no es obligatorio
+                                inputRUAC.value = ""; // limpia el valor
+                            }
+                        });
+                    </script>
 
-                    <label class="label-select">Numero de chip de su perro</label>
-                    <input class="namee" type="text" name="chip del perro" required>
 
-                    <label class="label-select">Tipo del chip del perro</label>
-                    <select class="namee" name="tipo_chip_perro">
-                        <option value="">Selecciona opción</option>
-                        <option>Microchip de identificación</option>
-                        <option>Dispositivos GPS</option>
-                        
+                    <!-- Pregunta principal -->
+                    <label class="label-select">¿Tiene chip su perro?</label>
+                    <select class="namee" id="chip_del_perro" name="chip_del_perro" required>
+  <option value="">Selecciona opción</option>
+  <option value="Si">Sí</option>
+  <option value="No">No</option>
+</select>
 
-                    </select>
+                    <!-- Campo: Número de chip -->
+                    <div id="campo_chip" style="display: none;">
+                        <label class="label-select">Número de chip de su perro</label>
+                        <input class="namee" type="text" name="numero_chip_perro">
+
+                        <label class="label-select">Tipo del chip del perro</label>
+                        <select class="namee" name="tipo_chip_perro">
+    <option value="">Selecciona opción</option>
+    <option value="FDX-B">FDX-B
+</option>
+    <option value="HDX
+"> HDX
+</option>
+  <option value="FDX-A
+
+"> FDX-A
+
+</option>
+  </select>
+                    </div>
+
+                    <script>
+                        // Detectar cambios en la selección
+                        const selectChip = document.getElementById("chip_del_perro");
+                        const campoChip = document.getElementById("campo_chip");
+
+                        selectChip.addEventListener("change", function() {
+                            if (this.value === "Si") {
+                                campoChip.style.display = "block";
+                            } else {
+                                campoChip.style.display = "none";
+                                // Opcional: limpiar los campos si elige "No"
+                                campoChip.querySelectorAll("input, select").forEach(el => el.value = "");
+                            }
+                        });
+                    </script>
+
 
                 </div>
                 <div id="mascotasContainer"></div>
