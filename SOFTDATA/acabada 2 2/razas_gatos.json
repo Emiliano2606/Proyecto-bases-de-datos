@@ -1,0 +1,691 @@
+[{
+        "id_raza": 1,
+        "nombre": "Absinio",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 2,
+        "nombre": "American shorthair",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 3,
+        "nombre": "American wirehair",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 4,
+        "nombre": "Angora turco",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 5,
+        "nombre": "Australian Mist",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 6,
+        "nombre": "Azul Británico",
+        "grupo_raza": "Desarrollado - Pelo corto",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 8",
+        "tipo_pelaje": "Corto y denso",
+        "caracteristicas": "Cabeza redonda, cuerpo robusto, ojos grandes"
+    },
+    {
+        "id_raza": 7,
+        "nombre": "Azul ruso",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 8,
+        "nombre": "Balines",
+        "grupo_raza": "Derivado - Orientales",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Balines semi-largo)",
+        "caracteristicas": "Cuerpo esbelto y elegante, cabeza triangular, ojos azules en point"
+    },
+    {
+        "id_raza": 9,
+        "nombre": "Bengala",
+        "grupo_raza": "Híbrido / Desarrollado - Salvaje apariencia",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Apariencia salvaje, manchas o rosetas, musculoso"
+    },
+    {
+        "id_raza": 10,
+        "nombre": "Bobtail Americano",
+        "grupo_raza": "Mutación de cola corta/larga variable",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o largo según variedad",
+        "caracteristicas": "Cola corta o ausente (Manx), fuerte musculatura"
+    },
+    {
+        "id_raza": 11,
+        "nombre": "Bobtail japonés",
+        "grupo_raza": "Mutación de cola corta/larga variable",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o largo según variedad",
+        "caracteristicas": "Cola corta o ausente (Manx), fuerte musculatura"
+    },
+    {
+        "id_raza": 12,
+        "nombre": "Bombay",
+        "grupo_raza": "Desarrollado para apariencia salvaje",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Cuerpo musculoso, aspecto 'salvaje'"
+    },
+    {
+        "id_raza": 13,
+        "nombre": "Bosque de Noruega",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 14,
+        "nombre": "Brazilian Shorthair",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 15,
+        "nombre": "Burmes",
+        "grupo_raza": "Origen sudeste asiático",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto a semi-largo",
+        "caracteristicas": "Ojos grandes y redondos, cuerpo musculoso"
+    },
+    {
+        "id_raza": 16,
+        "nombre": "Burmilla",
+        "grupo_raza": "Origen sudeste asiático",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto a semi-largo",
+        "caracteristicas": "Ojos grandes y redondos, cuerpo musculoso"
+    },
+    {
+        "id_raza": 17,
+        "nombre": "California Spangled",
+        "grupo_raza": "Híbrido / Desarrollado - Salvaje apariencia",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Apariencia salvaje, manchas o rosetas, musculoso"
+    },
+    {
+        "id_raza": 18,
+        "nombre": "Ceilan (Ceylon / nombre regional)",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Varía según linaje"
+    },
+    {
+        "id_raza": 19,
+        "nombre": "Chartreux",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 20,
+        "nombre": "Colorpoint Shorthair",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 21,
+        "nombre": "Cornish rex",
+        "grupo_raza": "Mutación - Rex (rizado)",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "2.5 - 6",
+        "tipo_pelaje": "Rizado/ondulado (Rex)",
+        "caracteristicas": "Pelaje suave y rizado, orejas prominentes en algunas"
+    },
+    {
+        "id_raza": 22,
+        "nombre": "Criolla",
+        "grupo_raza": "No-pedigree / Criolla",
+        "registro_principal": "No aplica",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Muy variable según población local"
+    },
+    {
+        "id_raza": 23,
+        "nombre": "Curl Americano",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 24,
+        "nombre": "Cyric",
+        "grupo_raza": "Nombre poco común / posible variante",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Información limitada (posible error de nombre)"
+    },
+    {
+        "id_raza": 25,
+        "nombre": "Deutsch Langhaar",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 26,
+        "nombre": "Devon Rex",
+        "grupo_raza": "Mutación - Rex (rizado)",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "2.5 - 6",
+        "tipo_pelaje": "Rizado/ondulado (Rex)",
+        "caracteristicas": "Pelaje suave y rizado, orejas prominentes en algunas"
+    },
+    {
+        "id_raza": 27,
+        "nombre": "Domestico europeo",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 28,
+        "nombre": "Dorado africano",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 29,
+        "nombre": "Dragón Li",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 30,
+        "nombre": "Exótico",
+        "grupo_raza": "Desarrollado - Cara achatada",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3.5 - 6.5",
+        "tipo_pelaje": "Corto (denso)",
+        "caracteristicas": "Cara chata tipo Persa, cuerpo compacto"
+    },
+    {
+        "id_raza": 31,
+        "nombre": "Fold japonés",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 32,
+        "nombre": "German Rex",
+        "grupo_raza": "Mutación - Rex (rizado)",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "2.5 - 6",
+        "tipo_pelaje": "Rizado/ondulado (Rex)",
+        "caracteristicas": "Pelaje suave y rizado, orejas prominentes en algunas"
+    },
+    {
+        "id_raza": 33,
+        "nombre": "Habana Brown",
+        "grupo_raza": "Raza exótica o natural",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o sin pelo (Peterbald)",
+        "caracteristicas": "Rasgos distintivos (ojos, color, cuerpo compacto)"
+    },
+    {
+        "id_raza": 34,
+        "nombre": "Himalayo",
+        "grupo_raza": "Desarrollado - Pelo largo",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Largo",
+        "caracteristicas": "Cabeza redondeada (especialmente Persa), pelo denso"
+    },
+    {
+        "id_raza": 35,
+        "nombre": "Javanés",
+        "grupo_raza": "Derivado - Orientales",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Balines semi-largo)",
+        "caracteristicas": "Cuerpo esbelto y elegante, cabeza triangular, ojos azules en point"
+    },
+    {
+        "id_raza": 36,
+        "nombre": "Khao Manee",
+        "grupo_raza": "Raza exótica o natural",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o sin pelo (Peterbald)",
+        "caracteristicas": "Rasgos distintivos (ojos, color, cuerpo compacto)"
+    },
+    {
+        "id_raza": 37,
+        "nombre": "Korat",
+        "grupo_raza": "Raza exótica o natural",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o sin pelo (Peterbald)",
+        "caracteristicas": "Rasgos distintivos (ojos, color, cuerpo compacto)"
+    },
+    {
+        "id_raza": 38,
+        "nombre": "LaPerm",
+        "grupo_raza": "Mutación - Rex (rizado)",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "2.5 - 6",
+        "tipo_pelaje": "Rizado/ondulado (Rex)",
+        "caracteristicas": "Pelaje suave y rizado, orejas prominentes en algunas"
+    },
+    {
+        "id_raza": 39,
+        "nombre": "Lykoi",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 40,
+        "nombre": "Maine Coon",
+        "grupo_raza": "Natural - Gran talla",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Grande",
+        "rango_peso": "5 - 11",
+        "tipo_pelaje": "Semi-largo/ Largo",
+        "caracteristicas": "Cuerpo grande, orejas con penachos, cola larga y espesa"
+    },
+    {
+        "id_raza": 41,
+        "nombre": "Manx",
+        "grupo_raza": "Mutación de cola corta/larga variable",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o largo según variedad",
+        "caracteristicas": "Cola corta o ausente (Manx), fuerte musculatura"
+    },
+    {
+        "id_raza": 42,
+        "nombre": "Mau Egipcio",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 43,
+        "nombre": "Munchkin",
+        "grupo_raza": "Mutación - Enana",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño",
+        "rango_peso": "2 - 4",
+        "tipo_pelaje": "Varía",
+        "caracteristicas": "Patas cortas"
+    },
+    {
+        "id_raza": 44,
+        "nombre": "Nebelung",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Semi-largo / Largo",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 45,
+        "nombre": "Ocicat",
+        "grupo_raza": "Híbrido / Desarrollado - Salvaje apariencia",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Apariencia salvaje, manchas o rosetas, musculoso"
+    },
+    {
+        "id_raza": 46,
+        "nombre": "Ojos Azules (Blue-Eyed White / Various breeds with blue eyes)",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 47,
+        "nombre": "Oriental",
+        "grupo_raza": "Derivado - Orientales",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Balines semi-largo)",
+        "caracteristicas": "Cuerpo esbelto y elegante, cabeza triangular, ojos azules en point"
+    },
+    {
+        "id_raza": 48,
+        "nombre": "Oriental de Pelo largo",
+        "grupo_raza": "Derivado - Orientales",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Balines semi-largo)",
+        "caracteristicas": "Cuerpo esbelto y elegante, cabeza triangular, ojos azules en point"
+    },
+    {
+        "id_raza": 49,
+        "nombre": "Pelo corto Britanico",
+        "grupo_raza": "Desarrollado - Pelo corto",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 8",
+        "tipo_pelaje": "Corto y denso",
+        "caracteristicas": "Cabeza redonda, cuerpo robusto, ojos grandes"
+    },
+    {
+        "id_raza": 50,
+        "nombre": "Persa Peterbald",
+        "grupo_raza": "Desarrollado - Pelo largo",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Largo",
+        "caracteristicas": "Cabeza redondeada (especialmente Persa), pelo denso"
+    },
+    {
+        "id_raza": 51,
+        "nombre": "Pixie Bob",
+        "grupo_raza": "Mutación de cola corta/larga variable",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o largo según variedad",
+        "caracteristicas": "Cola corta o ausente (Manx), fuerte musculatura"
+    },
+    {
+        "id_raza": 52,
+        "nombre": "Rabón Japonés",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 53,
+        "nombre": "Ragamuffin",
+        "grupo_raza": "Desarrollado - Pelo largo",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Largo",
+        "caracteristicas": "Cabeza redondeada (especialmente Persa), pelo denso"
+    },
+    {
+        "id_raza": 54,
+        "nombre": "Ragdoll",
+        "grupo_raza": "Desarrollado - Pelo largo",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Largo",
+        "caracteristicas": "Cabeza redondeada (especialmente Persa), pelo denso"
+    },
+    {
+        "id_raza": 55,
+        "nombre": "Sagrado de Birmania",
+        "grupo_raza": "Origen sudeste asiático",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto a semi-largo",
+        "caracteristicas": "Ojos grandes y redondos, cuerpo musculoso"
+    },
+    {
+        "id_raza": 56,
+        "nombre": "Savannah",
+        "grupo_raza": "Híbrido / Desarrollado - Salvaje apariencia",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano a grande",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Apariencia salvaje, manchas o rosetas, musculoso"
+    },
+    {
+        "id_raza": 57,
+        "nombre": "Scottish Fold",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 58,
+        "nombre": "Selkirk rex",
+        "grupo_raza": "Mutación - Rex (rizado)",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "2.5 - 6",
+        "tipo_pelaje": "Rizado/ondulado (Rex)",
+        "caracteristicas": "Pelaje suave y rizado, orejas prominentes en algunas"
+    },
+    {
+        "id_raza": 59,
+        "nombre": "Seregeti",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 60,
+        "nombre": "Seychellois",
+        "grupo_raza": "Raza exótica o natural",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o sin pelo (Peterbald)",
+        "caracteristicas": "Rasgos distintivos (ojos, color, cuerpo compacto)"
+    },
+    {
+        "id_raza": 61,
+        "nombre": "Siames",
+        "grupo_raza": "Derivado - Orientales",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Balines semi-largo)",
+        "caracteristicas": "Cuerpo esbelto y elegante, cabeza triangular, ojos azules en point"
+    },
+    {
+        "id_raza": 62,
+        "nombre": "Siamés Moderno",
+        "grupo_raza": "Derivado - Orientales",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Balines semi-largo)",
+        "caracteristicas": "Cuerpo esbelto y elegante, cabeza triangular, ojos azules en point"
+    },
+    {
+        "id_raza": 63,
+        "nombre": "Siberiano",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "4 - 9",
+        "tipo_pelaje": "Semi-largo / Largo",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 64,
+        "nombre": "Singapura",
+        "grupo_raza": "Raza exótica o natural",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Pequeño a mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto o sin pelo (Peterbald)",
+        "caracteristicas": "Rasgos distintivos (ojos, color, cuerpo compacto)"
+    },
+    {
+        "id_raza": 65,
+        "nombre": "Snowshoe",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    },
+    {
+        "id_raza": 66,
+        "nombre": "Somali",
+        "grupo_raza": "Natural - Oriental / Africana",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Somali es semi-largo)",
+        "caracteristicas": "Cuerpo ágil, pelaje ticked en Abyssinian"
+    },
+    {
+        "id_raza": 67,
+        "nombre": "Sphynx",
+        "grupo_raza": "Mutación - Sin pelo",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Sin pelo (piel fina)",
+        "caracteristicas": "Sin pelo, piel arrugada, gran musculatura"
+    },
+    {
+        "id_raza": 68,
+        "nombre": "Tonkines",
+        "grupo_raza": "Derivado - Orientales",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto (Balines semi-largo)",
+        "caracteristicas": "Cuerpo esbelto y elegante, cabeza triangular, ojos azules en point"
+    },
+    {
+        "id_raza": 69,
+        "nombre": "Van Turco",
+        "grupo_raza": "Natural / Estándar",
+        "registro_principal": "TICA / CFA / FIFe (varía)",
+        "tamano": "Mediano",
+        "rango_peso": "3 - 6",
+        "tipo_pelaje": "Corto",
+        "caracteristicas": "Conformación típica de la raza"
+    }
+]

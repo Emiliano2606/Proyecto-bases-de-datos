@@ -381,79 +381,27 @@
                 <label class="label-select">Raza del gato</label>
                 <select class="namee" name="raza_del_gato">
     <option value="">Selecciona opción</option>
-    <option>Abisinio</option>
-    <option>American shorthair (Pelo corto Americano)</option>
-    <option>American wirehair (gato americano de pelo áspero)</option>
-    <option>Angora turco</option>
-    <option>Australian Mist</option>
-    <option>Azul Británico (British Shorthair)</option>
-    <option>Azul ruso</option>
-    <option>Balinés</option>
-    <option>Bengala</option>
-    <option>Bobtail Americano</option>
-    <option>Bobtail Japonés</option>
-    <option>Bombay</option>
-    <option>Bosque de Noruega</option>
-    <option>Brazilian Shorthair (Brasileño pelo corto)</option>
-    <option>Burmés</option>
-    <option>Burmilla</option>
-    <option>California Spangled</option>
-    <option>Ceilán</option>
-    <option>Chartreux</option>
-    <option>Colorpoint Shorthair</option>
-    <option>Cornish rex</option>
-    <option>Criolla</option>
-    <option>Curl Americano</option>
-    <option>Cymric</option>
-    <option>Deutsch Langhaar</option>
-    <option>Devon Rex</option>
-    <option>Doméstico europeo</option>
-    <option>Dorado africano</option>
-    <option>Dragon Li</option>
-    <option>Exótico</option>
-    <option>Fold Japones</option>
-    <option>German Rex</option>
-    <option>Habana brown</option>
-    <option>Himalayo</option>
-    <option>Javanés</option>
-    <option>Khao Manee</option>
-    <option>Korat</option>
-    <option>LaPerm</option>
-    <option>Lykoi</option>
-    <option>Maine Coon</option>
-    <option>Manx</option>
-    <option>Mau Egipcio</option>
-    <option>Munchkin</option>
-    <option>Nebelung</option>
-    <option>Ocicat</option>
-    <option>Ojos azules</option>
-    <option>Oriental</option>
-    <option>Oriental</option>
-    <option>Oriental de pelo largo</option>
-    <option>Pelo corto Británico</option>
-    <option>Persa</option>
-    <option>Peterbald</option>
-    <option>Pixie Bob</option>
-    <option>Rabon Japones</option>
-    <option>Ragamuffin</option>
-    <option>Ragdoll</option>
-    <option>Sagrado de Birmania</option>
-    <option>Savannah</option>
-    <option>Scottish Fold</option>
-    <option>Selkirk rex</option>
-    <option>Serengeti</option>
-    <option>Seychellois</option>
-    <option>Siamés</option>
-    <option>Siamés Moderno</option>
-    <option>Siberiano</option>
-    <option>Siberiano</option>
-    <option>Singapura</option>
-    <option>Snowshoe</option>
-    <option>Somalí</option>
-    <option>Sphynx (Esfinge)</option>
-    <option>Tonkinés</option>
-    <option>Van Turco</option>
+  
 </select>
+                <label class="label-select">Grupo</label>
+                <input class="namee" type="text" id="grupo_gato" readonly>
+
+                <label class="label-select">Registro Principal</label>
+                <input class="namee" type="text" id="seccion_gato" readonly>
+
+                <label class="label-select">Tamaño</label>
+                <input class="namee" type="text" id="tamano_gato" readonly>
+
+                <label class="label-select">Rango de peso</label>
+                <select class="namee" id="peso_gato">
+
+                        <label class="label-select">Tipo de pelaje</label>
+                <select class="namee"  id="tipopelaje_gato">
+                    </select>
+
+                <label class="label-select">Caracteristicas fisicas</label>
+                <input class="namee" type="text" id="caracterfisicas_gato" readonly>
+
 
                 <!-- Color principal del gato -->
                 <label class="label-select">Color principal *</label>
@@ -516,13 +464,8 @@
     <option>No aplica</option>
 </select>
 
-                <label class="label-select">Tamaño *</label>
-                <select class="namee" name="tamano_gato">
-                        <option value="">Selecciona tamaño</option>
-                        <option>Pequeño (menos de 4 kg)</option>
-                        <option>Mediano (4-7 kg)</option>
-                        <option>Grande (mayor a 7 kg)</option>
-                    </select>
+
+
 
                 <label class="label-select">Convive con más animales *</label>
                 <select class="namee" name="convive_gato">
@@ -1189,6 +1132,8 @@
     <script src="../listado_razas.js"></script>
     <script src="../agregar_mascotas.js"></script>
     <script src="../vacunas-perros.js"></script>
+    <script src="../razas_gatos.js"></script>
+
 </body>
 
 </html>
