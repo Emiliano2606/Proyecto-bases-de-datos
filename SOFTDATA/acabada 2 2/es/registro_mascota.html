@@ -105,7 +105,6 @@
         #sectionGato {
             width: 930px;
             position: relative;
-            left: 165px;
         }
         
         #sectionAve {
@@ -154,6 +153,7 @@
 
                 <!-- Secciones dinámicas -->
                 <!-- Perro -->
+
                 <div id="sectionPerro" class="section">
                     <label class="label-select">Raza *</label>
 
@@ -280,6 +280,7 @@
                     <!-- Contenedor para fechas dinámicas -->
                     <div id="fechas-vacunas-container"></div>
 
+
                     <label class="label-select">Tratamientos que a llevado *</label>
                     <select class="namee" name="tratamientos_del_perro">
                         <option value="">Selecciona opción</option>
@@ -316,12 +317,17 @@
                     </select>
 
                 </div>
+                <div id="mascotasContainer"></div>
+                <button type="button" class="sape p-2 mt-3" id="agregarMascota">➕ Agregar otra mascota pERRPf</button>
+
         </div>
 
         <!-- Gato -->
-        <div id="sectionGato" class="section">
-            <label class="label-select">Raza del gato</label>
-            <select class="namee" name="raza_del_gato">
+        <div class="container">
+
+            <div id="sectionGato" class="section">
+                <label class="label-select">Raza del gato</label>
+                <select class="namee" name="raza_del_gato">
     <option value="">Selecciona opción</option>
     <option>Abisinio</option>
     <option>American shorthair (Pelo corto Americano)</option>
@@ -397,9 +403,9 @@
     <option>Van Turco</option>
 </select>
 
-            <!-- Color principal del gato -->
-            <label class="label-select">Color principal *</label>
-            <select class="namee" name="color_principal_gato">
+                <!-- Color principal del gato -->
+                <label class="label-select">Color principal *</label>
+                <select class="namee" name="color_principal_gato">
     <option value="">Selecciona opción</option>
     <option>Blanco</option>
     <option>Crema</option>
@@ -416,9 +422,9 @@
     <option>Rosa</option>
 </select>
 
-            <!-- Color secundario del gato -->
-            <label class="label-select">Color secundario</label>
-            <select class="namee" name="color_secundario_gato">
+                <!-- Color secundario del gato -->
+                <label class="label-select">Color secundario</label>
+                <select class="namee" name="color_secundario_gato">
     <option value="">Selecciona opción</option>
     <option>Blanco</option>
     <option>Crema</option>
@@ -435,9 +441,9 @@
     <option>Rosa</option>
 </select>
 
-            <!-- Tipo de pelo del gato -->
-            <label class="label-select">Tipo de pelo *</label>
-            <select class="namee" name="tipo_pelo_gato">
+                <!-- Tipo de pelo del gato -->
+                <label class="label-select">Tipo de pelo *</label>
+                <select class="namee" name="tipo_pelo_gato">
     <option value="">Selecciona opción</option>
     <option>Liso</option>
     <option>Rizado</option>
@@ -446,9 +452,9 @@
     <option>No tiene pelaje</option>
 </select>
 
-            <!-- Patrón de pelo del gato -->
-            <label class="label-select">Patrón de pelo</label>
-            <select class="namee" name="patron_pelo_gato">
+                <!-- Patrón de pelo del gato -->
+                <label class="label-select">Patrón de pelo</label>
+                <select class="namee" name="patron_pelo_gato">
     <option value="">Selecciona opción</option>
     <option>Rayas</option>
     <option>Manchas</option>
@@ -458,23 +464,23 @@
     <option>No aplica</option>
 </select>
 
-            <label class="label-select">Tamaño *</label>
-            <select class="namee" name="tamano_gato">
+                <label class="label-select">Tamaño *</label>
+                <select class="namee" name="tamano_gato">
                         <option value="">Selecciona tamaño</option>
                         <option>Pequeño (menos de 4 kg)</option>
                         <option>Mediano (4-7 kg)</option>
                         <option>Grande (mayor a 7 kg)</option>
                     </select>
 
-            <label class="label-select">Convive con más animales *</label>
-            <select class="namee" name="convive_gato">
+                <label class="label-select">Convive con más animales *</label>
+                <select class="namee" name="convive_gato">
                         <option value="">Selecciona opción</option>
                         <option>Sí</option>
                         <option>No</option>
                     </select>
 
-            <label class="label-select">Alimento *</label>
-            <select class="namee" name="alimento_gato">
+                <label class="label-select">Alimento *</label>
+                <select class="namee" name="alimento_gato">
                         <option value="">Selecciona alimento</option>
                         <option>Alimento seco (croquetas)</option>
                         <option>Alimento húmedo (latas o sobres)</option>
@@ -483,11 +489,11 @@
                         <option>Otra…</option>
                     </select>
 
-            <label class="label-select">Marca del alimento</label>
-            <input class="namee" type="text" name="marca_alimento_gato">
+                <label class="label-select">Marca del alimento</label>
+                <input class="namee" type="text" name="marca_alimento_gato">
 
-            <label class="label-select">Veces que come al día *</label>
-            <select class="namee" name="veces_comida_gato">
+                <label class="label-select">Veces que come al día *</label>
+                <select class="namee" name="veces_comida_gato">
                         <option value="">Selecciona opción</option>
                         <option>1 vez al día</option>
                         <option>2 veces al día</option>
@@ -495,9 +501,9 @@
                         <option>Libertad de horario</option>
                     </select>
 
-            <!-- Vacunas que tiene tu gatito -->
-            <label class="label-select">Vacunas que tiene tu gatito *</label>
-            <select class="namee" name="vacunas_gatito">
+                <!-- Vacunas que tiene tu gatito -->
+                <label class="label-select">Vacunas que tiene tu gatito *</label>
+                <select class="namee" name="vacunas_gatito">
     <option value="">Selecciona opción</option>
     <option>Trivalente Felina</option>
     <option>Rabia</option>
@@ -505,9 +511,9 @@
     <option>Ninguna</option>
 </select>
 
-            <!-- Trivalente Felina: Última colocación -->
-            <label class="label-select">Trivalente Felina: Última colocación</label>
-            <select class="namee" name="trivalente_fecha">
+                <!-- Trivalente Felina: Última colocación -->
+                <label class="label-select">Trivalente Felina: Última colocación</label>
+                <select class="namee" name="trivalente_fecha">
     <option value="">Selecciona opción</option>
     <option>Enero</option>
     <option>Febrero</option>
@@ -523,9 +529,9 @@
     <option>Diciembre</option>
 </select>
 
-            <!-- Rabia: Última colocación -->
-            <label class="label-select">Rabia: Última colocación</label>
-            <select class="namee" name="rabia_fecha">
+                <!-- Rabia: Última colocación -->
+                <label class="label-select">Rabia: Última colocación</label>
+                <select class="namee" name="rabia_fecha">
     <option value="">Selecciona opción</option>
     <option>Enero</option>
     <option>Febrero</option>
@@ -541,9 +547,9 @@
     <option>Diciembre</option>
 </select>
 
-            <!-- Tratamientos que ha llevado -->
-            <label class="label-select">Tratamientos que ha llevado *</label>
-            <select class="namee" name="tratamientos_gatito">
+                <!-- Tratamientos que ha llevado -->
+                <label class="label-select">Tratamientos que ha llevado *</label>
+                <select class="namee" name="tratamientos_gatito">
     <option value="">Selecciona opción</option>
     <option>Desparasitacion</option>
     <option>Lavado dental</option>
@@ -553,9 +559,9 @@
     <option>Otra…</option>
 </select>
 
-            <!-- Ingrese el RUAC de su gatito -->
-            <label class="label-select">Ingrese el RUAC de su gatito</label>
-            <select class="namee" name="ruac_gatito">
+                <!-- Ingrese el RUAC de su gatito -->
+                <label class="label-select">Ingrese el RUAC de su gatito</label>
+                <select class="namee" name="ruac_gatito">
     <option value="">Selecciona opción</option>
     <option>RUAC 1</option>
     <option>RUAC 2</option>
@@ -563,17 +569,17 @@
     <option>RUAC 4</option>
 </select>
 
-            <!-- Tiene chip su gato? -->
-            <label class="label-select">¿Tiene chip su gato? *</label>
-            <select class="namee" name="chip_gatito">
+                <!-- Tiene chip su gato? -->
+                <label class="label-select">¿Tiene chip su gato? *</label>
+                <select class="namee" name="chip_gatito">
     <option value="">Selecciona opción</option>
     <option>Sí</option>
     <option>No</option>
 </select>
 
-            <!-- Número de chip de su gatito -->
-            <label class="label-select">Número de chip de su gatito</label>
-            <select class="namee" name="numero_chip_gatito">
+                <!-- Número de chip de su gatito -->
+                <label class="label-select">Número de chip de su gatito</label>
+                <select class="namee" name="numero_chip_gatito">
     <option value="">Selecciona opción</option>
     <option>0001</option>
     <option>0002</option>
@@ -581,16 +587,18 @@
     <option>0004</option>
 </select>
 
-            <!-- Tipo de chip -->
-            <label class="label-select">Tipo de chip</label>
-            <select class="namee" name="tipo_chip_gatito">
+                <!-- Tipo de chip -->
+                <label class="label-select">Tipo de chip</label>
+                <select class="namee" name="tipo_chip_gatito">
     <option value="">Selecciona opción</option>
     <option>Microchip de identificación</option>
     <option>Dispositivos GPS</option>
 </select>
 
+            </div>
+            <div id="mascotasContainerGato"></div>
+            <button type="button" class="sape p-2 mt-3" id="agregarMascotaGato">➕ Agregar otra mascota</button>
         </div>
-
 
         <!-- Ave -->
         <div id="sectionAve" class="section">
@@ -1127,8 +1135,8 @@
     </script>
 
     <script src="../listado_razas.js"></script>
+    <script src="../agregar_mascotas.js"></script>
     <script src="../vacunas-perros.js"></script>
-    
 </body>
 
 </html>
