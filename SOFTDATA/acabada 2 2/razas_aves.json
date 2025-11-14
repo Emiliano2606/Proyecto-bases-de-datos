@@ -1,0 +1,267 @@
+[{
+        "id_ave": 1,
+        "ave": "Loros del Amazonas",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 2,
+        "ave": "Periquitos brotogeris",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 3,
+        "ave": "Periquitos (pericos)",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 4,
+        "ave": "Caiques",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 5,
+        "ave": "Canarios",
+        "grupo_taxonómico": "Pajarillo (Fringílido)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Passeriformes"
+    },
+    {
+        "id_ave": 6,
+        "ave": "Ninfas",
+        "grupo_taxonómico": "Cacatúa (Cacatuoidea)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 7,
+        "ave": "Cacatúas",
+        "grupo_taxonómico": "Cacatúa (Cacatuoidea)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 8,
+        "ave": "Cotorras pequeñas",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 9,
+        "ave": "Cotorras más grandes",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 10,
+        "ave": "Palomas",
+        "grupo_taxonómico": "Paloma / Tórtola",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Columbiformes"
+    },
+    {
+        "id_ave": 11,
+        "ave": "Loros Eclectus",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 12,
+        "ave": "Pinzones (Fringillidae)",
+        "grupo_taxonómico": "Pajarillo (Fringílido)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Passeriformes"
+    },
+    {
+        "id_ave": 13,
+        "ave": "Periquitos australianos",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 14,
+        "ave": "Loros grises africanos",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Vulnerable (VU)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 15,
+        "ave": "Loris y loritos",
+        "grupo_taxonómico": "Loris/Loriquetos (Loriini - Tribu)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 16,
+        "ave": "Agapornis",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 17,
+        "ave": "Guacamayos",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Peligro de extinción (EN)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 18,
+        "ave": "Minás",
+        "grupo_taxonómico": "Estúrnido (Common Myna)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Passeriformes"
+    },
+    {
+        "id_ave": 19,
+        "ave": "Forpus",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 20,
+        "ave": "Loro cabeciazul",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 21,
+        "ave": "Loros de frente amarilla",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Vulnerable (VU)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 22,
+        "ave": "Pichones",
+        "grupo_taxonómico": "Pichón / Cría de Paloma",
+        "estatus_conservación": "Nomenclatura",
+        "clasificación_autoridades": "Columbiformes"
+    },
+    {
+        "id_ave": 23,
+        "ave": "Cotorra de Kramer",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 24,
+        "ave": "Periquitos cuáqueros (monje)",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 25,
+        "ave": "Rosellas",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 26,
+        "ave": "Tucanes y tucán esmeralda",
+        "grupo_taxonómico": "Tucán",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Piciformes"
+    },
+    {
+        "id_ave": 27,
+        "ave": "Periquitos de Bourke",
+        "grupo_taxonómico": "Loro Verdadero",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 28,
+        "ave": "Loro arcoíris",
+        "grupo_taxonómico": "Loris/Loriquetos (Loriini - Tribu)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Psittaciformes"
+    },
+    {
+        "id_ave": 29,
+        "ave": "Jilgueros",
+        "grupo_taxonómico": "Pajarillo (Fringílido)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Passeriformes"
+    },
+    {
+        "id_ave": 30,
+        "ave": "Diamante mandarín",
+        "grupo_taxonómico": "Pajarillo (Fringílido)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Passeriformes"
+    },
+    {
+        "id_ave": 31,
+        "ave": "Ruiseñor del Japón",
+        "grupo_taxonómico": "Pajarillo (Fringílido)",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Passeriformes"
+    },
+    {
+        "id_ave": 32,
+        "ave": "Gallina doméstica",
+        "grupo_taxonómico": "Galliforme",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Galliformes"
+    },
+    {
+        "id_ave": 33,
+        "ave": "Faisán dorado",
+        "grupo_taxonómico": "Galliforme",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Galliformes"
+    },
+    {
+        "id_ave": 34,
+        "ave": "Codorniz japonesa",
+        "grupo_taxonómico": "Galliforme",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Galliformes"
+    },
+    {
+        "id_ave": 35,
+        "ave": "Tucán toco",
+        "grupo_taxonómico": "Tucán",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Piciformes"
+    },
+    {
+        "id_ave": 36,
+        "ave": "Aracaris",
+        "grupo_taxonómico": "Tucán",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Piciformes"
+    },
+    {
+        "id_ave": 37,
+        "ave": "Tórtola diamante",
+        "grupo_taxonómico": "Paloma / Tórtola",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Columbiformes"
+    },
+    {
+        "id_ave": 38,
+        "ave": "Tórtola turca",
+        "grupo_taxonómico": "Paloma / Tórtola",
+        "estatus_conservación": "Preocupación menor (LC)",
+        "clasificación_autoridades": "Columbiformes"
+    }
+]

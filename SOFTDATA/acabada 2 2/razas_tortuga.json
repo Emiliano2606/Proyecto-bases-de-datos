@@ -1,0 +1,66 @@
+[{
+        "id_raza": 201,
+        "nombre": "Tortuga Rusa (Horsfieldii)",
+        "patrón_dominante": "Criptismo",
+        "tamano_sugerido": "Pequeño (16-25 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Testudines",
+        "estatus_conservación": "Vulnerable (VU)",
+        "dieta_base": ["Verduras", "Vegetales"],
+        "fuente_calor_sugerida": "Lámpara de calor",
+        "tipo_terrario_sugerido": "Terrario desértico",
+        "veces_comida_sugeridas": "1 vez al día",
+        "tratamiento_sugerido": "Desparasitacion"
+    },
+    {
+        "id_raza": 202,
+        "nombre": "Tortuga de Caja (Box Turtle)",
+        "patrón_dominante": "Criptismo",
+        "tamano_sugerido": "Mini (7-15 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Testudines",
+        "estatus_conservación": "Casi Amenazado (NT)",
+        "dieta_base": ["Gusanos", "Frutas"],
+        "fuente_calor_sugerida": "Emisor de calor cerámico",
+        "tipo_terrario_sugerido": "Terrario de humedad media",
+        "veces_comida_sugeridas": "1 vez al día",
+        "tratamiento_sugerido": "Vitaminas"
+    },
+    {
+        "id_raza": 203,
+        "nombre": "Galápago Orejas Rojas (Slider)",
+        "patrón_dominante": "Exhibición",
+        "tamano_sugerido": "Mediano (26-45 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Testudines",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "dieta_base": ["Pienso comercial", "Vegetales"],
+        "fuente_calor_sugerida": "Lámpara de calor",
+        "tipo_terrario_sugerido": "Terrario tropical",
+        "veces_comida_sugeridas": "1 vez al día",
+        "tratamiento_sugerido": "Baños de sol controlados"
+    },
+    {
+        "id_raza": 204,
+        "nombre": "Tortuga Leopardo",
+        "patrón_dominante": "Criptismo",
+        "tamano_sugerido": "Grande (46-60 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Testudines",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "dieta_base": ["Hojas", "Verduras"],
+        "fuente_calor_sugerida": "Lámpara de calor",
+        "tipo_terrario_sugerido": "Terrario desértico",
+        "veces_comida_sugeridas": "Libertad de horario, siempre tiene comida en su plato",
+        "tratamiento_sugerido": "Desparasitacion"
+    },
+    {
+        "id_raza": 205,
+        "nombre": "Tortuga Sulcata (Espolonada)",
+        "patrón_dominante": "Criptismo",
+        "tamano_sugerido": "Grande (46-60 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Testudines",
+        "estatus_conservación": "Vulnerable (VU)",
+        "dieta_base": ["Vegetales", "Pasto"],
+        "fuente_calor_sugerida": "Emisor de calor cerámico",
+        "tipo_terrario_sugerido": "Terrario desértico",
+        "veces_comida_sugeridas": "Libertad de horario, siempre tiene comida en su plato",
+        "tratamiento_sugerido": "Baños de sol controlados"
+    }
+]

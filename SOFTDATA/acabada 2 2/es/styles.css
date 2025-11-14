@@ -24,7 +24,9 @@ body {
     padding: 20px;
 }
 
+
 /* Nombres de clase personalizados */
+
 .titutifuti {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -48,9 +50,17 @@ body {
     margin-right: 5px;
 }
 
-.browser-red { color: #ff5f56; }
-.browser-yellow { color: #ffbd2e; }
-.browser-green { color: #27c93f; }
+.browser-red {
+    color: #ff5f56;
+}
+
+.browser-yellow {
+    color: #ffbd2e;
+}
+
+.browser-green {
+    color: #27c93f;
+}
 
 .goku {
     flex-grow: 1;
@@ -157,7 +167,8 @@ h4 {
     margin-bottom: 10px;
 }
 
-.picoro p, .trunk p {
+.picoro p,
+.trunk p {
     font-size: 0.9rem;
     line-height: 1.5;
 }
@@ -242,7 +253,6 @@ h4 {
     .emilianiiiii {
         flex-direction: column;
     }
-
     .tralalero-tralala {
         flex-direction: column;
     }

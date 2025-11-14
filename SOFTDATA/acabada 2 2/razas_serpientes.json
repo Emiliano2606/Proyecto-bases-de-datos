@@ -1,0 +1,66 @@
+[{
+        "id_raza": 101,
+        "nombre": "Pitón Bola (Ball Python)",
+        "patrón_dominante": "Criptismo",
+        "tamano_sugerido": "Mediano (90-150 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Serpentes)",
+        "estatus_conservación": "Casi Amenazado (NT)",
+        "dieta_base": ["Ratones", "Ratas"],
+        "fuente_calor_sugerida": "Placa térmica",
+        "tipo_terrario_sugerido": "Terrario de humedad media",
+        "veces_comida_sugeridas": "1 vez cada 7-14 días",
+        "tratamiento_sugerido": "Desparasitacion"
+    },
+    {
+        "id_raza": 102,
+        "nombre": "Boa Constrictor",
+        "patrón_dominante": "Criptismo",
+        "tamano_sugerido": "Grande (1.8-3.7 m)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Serpentes)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "dieta_base": ["Ratas", "Conejos"],
+        "fuente_calor_sugerida": "Emisor de calor cerámico",
+        "tipo_terrario_sugerido": "Terrario tropical",
+        "veces_comida_sugeridas": "1 vez cada 10-20 días",
+        "tratamiento_sugerido": "Vitaminas"
+    },
+    {
+        "id_raza": 103,
+        "nombre": "Serpiente del Maíz (Corn Snake)",
+        "patrón_dominante": "Aposematismo",
+        "tamano_sugerido": "Mediano (120-180 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Serpentes)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "dieta_base": ["Ratones"],
+        "fuente_calor_sugerida": "Placa térmica",
+        "tipo_terrario_sugerido": "Terrario de humedad media",
+        "veces_comida_sugeridas": "1 vez cada 7 días",
+        "tratamiento_sugerido": "Ninguno de los anteriores"
+    },
+    {
+        "id_raza": 104,
+        "nombre": "Pitón Reticulada (Reticulated Python)",
+        "patrón_dominante": "Criptismo",
+        "tamano_sugerido": "Muy Grande (> 5 m)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Serpentes)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "dieta_base": ["Ratas", "Aves grandes"],
+        "fuente_calor_sugerida": "Emisor de calor cerámico",
+        "tipo_terrario_sugerido": "Terrario tropical",
+        "veces_comida_sugeridas": "1 vez cada 20-30 días",
+        "tratamiento_sugerido": "Desparasitacion"
+    },
+    {
+        "id_raza": 105,
+        "nombre": "Serpiente Real (King Snake)",
+        "patrón_dominante": "Aposematismo",
+        "tamano_sugerido": "Pequeño (90-120 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Serpentes)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "dieta_base": ["Ratones", "Lagartos"],
+        "fuente_calor_sugerida": "Placa térmica",
+        "tipo_terrario_sugerido": "Terrario desértico",
+        "veces_comida_sugeridas": "1 vez cada 7 días",
+        "tratamiento_sugerido": "Vitaminas"
+    }
+]

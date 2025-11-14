@@ -143,8 +143,7 @@
 
                 <!-- Selección especie -->
                 <label class="label-select">Tipo de mascota *</label>
-                <select class="namee" id="tipoMascota" required>
-                    <option value="">Selecciona especie</option>
+                <select class="namee" id="tipoMascota" name="tipo_mascota" required>                    <option value="">Selecciona especie</option>
                     <option value="Perro">Perro</option>
                     <option value="Gato">Gato</option>
                     <option value="Ave">Ave</option>
@@ -162,13 +161,13 @@
 </select>
 
                     <label class="label-select">Grupo</label>
-                    <input class="namee" type="text" id="grupo_perro" readonly>
+                    <input class="namee" name="grupo_perro" type="text" id="grupo_perro" readonly>
 
                     <label class="label-select">Sección</label>
-                    <input class="namee" type="text" id="seccion_perro" readonly>
+                    <input class="namee" name="seccion_perro" type="text" id="seccion_perro" readonly>
 
                     <label class="label-select">País</label>
-                    <input class="namee" type="text" id="pais_perro" readonly>
+                    <input class="namee" name="pais_perro" type="text" id="pais_perro" readonly>
 
                     <label class="label-select">Color principal del perro</label>
                     <select class="namee" name="color_principal_del_perro">
@@ -302,7 +301,7 @@
 
                     <!-- Campo RUAC (inicialmente deshabilitado) -->
                     <label class="label-select">Ingrese el RUAC</label>
-                    <input class="namee" type="text" id="campoRUAC" name="ruac" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
+                    <input class="namee" type="text" name="tieneRUAC" id="campoRUAC" name="ruac_perro" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
 
                     <script>
                         // Escuchar cambios en el selector
@@ -377,30 +376,30 @@
         <!-- Gato -->
         <div class="container">
 
-            <div id="sectionGato" class="section">
+            <div name="seccion_gato" id="sectionGato" class="section">
                 <label class="label-select">Raza del gato</label>
                 <select class="namee" name="raza_del_gato">
     <option value="">Selecciona opción</option>
   
 </select>
                 <label class="label-select">Grupo</label>
-                <input class="namee" type="text" id="grupo_gato" readonly>
+                <input class="namee" name="grupo_gato" type="text" id="grupo_gato" readonly>
 
                 <label class="label-select">Registro Principal</label>
                 <input class="namee" type="text" id="seccion_gato" readonly>
 
                 <label class="label-select">Tamaño</label>
-                <input class="namee" type="text" id="tamano_gato" readonly>
+                <input class="namee" name="tamano_gato" type="text" id="tamano_gato" readonly>
 
                 <label class="label-select">Rango de peso</label>
-                <select class="namee" id="peso_gato">
-
-                        <label class="label-select">Tipo de pelaje</label>
-                <select class="namee"  id="tipopelaje_gato">
+                <select class="namee" name="peso_gato" id="peso_gato">
+</select>
+                <label class="label-select">Tipo de pelaje</label>
+                <select class="namee" name="tipopelaje_gato" id="tipopelaje_gato">
                     </select>
 
                 <label class="label-select">Caracteristicas fisicas</label>
-                <input class="namee" type="text" id="caracterfisicas_gato" readonly>
+                <input class="namee" name="caracterfisicas_gato" type="text" id="caracterfisicas_gato" readonly>
 
 
                 <!-- Color principal del gato -->
@@ -496,51 +495,14 @@
                         <option>Libertad de horario</option>
                     </select>
 
-                <!-- Vacunas que tiene tu gatito -->
-                <label class="label-select">Vacunas que tiene tu gatito *</label>
-                <select class="namee" name="vacunas_gatito">
-    <option value="">Selecciona opción</option>
-    <option>Trivalente Felina</option>
-    <option>Rabia</option>
-    <option>No tengo ese conocimiento</option>
-    <option>Ninguna</option>
-</select>
+                <label class="label-select">Vacunas que tiene tu gatito </label>
+                <div id="lista-vacunas-checkbox2">
+                </div>
 
-                <!-- Trivalente Felina: Última colocación -->
-                <label class="label-select">Trivalente Felina: Última colocación</label>
-                <select class="namee" name="trivalente_fecha">
-    <option value="">Selecciona opción</option>
-    <option>Enero</option>
-    <option>Febrero</option>
-    <option>Marzo</option>
-    <option>Abril</option>
-    <option>Mayo</option>
-    <option>Junio</option>
-    <option>Julio</option>
-    <option>Agosto</option>
-    <option>Septiembre</option>
-    <option>Octubre</option>
-    <option>Noviembre</option>
-    <option>Diciembre</option>
-</select>
+                <!-- Contenedor para fechas dinámicas -->
+                <div id="fechas-vacunas-container2"></div>
 
-                <!-- Rabia: Última colocación -->
-                <label class="label-select">Rabia: Última colocación</label>
-                <select class="namee" name="rabia_fecha">
-    <option value="">Selecciona opción</option>
-    <option>Enero</option>
-    <option>Febrero</option>
-    <option>Marzo</option>
-    <option>Abril</option>
-    <option>Mayo</option>
-    <option>Junio</option>
-    <option>Julio</option>
-    <option>Agosto</option>
-    <option>Septiembre</option>
-    <option>Octubre</option>
-    <option>Noviembre</option>
-    <option>Diciembre</option>
-</select>
+
 
                 <!-- Tratamientos que ha llevado -->
                 <label class="label-select">Tratamientos que ha llevado *</label>
@@ -553,46 +515,85 @@
     <option>No tengo conocimiento de esta información</option>
     <option>Otra…</option>
 </select>
+                <!-- Pregunta si tiene RUAC -->
+                <label class="label-select">¿Su mascota cuenta con RUAC?</label>
+                <select class="namee" name="tiene_ruac_gato" id="tieneRUAC2" required>
+  <option value="">Selecciona opción</option>
+  <option value="si">Sí</option>
+  <option value="no">No</option>
+</select>
+                <label class="label-select">Ingrese el RUAC</label>
+                <input class="namee" type="text" id="campoRUAC2" name="ruac_gato" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
 
-                <!-- Ingrese el RUAC de su gatito -->
-                <label class="label-select">Ingrese el RUAC de su gatito</label>
-                <select class="namee" name="ruac_gatito">
-    <option value="">Selecciona opción</option>
-    <option>RUAC 1</option>
-    <option>RUAC 2</option>
-    <option>RUAC 3</option>
-    <option>RUAC 4</option>
+                <script>
+                    // Escuchar cambios en el selector
+                    const selectRUAC2 = document.getElementById("tieneRUAC2");
+                    const inputRUAC2 = document.getElementById("campoRUAC2");
+
+                    selectRUAC2.addEventListener("change", () => {
+                        if (selectRUAC2.value === "si") {
+                            inputRUAC2.disabled = false; // habilita el campo
+                            inputRUAC2.required = true; // lo vuelve obligatorio
+                        } else {
+                            inputRUAC2.disabled = true; // lo deshabilita
+                            inputRUAC2.required = false; // ya no es obligatorio
+                            inputRUAC2.value = ""; // limpia el valor
+                        }
+                    });
+                </script>
+
+
+                <!-- Pregunta principal -->
+                <label class="label-select">¿Tiene chip su gato?</label>
+                <select class="namee" id="chip_del_gato" name="chip_del_gato" required>
+  <option value="">Selecciona opción</option>
+  <option value="Si">Sí</option>
+  <option value="No">No</option>
 </select>
 
-                <!-- Tiene chip su gato? -->
-                <label class="label-select">¿Tiene chip su gato? *</label>
-                <select class="namee" name="chip_gatito">
-    <option value="">Selecciona opción</option>
-    <option>Sí</option>
-    <option>No</option>
-</select>
+                <!-- Campo: Número de chip -->
+                <div id="campo_chip_gato" style="display: none;">
+                    <label class="label-select">Número de chip de su gato</label>
+                    <input class="namee" type="text" name="numero_chip_gato">
 
-                <!-- Número de chip de su gatito -->
-                <label class="label-select">Número de chip de su gatito</label>
-                <select class="namee" name="numero_chip_gatito">
+                    <label class="label-select">Tipo del chip del gato</label>
+                    <select class="namee" name="tipo_chip_gato">
     <option value="">Selecciona opción</option>
-    <option>0001</option>
-    <option>0002</option>
-    <option>0003</option>
-    <option>0004</option>
-</select>
+    <option value="FDX-B">FDX-B
+</option>
+    <option value="HDX
+"> HDX
+</option>
+  <option value="FDX-A
 
-                <!-- Tipo de chip -->
-                <label class="label-select">Tipo de chip</label>
-                <select class="namee" name="tipo_chip_gatito">
-    <option value="">Selecciona opción</option>
-    <option>Microchip de identificación</option>
-    <option>Dispositivos GPS</option>
-</select>
+"> FDX-A
+
+</option>
+  </select>
+                </div>
+
+                <script>
+                    // Detectar cambios en la selección
+                    const selectChip2 = document.getElementById("chip_del_gato");
+                    const campoChip2 = document.getElementById("campo_chip_gato");
+
+                    selectChip2.addEventListener("change", function() {
+                        if (this.value === "Si") {
+                            campoChip2.style.display = "block";
+                        } else {
+                            campoChip2.style.display = "none";
+                            // Opcional: limpiar los campos si elige "No"
+                            campoChip2.querySelectorAll("input, select").forEach(el => el.value = "");
+                        }
+                    });
+                </script>
+
 
             </div>
             <div id="mascotasContainerGato"></div>
             <button type="button" class="sape p-2 mt-3" id="agregarMascotaGato">➕ Agregar otra mascota</button>
+        </div>
+
         </div>
 
         <!-- Ave -->
@@ -600,36 +601,31 @@
             <label class="label-select">Especie *</label>
             <select class="namee" name="especie_ave">
     <option value="">Selecciona especie</option>
-    <option>Perico Australiano</option>
-    <option>Periquito Común</option>
-    <option>Ninfa (Carolina)</option>
-    <option>Agapornis (Inseparable)</option>
-    <option>Cotorrita Argentina</option>
-    <option>Perico Frente Naranja</option>
-    <option>Cacatúa Ninfa</option>
-    <option>Canario</option>
-    <option>Gallina</option>
-    <option>Gallina de guinea</option>
-    <option>Pato</option>
-    <option>Ganso</option>
-    <option>Paloma</option>
-    <option>Diamante Mandarín</option>
-    <option>Diamante de Gould</option>
-    <option>Jilguero</option>
-    <option>Calafate</option>
-    <option>Azulejo</option>
-    <option>Mainate</option>
+   
 </select>
+
+            <label class="label-select">Grupo Taxonomico</label>
+            <input class="namee" type="text" id="grupo_taxonomico" readonly>
+
+            <label class="label-select">Estatus Conservacion</label>
+            <input class="namee" type="text" id="conservacion_ave" readonly>
+
+            <label class="label-select">Clasificacion de Autoridades</label>
+            <input class="namee" type="text" id="clasificacion_autoridades" readonly>
+
+
+
 
 
             <label class="label-select">Tamaño *</label>
             <select class="namee" name="tamano_ave">
-                        <option value="">Selecciona tamaño</option>
-                        <option>Mini (hasta 15 cm)</option>
-                        <option>Pequeña (16-25 cm)</option>
-                        <option>Mediana (26-40 cm)</option>
-                        <option>Grande (mayor a 40 cm)</option>
-                    </select>
+    <option value="">Selecciona tamaño</option>
+    <option value="X-Small">X-Small (Menos de 18 cm)</option>
+    <option value="Small">Small (18-30 cm)</option>
+    <option value="Medium">Medium (30-45 cm)</option>
+    <option value="Large">Large (45-70 cm)</option>
+    <option value="X-Large">X-Large (Más de 70 cm)</option>
+</select>
 
             <label class="label-select">Convive con otros animales *</label>
             <select class="namee" name="convive_ave">
@@ -688,7 +684,7 @@
 </select>
 
             <!-- Dimensiones aproximadas de la jaula -->
-            <label class="label-text">Dimensiones aproximadas de la jaula *</label>
+            <label class="label-select">Dimensiones aproximadas de la jaula *</label>
             <input type="text" class="namee" name="dimensiones_jaula_ave" placeholder="Ancho x Largo x Profundidad">
 
             <!-- Tipo de plumas de su ave -->
@@ -741,280 +737,346 @@
     <option>Rosa</option>
 </select>
 
+            <label class="label-select">Vacunas que tiene tu ave </label>
+            <div id="lista-vacunas-checkbox3">
+            </div>
+
+            <!-- Contenedor para fechas dinámicas -->
+            <div id="fechas-vacunas-container3"></div>
+
+
+            <label class="label-select">¿Tiene chip su ave?</label>
+            <select class="namee" id="chip_del_ave" name="chip_del_ave" required>
+    <option value="">Selecciona opción</option>
+    <option value="Si">Sí</option>
+    <option value="No">No</option>
+</select>
+
+            <div id="campo_chip_ave" style="display: none;">
+                <label class="label-select">Número de chip de su ave</label>
+                <input class="namee" type="text" name="numero_chip_ave" id="numero_chip_ave_input">
+
+                <label class="label-select">Tipo del chip del ave</label>
+                <select class="namee" name="tipo_chip_ave" id="tipo_chip_ave_select">
+        <option value="">Selecciona opción</option>
+        <option value="FDX-B">FDX-B (Estándar ISO)</option>
+        <option value="FDX-A">FDX-A</option>
+        <option value="HDX">HDX</option>
+    </select>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // CORRECCIÓN 1: Usar los IDs correctos del HTML
+                    const selectChip = document.getElementById("chip_del_ave");
+                    const campoChip = document.getElementById("campo_chip_ave");
+
+                    // Elementos a limpiar opcionalmente
+                    const numeroChipInput = document.getElementById("numero_chip_ave_input");
+                    const tipoChipSelect = document.getElementById("tipo_chip_ave_select");
+
+
+                    // CORRECCIÓN 2: El evento debe estar en la variable correcta
+                    selectChip.addEventListener("change", function() {
+                        if (this.value === "Si") {
+                            // Muestra el div si la opción es "Si"
+                            campoChip.style.display = "block";
+
+                            // Hace que el número de chip sea obligatorio
+                            if (numeroChipInput) numeroChipInput.required = true;
+
+                        } else {
+                            // Oculta el div si la opción es "No"
+                            campoChip.style.display = "none";
+
+                            // Limpia y desactiva la obligatoriedad de los campos
+                            if (numeroChipInput) {
+                                numeroChipInput.value = "";
+                                numeroChipInput.required = false;
+                            }
+                            if (tipoChipSelect) tipoChipSelect.value = "";
+                        }
+                    });
+                });
+            </script>
+            <div id="mascotasContainerAve"></div>
+            <button type="button" class="sape p-2 mt-3" id="agregarMascotaAve">➕ Agregar otra ave</button>
         </div>
 
         <!-- Reptil -->
         <div id="sectionReptil" class="section">
             <label class="label-select">Tipo de reptil *</label>
             <select class="namee" id="tipoReptil" name="tipo_reptil">
-                        <option value="">Selecciona tipo</option>
-                        <option value="Lagarto">Lagarto</option>
-                        <option value="Serpiente">Serpiente</option>
-                        <option value="Tortuga">Tortuga</option>
-                    </select>
+        <option value="">Selecciona tipo</option>
+        <option value="Lagarto">Lagarto</option>
+        <option value="Serpiente">Serpiente</option>
+        <option value="Tortuga">Tortuga</option>
+    </select>
 
-            <!-- Lagarto -->
-            <div id="sectionLagarto" class="section">
+            <!-- ==================== LAGARTO ==================== -->
+            <div id="sectionLagarto" class="section reptil-section">
                 <label class="label-select">Especie *</label>
-                <select class="namee" name="especie_lagarto">
-                            <option value="">Selecciona especie</option>
-                            <option>Gecko Leopardo</option>
-                            <option>Gecko Crestado</option>
-                            <option>Dragón Barbudo</option>
-                            <option>Anolis Verde</option>
-                            <option>Esquinco de lengua azul</option>
-                        </select>
+                <select class="namee" name="especie_lagarto" id="especie_lagarto">
+            <option value="">Selecciona especie</option>
+        </select>
 
-                <label class="label-select">Tamaño *</label>
-                <select class="namee" name="tamano_lagarto">
-                            <option value="">Selecciona tamaño</option>
-                            <option>Mini (7-15 cm)</option>
-                            <option>Pequeño (16-25 cm)</option>
-                            <option>Mediano (26-45 cm)</option>
-                            <option>Grande (46-60 cm)</option>
-                        </select>
+                <label class="label-select">Tamaño típico *</label>
+                <input type="text" class="namee" name="tamano_lagarto" id="tamano_lagarto">
 
-                <!-- Fuente de calor del lagarto -->
+                <label class="label-select">Clasificación taxonómica *</label>
+                <input type="text" class="namee" name="clasificacion_lagarto" id="clasificacion_lagarto">
+
+                <label class="label-select">Estatus de conservación *</label>
+                <input type="text" class="namee" name="estatus_lagarto" id="estatus_lagarto">
+
+                <label class="label-select">Requerimientos ambientales clave *</label>
+                <input type="text" class="namee" name="requerimientos_ambientales_lagarto" id="requerimientos_ambientales_lagarto">
+
                 <label class="label-select">Fuente de calor *</label>
-                <select class="namee" name="fuente_calor_lagarto">
-    <option value="">Selecciona opción</option>
-    <option>Lámpara de calor</option>
-    <option>Placa térmica</option>
-    <option>Cable calefactor</option>
-    <option>Piedra calefactora</option>
-    <option>Emisor de calor cerámico</option>
-    <option>Calentador de agua</option>
-    <option>No tiene fuente de calor</option>
-</select>
+                <select class="namee" name="fuente_calor_lagarto" id="fuente_calor_lagarto">
+            <option value="">Selecciona opción</option>
+            <option>Lámpara de calor</option>
+            <option>Placa térmica</option>
+            <option>Cable calefactor</option>
+            <option>Piedra calefactora</option>
+            <option>Emisor de calor cerámico</option>
+            <option>Calentador de agua</option>
+            <option>No tiene fuente de calor</option>
+        </select>
 
-                <!-- Alimentos que consume el lagarto -->
-                <label class="label-select">¿Qué alimentos consume tu lagarto? *</label>
-                <select class="namee" name="alimentos_lagarto">
-    <option value="">Selecciona opción</option>
-    <option>Grillos</option>
-    <option>Gusanos</option>
-    <option>Verduras</option>
-    <option>Frutas</option>
-    <option>Vegetales</option>
-    <option>Otra…</option>
-</select>
+                <label class="label-select">Tipo de terrario *</label>
+                <select class="namee" name="tipo_terrario_lagarto" id="tipo_terrario_lagarto">
+            <option value="">Selecciona opción</option>
+            <option>Terrario tropical</option>
+            <option>Terrario desértico</option>
+            <option>Terrario de humedad media</option>
+            <option>Terrario vertical</option>
+            <option>Terrario horizontal</option>
+            <option>Bioactivo</option>
+        </select>
 
-                <!-- Marca del alimento -->
-                <label class="label-select">Ingrese marca de su alimento</label>
-                <input type="text" class="namee" name="marca_alimento_lagarto" placeholder="Si aplica">
+                <label class="label-select">Vacunas que tiene tu lagarto </label>
+                <div id="lista-vacunas-checkbox4">
+                </div>
 
-                <!-- Veces que come al día -->
-                <label class="label-select">¿Cuántas veces come al día? *</label>
-                <select class="namee" name="veces_comida_lagarto">
-    <option value="">Selecciona opción</option>
-    <option>1 vez al día</option>
-    <option>2 veces al día</option>
-    <option>3 veces al día</option>
-    <option>Libertad de horario, siempre tiene comida en su plato</option>
-</select>
+                <!-- Contenedor para fechas dinámicas -->
+                <div id="fechas-vacunas-container4"></div>
 
-                <!-- Tratamientos que ha llevado -->
-                <label class="label-select">Tratamientos que ha llevado *</label>
-                <select class="namee" name="tratamientos_lagarto">
-    <option value="">Selecciona opción</option>
-    <option>Desparasitacion</option>
-    <option>Vitaminas</option>
-    <option>Baños de sol controlados</option>
-    <option>Ninguno de los anteriores</option>
-    <option>No tengo el conocimiento de esta información</option>
-    <option>Otra…</option>
-</select>
 
-                <!-- Tipo de terrario -->
-                <label class="label-select">Tipo de terrario en el que vive *</label>
-                <select class="namee" name="tipo_terrario_lagarto">
-    <option value="">Selecciona opción</option>
-    <option>Terrario tropical</option>
-    <option>Terrario desértico</option>
-    <option>Terrario de humedad media</option>
-    <option>Terrario vertical</option>
-    <option>Terrario horizontal</option>
-    <option>Bioactivo</option>
-</select>
 
-                <!-- Dimensiones aproximadas del terrario -->
                 <label class="label-select">Dimensiones aproximadas del terrario *</label>
-                <input type="text" class="namee" name="dimensiones_terrario_lagarto" placeholder="Ancho x largo x profundidad">
+                <input type="text" class="namee" name="dimensiones_terrario_lagarto" id="dimensiones_terrario_lagarto">
+
+                <label class="label-select">Dieta base *</label>
+                <select class="namee" name="dieta_lagarto" id="dieta_lagarto">
+            <option value="">Selecciona opción</option>
+            <option>Grillos</option>
+            <option>Gusanos</option>
+            <option>Verduras</option>
+            <option>Frutas</option>
+            <option>Vegetales</option>
+            <option>Otra…</option>
+        </select>
+
+                <label class="label-select">Ingrese marca de su alimento</label>
+                <input type="text" class="namee" name="marca_alimento_lagarto" id="marca_alimento_lagarto">
+
+                <label class="label-select">¿Cuántas veces come al día? *</label>
+                <select class="namee" name="veces_comida_lagarto" id="veces_comida_lagarto">
+            <option value="">Selecciona opción</option>
+            <option>1 vez al día</option>
+            <option>2 veces al día</option>
+            <option>3 veces al día</option>
+            <option>Libertad de horario</option>
+        </select>
+
+                <label class="label-select">Tratamientos que ha llevado *</label>
+                <select class="namee" name="tratamientos_lagarto" id="tratamientos_lagarto">
+            <option value="">Selecciona opción</option>
+            <option>Desparasitacion</option>
+            <option>Vitaminas</option>
+            <option>Baños de sol controlados</option>
+            <option>Ninguno</option>
+            <option>No tengo conocimiento</option>
+            <option>Otra…</option>
+        </select>
 
             </div>
 
-            <!-- Serpiente -->
-            <div id="sectionSerpiente" class="section">
+            <!-- Clones -->
+            <div id="mascotasContainerLagarto"></div>
+
+            <!-- Botón único -->
+            <button type="button" class="sape p-2 mt-3" id="agregarMascotaLagarto">
+        ➕ Agregar otro lagarto
+    </button>
+            <div id="sectionSerpiente" class="section reptil-section">
+
                 <label class="label-select">Especie *</label>
-                <select class="namee" name="especie_serpiente">
-                            <option value="">Selecciona especie</option>
-                            <option>Serpiente del Maíz</option>
-                            <option>Serpiente Rey de California</option>
-                            <option>Serpiente de Leche</option>
-                            <option>Serpiente Jarretera</option>
-                        </select>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <select class="namee" name="especie_serpiente" id="especie_serpiente"></select>
 
                 <label class="label-select">Tamaño *</label>
-                <select class="namee" name="tamano_serpiente">
-                            <option value="">Selecciona tamaño</option>
-                            <option>Pequeña (30-60 cm)</option>
-                            <option>Mediana (61-120 cm)</option>
-                            <option>Grande (121-180 cm)</option>
-                        </select>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <input class="namee" name="tamano_serpiente" id="tamano_serpiente">
 
-                <!-- Fuente de calor de la serpiente -->
-                <label class="label-select">Fuente de calor que tiene tu serpiente *</label>
-                <select class="namee" name="fuente_calor_serpiente">
-    <option value="">Selecciona opción</option>
-    <option>Lámpara de calor</option>
-    <option>Placa térmica</option>
-    <option>Cable calefactor</option>
-    <option>Piedra calefactora</option>
-    <option>Emisor de calor cerámico</option>
-    <option>Calentador de agua</option>
-</select>
+                <label class="label-select">Clasificación *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <input class="namee" name="clasificacion_serpiente" id="clasificacion_serpiente">
 
-                <!-- Alimentos que consume la serpiente -->
-                <label class="label-select">¿Qué alimentos consume su serpiente? *</label>
-                <select class="namee" name="alimentos_serpiente">
-    <option value="">Selecciona opción</option>
-    <option>Roedores</option>
-    <option>Aves pequeñas</option>
-    <option>Huevos</option>
-    <option>Alimento pre-matado (congelado)</option>
-    <option>Otra…</option>
-</select>
+                <label class="label-select">Estatus de conservación *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <input class="namee" name="estatus_serpiente" id="estatus_serpiente">
 
-                <!-- Marca del alimento -->
-                <label class="label-select">Ingrese marca de su alimento</label>
-                <input type="text" class="namee" name="marca_alimento_serpiente" placeholder="Si aplica">
+                <label class="label-select">Fuente de calor *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <select class="namee" name="fuente_calor_serpiente" id="fuente_calor_serpiente">
+            <option value="">Selecciona opción</option>
+            <option>Placa térmica</option>
+            <option>Emisor de calor cerámico</option>
+            <option>Lámpara de calor</option>
+            <option>Cable calefactor</option>
+            <option>Piedra calefactora</option>
+            <option>Calentador de agua</option>
+        </select>
 
-                <!-- Veces que come al día -->
-                <label class="label-select">¿Cuántas veces come al día? *</label>
-                <select class="namee" name="veces_comida_serpiente">
-    <option value="">Selecciona opción</option>
-    <option>1 vez al día</option>
-    <option>2 veces al día</option>
-    <option>3 veces al día</option>
-    <option>Libertad de horario, siempre tiene comida en su plato</option>
-</select>
+                <label class="label-select">Tipo de terrario *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <select class="namee" name="tipo_terrario_serpiente" id="tipo_terrario_serpiente">
+            <option>Terrario de humedad media</option>
+            <option>Terrario tropical</option>
+            <option>Terrario desértico</option>
+            <option>Rack system</option>
+            <option>Terrario de cristal</option>
+            <option>Terrario de plástico</option>
+        </select>
 
-                <!-- Tratamientos que ha llevado -->
-                <label class="label-select">Tratamientos que ha llevado *</label>
-                <select class="namee" name="tratamientos_serpiente">
-    <option value="">Selecciona opción</option>
-    <option>Desparasitacion</option>
-    <option>Vitaminas</option>
-    <option>Baños de sol controlados</option>
-    <option>Ninguna de las anteriores</option>
-    <option>No tengo el conocimiento de esta información</option>
-    <option>Otra…</option>
-</select>
+                <label class="label-select">Alimentos que consume *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <select class="namee" name="alimentos_serpiente" id="alimentos_serpiente">
+            <option value="">Selecciona opción</option>
+            <option>Ratones</option>
+            <option>Ratas</option>
+            <option>Conejos</option>
+            <option>Aves grandes</option>
+            <option>Lagartos</option>
+            <option>Otra…</option>
+        </select>
 
-                <!-- Tipo de terrario -->
-                <label class="label-select">Tipo de terrario en el que vive *</label>
-                <select class="namee" name="tipo_terrario_serpiente">
-    <option value="">Selecciona opción</option>
-    <option>Terrario desértico/seco</option>
-    <option>Terrario tropical/húmedo</option>
-    <option>Terrario de bosque</option>
-    <option>Rack system</option>
-    <option>Terrario de cristal con tapa segura</option>
-    <option>Terrario de plástico</option>
-</select>
+                <label class="label-select">Vacunas que tiene tu Serpiente </label>
+                <div id="lista-vacunas-checkbox5">
+                </div>
 
-                <!-- Dimensiones aproximadas del terrario -->
-                <label class="label-select">Dimensiones aproximadas del terrario *</label>
-                <input type="text" class="namee" name="dimensiones_terrario_serpiente" placeholder="Ancho x largo x profundidad">
+                <!-- Contenedor para fechas dinámicas -->
+                <div id="fechas-vacunas-container5"></div>
+
+
+                <label class="label-select">Marca del alimento</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <input type="text" class="namee" name="marca_alimento_serpiente" id="marca_alimento_serpiente">
+
+                <label class="label-select">Veces que come *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <input type="text" class="namee" name="veces_comida_serpiente" id="veces_comida_serpiente">
+
+                <label class="label-select">Tratamiento *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <select class="namee" name="tipo_tratamiento_serpiente" id="tipo_tratamiento_serpiente">
+            <option value="">Selecciona opción</option>
+            <option>Desparasitacion</option>
+            <option>Vitaminas</option>
+            <option>Baños de sol controlados</option>
+            <option>Ninguno</option>
+            <option>No tengo conocimiento</option>
+            <option>Otra…</option>
+        </select>
+
+                <label class="label-select">Dimensiones del terrario *</label>
+                <!-- CORRECCIÓN 3: Se añade name -->
+                <input type="text" class="namee" name="dimensiones_terrario_serpiente" id="dimensiones_terrario_serpiente">
 
             </div>
 
-            <!-- Tortuga -->
-            <div id="sectionTortuga" class="section">
+            <div id="mascotasContainerSerpiente"></div>
+
+            <button type="button" class="sape p-2 mt-3" id="agregarMascotaSerpiente">
+        ➕ Agregar otra serpiente
+    </button>
+
+            <!-- ==================== TORTUGA ==================== -->
+            <div id="sectionTortuga" class="section reptil-section">
+
                 <label class="label-select">Especie *</label>
-                <select class="namee" name="especie_tortuga">
-                            <option value="">Selecciona especie</option>
-                            <option>Tortuga de Orejas Rojas</option>
-                            <option>Tortuga de Orejas Amarillas</option>
-                            <option>Tortuga Pintada</option>
-                            <option>Tortuga Mapa</option>
-                        </select>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <select class="namee" name="especie_tortuga" id="especie_tortuga"></select>
 
                 <label class="label-select">Tamaño *</label>
-                <select class="namee" name="tamano_tortuga">
-                            <option value="">Selecciona tamaño</option>
-                            <option>Pequeña (10-15 cm)</option>
-                            <option>Mediana (16-20 cm)</option>
-                            <option>Grande (26-35 cm)</option>
-                        </select>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <input class="namee" name="tamano_tortuga" id="tamano_tortuga">
 
-                <!-- Fuente de calor de la tortuga -->
-                <label class="label-select">Fuente de calor que tiene tu tortuga *</label>
-                <select class="namee" name="fuente_calor_tortuga">
-    <option value="">Selecciona opción</option>
-    <option>Lámpara de calor</option>
-    <option>Placa térmica</option>
-    <option>Cable calefactor</option>
-    <option>Piedra calefactora</option>
-    <option>Emisor de calor cerámico</option>
-    <option>Calentador de agua</option>
-</select>
+                <label class="label-select">Clasificación *</label>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <input class="namee" name="clasificacion_tortuga" id="clasificacion_tortuga">
 
-                <!-- Alimentos que consume la tortuga -->
-                <label class="label-select">¿Qué alimentos consume tu tortuga? *</label>
-                <select class="namee" name="alimentos_tortuga">
-    <option value="">Selecciona opción</option>
-    <option>Pellets</option>
-    <option>Peces</option>
-    <option>Vegetales acuáticos</option>
-    <option>Verduras</option>
-    <option>Frutas</option>
-    <option>Otra…</option>
-</select>
+                <label class="label-select">Estatus *</label>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <input class="namee" name="estatus_tortuga" id="estatus_tortuga">
 
-                <!-- Marca del alimento -->
-                <label class="label-select">Ingrese marca de su alimento</label>
-                <input type="text" class="namee" name="marca_alimento_tortuga" placeholder="Si aplica">
+                <label class="label-select">Fuente de calor *</label>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <select class="namee" name="fuente_calor_tortuga" id="fuente_calor_tortuga">
+            <option>Lámpara de calor</option>
+            <option>Placa térmica</option>
+            <option>Cable calefactor</option>
+            <option>Piedra calefactora</option>
+            <option>Emisor cerámico</option>
+            <option>Calentador de agua</option>
+        </select>
 
-                <!-- Veces que come al día -->
-                <label class="label-select">¿Cuántas veces come al día? *</label>
-                <select class="namee" name="veces_comida_tortuga">
-    <option value="">Selecciona opción</option>
-    <option>1 vez al día</option>
-    <option>2 veces al día</option>
-    <option>3 veces al día</option>
-    <option>Libertad de horario, siempre tiene comida en su plato</option>
-</select>
+                <label class="label-select">Vacunas que tiene tu Tortuga </label>
+                <div id="lista-vacunas-checkbox6">
+                </div>
 
-                <!-- Tratamientos que ha llevado -->
+                <!-- Contenedor para fechas dinámicas -->
+                <div id="fechas-vacunas-container6"></div>
+
+                <label class="label-select">¿Qué alimentos consume?</label>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <select class="namee" name="alimentos_tortuga" id="alimentos_tortuga" multiple></select>
+
                 <label class="label-select">Tratamientos que ha llevado *</label>
-                <select class="namee" name="tratamientos_tortuga">
-    <option value="">Selecciona opción</option>
-    <option>Desparasitacion</option>
-    <option>Vitaminas</option>
-    <option>Baños de sol controlados</option>
-    <option>Ninguna de las anteriores</option>
-    <option>No tengo el conocimiento de esta información</option>
-    <option>Otra…</option>
-</select>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <select class="namee" name="tratamientos_tortuga" id="tratamientos_tortuga" multiple></select>
 
-                <!-- Tipo de terrario -->
-                <label class="label-select">Tipo de terrario en el que vive *</label>
-                <select class="namee" name="tipo_terrario_tortuga">
-    <option value="">Selecciona opción</option>
-    <option>Acuaterrario (70% agua, 30% tierra)</option>
-    <option>Terrario semi-acuático</option>
-    <option>Terrario terrestre</option>
-    <option>Recinto exterior con estanque</option>
-    <option>Tortuguera interior básica</option>
-    <option>Estanque interior con zona seca</option>
-</select>
+                <label class="label-select">Veces que come *</label>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <input class="namee" name="veces_comida_tortuga" id="veces_comida_tortuga">
 
-                <!-- Dimensiones aproximadas del terrario -->
-                <label class="label-select">Dimensiones aproximadas del terrario *</label>
-                <input type="text" class="namee" name="dimensiones_terrario_tortuga" placeholder="Ancho x largo x profundidad">
+                <label class="label-select">Tipo de terrario *</label>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <input class="namee" name="tipo_terrario_tortuga" id="tipo_terrario_tortuga">
+
+                <label class="label-select">Dimensiones *</label>
+                <!-- CORRECCIÓN 4: Se añade name -->
+                <input class="namee" name="dimensiones_terrario_tortuga" id="dimensiones_terrario_tortuga">
 
             </div>
+            <div id="mascotasContainerTortuga"></div>
+            <button type="button" class="sape p-2 mt-3" id="agregarMascotaTortuga">➕ Agregar otra tortuga</button>
+
+        </div>
+
+
+
+        </div>
+        </div>
+        <!-- Serpiente -->
+
+        <!-- Tortuga -->
+
+        </div>
+
+
         </div>
 
         <br>
@@ -1133,6 +1195,19 @@
     <script src="../agregar_mascotas.js"></script>
     <script src="../vacunas-perros.js"></script>
     <script src="../razas_gatos.js"></script>
+    <script src="../vacunas-gatos.js"></script>
+    <script src="../razas_aves.js"></script>
+    <script src="../razas_lagartos.js"></script>
+    <script src="../razas_serpientes.js"></script>
+    <script src="../razas_tortuga.js"></script>
+    <script src="../vacunas-aves.js"></script>
+    <script src="../vacunas-lagartos.js"></script>
+    <script src="../vacunas-serpientes.js"></script>
+    <script src="../vacunas-tortugas.js"></script>
+
+
+
+
 
 </body>
 

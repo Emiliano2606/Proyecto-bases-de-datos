@@ -1,0 +1,61 @@
+[{
+        "id_raza": 1,
+        "nombre": "Gecko Leopardo",
+        "patrón_dominante": "Criptismo",
+        "tamaño_típico": "Pequeño (15-25 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Lacertilia)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "requerimiento_ambiental_clave": "Humedad Baja (20%-40%) y Termorregulación con gradiente.",
+        "dieta_base": ["Grillos", "Gusanos"],
+        "fuente_calor_sugerida": "Placa térmica",
+        "tipo_terrario_sugerido": "Terrario desértico"
+    },
+    {
+        "id_raza": 2,
+        "nombre": "Gecko Crestado",
+        "patrón_dominante": "Exhibición",
+        "tamaño_típico": "Pequeño (15-25 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Lacertilia)",
+        "estatus_conservación": "Vulnerable (VU)",
+        "requerimiento_ambiental_clave": "Humedad Alta (70%-90%) y Espacio con enriquecimiento vertical.",
+        "dieta_base": ["Frutas", "Gusanos"],
+        "fuente_calor_sugerida": "Emisor de calor cerámico",
+        "tipo_terrario_sugerido": "Terrario tropical"
+    },
+    {
+        "id_raza": 3,
+        "nombre": "Dragón Barbudo",
+        "patrón_dominante": "Exhibición",
+        "tamaño_típico": "Mediano (40-60 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Lacertilia)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "requerimiento_ambiental_clave": "Iluminación UVB artificial esencial y Termorregulación con punto de asoleo.",
+        "dieta_base": ["Verduras", "Grillos"],
+        "fuente_calor_sugerida": "Lámpara de calor",
+        "tipo_terrario_sugerido": "Terrario desértico"
+    },
+    {
+        "id_raza": 4,
+        "nombre": "Iguana Verde",
+        "patrón_dominante": "Aposematismo",
+        "tamaño_típico": "Grande (1.5-2 m)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Lacertilia)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "requerimiento_ambiental_clave": "Espacio y Enriquecimiento (grandes recintos), Humedad Alta.",
+        "dieta_base": ["Vegetales", "Verduras"],
+        "fuente_calor_sugerida": "Emisor de calor cerámico",
+        "tipo_terrario_sugerido": "Terrario tropical"
+    },
+    {
+        "id_raza": 5,
+        "nombre": "Camaleón de Velo",
+        "patrón_dominante": "Exhibición",
+        "tamaño_típico": "Mediano (30-50 cm)",
+        "clasificación_taxonómica": "Clase Reptilia / Orden Squamata (Suborden Lacertilia)",
+        "estatus_conservación": "Preocupación Menor (LC)",
+        "requerimiento_ambiental_clave": "Ventilación (vital para evitar infecciones) y Humedad controlada.",
+        "dieta_base": ["Grillos", "Gusanos"],
+        "fuente_calor_sugerida": "Lámpara de calor",
+        "tipo_terrario_sugerido": "Terrario vertical"
+    }
+]
