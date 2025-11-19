@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <title>Generar Cita - Clínica Veterinaria</title>
+    <link rel="stylesheet" href="citas_estilo.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>🐾 Generar Cita Veterinaria</h1>
+</header>
+
+<main class="contenedor">
+
+    <!-- Formulario para registrar una cita -->
+    <form class="form-cita" id="formCita">
+
+        <div class="campo">
+            <label>Sucursal:</label>
+            <select id="sucursal">
+                <option>Centro</option>
+                <option>Norte</option>
+                <option>Sur</option>
+                <option>Oriente</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Nombre del dueño:</label>
+            <input type="text" id="dueno" placeholder="Ej. Lola Martínez">
+        </div>
+
+        <div class="campo">
+            <label>Nombre de la mascota:</label>
+            <input type="text" id="mascota" placeholder="Ej. Rocky">
+        </div>
+
+        <div class="campo">
+            <label>Fecha:</label>
+            <input type="date" id="fecha">
+        </div>
+
+        <div class="campo">
+            <label>Hora:</label>
+            <input type="time" id="hora">
+        </div>
+
+        <div class="campo">
+            <label>Doctor:</label>
+            <select id="doctor">
+                <option>Dr. Ramírez</option>
+                <option>Dra. Gómez</option>
+                <option>Dr. Torres</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Motivo de consulta:</label>
+            <textarea id="motivo" placeholder="Ej. Vacunación, revisión general..."></textarea>
+        </div>
+
+        <button class="btn-guardar" type="submit">Guardar cita</button>
+    </form>
+
+    <!-- Sección donde se imprimirán las citas -->
+    <section class="lista-citas" id="listaCitas">
+        <h2>Citas generadas</h2>
+        <p id="mensajeVacio">Aún no hay citas registradas 🐾</p>
+    </section>
+
+</main>
+
+
+<script>
+    const form = document.getElementById("formCita");
+    const contenedorCitas = document.getElementById("listaCitas");
+    const msgSinCitas = document.getElementById("mensajeVacio");
+
+    let citas = []; // Se irán guardando aquí
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // se obtienen los valores del formulario
+        const nueva = {
+            sucursal: document.getElementById("sucursal").value,
+            dueno: document.getElementById("dueno").value.trim(),
+            mascota: document.getElementById("mascota").value.trim(),
+            fecha: document.getElementById("fecha").value,
+            hora: document.getElementById("hora").value,
+            doctor: document.getElementById("doctor").value,
+            motivo: document.getElementById("motivo").value.trim()
+        };
+
+        // validación básica
+        if (!nueva.dueno || !nueva.mascota || !nueva.fecha || !nueva.hora || !nueva.motivo) {
+            alert("Faltan datos, por favor revisa.");
+            return;
+        }
+
+        // guardo la cita
+        citas.push(nueva);
+
+        // actualizo la vista
+        imprimirCitas();
+
+        form.reset();
+    });
+
+    // Muestra todas las citas guardadas
+    function imprimirCitas() {
+        contenedorCitas.querySelectorAll(".cita").forEach(c => c.remove());
+
+        if (citas.length === 0) {
+            msgSinCitas.style.display = "block";
+            return;
+        }
+
+        msgSinCitas.style.display = "none";
+
+        citas.forEach((cita, i) => {
+            const caja = document.createElement("div");
+            caja.classList.add("cita");
+
+            caja.innerHTML = `
+                <h3>${cita.mascota}</h3>
+                <p><strong>Dueño:</strong> ${cita.dueno}</p>
+                <p><strong>Sucursal:</strong> ${cita.sucursal}</p>
+                <p><strong>Fecha:</strong> ${cita.fecha}</p>
+                <p><strong>Hora:</strong> ${cita.hora}</p>
+                <p><strong>Doctor:</strong> ${cita.doctor}</p>
+                <p><strong>Motivo:</strong> ${cita.motivo}</p>
+                <button class="btn-eliminar" data-id="${i}">Eliminar</button>
+            `;
+
+            contenedorCitas.appendChild(caja);
+        });
+
+        // añadir eventos a botones de eliminar
+        document.querySelectorAll(".btn-eliminar").forEach(btn => {
+            btn.addEventListener("click", function() {
+                const id = this.getAttribute("data-id");
+                citas.splice(id, 1);
+                imprimirCitas();
+            });
+        });
+    }
+</script>
+
+</body>
+</html>
