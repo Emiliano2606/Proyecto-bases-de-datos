@@ -83,87 +83,71 @@
                 <div class="col-md-12">
                     <div class="info-left text-center">
                         <h2 class="tu">Registro de Dueño</h2>
-                        <form action="" method="POST">
+                        <form action="../src/registro.php" method="POST">
 
-                            <!-- Nombre -->
+
+
                             <input class="namee mt-2" type="text" name="nombre" required placeholder="Nombre del Dueño *"><br>
-
-                            <!-- Apellidos -->
                             <input class="namee mt-2" type="text" name="apellido1" required placeholder="Primer Apellido *"><br>
-                            <input class="namee mt-2" type="text" name="apellido2" required placeholder="Segundo Apellido *"><br>
+                            <input class="namee mt-2" type="text" name="apellido2" placeholder="Segundo Apellido"><br>
+                            <input class="namee mt-2" type="email" name="email" required placeholder="Correo Electrónico *"><br>
+                            <input class="namee mt-2" type="password" name="password" required placeholder="Contraseña *"><br>
+                            <p class="mt-3 sexo">Sexo del Dueño *</p>
+                            <select class="namee mt-2" name="sexo_dueno" required>
+        <option value="" disabled selected>-- Seleccione su sexo --</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
+    </select><br>
 
-                            <!-- Sexo -->
-                            <p class="  mt-3 sexo">Sexo del Dueño *</p>
-                            <select class="namee mt-2" name="procedencia">
-              <option value="Adopción">Hombre</option>
-              <option value="Compra">Mujer</option>
-
-            </select><br>
-
-                            <!-- Fecha de nacimiento -->
                             <input class="namee mt-2" type="date" name="fecha_nacimiento" required placeholder="Fecha de nacimiento *"><br>
 
-                            <!-- Cómo llegó la mascota -->
                             <p class="mt-3 sexo2">Su mascota llegó a su hogar mediante...</p>
-                            <select class="namee mt-2" name="procedencia">
-              <option value="Adopción">Adopción</option>
-              <option value="Compra">Compra</option>
-              <option value="Rescate">Rescate de calle</option>
-              <option value="Nacido">Nacido en casa</option>
-              <option value="Regalo">Regalo</option>
-            </select><br>
+                            <select class="namee mt-2" name="procedencia_mascota"> 
+        <option value="Adopción">Adopción</option>
+        <option value="Compra">Compra</option>
+        <option value="Rescate">Rescate de calle</option>
+        <option value="Nacido">Nacido en casa</option>
+        <option value="Regalo">Regalo</option>
+    </select><br>
 
-                            <!-- Teléfonos -->
-                            <input class="namee mt-2" type="tel" name="telefono" required placeholder="Teléfono principal *"><br>
+                            <input class="namee mt-2" type="tel" name="telefono_principal" required placeholder="Teléfono principal *"><br>
                             <input class="namee mt-2" type="tel" name="telefono_emergencia" required placeholder="Teléfono de emergencia *"><br>
 
-                            <!-- Tipo de hogar -->
+                            <p class="mt-3 sexo3">Código Postal</p>
+                            <input class="namee mt-2" type="text" name="cp" id="codigo_postal" required placeholder="Ej: 06700" maxlength="5"><br>
 
-                            <style>
-                                .keukol {
-                                    position: relative;
-                                    right: 380px;
-                                }
-                            </style>
-                            <form id="direccionForm">
-                                <p class="mt-3 sexo3">Código Postal</p>
-                                <input class="namee mt-2" type="text" name="cp" id="codigo_postal" required placeholder="Ej: 06700" maxlength="5"><br>
+                            <p class="mt-3 sexo3">Estado</p>
+                            <input class="namee mt-2" type="text" name="estado" id="estado" required placeholder="Estado" readonly><br>
 
-                                <p class="mt-3 sexo3">Estado</p>
-                                <input class="namee mt-2" type="text" name="estado" id="estado" required placeholder="Estado" readonly><br>
+                            <p class="mt-3 sexo3">Municipio</p>
+                            <input class="namee mt-2" type="text" name="municipio" id="municipio" required placeholder="Municipio" readonly><br>
 
-                                <p class="mt-3 sexo3">Municipio</p>
-                                <input class="namee mt-2" type="text" name="municipio" id="municipio" required placeholder="Municipio" readonly><br>
+                            <p class="mt-3 sexo3">Colonia</p>
+                            <select class="namee mt-2" name="colonia" id="colonia" required disabled>
+        <option value="">-- Seleccione Colonia --</option>
+    </select><br>
 
-                                <p class="mt-3 sexo3">Colonia</p>
-                                <select class="namee mt-2" name="colonia" id="colonia" required disabled>
-    <option value="">-- Seleccione Colonia --</option>
-  </select><br>
+                            <p class="mt-3 sexo3">Calle</p>
+                            <input class="namee mt-2" type="text" name="calle" id="calle_mascota" required placeholder="Ej: Av. Reforma"><br>
 
-                                <p class="mt-3 sexo3">Calle</p>
-                                <input class="namee mt-2" type="text" name="calle" id="calle_mascota" required placeholder="Ej: Av. Reforma"><br>
+                            <p class="mt-3 sexo3">Número exterior</p>
+                            <input class="namee mt-2" type="text" name="numero_exterior" id="numero_exterior" required placeholder="Ej: 73"><br>
 
-                                <p class="mt-3 sexo3">Número exterior</p>
-                                <input class="namee mt-2" type="text" name="numero_exterior" id="numero_exterior" required placeholder="Ej: 73"><br>
+                            <p class="mt-3 sexo3">Número interior / Torre / Depto / Piso</p>
+                            <input class="namee mt-2" type="text" name="numero_interior" id="numero_interior" placeholder="Ej: C3, PH 304"><br>
 
-                                <p class="mt-3 sexo3">Número interior / Torre / Depto / Piso</p>
-                                <input class="namee mt-2" type="text" name="numero_interior" id="numero_interior" placeholder="Ej: C3, PH 304"><br>
+                            <p class="mt-3 sexo3">Referencias / Observaciones</p>
+                            <textarea class="namee mt-2" name="referencias" id="referencias" rows="3" placeholder="Ej: Al lado de la fachada azul, puerta verde"></textarea><br>
 
-                                <p class="mt-3 sexo3">Referencias / Observaciones</p>
-                                <textarea class="namee mt-2" name="referencias" id="referencias" rows="3" placeholder="Ej: Al lado de la fachada azul, puerta verde"></textarea><br>
+                            <p id="direccion_final" class="sexo3 mt-3" style="margin-top: 20px;">Dirección seleccionada:</p>
 
-                                <p id="direccion_final" class="sexo3 mt-3" style="margin-top: 20px;">Dirección seleccionada:</p>
+                            <button class="sape p-2 mt-3 d-none d-sm-inline-block" type="submit">Registrarse</button>
+                            <button class="sape2 p-2 mt-3 d-sm-none" type="submit">Registrarse</button>
 
-                                <!-- Botón -->
-                                <a href="registro_mascota.html" class="sape p-2 mt-3 d-none d-sm-inline-block">Registrarse</a>
-                                <a href="registro_mascota.html" class="sape2 p-2 mt-3 d-sm-none">Registrarse</a>
+                            <br>
+                            <br>
 
-                                <br>
-                                <br>
-
-
-
-                            </form>
+                        </form>
 
                     </div>
                 </div>
