@@ -2,6 +2,20 @@
 // 1. INCLUIR LA CONEXIÓN
 require_once '../includes/db_connection.php'; 
 
+// Función para mostrar errores y redirigir
+function display_error_and_exit($error_array) {
+    // Aquí puedes implementar una forma de redirigir y mostrar los errores 
+    // en el formulario, pero por ahora solo los imprimiremos
+    echo "<h1>Errores de Validación</h1>";
+    foreach ($error_array as $error) {
+        echo "<p style='color:red;'>- $error</p>";
+    }
+    // Opcional: Redirigir al formulario para que el usuario corrija
+    // header("Location: ../registro.html?errors=" . urlencode(implode('; ', $error_array)));
+    exit();
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // 2. OBTENER Y SANITIZAR DATOS INICIALES
@@ -63,16 +77,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 3. PROCESAR SI NO HAY ERRORES
     if (!empty($errores)) {
-        // Mostrar errores si falló alguna validación
-        echo "<h1>Errores de Validación</h1>";
-        foreach ($errores as $error) {
-            echo "<p style='color:red;'>- $error</p>";
-        }
-        // Puedes optar por redirigir al formulario aquí: header("Location: ../registro.html?errors=...");
-        exit();
+        display_error_and_exit($errores);
     }
     
     // Si llegamos aquí, los datos son válidos y podemos hacer el hashing
+    // La variable se sigue llamando $password_hash, pero el campo de la DB es 'password'
     $password_hash = password_hash($password, PASSWORD_DEFAULT); 
 
     // INICIAR TRANSACCIÓN (si los datos son válidos, empezamos la inserción)
@@ -80,19 +89,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     try {
         // === 4. INSERCIÓN 1: TABLA Usuarios ===
-        $sql_usuarios = "INSERT INTO Usuarios (email, password_hash) 
+        // ¡CORRECCIÓN AQUÍ! Se usa 'password' en lugar de 'password_hash' en la DB
+        $sql_usuarios = "INSERT INTO Usuarios (email, password) 
                          VALUES (:email, :password_hash) RETURNING idUsuario";
         $stmt_usuarios = $pdo->prepare($sql_usuarios);
         $stmt_usuarios->execute([
             ':email' => $email,
-            ':password_hash' => $password_hash
+            ':password_hash' => $password_hash // Usamos el alias de variable
         ]);
         
         $idUsuario = $stmt_usuarios->fetchColumn(); 
         
         // === 5. INSERCIÓN 2: TABLA DatosUsuario ===
-        // ... (Tu código de inserción en DatosUsuario) ...
-        
         $sql_datos = "INSERT INTO DatosUsuario (fk_id_usuario, nombre, apellido1, apellido2, sexo_dueno, fecha_nacimiento, procedencia_mascota, telefono_principal, telefono_emergencia) 
                       VALUES (:id, :nombre, :apellido1, :apellido2, :sexo, :fecha_nac, :procedencia, :tel_princ, :tel_emerg)";
         $stmt_datos = $pdo->prepare($sql_datos);
@@ -109,8 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
         
         // === 6. INSERCIÓN 3: TABLA Domicilio ===
-        // ... (Tu código de inserción en Domicilio) ...
-        
         $sql_domicilio = "INSERT INTO Domicilio (fk_usuario_id, calle, numero_exterior, numero_interior, colonia, municipio, estado, cp, referencias)
                           VALUES (:id, :calle, :num_ext, :num_int, :colonia, :municipio, :estado, :cp, :referencias)";
         $stmt_domicilio = $pdo->prepare($sql_domicilio);
@@ -138,6 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($e->getCode() == '23505') { 
             $error_message = "El email ya está registrado. Por favor, inicie sesión o use otro correo.";
         } else {
+            // Este es un error general de la DB, solo mostrarlo si display_errors está activado
             $error_message = "Error crítico de base de datos: " . $e->getMessage();
         }
         
