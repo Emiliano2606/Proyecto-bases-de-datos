@@ -122,24 +122,8 @@
     <section id="registro" class="pt-5">
         <div class="container">
             <h2 class="tu">Registro de Mascota</h2>
-            <form id="formMascota">
+            <form action="../src/registro_mascota.php" method="POST">
 
-                <!-- Campos comunes -->
-                <label class="label-select">Nombre de la mascota *</label>
-                <input class="namee" type="text" name="nombre_mascota" required>
-
-                <label class="label-select">Fecha de nacimiento *</label>
-                <input class="namee" type="date" name="fecha_nacimiento" required>
-
-                <label class="label-select">Sexo *</label>
-                <select class="namee" name="sexo" required>
-                    <option value="">Selecciona sexo</option>
-                    <option value="Macho">Macho</option>
-                    <option value="Hembra">Hembra</option>
-                </select>
-
-                <label class="label-select">Foto de la mascota</label>
-                <input class="namee" type="file" name="foto" accept="image/*">
 
                 <!-- Selección especie -->
                 <label class="label-select">Tipo de mascota *</label>
@@ -154,6 +138,24 @@
                 <!-- Perro -->
 
                 <div id="sectionPerro" class="section">
+
+                    <!-- Campos comunes -->
+                    <label class="label-select">Nombre de la mascota *</label>
+                    <input class="namee" type="text" name="nombre_mascota" required>
+
+                    <label class="label-select">Fecha de nacimiento *</label>
+                    <input class="namee" type="date" name="fecha_nacimiento" required>
+
+                    <label class="label-select">Sexo *</label>
+                    <select class="namee" name="sexo" required>
+                    <option value="">Selecciona sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+
+                    <label class="label-select">Foto de la mascota</label>
+                    <input class="namee" type="file" name="foto" accept="image/*">
+
                     <label class="label-select">Raza *</label>
 
                     <select class="namee" name="raza_perro" id="raza_perro">
@@ -377,6 +379,23 @@
         <div class="container">
 
             <div name="seccion_gato" id="sectionGato" class="section">
+                <!-- Campos comunes -->
+                <label class="label-select">Nombre de la mascota *</label>
+                <input class="namee" type="text" name="nombre_mascota" required>
+
+                <label class="label-select">Fecha de nacimiento *</label>
+                <input class="namee" type="date" name="fecha_nacimiento" required>
+
+                <label class="label-select">Sexo *</label>
+                <select class="namee" name="sexo" required>
+                    <option value="">Selecciona sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+
+                <label class="label-select">Foto de la mascota</label>
+                <input class="namee" type="file" name="foto" accept="image/*">
+
                 <label class="label-select">Raza del gato</label>
                 <select class="namee" name="raza_del_gato">
     <option value="">Selecciona opción</option>
@@ -598,6 +617,23 @@
 
         <!-- Ave -->
         <div id="sectionAve" class="section">
+            <!-- Campos comunes -->
+            <label class="label-select">Nombre de la mascota *</label>
+            <input class="namee" type="text" name="nombre_mascota" required>
+
+            <label class="label-select">Fecha de nacimiento *</label>
+            <input class="namee" type="date" name="fecha_nacimiento" required>
+
+            <label class="label-select">Sexo *</label>
+            <select class="namee" name="sexo" required>
+                    <option value="">Selecciona sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+
+            <label class="label-select">Foto de la mascota</label>
+            <input class="namee" type="file" name="foto" accept="image/*">
+
             <label class="label-select">Especie *</label>
             <select class="namee" name="especie_ave">
     <option value="">Selecciona especie</option>
@@ -815,6 +851,24 @@
 
             <!-- ==================== LAGARTO ==================== -->
             <div id="sectionLagarto" class="section reptil-section">
+
+                <!-- Campos comunes -->
+                <label class="label-select">Nombre de la mascota *</label>
+                <input class="namee" type="text" name="nombre_mascota" required>
+
+                <label class="label-select">Fecha de nacimiento *</label>
+                <input class="namee" type="date" name="fecha_nacimiento" required>
+
+                <label class="label-select">Sexo *</label>
+                <select class="namee" name="sexo" required>
+                    <option value="">Selecciona sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+
+                <label class="label-select">Foto de la mascota</label>
+                <input class="namee" type="file" name="foto" accept="image/*">
+
                 <label class="label-select">Especie *</label>
                 <select class="namee" name="especie_lagarto" id="especie_lagarto">
             <option value="">Selecciona especie</option>
@@ -911,6 +965,22 @@
         ➕ Agregar otro lagarto
     </button>
             <div id="sectionSerpiente" class="section reptil-section">
+                <!-- Campos comunes -->
+                <label class="label-select">Nombre de la mascota *</label>
+                <input class="namee" type="text" name="nombre_mascota" required>
+
+                <label class="label-select">Fecha de nacimiento *</label>
+                <input class="namee" type="date" name="fecha_nacimiento" required>
+
+                <label class="label-select">Sexo *</label>
+                <select class="namee" name="sexo" required>
+                    <option value="">Selecciona sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+
+                <label class="label-select">Foto de la mascota</label>
+                <input class="namee" type="file" name="foto" accept="image/*">
 
                 <label class="label-select">Especie *</label>
                 <!-- CORRECCIÓN 3: Se añade name -->
@@ -1005,6 +1075,22 @@
 
             <!-- ==================== TORTUGA ==================== -->
             <div id="sectionTortuga" class="section reptil-section">
+                <!-- Campos comunes -->
+                <label class="label-select">Nombre de la mascota *</label>
+                <input class="namee" type="text" name="nombre_mascota" required>
+
+                <label class="label-select">Fecha de nacimiento *</label>
+                <input class="namee" type="date" name="fecha_nacimiento" required>
+
+                <label class="label-select">Sexo *</label>
+                <select class="namee" name="sexo" required>
+                    <option value="">Selecciona sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+
+                <label class="label-select">Foto de la mascota</label>
+                <input class="namee" type="file" name="foto" accept="image/*">
 
                 <label class="label-select">Especie *</label>
                 <!-- CORRECCIÓN 4: Se añade name -->

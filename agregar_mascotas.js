@@ -1,245 +1,100 @@
-// === Función para renombrar IDs internos ===
+// === Función para renombrar IDs y Names internos ===
 function renombrarIDsInternos(clon, contador) {
-
-    // Renombrar IDs internos
     clon.querySelectorAll("[id]").forEach(el => {
         el.id = el.id + "_" + contador;
     });
-
-    // Renombrar NAME internos
     clon.querySelectorAll("[name]").forEach(el => {
         el.name = el.name + "_" + contador;
     });
 }
 
-
-// === Selección de botones y elementos ===
-const botonPerro = document.getElementById("agregarMascota");
-const botonGato = document.getElementById("agregarMascotaGato");
+// === Selección de elementos del DOM ===
 const selectorTipo = document.getElementById("tipoMascota");
-const contenedorPerros = document.getElementById("mascotasContainer");
-const contenedorGatos = document.getElementById("mascotasContainerGato");
+const botonesEspecies = {
+    "Perro": document.getElementById("agregarMascota"),
+    "Gato": document.getElementById("agregarMascotaGato"),
+    "Ave": document.getElementById("agregarMascotaAve"),
+    "Lagarto": document.getElementById("agregarMascotaLagarto"),
+    "Serpiente": document.getElementById("agregarMascotaSerpiente"),
+    "Tortuga": document.getElementById("agregarMascotaTortuga")
+};
 
-// Ocultamos ambos botones al inicio
-botonPerro.style.display = "none";
-botonGato.style.display = "none";
+const contenedores = {
+    "Perro": document.getElementById("mascotasContainer"),
+    "Gato": document.getElementById("mascotasContainerGato"),
+    "Ave": document.getElementById("mascotasContainerAve"),
+    "Lagarto": document.getElementById("mascotasContainerLagarto"),
+    "Serpiente": document.getElementById("mascotasContainerSerpiente"),
+    "Tortuga": document.getElementById("mascotasContainerTortuga")
+};
 
-// Escuchamos cambios en el selector
+// Contadores para cada especie
+const contadores = { "Perro": 1, "Gato": 1, "Ave": 1, "Lagarto": 1, "Serpiente": 1, "Tortuga": 1 };
+
+// Ocultar todos los botones al inicio
+Object.values(botonesEspecies).forEach(btn => { if (btn) btn.style.display = "none"; });
+
+// Mostrar botón según especie seleccionada
 selectorTipo.addEventListener("change", () => {
-    const tipo = selectorTipo.value;
-
-    // Ocultamos ambos primero
-    botonPerro.style.display = "none";
-    botonGato.style.display = "none";
-
-    // Mostramos solo el botón correspondiente
-    if (tipo === "Perro") {
-        botonPerro.style.display = "block";
-    } else if (tipo === "Gato") {
-        botonGato.style.display = "block";
-    }
+    Object.values(botonesEspecies).forEach(btn => { if (btn) btn.style.display = "none"; });
+    const btnActivo = botonesEspecies[selectorTipo.value];
+    if (btnActivo) btnActivo.style.display = "block";
 });
 
-// === Función para agregar y eliminar mascotas (Perro) ===
-let contadorPerro = 1;
+/**
+ * Función genérica para clonar cualquier sección de especie
+ */
+function configurarBotonAgregar(especie, idSeccionOriginal) {
+    const boton = botonesEspecies[especie];
+    if (!boton) return;
 
-botonPerro.addEventListener("click", () => {
-    const original = document.querySelector("#sectionPerro");
-    if (!original) {
-        console.error("❌ No se encontró el bloque #sectionPerro");
-        return;
-    }
+    boton.addEventListener("click", () => {
+        const original = document.querySelector(`#${idSeccionOriginal}`);
+        if (!original) return;
 
-    contadorPerro++;
-    const clon = original.cloneNode(true);
-    clon.id = `sectionPerro_${contadorPerro}`;
+        contadores[especie]++;
+        const num = contadores[especie];
+        const clon = original.cloneNode(true);
 
-    renombrarIDsInternos(clon, contadorPerro);
+        clon.id = `${idSeccionOriginal}_${num}`;
+        renombrarIDsInternos(clon, num);
 
-    // Limpiar los campos del clon
-    clon.querySelectorAll("input, select").forEach(campo => campo.value = "");
+        // Limpiar campos
+        clon.querySelectorAll("input, select, textarea").forEach(campo => {
+            if (campo.type !== 'checkbox' && campo.type !== 'radio') campo.value = "";
+            if (campo.type === 'checkbox') campo.checked = false;
+        });
 
-    // Crear botón eliminar
-    const botonEliminar = document.createElement("button");
-    botonEliminar.textContent = "🗑️ Eliminar esta mascota";
-    botonEliminar.className = "sape eliminarMascota p-2 mt-3";
-    botonEliminar.type = "button";
-    botonEliminar.addEventListener("click", () => clon.remove());
+        // Caso especial: Reiniciar vacunas si es Perro
+        if (especie === "Perro") {
+            const contVacunas = clon.querySelector('[id^="lista-vacunas-checkbox"]');
+            const contFechas = clon.querySelector('[id^="fechas-vacunas-container"]');
+            if (contFechas) contFechas.innerHTML = '';
+            if (contVacunas) cargarVacunasEnContenedor(contVacunas);
+        }
 
-    clon.appendChild(botonEliminar);
-
-    // Agregar el clon al contenedor de perros
-    contenedorPerros.appendChild(clon);
-});
-
-// === Función para agregar y eliminar mascotas (Gato) ===
-let contadorGato = 1;
-
-botonGato.addEventListener("click", () => {
-    const original = document.querySelector("#sectionGato");
-    if (!original) {
-        console.error("❌ No se encontró el bloque #sectionGato");
-        return;
-    }
-
-    contadorGato++;
-    const clon = original.cloneNode(true);
-    clon.id = `sectionGato_${contadorGato}`;
-
-    renombrarIDsInternos(clon, contadorGato);
-
-    // Limpiar los campos del clon
-    clon.querySelectorAll("input, select").forEach(campo => campo.value = "");
-
-    // Crear botón eliminar
-    const botonEliminar = document.createElement("button");
-    botonEliminar.textContent = "🗑️ Eliminar esta mascota";
-    botonEliminar.className = "sape eliminarMascota p-2 mt-3";
-    botonEliminar.type = "button";
-    botonEliminar.addEventListener("click", () => clon.remove());
-
-    clon.appendChild(botonEliminar);
-
-    // Agregar el clon al contenedor de gatos
-    contenedorGatos.appendChild(clon);
-});
-
-// === Función para agregar y eliminar mascotas (Ave) ===
-let contadorAve = 1;
-
-const botonAve = document.querySelector("#agregarMascotaAve");
-const contenedorAves = document.querySelector("#mascotasContainerAve");
-
-botonAve.addEventListener("click", () => {
-    const original = document.querySelector("#sectionAve");
-    if (!original) {
-        console.error("❌ No se encontró el bloque #sectionAve");
-        return;
-    }
-
-    contadorAve++;
-    const clon = original.cloneNode(true);
-    clon.id = `sectionAve_${contadorAve}`;
-
-    renombrarIDsInternos(clon, contadorAve);
-
-    // Limpiar los campos del clon
-    clon.querySelectorAll("input, select, textarea").forEach(campo => campo.value = "");
-
-    // Crear botón eliminar
-    const botonEliminar = document.createElement("button");
-    botonEliminar.textContent = "🗑️ Eliminar esta mascota";
-    botonEliminar.className = "sape eliminarMascota p-2 mt-3";
-    botonEliminar.type = "button";
-    botonEliminar.addEventListener("click", () => clon.remove());
-
-    clon.appendChild(botonEliminar);
-
-    // Agregar el clon al contenedor de aves
-    contenedorAves.appendChild(clon);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    const botonLagarto = document.getElementById("agregarMascotaLagarto");
-    const contenedorLagarto = document.getElementById("mascotasContainerLagarto");
-    const bloqueOriginal = document.getElementById("sectionLagarto");
-
-    let contadorLagarto = 1;
-
-    botonLagarto.addEventListener("click", () => {
-
-        const clon = bloqueOriginal.cloneNode(true);
-        contadorLagarto++;
-
-        clon.id = `sectionLagarto_${contadorLagarto}`;
-
-        renombrarIDsInternos(clon, contadorLagarto);
-
-        clon.querySelectorAll("input, select").forEach(campo => campo.value = "");
-
+        // Botón eliminar
         const btnEliminar = document.createElement("button");
-        btnEliminar.textContent = "🗑️ Eliminar este lagarto";
-        btnEliminar.type = "button";
+        btnEliminar.textContent = `🗑️ Eliminar esta mascota`;
         btnEliminar.className = "sape eliminarMascota p-2 mt-3";
-
-        btnEliminar.addEventListener("click", () => clon.remove());
-
+        btnEliminar.type = "button";
+        btnEliminar.onclick = () => clon.remove();
         clon.appendChild(btnEliminar);
 
-        contenedorLagarto.appendChild(clon);
-
+        contenedores[especie].appendChild(clon);
     });
+}
 
-});
+// Inicializar botones para cada especie
+document.addEventListener("DOMContentLoaded", () => {
+    configurarBotonAgregar("Perro", "sectionPerro");
+    configurarBotonAgregar("Gato", "sectionGato");
+    configurarBotonAgregar("Ave", "sectionAve");
+    configurarBotonAgregar("Lagarto", "sectionLagarto");
+    configurarBotonAgregar("Serpiente", "sectionSerpiente");
+    configurarBotonAgregar("Tortuga", "sectionTortuga");
 
-document.addEventListener("DOMContentLoaded", function() {
-
-    /* =====================
-       SECCIÓN SERPIENTE
-    ====================== */
-    const botonSerpiente = document.getElementById("agregarMascotaSerpiente");
-    const contenedorSerpiente = document.getElementById("mascotasContainerSerpiente");
-    const bloqueOriginalSerpiente = document.getElementById("sectionSerpiente");
-
-    let contadorSerpiente = 1;
-
-    botonSerpiente.addEventListener("click", () => {
-
-        const clon = bloqueOriginalSerpiente.cloneNode(true);
-        contadorSerpiente++;
-
-        clon.id = `sectionSerpiente_${contadorSerpiente}`;
-
-        renombrarIDsInternos(clon, contadorSerpiente);
-
-        clon.querySelectorAll("input, select").forEach(campo => campo.value = "");
-
-        const btnEliminar = document.createElement("button");
-        btnEliminar.textContent = "🗑️ Eliminar esta serpiente";
-        btnEliminar.type = "button";
-        btnEliminar.className = "sape eliminarMascota p-2 mt-3";
-
-        btnEliminar.addEventListener("click", () => clon.remove());
-
-        clon.appendChild(btnEliminar);
-
-        contenedorSerpiente.appendChild(clon);
-
-    });
-
-    /* =====================
-       SECCIÓN TORTUGA
-    ====================== */
-
-    const botonTortuga = document.getElementById("agregarMascotaTortuga");
-    const contenedorTortuga = document.getElementById("mascotasContainerTortuga");
-    const bloqueOriginalTortuga = document.getElementById("sectionTortuga");
-
-    let contadorTortuga = 1;
-
-    botonTortuga.addEventListener("click", () => {
-
-        const clon = bloqueOriginalTortuga.cloneNode(true);
-        contadorTortuga++;
-
-        clon.id = `sectionTortuga_${contadorTortuga}`;
-
-        renombrarIDsInternos(clon, contadorTortuga);
-
-        clon.querySelectorAll("input, select").forEach(campo => campo.value = "");
-
-        const btnEliminar = document.createElement("button");
-        btnEliminar.textContent = "🗑️ Eliminar esta tortuga";
-        btnEliminar.type = "button";
-        btnEliminar.className = "sape eliminarMascota p-2 mt-3";
-
-        btnEliminar.addEventListener("click", () => clon.remove());
-
-        clon.appendChild(btnEliminar);
-
-        contenedorTortuga.appendChild(clon);
-
-    });
-
+    // Cargar vacunas iniciales para el primer perro
+    const contVacunasInicial = document.getElementById('lista-vacunas-checkbox');
+    if (contVacunasInicial) cargarVacunasEnContenedor(contVacunasInicial);
 });

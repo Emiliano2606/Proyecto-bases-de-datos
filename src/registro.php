@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         // 7. CONFIRMAR TRANSACCIÓN y Redirigir
         $pdo->commit(); 
-        header("Location: ../es/registro_mascota?success=1");
+        header("Location: ../es/registro_mascota.html?success=1");
         exit();
         
     } catch (PDOException $e) {
