@@ -1,91 +1,78 @@
-// Lista de chequeos preventivos y tratamientos comunes para lagartos.
-// En reptiles, el enfoque es en profilaxis y chequeos de salud, más que en vacunas virales.
 const vacunasLagarto = [
-    { nombre: "Chequeo Parasitario (Coprológico)", valor: "chequeo_parasitario" },
-    { nombre: "Desparasitación Interna (última dosis)", valor: "desparasitacion_int" },
-    { nombre: "Suplemento de Calcio y D3 (Inicio de uso)", valor: "suplemento_calcio" },
-    { nombre: "Prueba de Herpesvirus (Ophidian/Iguanid)", valor: "prueba_herpes" },
-    { nombre: "Chequeo Anual General (Fecha)", valor: "chequeo_anual" },
-    { nombre: "Gota/Enfermedad Renal (Inicio de Tratamiento)", valor: "gota_tratamiento" },
-    { nombre: "Vitaminas del Complejo B (Inicio de Terapia)", valor: "vitamina_b" },
-    { nombre: "Examen de Piel (Enfermedad Mular)", valor: "examen_piel" },
-    { nombre: "Manejo de Estomatitis (Inicio de Terapia)", valor: "estomatitis" },
-    { nombre: "Control de Ácaros (Fecha de Desinfección)", valor: "control_acaros" },
-    { nombre: "Examen de Hemoparásitos", valor: "hemoparasitos" },
-    { nombre: "Antibiótico de amplio espectro (Fecha inicio)", valor: "antibiotico_espectro" }
+    { nombre: "Chequeo Parasitario (Coprológico)", valor: 40 },
+    { nombre: "Desparasitación Interna", valor: 41 },
+    { nombre: "Suplemento de Calcio y D3", valor: 42 },
+    { nombre: "Prueba de Herpesvirus", valor: 43 },
+    { nombre: "Chequeo Anual General", valor: 44 },
+    { nombre: "Gota/Enfermedad Renal", valor: 45 },
+    { nombre: "Vitaminas del Complejo B", valor: 46 },
+    { nombre: "Examen de Piel", valor: 47 },
+    { nombre: "Manejo de Estomatitis", valor: 48 },
+    { nombre: "Control de Ácaros", valor: 49 },
+    { nombre: "Examen de Hemoparásitos", valor: 50 },
+    { nombre: "Antibiótico de amplio espectro", valor: 51 }
 ];
 
-// Función para cargar los chequeos/tratamientos como checkboxes en el contenedor 4 (Lagartos)
-function cargarVacunasLagarto() {
-    // ID único para lagartos
-    const containerCheckboxes = document.getElementById('lista-vacunas-checkbox4');
+function cargarVacunasLagarto(contenedor) {
+    if (!contenedor) return;
+    contenedor.innerHTML = '';
 
-    if (!containerCheckboxes) {
-        // console.log('No se encontró el elemento lista-vacunas-checkbox4');
-        return;
-    }
+    const seccionPadre = contenedor.closest('.section');
+    // Esto extrae el _2, _3 etc.
+    const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
-    // Limpiar contenedor
-    containerCheckboxes.innerHTML = '';
-
-    // Agregar cada chequeo/tratamiento como checkbox
     vacunasLagarto.forEach(vacuna => {
         const div = document.createElement('div');
         div.className = 'checkbox-vacuna';
-        // Usamos vacunas_lagarto[] como name
         div.innerHTML = `
-            <input type="checkbox" id="vacuna_lagarto_${vacuna.valor}" name="vacunas_lagarto[]" value="${vacuna.valor}">
-            <label for="vacuna_lagarto_${vacuna.valor}" style="margin-left: 8px;">${vacuna.nombre}</label>
+            <input type="checkbox" name="vacunas_lagarto${sufijo}[]" value="${vacuna.valor}" class="vacuna-lagarto-checkbox-input">
+            <label style="margin-left: 8px;">${vacuna.nombre}</label>
         `;
-        containerCheckboxes.appendChild(div);
-
-        // Agregar evento a cada checkbox
-        const checkbox = div.querySelector('input[type="checkbox"]');
-        checkbox.addEventListener('change', mostrarCamposFechaVacunasLagarto);
+        contenedor.appendChild(div);
     });
 }
 
-// Función para mostrar campos de fecha según chequeos/tratamientos seleccionados
-function mostrarCamposFechaVacunasLagarto() {
-    // ID único para lagartos
-    const containerFechas = document.getElementById('fechas-vacunas-container4');
-    const checkboxes = document.querySelectorAll('input[name="vacunas_lagarto[]"]:checked');
+// Delegación de eventos para Lagartos
+document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('vacuna-lagarto-checkbox-input')) {
+        const checkbox = e.target;
+        const seccionPadre = checkbox.closest('.section');
+        // Buscamos el contenedor por clase o ID que empiece por...
+        const containerFechas = seccionPadre.querySelector('.fechas-vacunas-dinamicas') || seccionPadre.querySelector('[id^="fechas-vacunas-container4"]');
+        const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
-    if (!containerFechas) return;
+        if (containerFechas) {
+            actualizarFechasLagarto(seccionPadre, containerFechas, sufijo);
+        }
+    }
+});
 
-    const vacunasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+function actualizarFechasLagarto(seccion, contenedor, sufijo) {
+    // 1. Aseguramos que el selector use la clase específica de lagarto
+    const seleccionados = seccion.querySelectorAll('.vacuna-lagarto-checkbox-input:checked');
+    contenedor.innerHTML = '';
 
-    // Limpiar el contenedor
-    containerFechas.innerHTML = '';
-
-    // Crear campo de fecha para cada chequeo seleccionado
-    vacunasSeleccionadas.forEach(vacunaValor => {
-        const vacunaInfo = vacunasLagarto.find(v => v.valor === vacunaValor);
+    seleccionados.forEach(checkbox => {
+        // 2. CORRECCIÓN CLAVE: Convertimos a Number para que coincida con el catálogo (40, 41...)
+        const vacunaInfo = vacunasLagarto.find(v => v.valor === Number(checkbox.value));
 
         if (vacunaInfo) {
-            const label = document.createElement('label');
-            label.className = 'label-select';
-            // Adaptar texto de la etiqueta para que sea más genérico
-            label.textContent = `Fecha de ${vacunaInfo.nombre} *`;
-
-            label.htmlFor = `fecha_lagarto_${vacunaValor}`;
-
-            const input = document.createElement('input');
-            input.className = 'namee';
-            input.type = 'date';
-
-            input.id = `fecha_lagarto_${vacunaValor}`;
-            input.name = `fecha_lagarto_${vacunaValor}`; // Nombre único para el envío
-            input.required = true;
-
-            containerFechas.appendChild(label);
-            containerFechas.appendChild(input);
+            const div = document.createElement('div');
+            div.className = 'mt-2';
+            div.innerHTML = `
+                <label class="label-select d-block">Fecha de ${vacunaInfo.nombre} *</label>
+                <input type="date" class="namee" name="fecha_${vacunaInfo.valor}${sufijo}" required>
+            `;
+            // He simplificado el name a "fecha_ID_SUFIJO" para que tu PHP sea universal
+            contenedor.appendChild(div);
         }
     });
 }
 
-// Ejecutar cuando el documento esté listo
+// Inicialización
 document.addEventListener('DOMContentLoaded', function() {
-    cargarVacunasLagarto();
-    // console.log('Sistema de chequeos preventivos para lagartos listo.');
+    const originalContainer = document.getElementById('lista-vacunas-checkbox4');
+    if (originalContainer) {
+        cargarVacunasLagarto(originalContainer);
+    }
 });

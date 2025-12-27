@@ -110,7 +110,6 @@
         #sectionAve {
             width: 930px;
             position: relative;
-            left: 165px;
         }
         
         #sectionReptil {
@@ -122,8 +121,7 @@
     <section id="registro" class="pt-5">
         <div class="container">
             <h2 class="tu">Registro de Mascota</h2>
-            <form action="../src/registro_mascota.php" method="POST">
-
+            <form action="../src/registrar_mascota.php" method="POST" enctype="multipart/form-data">
 
                 <!-- Selección especie -->
                 <label class="label-select">Tipo de mascota *</label>
@@ -141,13 +139,13 @@
 
                     <!-- Campos comunes -->
                     <label class="label-select">Nombre de la mascota *</label>
-                    <input class="namee" type="text" name="nombre_mascota" required>
+                    <input class="namee" type="text" name="nombre_perro[]" required>
 
                     <label class="label-select">Fecha de nacimiento *</label>
-                    <input class="namee" type="date" name="fecha_nacimiento" required>
+                    <input class="namee" type="date" name="fecha_nacimiento_perro">
 
                     <label class="label-select">Sexo *</label>
-                    <select class="namee" name="sexo" required>
+                    <select class="namee" name="sexo_perro" required>
                     <option value="">Selecciona sexo</option>
                     <option value="Macho">Macho</option>
                     <option value="Hembra">Hembra</option>
@@ -159,8 +157,8 @@
                     <label class="label-select">Raza *</label>
 
                     <select class="namee" name="raza_perro" id="raza_perro">
-    <option value="">Selecciona raza</option>
-</select>
+                          <option value="">Selecciona raza</option>
+                            </select>
 
                     <label class="label-select">Grupo</label>
                     <input class="namee" name="grupo_perro" type="text" id="grupo_perro" readonly>
@@ -279,7 +277,9 @@
                     </div>
 
                     <!-- Contenedor para fechas dinámicas -->
-                    <div id="fechas-vacunas-container"></div>
+                    <div id="fechas-vacunas-container" class="fechas-vacunas-dinamicas"></div>
+
+
 
 
                     <label class="label-select">Tratamientos que a llevado *</label>
@@ -295,7 +295,7 @@
 
                     <!-- Pregunta si tiene RUAC -->
                     <label class="label-select">¿Su mascota cuenta con RUAC?</label>
-                    <select class="namee" id="tieneRUAC" required>
+                    <select class="namee" name="tieneRUAC" id="tieneRUAC" required>
   <option value="">Selecciona opción</option>
   <option value="si">Sí</option>
   <option value="no">No</option>
@@ -303,29 +303,39 @@
 
                     <!-- Campo RUAC (inicialmente deshabilitado) -->
                     <label class="label-select">Ingrese el RUAC</label>
-                    <input class="namee" type="text" name="tieneRUAC" id="campoRUAC" name="ruac_perro" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
+                    <input class="namee" type="text" id="campoRUAC" name="ruac_perro" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
 
                     <script>
-                        // Escuchar cambios en el selector
-                        const selectRUAC = document.getElementById("tieneRUAC");
-                        const inputRUAC = document.getElementById("campoRUAC");
+                        // Escuchamos cambios en todo el documento para el RUAC
+                        document.addEventListener('change', function(event) {
 
-                        selectRUAC.addEventListener("change", () => {
-                            if (selectRUAC.value === "si") {
-                                inputRUAC.disabled = false; // habilita el campo
-                                inputRUAC.required = true; // lo vuelve obligatorio
-                            } else {
-                                inputRUAC.disabled = true; // lo deshabilita
-                                inputRUAC.required = false; // ya no es obligatorio
-                                inputRUAC.value = ""; // limpia el valor
+                            // Verificamos si el ID del select empieza con "tieneRUAC"
+                            if (event.target && event.target.id.startsWith('tieneRUAC')) {
+
+                                const selectActual = event.target;
+                                // Extraemos el sufijo (ej: si el ID es tieneRUAC_3, el sufijo es _3)
+                                const sufijo = selectActual.id.replace('tieneRUAC', '');
+
+                                // Buscamos el campo de texto correspondiente usando ese mismo sufijo
+                                const inputRUAC = document.getElementById('campoRUAC' + sufijo);
+
+                                if (inputRUAC) {
+                                    if (selectActual.value === "si") {
+                                        inputRUAC.disabled = false; // Habilita
+                                        inputRUAC.required = true; // Obligatorio
+                                    } else {
+                                        inputRUAC.disabled = true; // Deshabilita
+                                        inputRUAC.required = false; // No obligatorio
+                                        inputRUAC.value = ""; // Limpia
+                                    }
+                                }
                             }
                         });
                     </script>
 
-
                     <!-- Pregunta principal -->
                     <label class="label-select">¿Tiene chip su perro?</label>
-                    <select class="namee" id="chip_del_perro" name="chip_del_perro" required>
+                    <select class="namee" id="chip_del_perro" name="chip_del_perro">
   <option value="">Selecciona opción</option>
   <option value="Si">Sí</option>
   <option value="No">No</option>
@@ -353,17 +363,31 @@
                     </div>
 
                     <script>
-                        // Detectar cambios en la selección
-                        const selectChip = document.getElementById("chip_del_perro");
-                        const campoChip = document.getElementById("campo_chip");
+                        document.addEventListener('change', function(event) {
+                            // Verificamos si el cambio fue en un select de chip
+                            if (event.target && event.target.id.startsWith('chip_del_perro')) {
 
-                        selectChip.addEventListener("change", function() {
-                            if (this.value === "Si") {
-                                campoChip.style.display = "block";
-                            } else {
-                                campoChip.style.display = "none";
-                                // Opcional: limpiar los campos si elige "No"
-                                campoChip.querySelectorAll("input, select").forEach(el => el.value = "");
+                                const selectActual = event.target;
+                                // Extraemos el sufijo (ej: "" o "_2" o "_3")
+                                const sufijo = selectActual.id.replace('chip_del_perro', '');
+
+                                // Buscamos el contenedor de los campos del chip con ese sufijo
+                                const divCampoChip = document.getElementById('campo_chip' + sufijo);
+
+                                if (divCampoChip) {
+                                    if (selectActual.value === "Si") {
+                                        divCampoChip.style.display = "block";
+                                        // Opcional: Hacer que los campos internos sean requeridos si dice "Si"
+                                        divCampoChip.querySelectorAll("input, select").forEach(el => el.required = true);
+                                    } else {
+                                        divCampoChip.style.display = "none";
+                                        // Limpiamos los valores y quitamos el requerido si dice "No"
+                                        divCampoChip.querySelectorAll("input, select").forEach(el => {
+                                            el.value = "";
+                                            el.required = false;
+                                        });
+                                    }
+                                }
                             }
                         });
                     </script>
@@ -381,21 +405,20 @@
             <div name="seccion_gato" id="sectionGato" class="section">
                 <!-- Campos comunes -->
                 <label class="label-select">Nombre de la mascota *</label>
-                <input class="namee" type="text" name="nombre_mascota" required>
+                <input class="namee" type="text" name="nombre_gato[]" required>
 
                 <label class="label-select">Fecha de nacimiento *</label>
-                <input class="namee" type="date" name="fecha_nacimiento" required>
+                <input class="namee" type="date" name="fecha_nacimiento_gato">
 
                 <label class="label-select">Sexo *</label>
-                <select class="namee" name="sexo" required>
+                <select class="namee" name="sexo_gato" required>
                     <option value="">Selecciona sexo</option>
                     <option value="Macho">Macho</option>
                     <option value="Hembra">Hembra</option>
                 </select>
 
                 <label class="label-select">Foto de la mascota</label>
-                <input class="namee" type="file" name="foto" accept="image/*">
-
+                <input class="namee" type="file" name="foto_gato">
                 <label class="label-select">Raza del gato</label>
                 <select class="namee" name="raza_del_gato">
     <option value="">Selecciona opción</option>
@@ -405,8 +428,7 @@
                 <input class="namee" name="grupo_gato" type="text" id="grupo_gato" readonly>
 
                 <label class="label-select">Registro Principal</label>
-                <input class="namee" type="text" id="seccion_gato" readonly>
-
+                <input class="namee" type="text" name="registro_principal_gato" id="seccion_gato" readonly>
                 <label class="label-select">Tamaño</label>
                 <input class="namee" name="tamano_gato" type="text" id="tamano_gato" readonly>
 
@@ -514,12 +536,16 @@
                         <option>Libertad de horario</option>
                     </select>
 
-                <label class="label-select">Vacunas que tiene tu gatito </label>
-                <div id="lista-vacunas-checkbox2">
-                </div>
+                <div id="lista-vacunas-checkbox2"></div>
+
 
                 <!-- Contenedor para fechas dinámicas -->
-                <div id="fechas-vacunas-container2"></div>
+                <div id="fechas-vacunas-container2" class="fechas-vacunas-dinamicas"></div>
+
+
+
+
+
 
 
 
@@ -534,45 +560,69 @@
     <option>No tengo conocimiento de esta información</option>
     <option>Otra…</option>
 </select>
-                <!-- Pregunta si tiene RUAC -->
                 <label class="label-select">¿Su mascota cuenta con RUAC?</label>
-                <select class="namee" name="tiene_ruac_gato" id="tieneRUAC2" required>
-  <option value="">Selecciona opción</option>
-  <option value="si">Sí</option>
-  <option value="no">No</option>
+                <select class="namee" name="tiene_ruac_gato" id="tieneRUAC_gato" required>
+    <option value="">Selecciona opción</option>
+    <option value="si">Sí</option>
+    <option value="no">No</option>
 </select>
+
                 <label class="label-select">Ingrese el RUAC</label>
-                <input class="namee" type="text" id="campoRUAC2" name="ruac_gato" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
-
+                <input class="namee" type="text" id="campoRUAC_gato" name="ruac_gato" placeholder="Ejemplo: RUAC-MX-2025-00012345" disabled>
                 <script>
-                    // Escuchar cambios en el selector
-                    const selectRUAC2 = document.getElementById("tieneRUAC2");
-                    const inputRUAC2 = document.getElementById("campoRUAC2");
+                    document.addEventListener('change', function(event) {
+                        const el = event.target;
 
-                    selectRUAC2.addEventListener("change", () => {
-                        if (selectRUAC2.value === "si") {
-                            inputRUAC2.disabled = false; // habilita el campo
-                            inputRUAC2.required = true; // lo vuelve obligatorio
-                        } else {
-                            inputRUAC2.disabled = true; // lo deshabilita
-                            inputRUAC2.required = false; // ya no es obligatorio
-                            inputRUAC2.value = ""; // limpia el valor
+                        // --- LÓGICA PARA EL RUAC ---
+                        if (el.id && el.id.startsWith('tieneRUAC')) {
+                            // Extrae el sufijo (ej: "_gato", "_perro_2", "_gato_3")
+                            const sufijo = el.id.replace('tieneRUAC', '');
+                            const campoRUAC = document.getElementById('campoRUAC' + sufijo);
+
+                            if (campoRUAC) {
+                                if (el.value === "si") {
+                                    campoRUAC.disabled = false;
+                                    campoRUAC.required = true;
+                                } else {
+                                    campoRUAC.disabled = true;
+                                    campoRUAC.required = false;
+                                    campoRUAC.value = "";
+                                }
+                            }
+                        }
+
+                        // --- LÓGICA PARA EL CHIP ---
+                        if (el.id && el.id.startsWith('chip_del_')) {
+                            // Extrae el sufijo (ej: "gato", "perro", "gato_2")
+                            const sufijo = el.id.replace('chip_del_', '');
+                            const divChip = document.getElementById('campo_chip_' + sufijo);
+
+                            if (divChip) {
+                                if (el.value === "Si") {
+                                    divChip.style.display = "block";
+                                    divChip.querySelectorAll("input, select").forEach(i => i.required = true);
+                                } else {
+                                    divChip.style.display = "none";
+                                    divChip.querySelectorAll("input, select").forEach(i => {
+                                        i.required = false;
+                                        i.value = "";
+                                    });
+                                }
+                            }
                         }
                     });
                 </script>
 
 
-                <!-- Pregunta principal -->
                 <label class="label-select">¿Tiene chip su gato?</label>
-                <select class="namee" id="chip_del_gato" name="chip_del_gato" required>
-  <option value="">Selecciona opción</option>
-  <option value="Si">Sí</option>
-  <option value="No">No</option>
+                <select class="namee" id="chip_del_gato" name="chip_del_gato">
+    <option value="">Selecciona opción</option>
+    <option value="Si">Sí</option>
+    <option value="No">No</option>
 </select>
 
-                <!-- Campo: Número de chip -->
                 <div id="campo_chip_gato" style="display: none;">
-                    <label class="label-select">Número de chip de su gato</label>
+                    <label class="label-select">Número de chip</label>
                     <input class="namee" type="text" name="numero_chip_gato">
 
                     <label class="label-select">Tipo del chip del gato</label>
@@ -591,21 +641,7 @@
   </select>
                 </div>
 
-                <script>
-                    // Detectar cambios en la selección
-                    const selectChip2 = document.getElementById("chip_del_gato");
-                    const campoChip2 = document.getElementById("campo_chip_gato");
 
-                    selectChip2.addEventListener("change", function() {
-                        if (this.value === "Si") {
-                            campoChip2.style.display = "block";
-                        } else {
-                            campoChip2.style.display = "none";
-                            // Opcional: limpiar los campos si elige "No"
-                            campoChip2.querySelectorAll("input, select").forEach(el => el.value = "");
-                        }
-                    });
-                </script>
 
 
             </div>
@@ -614,47 +650,47 @@
         </div>
 
         </div>
+        <div class="container">
+            <!-- Ave -->
+            <div id="sectionAve" class="section">
+                <!-- Campos comunes -->
+                <label class="label-select">Nombre de la mascota *</label>
+                <input class="namee" type="text" name="nombre_mascota" required>
 
-        <!-- Ave -->
-        <div id="sectionAve" class="section">
-            <!-- Campos comunes -->
-            <label class="label-select">Nombre de la mascota *</label>
-            <input class="namee" type="text" name="nombre_mascota" required>
+                <label class="label-select">Fecha de nacimiento *</label>
+                <input class="namee" type="date" name="fecha_nacimiento">
 
-            <label class="label-select">Fecha de nacimiento *</label>
-            <input class="namee" type="date" name="fecha_nacimiento" required>
-
-            <label class="label-select">Sexo *</label>
-            <select class="namee" name="sexo" required>
+                <label class="label-select">Sexo *</label>
+                <select class="namee" name="sexo" required>
                     <option value="">Selecciona sexo</option>
                     <option value="Macho">Macho</option>
                     <option value="Hembra">Hembra</option>
                 </select>
 
-            <label class="label-select">Foto de la mascota</label>
-            <input class="namee" type="file" name="foto" accept="image/*">
+                <label class="label-select">Foto de la mascota</label>
+                <input class="namee" type="file" name="foto" accept="image/*">
 
-            <label class="label-select">Especie *</label>
-            <select class="namee" name="especie_ave">
+                <label class="label-select">Especie *</label>
+                <select class="namee" name="especie_ave">
     <option value="">Selecciona especie</option>
    
 </select>
 
-            <label class="label-select">Grupo Taxonomico</label>
-            <input class="namee" type="text" id="grupo_taxonomico" readonly>
+                <label class="label-select">Grupo Taxonomico</label>
+                <input class="namee" type="text" id="grupo_taxonomico" readonly>
 
-            <label class="label-select">Estatus Conservacion</label>
-            <input class="namee" type="text" id="conservacion_ave" readonly>
+                <label class="label-select">Estatus Conservacion</label>
+                <input class="namee" type="text" id="conservacion_ave" readonly>
 
-            <label class="label-select">Clasificacion de Autoridades</label>
-            <input class="namee" type="text" id="clasificacion_autoridades" readonly>
-
-
+                <label class="label-select">Clasificacion de Autoridades</label>
+                <input class="namee" type="text" id="clasificacion_autoridades" readonly>
 
 
 
-            <label class="label-select">Tamaño *</label>
-            <select class="namee" name="tamano_ave">
+
+
+                <label class="label-select">Tamaño *</label>
+                <select class="namee" name="tamano_ave">
     <option value="">Selecciona tamaño</option>
     <option value="X-Small">X-Small (Menos de 18 cm)</option>
     <option value="Small">Small (18-30 cm)</option>
@@ -663,15 +699,15 @@
     <option value="X-Large">X-Large (Más de 70 cm)</option>
 </select>
 
-            <label class="label-select">Convive con otros animales *</label>
-            <select class="namee" name="convive_ave">
+                <label class="label-select">Convive con otros animales *</label>
+                <select class="namee" name="convive_ave">
                         <option value="">Selecciona opción</option>
                         <option>Sí</option>
                         <option>No</option>
                     </select>
 
-            <label class="label-select">Alimento *</label>
-            <select class="namee" name="alimento_ave">
+                <label class="label-select">Alimento *</label>
+                <select class="namee" name="alimento_ave">
                         <option value="">Selecciona alimento</option>
                         <option>Semillas y mezclas de granos</option>
                         <option>Pellets o croquetas especializadas</option>
@@ -680,11 +716,11 @@
                         <option>Otra…</option>
                     </select>
 
-            <label class="label-select">Marca del alimento</label>
-            <input class="namee" type="text" name="marca_alimento_ave">
+                <label class="label-select">Marca del alimento</label>
+                <input class="namee" type="text" name="marca_alimento_ave">
 
-            <label class="label-select">Veces que come al día *</label>
-            <select class="namee" name="veces_comida_ave">
+                <label class="label-select">Veces que come al día *</label>
+                <select class="namee" name="veces_comida_ave">
                         <option value="">Selecciona opción</option>
                         <option>1 vez al día</option>
                         <option>2 veces al día</option>
@@ -692,9 +728,9 @@
                         <option>Libertad de horario</option>
                     </select>
 
-            <!-- Tratamientos que ha llevado -->
-            <label class="label-select">Tratamientos que ha llevado *</label>
-            <select class="namee" name="tratamientos_ave">
+                <!-- Tratamientos que ha llevado -->
+                <label class="label-select">Tratamientos que ha llevado *</label>
+                <select class="namee" name="tratamientos_ave">
     <option value="">Selecciona opción</option>
     <option>Desparasitacion</option>
     <option>Exámen copológico</option>
@@ -705,9 +741,9 @@
     <option>Otra…</option>
 </select>
 
-            <!-- Tipo de jaula en la que vive el ave -->
-            <label class="label-select">Tipo de jaula en la que vive el ave *</label>
-            <select class="namee" name="tipo_jaula_ave">
+                <!-- Tipo de jaula en la que vive el ave -->
+                <label class="label-select">Tipo de jaula en la que vive el ave *</label>
+                <select class="namee" name="tipo_jaula_ave">
     <option value="">Selecciona tipo de jaula</option>
     <option>Jaula de interior</option>
     <option>Jaula voladora</option>
@@ -719,13 +755,13 @@
     <option>No tiene jaula (vuela libre)</option>
 </select>
 
-            <!-- Dimensiones aproximadas de la jaula -->
-            <label class="label-select">Dimensiones aproximadas de la jaula *</label>
-            <input type="text" class="namee" name="dimensiones_jaula_ave" placeholder="Ancho x Largo x Profundidad">
+                <!-- Dimensiones aproximadas de la jaula -->
+                <label class="label-select">Dimensiones aproximadas de la jaula *</label>
+                <input type="text" class="namee" name="dimensiones_jaula_ave" placeholder="Ancho x Largo x Profundidad">
 
-            <!-- Tipo de plumas de su ave -->
-            <label class="label-select">Tipo de plumas de su ave *</label>
-            <select class="namee" name="tipo_plumas_ave">
+                <!-- Tipo de plumas de su ave -->
+                <label class="label-select">Tipo de plumas de su ave *</label>
+                <select class="namee" name="tipo_plumas_ave">
     <option value="">Selecciona tipo de plumas</option>
     <option>Lisas</option>
     <option>Rizadas/Encrespadas</option>
@@ -735,9 +771,9 @@
     <option>Plumas esponjosas</option>
     <option>Plumas ajustadas al cuerpo</option>
 </select>
-            <!-- Color principal del ave -->
-            <label class="label-select">Color principal *</label>
-            <select class="namee" name="color_principal_ave">
+                <!-- Color principal del ave -->
+                <label class="label-select">Color principal *</label>
+                <select class="namee" name="color_principal_ave">
     <option value="">Selecciona opción</option>
     <option>Blanco</option>
     <option>Crema</option>
@@ -754,9 +790,9 @@
     <option>Rosa</option>
 </select>
 
-            <!-- Color secundario del ave -->
-            <label class="label-select">Color secundario *</label>
-            <select class="namee" name="color_secundario_ave">
+                <!-- Color secundario del ave -->
+                <label class="label-select">Color secundario *</label>
+                <select class="namee" name="color_secundario_ave">
     <option value="">Selecciona opción</option>
     <option>Blanco</option>
     <option>Crema</option>
@@ -773,72 +809,71 @@
     <option>Rosa</option>
 </select>
 
-            <label class="label-select">Vacunas que tiene tu ave </label>
-            <div id="lista-vacunas-checkbox3">
-            </div>
+                <label class="label-select">Vacunas que tiene tu ave </label>
+                <div id="lista-vacunas-checkbox3"></div>
 
-            <!-- Contenedor para fechas dinámicas -->
-            <div id="fechas-vacunas-container3"></div>
+                <div id="fechas-vacunas-container3" class="fechas-vacunas-dinamicas"></div>
 
 
-            <label class="label-select">¿Tiene chip su ave?</label>
-            <select class="namee" id="chip_del_ave" name="chip_del_ave" required>
+                <label class="label-select">¿Tiene chip su ave?</label>
+                <select class="namee" id="chip_del_ave" name="chip_del_ave">
     <option value="">Selecciona opción</option>
     <option value="Si">Sí</option>
     <option value="No">No</option>
 </select>
 
-            <div id="campo_chip_ave" style="display: none;">
-                <label class="label-select">Número de chip de su ave</label>
-                <input class="namee" type="text" name="numero_chip_ave" id="numero_chip_ave_input">
+                <div id="campo_chip_ave" style="display: none;">
+                    <label class="label-select">Número de chip de su ave</label>
+                    <input class="namee" type="text" name="numero_chip_ave" id="numero_chip_ave_input">
 
-                <label class="label-select">Tipo del chip del ave</label>
-                <select class="namee" name="tipo_chip_ave" id="tipo_chip_ave_select">
+                    <label class="label-select">Tipo del chip del ave</label>
+                    <select class="namee" name="tipo_chip_ave" id="tipo_chip_ave_select">
         <option value="">Selecciona opción</option>
         <option value="FDX-B">FDX-B (Estándar ISO)</option>
         <option value="FDX-A">FDX-A</option>
         <option value="HDX">HDX</option>
     </select>
-            </div>
+                </div>
 
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    // CORRECCIÓN 1: Usar los IDs correctos del HTML
-                    const selectChip = document.getElementById("chip_del_ave");
-                    const campoChip = document.getElementById("campo_chip_ave");
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        // CORRECCIÓN 1: Usar los IDs correctos del HTML
+                        const selectChip = document.getElementById("chip_del_ave");
+                        const campoChip = document.getElementById("campo_chip_ave");
 
-                    // Elementos a limpiar opcionalmente
-                    const numeroChipInput = document.getElementById("numero_chip_ave_input");
-                    const tipoChipSelect = document.getElementById("tipo_chip_ave_select");
+                        // Elementos a limpiar opcionalmente
+                        const numeroChipInput = document.getElementById("numero_chip_ave_input");
+                        const tipoChipSelect = document.getElementById("tipo_chip_ave_select");
 
 
-                    // CORRECCIÓN 2: El evento debe estar en la variable correcta
-                    selectChip.addEventListener("change", function() {
-                        if (this.value === "Si") {
-                            // Muestra el div si la opción es "Si"
-                            campoChip.style.display = "block";
+                        // CORRECCIÓN 2: El evento debe estar en la variable correcta
+                        selectChip.addEventListener("change", function() {
+                            if (this.value === "Si") {
+                                // Muestra el div si la opción es "Si"
+                                campoChip.style.display = "block";
 
-                            // Hace que el número de chip sea obligatorio
-                            if (numeroChipInput) numeroChipInput.required = true;
+                                // Hace que el número de chip sea obligatorio
+                                if (numeroChipInput) numeroChipInput.required = true;
 
-                        } else {
-                            // Oculta el div si la opción es "No"
-                            campoChip.style.display = "none";
+                            } else {
+                                // Oculta el div si la opción es "No"
+                                campoChip.style.display = "none";
 
-                            // Limpia y desactiva la obligatoriedad de los campos
-                            if (numeroChipInput) {
-                                numeroChipInput.value = "";
-                                numeroChipInput.required = false;
+                                // Limpia y desactiva la obligatoriedad de los campos
+                                if (numeroChipInput) {
+                                    numeroChipInput.value = "";
+                                    numeroChipInput.required = false;
+                                }
+                                if (tipoChipSelect) tipoChipSelect.value = "";
                             }
-                            if (tipoChipSelect) tipoChipSelect.value = "";
-                        }
+                        });
                     });
-                });
-            </script>
+                </script>
+
+            </div>
             <div id="mascotasContainerAve"></div>
             <button type="button" class="sape p-2 mt-3" id="agregarMascotaAve">➕ Agregar otra ave</button>
         </div>
-
         <!-- Reptil -->
         <div id="sectionReptil" class="section">
             <label class="label-select">Tipo de reptil *</label>
@@ -857,7 +892,7 @@
                 <input class="namee" type="text" name="nombre_mascota" required>
 
                 <label class="label-select">Fecha de nacimiento *</label>
-                <input class="namee" type="date" name="fecha_nacimiento" required>
+                <input class="namee" type="date" name="fecha_nacimiento">
 
                 <label class="label-select">Sexo *</label>
                 <select class="namee" name="sexo" required>
@@ -914,7 +949,7 @@
                 </div>
 
                 <!-- Contenedor para fechas dinámicas -->
-                <div id="fechas-vacunas-container4"></div>
+                <div id="fechas-vacunas-container4" class="fechas-vacunas-dinamicas"></div>
 
 
 
@@ -970,7 +1005,7 @@
                 <input class="namee" type="text" name="nombre_mascota" required>
 
                 <label class="label-select">Fecha de nacimiento *</label>
-                <input class="namee" type="date" name="fecha_nacimiento" required>
+                <input class="namee" type="date" name="fecha_nacimiento">
 
                 <label class="label-select">Sexo *</label>
                 <select class="namee" name="sexo" required>
@@ -1038,8 +1073,7 @@
                 </div>
 
                 <!-- Contenedor para fechas dinámicas -->
-                <div id="fechas-vacunas-container5"></div>
-
+                <div id="fechas-vacunas-container5" class="fechas-vacunas-dinamicas"></div>
 
                 <label class="label-select">Marca del alimento</label>
                 <!-- CORRECCIÓN 3: Se añade name -->
@@ -1080,7 +1114,7 @@
                 <input class="namee" type="text" name="nombre_mascota" required>
 
                 <label class="label-select">Fecha de nacimiento *</label>
-                <input class="namee" type="date" name="fecha_nacimiento" required>
+                <input class="namee" type="date" name="fecha_nacimiento">
 
                 <label class="label-select">Sexo *</label>
                 <select class="namee" name="sexo" required>
@@ -1124,8 +1158,7 @@
                 </div>
 
                 <!-- Contenedor para fechas dinámicas -->
-                <div id="fechas-vacunas-container6"></div>
-
+                <div id="fechas-vacunas-container6" class="fechas-vacunas-dinamicas"></div>
                 <label class="label-select">¿Qué alimentos consume?</label>
                 <!-- CORRECCIÓN 4: Se añade name -->
                 <select class="namee" name="alimentos_tortuga" id="alimentos_tortuga" multiple></select>
@@ -1209,70 +1242,112 @@
             .catch(error => console.error('Error cargando JSON:', error));
 
 
+        // Función para activar/desactivar validación según visibilidad
+        function actualizarRequired(seccionActiva) {
+            // 1. Buscamos todas las secciones
+            const todasLasSecciones = document.querySelectorAll('.section, #sectionLagarto, #sectionSerpiente, #sectionTortuga');
 
-        const tipoMascota = document.getElementById("tipoMascota");
-        const sectionPerro = document.getElementById("sectionPerro");
-        const sectionGato = document.getElementById("sectionGato");
-        const sectionAve = document.getElementById("sectionAve");
-        const sectionReptil = document.getElementById("sectionReptil");
-        const tipoReptil = document.getElementById("tipoReptil");
-        const sectionLagarto = document.getElementById("sectionLagarto");
-        const sectionSerpiente = document.getElementById("sectionSerpiente");
-        const sectionTortuga = document.getElementById("sectionTortuga");
+            todasLasSecciones.forEach(seccion => {
+                // 2. Buscamos todos los inputs, selects y textareas dentro de la sección
+                const campos = seccion.querySelectorAll('input, select, textarea');
 
+                if (seccion === seccionActiva) {
+                    // Si es la sección que estamos mostrando, le ponemos required a los que deberían tenerlo
+                    // OJO: Solo a los que tú quieras que sean obligatorios (ej: los que tengan clase "obligatorio")
+                    campos.forEach(c => {
+                        if (c.hasAttribute('data-required')) c.required = true;
+                    });
+                } else if (seccion.style.display === "none") {
+                    // Si la sección está oculta, le QUITAMOS el required sí o sí
+                    campos.forEach(c => {
+                        if (c.required) {
+                            c.setAttribute('data-required', 'true'); // Guardamos la marca de que era obligatorio
+                            c.required = false;
+                        }
+                    });
+                }
+            });
+        }
+
+        // Evento Principal (Perro, Gato, etc.)
         tipoMascota.addEventListener("change", function() {
-            sectionPerro.style.display = "none";
-            sectionGato.style.display = "none";
-            sectionAve.style.display = "none";
-            sectionReptil.style.display = "none";
-            sectionLagarto.style.display = "none";
-            sectionSerpiente.style.display = "none";
-            sectionTortuga.style.display = "none";
+            const secciones = [sectionPerro, sectionGato, sectionAve, sectionReptil, sectionLagarto, sectionSerpiente, sectionTortuga];
+            secciones.forEach(s => s.style.display = "none");
 
-            if (this.value === "Perro") sectionPerro.style.display = "block";
-            if (this.value === "Gato") sectionGato.style.display = "block";
-            if (this.value === "Ave") sectionAve.style.display = "block";
-            if (this.value === "Reptil") sectionReptil.style.display = "block";
+            let activa = null;
+            if (this.value === "Perro") activa = sectionPerro;
+            if (this.value === "Gato") activa = sectionGato;
+            if (this.value === "Ave") activa = sectionAve;
+            if (this.value === "Reptil") activa = sectionReptil;
+
+            if (activa) {
+                activa.style.display = "block";
+                actualizarRequired(activa);
+            }
         });
 
+        // Evento para Reptiles
         tipoReptil.addEventListener("change", function() {
             sectionLagarto.style.display = "none";
             sectionSerpiente.style.display = "none";
             sectionTortuga.style.display = "none";
 
-            if (this.value === "Lagarto") sectionLagarto.style.display = "block";
-            if (this.value === "Serpiente") sectionSerpiente.style.display = "block";
-            if (this.value === "Tortuga") sectionTortuga.style.display = "block";
+            let activaReptil = null;
+            if (this.value === "Lagarto") activaReptil = sectionLagarto;
+            if (this.value === "Serpiente") activaReptil = sectionSerpiente;
+            if (this.value === "Tortuga") activaReptil = sectionTortuga;
+
+            if (activaReptil) {
+                activaReptil.style.display = "block";
+                actualizarRequired(activaReptil);
+            }
         });
     </script>
     <script>
-        document.getElementById('raza_perro').addEventListener('change', function() {
-            const razaSeleccionada = this.value;
-            const razaInfo = razasData.find(r => r.nombre === razaSeleccionada);
+        // Escuchamos cualquier cambio en el documento
+        document.addEventListener('change', function(event) {
+            // Verificamos si el elemento que cambió es un select de raza_perro (incluyendo _2, _3, etc.)
+            if (event.target && event.target.id.startsWith('raza_perro')) {
 
-            if (razaInfo) {
-                document.getElementById('grupo_perro').value = razaInfo.grupo || '';
-                document.getElementById('seccion_perro').value = razaInfo.seccion || '';
-                document.getElementById('pais_perro').value = razaInfo.pais || '';
+                const selectActual = event.target;
+                const razaSeleccionada = selectActual.value;
 
-                // Para tamaño, tomamos el primero de la lista de tamaños del JSON
-                const tamanoSelect = document.getElementById('tamano_perro');
-                tamanoSelect.value = '';
-                if (razaInfo.tamanos.length > 0) {
-                    const tamano = razaInfo.tamanos[0];
-                    for (let opt of tamanoSelect.options) {
-                        if (opt.textContent.includes(tamano)) {
-                            tamanoSelect.value = opt.value;
-                            break;
+                // Detectamos si el ID tiene un sufijo (ej: "_2")
+                // Si el ID es "raza_perro_2", el sufijo es "_2". Si es "raza_perro", es cadena vacía.
+                const sufijo = selectActual.id.replace('raza_perro', '');
+
+                // Buscamos la info en tu base de datos JSON (razasData)
+                const razaInfo = razasData.find(r => r.nombre === razaSeleccionada);
+
+                // Obtenemos las referencias a los campos compañeros usando el sufijo
+                const campoGrupo = document.getElementById('grupo_perro' + sufijo);
+                const campoSeccion = document.getElementById('seccion_perro' + sufijo);
+                const campoPais = document.getElementById('pais_perro' + sufijo);
+                const campoTamano = document.getElementById('tamano_perro' + sufijo);
+
+                if (razaInfo) {
+                    if (campoGrupo) campoGrupo.value = razaInfo.grupo || '';
+                    if (campoSeccion) campoSeccion.value = razaInfo.seccion || '';
+                    if (campoPais) campoPais.value = razaInfo.pais || '';
+
+                    // Lógica para el tamaño
+                    if (campoTamano && razaInfo.tamanos.length > 0) {
+                        const tamanoBuscado = razaInfo.tamanos[0];
+                        campoTamano.value = ''; // Reset
+                        for (let opt of campoTamano.options) {
+                            if (opt.textContent.includes(tamanoBuscado)) {
+                                campoTamano.value = opt.value;
+                                break;
+                            }
                         }
                     }
+                } else {
+                    // Limpiar campos si no hay selección
+                    if (campoGrupo) campoGrupo.value = '';
+                    if (campoSeccion) campoSeccion.value = '';
+                    if (campoPais) campoPais.value = '';
+                    if (campoTamano) campoTamano.value = '';
                 }
-            } else {
-                // Limpiar campos si no hay info
-                document.getElementById('grupo_perro').value = '';
-                document.getElementById('seccion_perro').value = '';
-                document.getElementById('pais_perro').value = '';
-                document.getElementById('tamano_perro').value = '';
             }
         });
     </script>

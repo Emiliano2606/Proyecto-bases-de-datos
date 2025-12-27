@@ -1,0 +1,363 @@
+2025-12-27 03:07:29
+Array
+(
+    [vacunas_gato] => Array
+        (
+            [0] => 28
+            [1] => 29
+        )
+
+    [fecha_28] => 2025-12-19
+    [fecha_29] => 2025-12-24
+    [nombre_gato] => Array
+        (
+            [0] => GOKU2SFASF
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-09
+    [sexo_gato] => Macho
+    [raza_del_gato] => 13
+    [grupo_gato] => Natural / Estándar
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto
+    [caracterfisicas_gato] => Conformación típica de la raza
+    [color_principal_gato] => Blanco
+    [color_secundario_gato] => 
+    [tipo_pelo_gato] => 
+    [patron_pelo_gato] => 
+    [convive_gato] => 
+    [alimento_gato] => 
+    [marca_alimento_gato] => 
+    [veces_comida_gato] => 
+    [tiene_ruac_gato] => no
+    [chip_del_gato] => No
+    [numero_chip_gato] => 
+    [tipo_chip_gato] => 
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:05:44
+Array
+(
+    [fecha_nacimiento_perro] => 2025-12-04
+    [vacunas_perro] => Array
+        (
+            [0] => 14
+            [1] => 15
+        )
+
+    [fecha_14] => 2025-12-17
+    [fecha_15] => 2025-12-09
+    [fecha_nacimiento_perro_2] => 2025-12-17
+    [vacunas_perro_2] => Array
+        (
+            [0] => 12
+            [1] => 13
+        )
+
+    [fecha_12_2] => 2025-12-12
+    [fecha_13_2] => 2025-12-17
+    [nombre_gato] => Array
+        (
+            [0] => 
+        )
+
+    [fecha_nacimiento_gato] => 
+    [sexo_gato] => 
+    [raza_del_gato] => 
+    [grupo_gato] => 
+    [registro_principal_gato] => 
+    [tamano_gato] => 
+    [caracterfisicas_gato] => 
+    [color_principal_gato] => 
+    [color_secundario_gato] => 
+    [tipo_pelo_gato] => 
+    [patron_pelo_gato] => 
+    [convive_gato] => 
+    [alimento_gato] => 
+    [marca_alimento_gato] => 
+    [veces_comida_gato] => 
+    [tiene_ruac_gato] => 
+    [chip_del_gato] => 
+    [numero_chip_gato] => 
+    [tipo_chip_gato] => 
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:13:20
+Array
+(
+    [vacunas_gato] => Array
+        (
+            [0] => 27
+            [1] => 28
+            [2] => 29
+            [3] => 28
+            [4] => 29
+        )
+
+    [fecha_27] => 2025-12-11
+    [fecha_28] => 2025-12-17
+    [fecha_29] => 2025-12-12
+    [fecha_28_2] => 2025-12-17
+    [fecha_29_2] => 2025-12-08
+    [nombre_gato] => Array
+        (
+            [0] => GOKU
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-03
+    [sexo_gato] => Macho
+    [raza_del_gato] => 3
+    [grupo_gato] => Natural / Estándar
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto
+    [caracterfisicas_gato] => Conformación típica de la raza
+    [color_principal_gato] => Azul
+    [color_secundario_gato] => Verde
+    [tipo_pelo_gato] => Rizado
+    [patron_pelo_gato] => Manchas
+    [convive_gato] => Sí
+    [alimento_gato] => Pollo o pavo cocido
+    [marca_alimento_gato] => nupec
+    [veces_comida_gato] => 3 veces al día
+    [tiene_ruac_gato] => si
+    [ruac_gato] => 1323
+    [chip_del_gato] => Si
+    [numero_chip_gato] => hjkhj
+    [tipo_chip_gato] => HDX
+
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:14:07
+Array
+(
+    [vacunas_gato] => Array
+        (
+            [0] => 27
+            [1] => 28
+            [2] => 29
+            [3] => 28
+            [4] => 29
+        )
+
+    [fecha_27] => 2025-12-11
+    [fecha_28] => 2025-12-17
+    [fecha_29] => 2025-12-12
+    [fecha_28_2] => 2025-12-17
+    [fecha_29_2] => 2025-12-08
+    [nombre_gato] => Array
+        (
+            [0] => GOKU
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-03
+    [sexo_gato] => Macho
+    [raza_del_gato] => 3
+    [grupo_gato] => Natural / Estándar
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto
+    [caracterfisicas_gato] => Conformación típica de la raza
+    [color_principal_gato] => Azul
+    [color_secundario_gato] => Verde
+    [tipo_pelo_gato] => Rizado
+    [patron_pelo_gato] => Manchas
+    [convive_gato] => Sí
+    [alimento_gato] => Pollo o pavo cocido
+    [marca_alimento_gato] => nupec
+    [veces_comida_gato] => 3 veces al día
+    [tiene_ruac_gato] => si
+    [ruac_gato] => 1323
+    [chip_del_gato] => Si
+    [numero_chip_gato] => hjkhj
+    [tipo_chip_gato] => HDX
+
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:15:38
+Array
+(
+    [nombre_gato] => Array
+        (
+            [0] => broly
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-23
+    [sexo_gato] => Macho
+    [raza_del_gato] => 10
+    [grupo_gato] => Mutación de cola corta/larga variable
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto o largo según variedad
+    [caracterfisicas_gato] => Cola corta o ausente (Manx), fuerte musculatura
+    [color_principal_gato] => 
+    [color_secundario_gato] => 
+    [tipo_pelo_gato] => 
+    [patron_pelo_gato] => 
+    [convive_gato] => 
+    [alimento_gato] => 
+    [marca_alimento_gato] => 
+    [veces_comida_gato] => 
+    [tiene_ruac_gato] => no
+    [chip_del_gato] => No
+    [numero_chip_gato] => 
+    [tipo_chip_gato] => 
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:26:21
+Array
+(
+    [nombre_gato] => Array
+        (
+            [0] => ABELITO
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-10
+    [sexo_gato] => Macho
+    [raza_del_gato] => 10
+    [grupo_gato] => Mutación de cola corta/larga variable
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto o largo según variedad
+    [caracterfisicas_gato] => Cola corta o ausente (Manx), fuerte musculatura
+    [color_principal_gato] => 
+    [color_secundario_gato] => 
+    [tipo_pelo_gato] => 
+    [patron_pelo_gato] => 
+    [convive_gato] => 
+    [alimento_gato] => 
+    [marca_alimento_gato] => 
+    [veces_comida_gato] => 
+    [tiene_ruac_gato] => no
+    [chip_del_gato] => No
+    [numero_chip_gato] => 
+    [tipo_chip_gato] => 
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:26:46
+Array
+(
+    [nombre_gato] => Array
+        (
+            [0] => ABELITO2
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-10
+    [sexo_gato] => Macho
+    [raza_del_gato] => 10
+    [grupo_gato] => Mutación de cola corta/larga variable
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto o largo según variedad
+    [caracterfisicas_gato] => Cola corta o ausente (Manx), fuerte musculatura
+    [color_principal_gato] => 
+    [color_secundario_gato] => 
+    [tipo_pelo_gato] => 
+    [patron_pelo_gato] => 
+    [convive_gato] => 
+    [alimento_gato] => 
+    [marca_alimento_gato] => 
+    [veces_comida_gato] => 
+    [tiene_ruac_gato] => no
+    [chip_del_gato] => No
+    [numero_chip_gato] => 
+    [tipo_chip_gato] => 
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:28:48
+Array
+(
+    [nombre_gato] => Array
+        (
+            [0] => YAMCHA1
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-14
+    [sexo_gato] => Macho
+    [raza_del_gato] => 12
+    [grupo_gato] => Desarrollado para apariencia salvaje
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto
+    [caracterfisicas_gato] => Cuerpo musculoso, aspecto 'salvaje'
+    [color_principal_gato] => 
+    [color_secundario_gato] => 
+    [tipo_pelo_gato] => 
+    [patron_pelo_gato] => 
+    [convive_gato] => 
+    [alimento_gato] => 
+    [marca_alimento_gato] => 
+    [veces_comida_gato] => 
+    [tiene_ruac_gato] => no
+    [chip_del_gato] => No
+    [numero_chip_gato] => 
+    [tipo_chip_gato] => 
+    [fecha_nacimiento] => 
+)
+
+
+2025-12-27 19:30:12
+Array
+(
+    [vacunas_gato] => Array
+        (
+            [0] => 27
+            [1] => 28
+            [2] => 29
+        )
+
+    [fecha_27] => 2025-12-12
+    [fecha_28] => 2025-12-16
+    [fecha_29] => 2025-12-24
+    [nombre_gato] => Array
+        (
+            [0] => TUTNAKMAON
+        )
+
+    [fecha_nacimiento_gato] => 2025-12-14
+    [sexo_gato] => Macho
+    [raza_del_gato] => 12
+    [grupo_gato] => Desarrollado para apariencia salvaje
+    [registro_principal_gato] => TICA / CFA / FIFe (varía)
+    [tamano_gato] => Mediano
+    [peso_gato] => 3 - 6 kg
+    [tipopelaje_gato] => Corto
+    [caracterfisicas_gato] => Cuerpo musculoso, aspecto 'salvaje'
+    [color_principal_gato] => 
+    [color_secundario_gato] => 
+    [tipo_pelo_gato] => 
+    [patron_pelo_gato] => 
+    [convive_gato] => 
+    [alimento_gato] => 
+    [marca_alimento_gato] => 
+    [veces_comida_gato] => 
+    [tiene_ruac_gato] => no
+    [chip_del_gato] => No
+    [numero_chip_gato] => 
+    [tipo_chip_gato] => 
+    [fecha_nacimiento] => 
+)
+
+

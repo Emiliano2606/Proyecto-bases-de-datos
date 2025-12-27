@@ -1,32 +1,28 @@
 const vacunasPerro = [
-    { nombre: "Rabia", valor: "rabia" },
-    { nombre: "Moquillo (Distemper)", valor: "moquillo" },
-    { nombre: "Parvovirus", valor: "parvovirus" },
-    { nombre: "Hepatitis canina (Adenovirus-2)", valor: "hepatitis" },
-    { nombre: "Leptospirosis", valor: "leptospirosis" },
-    { nombre: "Traqueobronquitis (Bordetella)", valor: "traqueobronquitis" },
-    { nombre: "Influenza canina H3N2", valor: "influenza_h3n2" },
-    { nombre: "Influenza canina H3N8", valor: "influenza_h3n8" },
-    { nombre: "Coronavirus canino", valor: "coronavirus" },
-    { nombre: "Giardia", valor: "giardia" },
-    { nombre: "Leishmaniosis", valor: "leishmaniosis" },
-    { nombre: "Polivalente (Moquillo + Hepatitis + Parvovirus)", valor: "polivalente_basica" },
-    { nombre: "Polivalente Completa (Moquillo + Hepatitis + Parvovirus + Leptospirosis)", valor: "polivalente_completa" },
-    { nombre: "Triple (Bordetella + Parainfluenza)", valor: "triple_respiratoria" },
-    { nombre: "Vacuna contra hongosSSS (Microsporum)", valor: "hongos" }
+    { nombre: "Rabia", valor: 1 },
+    { nombre: "Moquillo (Distemper)", valor: 2 },
+    { nombre: "Parvovirus", valor: 3 },
+    { nombre: "Hepatitis canina (Adenovirus-2)", valor: 4 },
+    { nombre: "Leptospirosis", valor: 5 },
+    { nombre: "Traqueobronquitis (Bordetella)", valor: 6 },
+    { nombre: "Influenza canina H3N2", valor: 7 },
+    { nombre: "Influenza canina H3N8", valor: 8 },
+    { nombre: "Coronavirus canino", valor: 9 },
+    { nombre: "Giardia", valor: 10 },
+    { nombre: "Leishmaniosis", valor: 11 },
+    { nombre: "Polivalente (Básica)", valor: 12 },
+    { nombre: "Polivalente Completa", valor: 13 },
+    { nombre: "Triple (Respiratoria)", valor: 14 },
+    { nombre: "Vacuna contra hongos (Microsporum)", valor: 15 }
 ];
 
-/**
- * Carga los checkboxes de vacunas en un contenedor específico.
- * Detecta automáticamente si el contenedor pertenece a un clon para añadir sufijos.
- */
 function cargarVacunasEnContenedor(contenedor) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
 
+    // En lugar de usar document.getElementById, usamos el contenedor que ya recibimos
     const seccionPadre = contenedor.closest('.section');
-    const idPartes = seccionPadre.id.split('_');
-    const sufijo = idPartes.length > 1 ? '_' + idPartes[idPartes.length - 1] : '';
+    const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
     vacunasPerro.forEach(vacuna => {
         const div = document.createElement('div');
@@ -39,19 +35,20 @@ function cargarVacunasEnContenedor(contenedor) {
     });
 }
 
-/**
- * Escucha cambios en los checkboxes de vacunas usando delegación de eventos.
- * Funciona para elementos originales y clonados.
- */
+// DELEGACIÓN DE EVENTOS: Esto hace que funcione en clones automáticamente
 document.addEventListener('change', function(e) {
     if (e.target.classList.contains('vacuna-checkbox-input')) {
-        const seccionPadre = e.target.closest('.section');
-        const containerFechas = seccionPadre.querySelector('[id^="fechas-vacunas-container"]');
+        const checkbox = e.target;
+        const seccionPadre = checkbox.closest('.section');
 
-        const idPartes = seccionPadre.id.split('_');
-        const sufijo = idPartes.length > 1 ? '_' + idPartes[idPartes.length - 1] : '';
+        // BUSQUEDA CLAVE: Buscamos por CLASE dentro de esta sección específica
+        const containerFechas = seccionPadre.querySelector('.fechas-vacunas-dinamicas');
 
-        actualizarFechasDeEstaMascota(seccionPadre, containerFechas, sufijo);
+        const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
+
+        if (containerFechas) {
+            actualizarFechasDeEstaMascota(seccionPadre, containerFechas, sufijo);
+        }
     }
 });
 
@@ -60,12 +57,14 @@ function actualizarFechasDeEstaMascota(seccion, contenedor, sufijo) {
     contenedor.innerHTML = '';
 
     seleccionados.forEach(checkbox => {
-        const vacunaInfo = vacunasPerro.find(v => v.valor === checkbox.value);
+        // CORRECCIÓN: Convertimos checkbox.value a Number para que coincida con la lista
+        const vacunaInfo = vacunasPerro.find(v => v.valor === Number(checkbox.value));
+
         if (vacunaInfo) {
             const div = document.createElement('div');
             div.className = 'mt-2';
             div.innerHTML = `
-                <label class="label-select d-block">Fecha de última colocación de ${vacunaInfo.nombre} *</label>
+                <label class="label-select d-block">Fecha de ${vacunaInfo.nombre} *</label>
                 <input type="date" class="namee" name="fecha_${vacunaInfo.valor}${sufijo}" required>
             `;
             contenedor.appendChild(div);

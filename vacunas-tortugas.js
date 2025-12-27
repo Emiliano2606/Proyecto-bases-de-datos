@@ -1,89 +1,74 @@
-// Lista de chequeos preventivos y tratamientos comunes para Tortugas.
-// El enfoque está en el control de parásitos, salud de caparazón y manejo de enfermedades comunes de quelonios.
 const vacunasTortuga = [
-    { nombre: "Chequeo Parasitario (Coprológico)", valor: "chequeo_parasitario_tortuga" },
-    { nombre: "Desparasitación Interna (última dosis)", valor: "desparasitacion_int_tortuga" },
-    { nombre: "Examen de Caparazón y Plastrón", valor: "examen_caparazon" },
-    { nombre: "Prueba de Herpesvirus (Quelonios)", valor: "prueba_herpes_tortuga" },
-    { nombre: "Suplemento de Calcio y D3 (Inicio de uso)", valor: "suplemento_calcio_tortuga" },
-    { nombre: "Revisión Anual Veterinaria (Fecha)", valor: "chequeo_anual_tortuga" },
-    { nombre: "Tratamiento por Rinovirus/Neumonía", valor: "tratamiento_neumonia_tortuga" },
-    { nombre: "Tratamiento por Deficiencia de Vitamina A (Ojos)", valor: "tratamiento_vitamina_a" },
-    { nombre: "Manejo de Gota/Enfermedad Renal", valor: "manejo_gota_tortuga" },
-    { nombre: "Análisis de Hemoparásitos", valor: "hemoparasitos_tortuga" }
+    { nombre: "Chequeo Parasitario (Coprológico)", valor: 62 },
+    { nombre: "Desparasitación Interna", valor: 63 },
+    { nombre: "Examen de Caparazón y Plastrón", valor: 64 },
+    { nombre: "Prueba de Herpesvirus (Quelonios)", valor: 65 },
+    { nombre: "Suplemento de Calcio y D3", valor: 66 },
+    { nombre: "Revisión Anual Veterinaria", valor: 67 },
+    { nombre: "Tratamiento por Rinovirus/Neumonía", valor: 68 },
+    { nombre: "Tratamiento por Deficiencia de Vitamina A", valor: 69 },
+    { nombre: "Manejo de Gota/Enfermedad Renal", valor: 70 },
+    { nombre: "Análisis de Hemoparásitos", valor: 71 }
 ];
 
-// Función para cargar los chequeos/tratamientos como checkboxes en el contenedor 6 (Tortugas)
-function cargarVacunasTortuga() {
-    // ID único para tortugas
-    const containerCheckboxes = document.getElementById('lista-vacunas-checkbox6');
+function cargarVacunasTortuga(contenedor) {
+    if (!contenedor) return;
+    contenedor.innerHTML = '';
 
-    if (!containerCheckboxes) {
-        // console.log('No se encontró el elemento lista-vacunas-checkbox6');
-        return;
-    }
+    const seccionPadre = contenedor.closest('.section');
+    const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
-    // Limpiar contenedor
-    containerCheckboxes.innerHTML = '';
-
-    // Agregar cada chequeo/tratamiento como checkbox
     vacunasTortuga.forEach(vacuna => {
         const div = document.createElement('div');
         div.className = 'checkbox-vacuna';
-        // Usamos vacunas_tortuga[] como name
         div.innerHTML = `
-            <input type="checkbox" id="vacuna_tortuga_${vacuna.valor}" name="vacunas_tortuga[]" value="${vacuna.valor}">
-            <label for="vacuna_tortuga_${vacuna.valor}" style="margin-left: 8px;">${vacuna.nombre}</label>
+            <input type="checkbox" name="vacunas_tortuga${sufijo}[]" value="${vacuna.valor}" class="vacuna-tortuga-checkbox-input">
+            <label style="margin-left: 8px;">${vacuna.nombre}</label>
         `;
-        containerCheckboxes.appendChild(div);
-
-        // Agregar evento a cada checkbox
-        const checkbox = div.querySelector('input[type="checkbox"]');
-        checkbox.addEventListener('change', mostrarCamposFechaVacunasTortuga);
+        contenedor.appendChild(div);
     });
 }
 
-// Función para mostrar campos de fecha según chequeos/tratamientos seleccionados
-function mostrarCamposFechaVacunasTortuga() {
-    // ID único para tortugas
-    const containerFechas = document.getElementById('fechas-vacunas-container6');
-    const checkboxes = document.querySelectorAll('input[name="vacunas_tortuga[]"]:checked');
+// Delegación de eventos para Tortugas
+document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('vacuna-tortuga-checkbox-input')) {
+        const checkbox = e.target;
+        const seccionPadre = checkbox.closest('.section');
+        const containerFechas = seccionPadre.querySelector('.fechas-vacunas-dinamicas') || seccionPadre.querySelector('[id^="fechas-vacunas-container6"]');
+        const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
-    if (!containerFechas) return;
+        if (containerFechas) {
+            actualizarFechasTortuga(seccionPadre, containerFechas, sufijo);
+        }
+    }
+});
 
-    const vacunasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+function actualizarFechasTortuga(seccion, contenedor, sufijo) {
+    // 1. Selector corregido para la clase específica de tortuga
+    const seleccionados = seccion.querySelectorAll('.vacuna-tortuga-checkbox-input:checked');
+    contenedor.innerHTML = '';
 
-    // Limpiar el contenedor
-    containerFechas.innerHTML = '';
-
-    // Crear campo de fecha para cada chequeo seleccionado
-    vacunasSeleccionadas.forEach(vacunaValor => {
-        const vacunaInfo = vacunasTortuga.find(v => v.valor === vacunaValor);
+    seleccionados.forEach(checkbox => {
+        // 2. CORRECCIÓN: Convertir checkbox.value a Number para comparar con los valores 62-71
+        const vacunaInfo = vacunasTortuga.find(v => v.valor === Number(checkbox.value));
 
         if (vacunaInfo) {
-            const label = document.createElement('label');
-            label.className = 'label-select';
-            // Adaptar texto de la etiqueta para que sea más genérico
-            label.textContent = `Fecha de ${vacunaInfo.nombre} *`;
-
-            label.htmlFor = `fecha_tortuga_${vacunaValor}`;
-
-            const input = document.createElement('input');
-            input.className = 'namee';
-            input.type = 'date';
-
-            input.id = `fecha_tortuga_${vacunaValor}`;
-            input.name = `fecha_tortuga_${vacunaValor}`; // Nombre único para el envío
-            input.required = true;
-
-            containerFechas.appendChild(label);
-            containerFechas.appendChild(input);
+            const div = document.createElement('div');
+            div.className = 'mt-2';
+            div.innerHTML = `
+                <label class="label-select d-block">Fecha de ${vacunaInfo.nombre} *</label>
+                <input type="date" class="namee" name="fecha_${vacunaInfo.valor}${sufijo}" required>
+            `;
+            // name queda estandarizado como fecha_ID_SUFIJO (ej. fecha_62_1)
+            contenedor.appendChild(div);
         }
     });
 }
 
-// Ejecutar cuando el documento esté listo
+// Carga inicial
 document.addEventListener('DOMContentLoaded', function() {
-    cargarVacunasTortuga();
-    // console.log('Sistema de chequeos preventivos para tortugas listo.');
+    const originalContainer = document.getElementById('lista-vacunas-checkbox6');
+    if (originalContainer) {
+        cargarVacunasTortuga(originalContainer);
+    }
 });

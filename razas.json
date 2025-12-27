@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id_raza": 1,
         "nombre": "POINTER INGLÉS",
         "grupo": "Perros de muestra",
@@ -34,10 +33,10 @@
         "id_raza": 4,
         "nombre": "CAIRN TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -75,10 +74,10 @@
         "id_raza": 8,
         "nombre": "AUSTRALIAN TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "AUSTRALIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -128,7 +127,7 @@
         "id_raza": 13,
         "nombre": "TERRIER DE JUGUETE INGLÉS (NEGRO Y FUEGO)",
         "grupo": "Terriers",
-        "seccion": "Terriers de compañía",
+        "seccion": "Terriers de compaNía",
         "pais": "REINO UNIDO",
         "tamanos": [
             "Mediano"
@@ -206,7 +205,7 @@
     },
     {
         "id_raza": 22,
-        "nombre": "GRAN SABUESO AZUL DE GASCUÑA",
+        "nombre": "GRAN SABUESO AZUL DE GASCUNA",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -256,7 +255,7 @@
     },
     {
         "id_raza": 31,
-        "nombre": "PEQUEÑO SABUESO AZUL DE GASCUÑA",
+        "nombre": "PEQUENO SABUESO AZUL DE GASCUNA",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -266,7 +265,7 @@
     },
     {
         "id_raza": 32,
-        "nombre": "GRIFÓN AZUL DE GASCUÑA",
+        "nombre": "GRIFÓN AZUL DE GASCUNA",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -296,7 +295,7 @@
     },
     {
         "id_raza": 35,
-        "nombre": "BASSET AZUL DE GASCUÑA",
+        "nombre": "BASSET AZUL DE GASCUNA",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -306,7 +305,7 @@
     },
     {
         "id_raza": 36,
-        "nombre": "BASSET LEONADO DE BRETAÑA",
+        "nombre": "BASSET LEONADO DE BRETANA",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -362,7 +361,7 @@
         "seccion": "Molosoides",
         "pais": "MACEDONIA DEL NORTE, SERBIA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -383,7 +382,7 @@
         "seccion": "Tipo primitivo",
         "pais": "ÁFRICA CENTRAL",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -400,10 +399,10 @@
         "id_raza": 45,
         "nombre": "BOYERO DE MONTANA BERNES",
         "grupo": "Perros tipo pinscher y schnauzer",
-        "seccion": "Perros tipo montaña y boyeros suizos",
+        "seccion": "Perros tipo montaNa y boyeros suizos",
         "pais": "SUIZA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -411,10 +410,10 @@
         "id_raza": 46,
         "nombre": "PERRO BOYERO DE APPENZELL",
         "grupo": "Perros tipo pinscher y schnauzer",
-        "seccion": "Perros tipo montaña y boyeros suizos",
+        "seccion": "Perros tipo montaNa y boyeros suizos",
         "pais": "SUIZA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -422,10 +421,10 @@
         "id_raza": 47,
         "nombre": "PERRO BOYERO DE ENTLEBUCH",
         "grupo": "Perros tipo pinscher y schnauzer",
-        "seccion": "Perros tipo montaña y boyeros suizos",
+        "seccion": "Perros tipo montaNa y boyeros suizos",
         "pais": "SUIZA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -456,7 +455,7 @@
         "seccion": "Molosoides",
         "pais": "CANADÁ",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -535,10 +534,10 @@
         "id_raza": 58,
         "nombre": "GRAN BOYERO SUIZO",
         "grupo": "Perros tipo pinscher y schnauzer",
-        "seccion": "Perros tipo montaña y boyeros suizos",
+        "seccion": "Perros tipo montaNa y boyeros suizos",
         "pais": "SUIZA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -554,7 +553,7 @@
     },
     {
         "id_raza": 60,
-        "nombre": "SABUESO SUIZO PEQUEÑO",
+        "nombre": "SABUESO SUIZO PEQUENO",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "SUIZA",
@@ -569,7 +568,7 @@
         "seccion": "Molosoides",
         "pais": "SUIZA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -600,23 +599,23 @@
         "seccion": "Tipo Pinscher y Schnauzer",
         "pais": "AUSTRIA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
     {
         "id_raza": 65,
         "nombre": "MALTESE",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Bichons y razas semejantes",
         "pais": "CUENCA MEDITERRÁNEA CENTRAL",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 66,
-        "nombre": "GRIFÓN LEONADO DE BRETAÑA",
+        "nombre": "GRIFÓN LEONADO DE BRETANA",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -626,7 +625,7 @@
     },
     {
         "id_raza": 67,
-        "nombre": "PEQUEÑO BASSET GRIFÓN VENDEANO",
+        "nombre": "PEQUENO BASSET GRIFÓN VENDEANO",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -670,40 +669,40 @@
         "id_raza": 72,
         "nombre": "NORWICH TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 73,
         "nombre": "SCOTTISH TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 74,
         "nombre": "SEALYHAM TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 75,
         "nombre": "SKYE TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -718,12 +717,12 @@
     },
     {
         "id_raza": 77,
-        "nombre": "SPANIEL CONTINENTAL ENANO DE COMPAÑÍA",
-        "grupo": "Perros de compañía",
+        "nombre": "SPANIEL CONTINENTAL ENANO DE COMPANÍA",
+        "grupo": "Perros de compaNía",
         "seccion": "Spaniel continental enano y otros",
         "pais": "BÉLGICA, FRANCIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -740,31 +739,31 @@
     {
         "id_raza": 80,
         "nombre": "GRIFFON BRUXELLOIS",
-        "grupo": "Perros de compañía",
-        "seccion": "Perros belgas de talla pequeña",
+        "grupo": "Perros de compaNía",
+        "seccion": "Perros belgas de talla pequeNa",
         "pais": "BÉLGICA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 81,
         "nombre": "GRIFFON BELGE",
-        "grupo": "Perros de compañía",
-        "seccion": "Perros belgas de talla pequeña",
+        "grupo": "Perros de compaNía",
+        "seccion": "Perros belgas de talla pequeNa",
         "pais": "BÉLGICA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 82,
         "nombre": "PETIT BRABANÇON",
-        "grupo": "Perros de compañía",
-        "seccion": "Perros belgas de talla pequeña",
+        "grupo": "Perros de compaNía",
+        "seccion": "Perros belgas de talla pequeNa",
         "pais": "BÉLGICA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -791,17 +790,17 @@
         "id_raza": 85,
         "nombre": "WEST HIGHLAND WHITE TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 86,
         "nombre": "YORKSHIRE TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de compañía",
+        "seccion": "Terriers de compaNía",
         "pais": "REINO UNIDO",
         "tamanos": [
             "Toy"
@@ -812,7 +811,7 @@
         "nombre": "PERRO DE PASTOR CATALÁN",
         "grupo": "Perros de pastor y perros boyeros",
         "seccion": "Perros de pastor",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Grande"
         ]
@@ -832,7 +831,7 @@
         "nombre": "PODENCO IBICENCO",
         "grupo": "Perros tipo spitz y tipo primitivo",
         "seccion": "Tipo primitivo - Perros de caza",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Mediano"
         ]
@@ -842,17 +841,17 @@
         "nombre": "PERDIGUERO DE BURGOS",
         "grupo": "Perros de muestra",
         "seccion": "Perros de muestra continentales",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Grande"
         ]
     },
     {
         "id_raza": 91,
-        "nombre": "MASTÍN ESPAÑOL",
+        "nombre": "MASTÍN ESPANOL",
         "grupo": "Perros tipo pinscher y schnauzer",
         "seccion": "Molosoides",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Gigante"
         ]
@@ -862,9 +861,9 @@
         "nombre": "MASTÍN DEL PIRINEO",
         "grupo": "Perros tipo pinscher y schnauzer",
         "seccion": "Molosoides",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -885,7 +884,7 @@
         "seccion": "Tipo primitivo - Perros de caza",
         "pais": "PORTUGAL",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -951,16 +950,16 @@
     {
         "id_raza": 101,
         "nombre": "BULLDOG FRANCÉS",
-        "grupo": "Perros de compañía",
-        "seccion": "Molosoides de talla pequeña",
+        "grupo": "Perros de compaNía",
+        "seccion": "Molosoides de talla pequeNa",
         "pais": "FRANCIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 102,
-        "nombre": "PEQUEÑO MÜNSTERLÄNDER",
+        "nombre": "PEQUENO MÜNSTERLÄNDER",
         "grupo": "Perros de muestra",
         "seccion": "Perros de muestra continentales",
         "pais": "ALEMANIA",
@@ -1221,11 +1220,11 @@
     {
         "id_raza": 128,
         "nombre": "KING CHARLES SPANIEL",
-        "grupo": "Perros de compañía",
-        "seccion": "Spaniels ingleses de compañía",
+        "grupo": "Perros de compaNía",
+        "seccion": "Spaniels ingleses de compaNía",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1270,7 +1269,7 @@
     },
     {
         "id_raza": 133,
-        "nombre": "BRACO FRANCÉS - TIPO GASCUÑA",
+        "nombre": "BRACO FRANCÉS - TIPO GASCUNA",
         "grupo": "Perros de muestra",
         "seccion": "Perros de muestra continentales",
         "pais": "FRANCIA",
@@ -1303,21 +1302,21 @@
     {
         "id_raza": 136,
         "nombre": "CAVALIER KING CHARLES SPANIEL",
-        "grupo": "Perros de compañía",
-        "seccion": "Spaniels ingleses de compañía",
+        "grupo": "Perros de compaNía",
+        "seccion": "Spaniels ingleses de compaNía",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 137,
-        "nombre": "PERRO DE MONTAÑA DE LOS PIRINEOS",
+        "nombre": "PERRO DE MONTANA DE LOS PIRINEOS",
         "grupo": "Perros tipo pinscher y schnauzer",
         "seccion": "Molosoides",
         "pais": "FRANCIA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -1345,11 +1344,11 @@
     {
         "id_raza": 140,
         "nombre": "BOSTON TERRIER",
-        "grupo": "Perros de compañía",
-        "seccion": "Molosoides de talla pequeña",
+        "grupo": "Perros de compaNía",
+        "seccion": "Molosoides de talla pequeNa",
         "pais": "ESTADOS UNIDOS",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1389,7 +1388,7 @@
         "seccion": "Molosoides",
         "pais": "ALEMANIA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -1430,7 +1429,7 @@
         "seccion": "Molosoides",
         "pais": "ALEMANIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1628,10 +1627,10 @@
         "id_raza": 168,
         "nombre": "DANDIE DINMONT TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1668,11 +1667,11 @@
     {
         "id_raza": 172,
         "nombre": "CANICHE",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Caniche",
         "pais": "FRANCIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1682,7 +1681,7 @@
         "seccion": "Molosoides",
         "pais": "PORTUGAL",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -1766,7 +1765,7 @@
         "seccion": "Tipo Pinscher y Schnauzer",
         "pais": "ALEMANIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1786,7 +1785,7 @@
         "seccion": "Tipo Pinscher y Schnauzer",
         "pais": "ALEMANIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1796,7 +1795,7 @@
         "seccion": "Tipo Pinscher y Schnauzer",
         "pais": "ALEMANIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1837,7 +1836,7 @@
         "seccion": "Molosoides",
         "pais": "ALEMANIA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -1854,7 +1853,7 @@
     {
         "id_raza": 192,
         "nombre": "KROMFOHRLÄNDER",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Kromfohrländer",
         "pais": "ALEMANIA",
         "tamanos": [
@@ -1894,11 +1893,11 @@
     {
         "id_raza": 196,
         "nombre": "BOLOGNESE",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Bichons y razas semejantes",
         "pais": "ITALIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1933,12 +1932,12 @@
     },
     {
         "id_raza": 200,
-        "nombre": "PEQUEÑO LEBREL ITALIANO",
+        "nombre": "PEQUENO LEBREL ITALIANO",
         "grupo": "Lebreles",
         "seccion": "Lebreles de pelo corto",
         "pais": "ITALIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -1973,10 +1972,10 @@
     },
     {
         "id_raza": 204,
-        "nombre": "SABUESO ESPAÑOL",
+        "nombre": "SABUESO ESPANOL",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Grande"
         ]
@@ -1994,27 +1993,27 @@
     {
         "id_raza": 206,
         "nombre": "SPANIEL JAPONÉS",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Spaniels japoneses y pekineses",
         "pais": "JAPÓN",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 207,
         "nombre": "PEKINÉS",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Spaniels japoneses y pekineses",
         "pais": "CHINA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 208,
         "nombre": "SHIH TZU",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Perros tibetanos",
         "pais": "Tíbet (China)",
         "tamanos": [
@@ -2024,11 +2023,11 @@
     {
         "id_raza": 209,
         "nombre": "TERRIER TIBETANO",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Perros tibetanos",
         "pais": "Tíbet (China)",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2074,11 +2073,11 @@
     {
         "id_raza": 215,
         "nombre": "BICHON DE PELO RIZADO",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Bichons y razas semejantes",
         "pais": "BÉLGICA, FRANCIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2094,7 +2093,7 @@
     },
     {
         "id_raza": 217,
-        "nombre": "RASTREADOR MONTAÑES DE BAVIERA",
+        "nombre": "RASTREADOR MONTANES DE BAVIERA",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros de rastro",
         "pais": "ALEMANIA",
@@ -2104,8 +2103,8 @@
     },
     {
         "id_raza": 218,
-        "nombre": "CHIHUAHUEÑO",
-        "grupo": "Perros de compañía",
+        "nombre": "CHIHUAHUENO",
+        "grupo": "Perros de compaNía",
         "seccion": "Chihuahueno",
         "pais": "MÉXICO",
         "tamanos": [
@@ -2174,7 +2173,7 @@
     },
     {
         "id_raza": 225,
-        "nombre": "FILA BRASILEÑO",
+        "nombre": "FILA BRASILENO",
         "grupo": "Perros tipo pinscher y schnauzer",
         "seccion": "Molosoides",
         "pais": "BRASIL",
@@ -2189,18 +2188,18 @@
         "seccion": "Molosoides",
         "pais": "ALEMANIA, SUIZA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
     {
         "id_raza": 227,
         "nombre": "LHASA APSO",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Perros tibetanos",
         "pais": "Tíbet (China)",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2236,7 +2235,7 @@
     {
         "id_raza": 231,
         "nombre": "SPANIEL TIBETANO",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Perros tibetanos",
         "pais": "Tíbet (China)",
         "tamanos": [
@@ -2256,12 +2255,12 @@
     },
     {
         "id_raza": 233,
-        "nombre": "PEQUEÑO PERRO LEÓN",
-        "grupo": "Perros de compañía",
+        "nombre": "PEQUENO PERRO LEÓN",
+        "grupo": "Perros de compaNía",
         "seccion": "Bichons y razas semejantes",
         "pais": "FRANCIA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2288,7 +2287,7 @@
         "id_raza": 236,
         "nombre": "TERRIER SEDOSO AUSTRALIANO",
         "grupo": "Terriers",
-        "seccion": "Terriers de compañía",
+        "seccion": "Terriers de compaNía",
         "pais": "AUSTRALIA",
         "tamanos": [
             "Mediano"
@@ -2390,20 +2389,20 @@
         "id_raza": 246,
         "nombre": "TERRIER CHECO",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REPÚBLICA CHECA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 247,
-        "nombre": "PERRO DE MONTAÑA DEL ATLAS (AÏDI)",
+        "nombre": "PERRO DE MONTANA DEL ATLAS (AÏDI)",
         "grupo": "Perros tipo pinscher y schnauzer",
         "seccion": "Molosoides",
         "pais": "MARRUECOS",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -2422,7 +2421,7 @@
         "nombre": "CA DE BOU",
         "grupo": "Perros tipo pinscher y schnauzer",
         "seccion": "Molosoides",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Mediano"
         ]
@@ -2430,11 +2429,11 @@
     {
         "id_raza": 250,
         "nombre": "BICHON HABANERO",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Bichons y razas semejantes",
         "pais": "CUBA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2460,11 +2459,11 @@
     {
         "id_raza": 253,
         "nombre": "PUG",
-        "grupo": "Perros de compañía",
-        "seccion": "Molosoides de talla pequeña",
+        "grupo": "Perros de compaNía",
+        "seccion": "Molosoides de talla pequeNa",
         "pais": "CHINA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2494,17 +2493,17 @@
         "seccion": "Spitz asiáticos y razas semejantes",
         "pais": "JAPÓN",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
         "id_raza": 259,
         "nombre": "TERRIER JAPONÉS",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "JAPÓN",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2514,7 +2513,7 @@
         "seccion": "Molosoides",
         "pais": "JAPÓN",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -2555,7 +2554,7 @@
         "seccion": "Molosoides",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -2633,10 +2632,10 @@
         "id_raza": 272,
         "nombre": "NORFOLK TERRIER",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2661,7 +2660,7 @@
     },
     {
         "id_raza": 275,
-        "nombre": "RASTREADOR BRASILEÑO",
+        "nombre": "RASTREADOR BRASILENO",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "BRASIL",
@@ -2701,7 +2700,7 @@
     },
     {
         "id_raza": 279,
-        "nombre": "SABUESO DE MONTAÑA DEL MONTENEGRO",
+        "nombre": "SABUESO DE MONTANA DEL MONTENEGRO",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "MONTENEGRO",
@@ -2733,11 +2732,11 @@
     {
         "id_raza": 283,
         "nombre": "COTON DE TULEAR",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Bichons y razas semejantes",
         "pais": "MADAGASCAR",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2752,10 +2751,10 @@
     },
     {
         "id_raza": 285,
-        "nombre": "GALGO ESPAÑOL",
+        "nombre": "GALGO ESPANOL",
         "grupo": "Lebreles",
         "seccion": "Lebreles de pelo corto",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Grande"
         ]
@@ -2783,11 +2782,11 @@
     {
         "id_raza": 288,
         "nombre": "PERRO CRESTADO CHINO",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Perros sin pelo",
         "pais": "CHINA",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -2988,7 +2987,7 @@
         "seccion": "Tipo Pinscher y Schnauzer",
         "pais": "PAÍSES BAJOS",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3009,7 +3008,7 @@
         "seccion": "Tipo primitivo",
         "pais": "PERÚ",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -3118,7 +3117,7 @@
         "nombre": "PERRO DE PASTOR MALLORQUĺN",
         "grupo": "Perros de pastor y perros boyeros",
         "seccion": "Perros de pastor",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Grande"
         ]
@@ -3155,7 +3154,7 @@
     },
     {
         "id_raza": 325,
-        "nombre": "SABUESO ANGLO-FRANCÉS DE TAMAÑO MEDIANO",
+        "nombre": "SABUESO ANGLO-FRANCÉS DE TAMANO MEDIANO",
         "grupo": "Perros Tipo sabueso, perros de rastro y razas semejantes",
         "seccion": "Perros tipo sabueso",
         "pais": "FRANCIA",
@@ -3190,7 +3189,7 @@
         "seccion": "Molosoides",
         "pais": "RUSIA (FEDERACIÓN DE)",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3199,7 +3198,7 @@
         "nombre": "PODENCO CANARIO",
         "grupo": "Perros tipo spitz y tipo primitivo",
         "seccion": "Tipo primitivo - Perros de caza",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Mediano"
         ]
@@ -3222,7 +3221,7 @@
         "seccion": "Molosoides",
         "pais": "TURQUÍA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3263,16 +3262,16 @@
         "seccion": "Molosoides",
         "pais": "RUSIA (FEDERACIÓN DE)",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
     {
         "id_raza": 336,
-        "nombre": "PERRO DE AGUA ESPAÑOL",
+        "nombre": "PERRO DE AGUA ESPANOL",
         "grupo": "Perros cobradores de caza",
         "seccion": "Perros de agua",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Mediano"
         ]
@@ -3315,13 +3314,13 @@
         "seccion": "Molosoides",
         "pais": "PORTUGAL",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
     {
         "id_raza": 341,
-        "nombre": "TERRIER BRASILEÑO",
+        "nombre": "TERRIER BRASILENO",
         "grupo": "Terriers",
         "seccion": "Terriers de talla grande y media",
         "pais": "BRASIL",
@@ -3364,10 +3363,10 @@
         "id_raza": 345,
         "nombre": "TERRIER JACK RUSSELL",
         "grupo": "Terriers",
-        "seccion": "Terriers de talla pequeña",
+        "seccion": "Terriers de talla pequeNa",
         "pais": "REINO UNIDO",
         "tamanos": [
-            "Pequeño"
+            "PequeNo"
         ]
     },
     {
@@ -3375,7 +3374,7 @@
         "nombre": "PRESA CANARIO",
         "grupo": "Perros tipo pinscher y schnauzer",
         "seccion": "Molosoides",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Gigante"
         ]
@@ -3432,8 +3431,8 @@
     },
     {
         "id_raza": 352,
-        "nombre": "PEQUEÑO PERRO RUSO",
-        "grupo": "Perros de compañía",
+        "nombre": "PEQUENO PERRO RUSO",
+        "grupo": "Perros de compaNía",
         "seccion": "Spaniel continental enano y otros",
         "pais": "RUSIA (FEDERACIÓN DE)",
         "tamanos": [
@@ -3467,7 +3466,7 @@
         "seccion": "Molosoides",
         "pais": "BOSNIA Y HERZEGOVINA, CROACIA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3478,7 +3477,7 @@
         "seccion": "Tipo Pinscher y Schnauzer",
         "pais": "DINAMARCA, SUECIA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3489,7 +3488,7 @@
         "seccion": "Molosoides",
         "pais": "RUMANÍA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3546,7 +3545,7 @@
     {
         "id_raza": 363,
         "nombre": "RATONERO DE PRAGA",
-        "grupo": "Perros de compañía",
+        "grupo": "Perros de compaNía",
         "seccion": "Spaniel continental enano y otros",
         "pais": "REPÚBLICA CHECA",
         "tamanos": [
@@ -3600,7 +3599,7 @@
         "seccion": "Molosoides",
         "pais": "PORTUGAL",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3611,7 +3610,7 @@
         "seccion": "Molosoides",
         "pais": "SUIZA",
         "tamanos": [
-            "Pequeño",
+            "PequeNo",
             "Mediano"
         ]
     },
@@ -3620,7 +3619,7 @@
         "nombre": "RATONERO VALENCIANO",
         "grupo": "Terriers",
         "seccion": "Terriers de talla grande y media",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Mediano",
             "Grande"
@@ -3631,7 +3630,7 @@
         "nombre": "RATONERO BODEGUERO ANDALUZ",
         "grupo": "Terriers",
         "seccion": "Terriers de talla grande y media",
-        "pais": "ESPAÑA",
+        "pais": "ESPANA",
         "tamanos": [
             "Mediano",
             "Grande"
