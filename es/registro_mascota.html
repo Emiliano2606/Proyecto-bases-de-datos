@@ -45,6 +45,48 @@
     <link rel="stylesheet" href="../css/estilos.css">
 
 </head>
+<script>
+    // Archivo: procesar_todo.js
+    function procesarTodoAntesDeEnviar() {
+        console.log('🔄 PROCESANDO TODO ANTES DE ENVIAR...');
+
+        // 1. Procesar vacunas de PERROS
+        if (typeof procesarVacunasPerroAntesDeEnviar === 'function') {
+            procesarVacunasPerroAntesDeEnviar();
+        } else {
+            console.log('⚠️ Función de perros no disponible');
+        }
+
+        // 2. Procesar vacunas de GATOS
+        if (typeof procesarVacunasGatoAntesDeEnviar === 'function') {
+            procesarVacunasGatoAntesDeEnviar();
+        } else {
+            console.log('⚠️ Función de gatos no disponible');
+        }
+
+        // 3. Forzar envío de campos de gatos
+        if (typeof forzarEnvioCamposGatos === 'function') {
+            forzarEnvioCamposGatos();
+        }
+
+        return true;
+    }
+
+    // Configurar el listener del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                console.log('🎯 FORMULARIO ENVIÁNDOSE...');
+
+                // Procesar todo antes de enviar
+                procesarTodoAntesDeEnviar();
+
+                console.log('🚀 FORMULARIO ENVIADO');
+            });
+        }
+    });
+</script>
 
 <body>
     <style>
