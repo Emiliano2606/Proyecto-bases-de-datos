@@ -1039,14 +1039,19 @@ d-sm-none es para aparecer-->
       <div class="col-md-6">
         <div class="info-left text-center">
           <h2 class="tu">Inicia Sesión</h2>
-          <form action="" method="POST">
-            <input class="namee mt-2" type="text" name="usuario" required placeholder="Usuario">
-            <br>
-            <input class="beba mt-2" type="password" name="contraseña" required placeholder="Contraseña">
-            <br><br>
-            <a href="moduloejemplo.html" class="sape p-2 mt-2 d-none d-sm-inline-block">Enviar</a>
-            <a href="moduloejemplo.html" class="sape2 p-2 mt-2 d-sm-none">Enviar</a>
-          </form>
+<form action="../src/procesar_login.php" method="POST">
+    <input class="namee mt-2" type="text" name="usuario" required placeholder="Usuario">
+    <br>
+    <input class="beba mt-2" type="password" name="contrasena" required placeholder="Contraseña">
+    <br><br>
+    
+    <button type="submit" class="sape p-2 mt-2 d-none d-sm-inline-block" style="border:none; cursor:pointer;">
+        Iniciar Sesión
+    </button>
+    <button type="submit" class="sape2 p-2 mt-2 d-sm-none" style="border:none; cursor:pointer;">
+        Iniciar Sesión
+    </button>
+</form>
         </div>
       </div>
 

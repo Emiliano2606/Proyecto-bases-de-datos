@@ -1,6 +1,21 @@
+<?php
+session_start();
+
+// 1. Verificamos que el usuario tenga sesión, si no, al login
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: ../es/registro_mascota.html"); // Cambia esto al nombre de tu archivo de login
+    exit();
+}
+
+// 2. Variables de sesión para usar en el HTML
+$nombreUsuario = $_SESSION['nombre'];
+$apellidoUsuario = $_SESSION['apellido'];
+$emailUsuario = $_SESSION['email'];
+$telefono_principal = $_SESSION['telefono_principal'];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +23,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="../es/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
     <div class="titutifuti">
-
-
         <div class="emilianiiiii">
             <main class="tralalero-tralala">
                 <div class="sape card">
@@ -26,17 +38,17 @@
                             <h2>Chikis</h2>
                             <p>Chihuahua</p>
                             <p>5 años</p>
-                            <p>tutor</p>
+                            <p>Tutor: <?php echo htmlspecialchars($nombreUsuario); ?></p>
                         </div>
                     </div>
-
+                    
                     <div class="picoro">
-                        <h4>Información adicional</h4>
-                        <p><strong>Dueño:</strong> Camila Jazmín Hernández</p>
-                        <p><strong>Teléfono:</strong> 55-1234-5678</p>
-                        <p><strong>Dirección:</strong> Av Acueducto 937, Candelario Ticomán, CDMX</p>
-                        <p><strong>Correo:</strong> ejemplo123@gmail.com</p>
-                    </div>
+                        <h4>Información del Dueño</h4>
+                        <p><strong>Dueño:</strong> <?php echo htmlspecialchars($nombreUsuario . " " . $apellidoUsuario); ?></p>
+                        <p><strong>Correo:</strong> <?php echo htmlspecialchars($emailUsuario); ?></p>
+                        
+<p><strong>Teléfono:</strong> <?php echo htmlspecialchars($_SESSION['telefono_principal']); ?></p>                       
+<p><strong>Dirección:</strong> <?php echo htmlspecialchars($_SESSION['direccion'] ?? 'Dirección no disponible'); ?></p>                    </div>
 
                     <div class="trunk">
                         <h4>Últimos signos vitales</h4>
@@ -52,23 +64,14 @@
 
                 <div class="cabezon">
                     <div class="card cabezoni">
-                        <h4>Antecedentes</h4>
-                    </div>
-                    <div class="card cabezoni">
                         <h4>Vacunas</h4>
                         <ul>
                             <li>Rabia. <span>12/08/23</span></li>
                             <li>Moquillo canino. <span>20/09/24</span></li>
-                            <li>Parvovirus canino: -------</li>
-                            <li>Adenovirus tipo 1 y 2. -------</li>
-                            <li>Parainfluenza. -------</li>
                         </ul>
                     </div>
                     <div class="card cabezoni">
-                        <h4>Medicamento activo</h4>
-                    </div>
-                    <div class="card cabezoni">
-                        <h4>Notas de historial</h4>
+                        <h4><a href="logout.php" style="color: red; text-decoration: none;">Cerrar Sesión</a></h4>
                     </div>
                 </div>
             </main>
@@ -77,35 +80,16 @@
                 <div class="cahcitrula card">
                     <h3>Agendar consulta</h3>
                 </div>
-
-                <div class="pepe card">
-                    <h4>Consultas agendadas</h4>
-                    <div class="appointment">
-                        <div class="appointment-date">
-                            <p>05</p>
-                            <p>Sep</p>
-                            <p>25</p>
-                        </div>
-                        <div class="appointment-details">
-                            <p>Análisis de sangre</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="past-consultations card">
-                    <h4>Consultas pasadas</h4>
-                </div>
-            </aside>
+                </aside>
             <div class="page-number">12</div>
         </div>
     </div>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const profileImage = document.getElementById('profile-image');
-            profileImage.src = '../css/img2/enproceso.jpg'; // Replace with a hosted image URL
+            profileImage.src = '../css/img2/enproceso.jpg'; 
         });
     </script>
 </body>
-
 </html>
