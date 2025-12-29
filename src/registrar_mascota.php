@@ -266,6 +266,20 @@ foreach ($todosLosGatos as $gato) {
         error_log("Error en gato: " . $e->getMessage());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (isset($_POST['tipo_mascota']) && $_POST['tipo_mascota'] === 'Ave') {
 // ==============================================
 // 6. PROCESAR AVES - VERSIÓN CORREGIDA PARA MÚLTIPLES AVES
@@ -482,6 +496,226 @@ if (empty($todosLasAves)) {
 error_log("=== FIN PROCESAMIENTO AVES ===");
 error_log("Total aves procesadas exitosamente: " . count($todosLasAves));
 }
+
+
+
+
+
+// ==============================================
+// GUARDAR LAGARTOS (Lógica de Forzados)
+// ==============================================
+error_log("=== PROCESANDO SECCIÓN LAGARTOS ===");
+
+for ($i = 1; $i <= 10; $i++) {
+    $nombreForzado = $_POST["nombre_lagarto_forzado_$i"] ?? null;
+
+    if ($nombreForzado) {
+        try {
+            // 1. Insertar en MASCOTAS
+            $sqlM = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota) 
+                     VALUES (:dueno, :nom, :fec, :sex, :tipo) RETURNING idmascota";
+            $stmtM = $pdo->prepare($sqlM);
+            $stmtM->execute([
+                ':dueno' => $fk_id_dueno,
+                ':nom'   => $nombreForzado,
+                ':fec'   => $_POST["fecha_nacimiento_lag_forzado_$i"] ?: null,
+                ':sex'   => $_POST["sexo_lag_forzado_$i"] ?: null,
+                ':tipo'  => 'Lagarto'
+            ]);
+            $idLagarto = $stmtM->fetchColumn();
+
+            // 2. Insertar en DETALLES_LAGARTOS (Usa idLagarto como Primary Key)
+            $sqlD = "INSERT INTO detalles_lagartos (
+                fk_id_mascota, especie_lagarto, tamano_lagarto, clasificacion_lagarto,
+                estatus_lagarto, requerimientos_ambientales_lagarto, fuente_calor_lagarto,
+                tipo_terrario_lagarto, dimensiones_terrario_lagarto, dieta_lagarto,
+                marca_alimento_lagarto, veces_comida_lagarto, tratamientos_lagarto
+            ) VALUES (
+                :id, :esp, :tam, :cla, :est, :req, :fue, :ter, :dim, :die, :mar, :vec, :tra
+            )";
+
+            $stmtD = $pdo->prepare($sqlD);
+            $stmtD->execute([
+                ':id'  => $idLagarto,
+                ':esp' => $_POST["especie_lagarto_lag_forzado_$i"] ?: 'Desconocido',
+                ':tam' => $_POST["tamano_lagarto_lag_forzado_$i"] ?: 'N/A',
+                ':cla' => $_POST["clasificacion_lagarto_lag_forzado_$i"] ?: 'N/A',
+                ':est' => $_POST["estatus_lagarto_lag_forzado_$i"] ?: 'N/A',
+                ':req' => $_POST["requerimientos_ambientales_lagarto_lag_forzado_$i"] ?: 'N/A',
+                ':fue' => $_POST["fuente_calor_lagarto_lag_forzado_$i"] ?: 'N/A',
+                ':ter' => $_POST["tipo_terrario_lagarto_lag_forzado_$i"] ?: null,
+                ':dim' => $_POST["dimensiones_terrario_lagarto_lag_forzado_$i"] ?: null,
+                ':die' => $_POST["dieta_lagarto_lag_forzado_$i"] ?: null,
+                ':mar' => $_POST["marca_alimento_lagarto_lag_forzado_$i"] ?: null,
+                ':vec' => $_POST["veces_comida_lagarto_lag_forzado_$i"] ?: null,
+                ':tra' => $_POST["tratamientos_lagarto_lag_forzado_$i"] ?: null
+            ]);
+
+            // 3. Insertar Vacunas en HISTORIAL_VACUNACION
+            $vacunas = $_POST["vacunas_lag_forzado_$i"] ?? [];
+            foreach ($vacunas as $idVac) {
+                $fechaVac = $_POST["fecha_vacuna_lag_forzado_{$idVac}_{$i}"] ?? null;
+                if ($fechaVac) {
+                    $sqlV = "INSERT INTO historial_vacunacion (fk_id_mascota, fk_id_vacuna, fecha_aplicacion) 
+                             VALUES (?, ?, ?)";
+                    $pdo->prepare($sqlV)->execute([$idLagarto, $idVac, $fechaVac]);
+                }
+            }
+            error_log("✅ Lagarto $i guardado con éxito.");
+
+        } catch (Exception $e) {
+            error_log("❌ Error en Lagarto $i: " . $e->getMessage());
+        }
+    }
+}
+
+
+
+// ==============================================
+// PROCESAR SERPIENTES (Lógica de Forzados)
+// ==============================================
+error_log("=== INICIANDO PROCESAMIENTO SERPIENTES ===");
+
+for ($i = 1; $i <= 10; $i++) {
+    $nombreForzado = $_POST["nombre_serp_forzado_$i"] ?? null;
+
+    if ($nombreForzado) {
+        try {
+            // 1. Insertar en tabla principal MASCOTAS
+            $sqlM = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota) 
+                     VALUES (:dueno, :nom, :fec, :sex, :tipo) RETURNING idmascota";
+            $stmtM = $pdo->prepare($sqlM);
+            $stmtM->execute([
+                ':dueno' => $fk_id_dueno,
+                ':nom'   => $nombreForzado,
+                ':fec'   => $_POST["fecha_nacimiento_serp_forzado_$i"] ?: null,
+                ':sex'   => $_POST["sexo_serp_forzado_$i"] ?: null,
+                ':tipo'  => 'Serpiente'
+            ]);
+            $idMascota = $stmtM->fetchColumn();
+
+            // 2. Insertar en DETALLES_SERPIENTES (Orden exacto del formulario)
+            $sqlD = "INSERT INTO detalles_serpientes (
+                fk_id_mascota, especie_serpiente, tamano_serpiente, clasificacion_serpiente,
+                estatus_serpiente, fuente_calor_serpiente, tipo_terrario_serpiente,
+                alimentos_serpiente, marca_alimento_serpiente, veces_comida_serpiente, 
+                tipo_tratamiento_serpiente, dimensiones_terrario_serpiente
+            ) VALUES (
+                :id, :esp, :tam, :cla, :est, :fue, :ter, :ali, :mar, :vec, :tra, :dim
+            )";
+
+            $stmtD = $pdo->prepare($sqlD);
+            $stmtD->execute([
+                ':id'  => $idMascota,
+                ':esp' => $_POST["especie_serpiente_serp_forzado_$i"] ?: null,
+                ':tam' => $_POST["tamano_serpiente_serp_forzado_$i"] ?: null,
+                ':cla' => $_POST["clasificacion_serpiente_serp_forzado_$i"] ?: null,
+                ':est' => $_POST["estatus_serpiente_serp_forzado_$i"] ?: null,
+                ':fue' => $_POST["fuente_calor_serpiente_serp_forzado_$i"] ?: null,
+                ':ter' => $_POST["tipo_terrario_serpiente_serp_forzado_$i"] ?: null,
+                ':ali' => $_POST["alimentos_serpiente_serp_forzado_$i"] ?: null,
+                ':mar' => $_POST["marca_alimento_serpiente_serp_forzado_$i"] ?: null,
+                ':vec' => $_POST["veces_comida_serpiente_serp_forzado_$i"] ?: null,
+                ':tra' => $_POST["tipo_tratamiento_serpiente_serp_forzado_$i"] ?: null,
+                ':dim' => $_POST["dimensiones_terrario_serpiente_serp_forzado_$i"] ?: null
+            ]);
+
+            // 3. Insertar Vacunas en HISTORIAL_VACUNACION
+            $vacunas = $_POST["vacunas_serp_forzado_$i"] ?? [];
+            foreach ($vacunas as $idVac) {
+                $fechaVac = $_POST["fecha_v_serp_forzado_{$idVac}_{$i}"] ?? null;
+                if ($fechaVac) {
+                    $sqlV = "INSERT INTO historial_vacunacion (fk_id_mascota, fk_id_vacuna, fecha_aplicacion) 
+                             VALUES (?, ?, ?)";
+                    $pdo->prepare($sqlV)->execute([$idMascota, $idVac, $fechaVac]);
+                }
+            }
+            error_log("✅ Serpiente $i guardada correctamente.");
+
+        } catch (Exception $e) {
+            error_log("❌ Error en Serpiente $i: " . $e->getMessage());
+        }
+    }
+}
+
+
+// ==============================================
+// PROCESAR TORTUGAS (PHP)
+// ==============================================
+
+for ($i = 1; $i <= 10; $i++) {
+    $nombreForzado = $_POST["nombre_tort_forzado_$i"] ?? null;
+
+    if ($nombreForzado) {
+        try {
+            // 1. Insertar en tabla principal MASCOTAS
+            $sqlM = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota) 
+                     VALUES (:dueno, :nom, :fec, :sex, :tipo) RETURNING idmascota";
+            $stmtM = $pdo->prepare($sqlM);
+            $stmtM->execute([
+                ':dueno' => $fk_id_dueno,
+                ':nom'   => $nombreForzado,
+                ':fec'   => $_POST["fecha_nacimiento_tort_forzado_$i"] ?: null,
+                ':sex'   => $_POST["sexo_tort_forzado_$i"] ?: null,
+                ':tipo'  => 'Tortuga'
+            ]);
+            $idMascota = $stmtM->fetchColumn();
+
+            // 2. Insertar en DETALLES_TORTUGAS (Orden del Formulario)
+            $sqlD = "INSERT INTO detalles_tortugas (
+                fk_id_mascota, especie_tortuga, tamano_tortuga, clasificacion_tortuga,
+                estatus_tortuga, fuente_calor_tortuga, alimentos_tortuga, 
+                tratamientos_tortuga, veces_comida_tortuga, tipo_terrario_tortuga, 
+                dimensiones_terrario_tortuga
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            $stmtD = $pdo->prepare($sqlD);
+            $stmtD->execute([
+                $idMascota,
+                $_POST["especie_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["tamano_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["clasificacion_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["estatus_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["fuente_calor_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["alimentos_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["tratamientos_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["veces_comida_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["tipo_terrario_tortuga_tort_forzado_$i"] ?: null,
+                $_POST["dimensiones_terrario_tortuga_tort_forzado_$i"] ?: null
+            ]);
+
+            // 3. Insertar Vacunas en HISTORIAL_VACUNACION
+            $vacunasSeleccionadas = $_POST["vacunas_tort_forzado_$i"] ?? [];
+            foreach ($vacunasSeleccionadas as $idVacuna) {
+                $fechaVacuna = $_POST["fecha_v_tort_forzado_{$idVacuna}_{$i}"] ?? null;
+                if ($fechaVacuna) {
+                    $sqlV = "INSERT INTO historial_vacunacion (fk_id_mascota, fk_id_vacuna, fecha_aplicacion) 
+                             VALUES (?, ?, ?)";
+                    $pdo->prepare($sqlV)->execute([$idMascota, $idVacuna, $fechaVacuna]);
+                }
+            }
+
+        } catch (Exception $e) {
+            error_log("Error guardando tortuga $i: " . $e->getMessage());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // 6. FINALIZAR TRANSACCIÓN
     $pdo->commit();
 

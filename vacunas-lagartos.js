@@ -1,3 +1,7 @@
+// ==============================================
+// SISTEMA DE LAGARTOS - JS ACTUALIZADO
+// ==============================================
+
 const vacunasLagarto = [
     { nombre: "Chequeo Parasitario (Coprológico)", valor: 40 },
     { nombre: "Desparasitación Interna", valor: 41 },
@@ -16,9 +20,7 @@ const vacunasLagarto = [
 function cargarVacunasLagarto(contenedor) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
-
     const seccionPadre = contenedor.closest('.section');
-    // Esto extrae el _2, _3 etc.
     const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
     vacunasLagarto.forEach(vacuna => {
@@ -32,12 +34,10 @@ function cargarVacunasLagarto(contenedor) {
     });
 }
 
-// Delegación de eventos para Lagartos
 document.addEventListener('change', function(e) {
     if (e.target.classList.contains('vacuna-lagarto-checkbox-input')) {
         const checkbox = e.target;
         const seccionPadre = checkbox.closest('.section');
-        // Buscamos el contenedor por clase o ID que empiece por...
         const containerFechas = seccionPadre.querySelector('.fechas-vacunas-dinamicas') || seccionPadre.querySelector('[id^="fechas-vacunas-container4"]');
         const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
@@ -48,14 +48,11 @@ document.addEventListener('change', function(e) {
 });
 
 function actualizarFechasLagarto(seccion, contenedor, sufijo) {
-    // 1. Aseguramos que el selector use la clase específica de lagarto
     const seleccionados = seccion.querySelectorAll('.vacuna-lagarto-checkbox-input:checked');
     contenedor.innerHTML = '';
 
     seleccionados.forEach(checkbox => {
-        // 2. CORRECCIÓN CLAVE: Convertimos a Number para que coincida con el catálogo (40, 41...)
         const vacunaInfo = vacunasLagarto.find(v => v.valor === Number(checkbox.value));
-
         if (vacunaInfo) {
             const div = document.createElement('div');
             div.className = 'mt-2';
@@ -63,16 +60,72 @@ function actualizarFechasLagarto(seccion, contenedor, sufijo) {
                 <label class="label-select d-block">Fecha de ${vacunaInfo.nombre} *</label>
                 <input type="date" class="namee" name="fecha_${vacunaInfo.valor}${sufijo}" required>
             `;
-            // He simplificado el name a "fecha_ID_SUFIJO" para que tu PHP sea universal
             contenedor.appendChild(div);
         }
     });
 }
 
-// Inicialización
+// PRE-PROCESAMIENTO PARA ENVÍO (IGUAL QUE AVES)
+function procesarLagartosAntesDeEnviar() {
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    // Limpiar hiddens antiguos
+    form.querySelectorAll('[data-lagarto-hidden]').forEach(e => e.remove());
+
+    const secciones = document.querySelectorAll('#sectionLagarto, [id^="sectionLagarto_"]');
+
+    secciones.forEach((seccion, index) => {
+        const num = index + 1;
+        const sufijo = (num === 1) ? "" : "_" + num;
+
+        const nombreInput = seccion.querySelector('[name="nombre_mascota"], [name^="nombre_mascota_"]');
+
+        if (nombreInput && nombreInput.value.trim() !== "") {
+            // Nombre Forzado
+            crearHiddenLagarto(form, `nombre_lagarto_forzado_${num}`, nombreInput.value.trim());
+
+            // Mapeo de campos basado en tu tabla SQL NOT NULL
+            const campos = [
+                'fecha_nacimiento', 'sexo', 'especie_lagarto', 'tamano_lagarto',
+                'clasificacion_lagarto', 'estatus_lagarto', 'requerimientos_ambientales_lagarto',
+                'fuente_calor_lagarto', 'tipo_terrario_lagarto', 'dimensiones_terrario_lagarto',
+                'dieta_lagarto', 'marca_alimento_lagarto', 'veces_comida_lagarto', 'tratamientos_lagarto'
+            ];
+
+            campos.forEach(campo => {
+                const input = seccion.querySelector(`[name="${campo}${sufijo}"], [name="${campo}"]`);
+                if (input) {
+                    crearHiddenLagarto(form, `${campo}_lag_forzado_${num}`, input.value);
+                }
+            });
+
+            // Vacunas Forzadas
+            const vacunasChecked = seccion.querySelectorAll('.vacuna-lagarto-checkbox-input:checked');
+            vacunasChecked.forEach(v => {
+                crearHiddenLagarto(form, `vacunas_lag_forzado_${num}[]`, v.value);
+                const fechaInput = seccion.querySelector(`[name="fecha_${v.value}${sufijo}"]`);
+                if (fechaInput && fechaInput.value) {
+                    crearHiddenLagarto(form, `fecha_vacuna_lag_forzado_${v.value}_${num}`, fechaInput.value);
+                }
+            });
+        }
+    });
+}
+
+function crearHiddenLagarto(form, name, value) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    input.setAttribute('data-lagarto-hidden', '1');
+    form.appendChild(input);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const originalContainer = document.getElementById('lista-vacunas-checkbox4');
-    if (originalContainer) {
-        cargarVacunasLagarto(originalContainer);
-    }
+    if (originalContainer) cargarVacunasLagarto(originalContainer);
+
+    const form = document.querySelector('form');
+    if (form) form.addEventListener('submit', procesarLagartosAntesDeEnviar);
 });

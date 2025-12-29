@@ -1,3 +1,7 @@
+// ==============================================
+// SISTEMA DE SERPIENTES - JS FINAL
+// ==============================================
+
 const vacunasSerpiente = [
     { nombre: "Chequeo Parasitario (Coprológico)", valor: 52 },
     { nombre: "Desparasitación Interna", valor: 53 },
@@ -14,7 +18,6 @@ const vacunasSerpiente = [
 function cargarVacunasSerpiente(contenedor) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
-
     const seccionPadre = contenedor.closest('.section');
     const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
@@ -29,7 +32,6 @@ function cargarVacunasSerpiente(contenedor) {
     });
 }
 
-// Delegación de eventos para Serpientes
 document.addEventListener('change', function(e) {
     if (e.target.classList.contains('vacuna-serpiente-checkbox-input')) {
         const checkbox = e.target;
@@ -44,14 +46,11 @@ document.addEventListener('change', function(e) {
 });
 
 function actualizarFechasSerpiente(seccion, contenedor, sufijo) {
-    // 1. Selector corregido para la clase específica de serpiente
     const seleccionados = seccion.querySelectorAll('.vacuna-serpiente-checkbox-input:checked');
     contenedor.innerHTML = '';
 
     seleccionados.forEach(checkbox => {
-        // 2. CORRECCIÓN: Usar Number() para comparar con los valores 52-61
         const vacunaInfo = vacunasSerpiente.find(v => v.valor === Number(checkbox.value));
-
         if (vacunaInfo) {
             const div = document.createElement('div');
             div.className = 'mt-2';
@@ -59,16 +58,72 @@ function actualizarFechasSerpiente(seccion, contenedor, sufijo) {
                 <label class="label-select d-block">Fecha de ${vacunaInfo.nombre} *</label>
                 <input type="date" class="namee" name="fecha_${vacunaInfo.valor}${sufijo}" required>
             `;
-            // Dejamos name="fecha_52_1" (ejemplo), quitando el texto "serpiente"
             contenedor.appendChild(div);
         }
     });
 }
 
-// Carga inicial para la primera sección
+// FUNCIÓN DE PRE-PROCESAMIENTO (RECOLECCIÓN FORZADA)
+function procesarSerpientesAntesDeEnviar() {
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    // Limpiar hiddens previos
+    form.querySelectorAll('[data-serpiente-hidden]').forEach(e => e.remove());
+
+    const secciones = document.querySelectorAll('#sectionSerpiente, [id^="sectionSerpiente_"]');
+
+    secciones.forEach((seccion, index) => {
+        const num = index + 1;
+        const sufijo = (num === 1) ? "" : "_" + num;
+
+        const nombreInput = seccion.querySelector('[name="nombre_mascota"], [name^="nombre_mascota_"]');
+
+        if (nombreInput && nombreInput.value.trim() !== "") {
+            // ID Forzado Principal
+            crearHiddenSerp(form, `nombre_serp_forzado_${num}`, nombreInput.value.trim());
+
+            // Campos según orden de tu tabla SQL
+            const campos = [
+                'fecha_nacimiento', 'sexo', 'especie_serpiente', 'tamano_serpiente',
+                'clasificacion_serpiente', 'estatus_serpiente', 'fuente_calor_serpiente',
+                'tipo_terrario_serpiente', 'alimentos_serpiente', 'marca_alimento_serpiente',
+                'veces_comida_serpiente', 'tipo_tratamiento_serpiente', 'dimensiones_terrario_serpiente'
+            ];
+
+            campos.forEach(campo => {
+                const input = seccion.querySelector(`[name="${campo}${sufijo}"], [name="${campo}"]`);
+                if (input) {
+                    crearHiddenSerp(form, `${campo}_serp_forzado_${num}`, input.value);
+                }
+            });
+
+            // Vacunas Forzadas
+            const vacunasChecked = seccion.querySelectorAll('.vacuna-serpiente-checkbox-input:checked');
+            vacunasChecked.forEach(v => {
+                crearHiddenSerp(form, `vacunas_serp_forzado_${num}[]`, v.value);
+                const fechaInput = seccion.querySelector(`[name="fecha_${v.value}${sufijo}"]`);
+                if (fechaInput && fechaInput.value) {
+                    crearHiddenSerp(form, `fecha_v_serp_forzado_${v.value}_${num}`, fechaInput.value);
+                }
+            });
+        }
+    });
+}
+
+function crearHiddenSerp(form, name, value) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    input.setAttribute('data-serpiente-hidden', '1');
+    form.appendChild(input);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const originalContainer = document.getElementById('lista-vacunas-checkbox5');
-    if (originalContainer) {
-        cargarVacunasSerpiente(originalContainer);
-    }
+    if (originalContainer) cargarVacunasSerpiente(originalContainer);
+
+    const form = document.querySelector('form');
+    if (form) form.addEventListener('submit', procesarSerpientesAntesDeEnviar);
 });

@@ -1,3 +1,7 @@
+// ==============================================
+// SISTEMA DE TORTUGAS - JS FINAL
+// ==============================================
+
 const vacunasTortuga = [
     { nombre: "Chequeo Parasitario (Coprológico)", valor: 62 },
     { nombre: "Desparasitación Interna", valor: 63 },
@@ -14,7 +18,6 @@ const vacunasTortuga = [
 function cargarVacunasTortuga(contenedor) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
-
     const seccionPadre = contenedor.closest('.section');
     const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
@@ -29,7 +32,6 @@ function cargarVacunasTortuga(contenedor) {
     });
 }
 
-// Delegación de eventos para Tortugas
 document.addEventListener('change', function(e) {
     if (e.target.classList.contains('vacuna-tortuga-checkbox-input')) {
         const checkbox = e.target;
@@ -44,14 +46,11 @@ document.addEventListener('change', function(e) {
 });
 
 function actualizarFechasTortuga(seccion, contenedor, sufijo) {
-    // 1. Selector corregido para la clase específica de tortuga
     const seleccionados = seccion.querySelectorAll('.vacuna-tortuga-checkbox-input:checked');
     contenedor.innerHTML = '';
 
     seleccionados.forEach(checkbox => {
-        // 2. CORRECCIÓN: Convertir checkbox.value a Number para comparar con los valores 62-71
         const vacunaInfo = vacunasTortuga.find(v => v.valor === Number(checkbox.value));
-
         if (vacunaInfo) {
             const div = document.createElement('div');
             div.className = 'mt-2';
@@ -59,16 +58,70 @@ function actualizarFechasTortuga(seccion, contenedor, sufijo) {
                 <label class="label-select d-block">Fecha de ${vacunaInfo.nombre} *</label>
                 <input type="date" class="namee" name="fecha_${vacunaInfo.valor}${sufijo}" required>
             `;
-            // name queda estandarizado como fecha_ID_SUFIJO (ej. fecha_62_1)
             contenedor.appendChild(div);
         }
     });
 }
 
-// Carga inicial
+// FUNCIÓN DE PRE-PROCESAMIENTO PARA EL ENVÍO
+function procesarTortugasAntesDeEnviar() {
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    // Limpiar hiddens de tortugas previos
+    form.querySelectorAll('[data-tortuga-hidden]').forEach(e => e.remove());
+
+    const secciones = document.querySelectorAll('#sectionTortuga, [id^="sectionTortuga_"]');
+
+    secciones.forEach((seccion, index) => {
+        const num = index + 1;
+        const sufijo = (num === 1) ? "" : "_" + num;
+        const nombreInput = seccion.querySelector('[name="nombre_mascota"], [name^="nombre_mascota_"]');
+
+        if (nombreInput && nombreInput.value.trim() !== "") {
+            // Crear campo de nombre forzado
+            crearHiddenTort(form, `nombre_tort_forzado_${num}`, nombreInput.value.trim());
+
+            // Campos en orden de aparición del formulario
+            const campos = [
+                'fecha_nacimiento', 'sexo', 'especie_tortuga', 'tamano_tortuga',
+                'clasificacion_tortuga', 'estatus_tortuga', 'fuente_calor_tortuga',
+                'alimentos_tortuga', 'tratamientos_tortuga', 'veces_comida_tortuga',
+                'tipo_terrario_tortuga', 'dimensiones_terrario_tortuga'
+            ];
+
+            campos.forEach(campo => {
+                const input = seccion.querySelector(`[name="${campo}${sufijo}"], [name="${campo}"]`);
+                if (input) {
+                    crearHiddenTort(form, `${campo}_tort_forzado_${num}`, input.value);
+                }
+            });
+
+            // Procesar Vacunas Seleccionadas
+            seccion.querySelectorAll('.vacuna-tortuga-checkbox-input:checked').forEach(v => {
+                crearHiddenTort(form, `vacunas_tort_forzado_${num}[]`, v.value);
+                const fechaInp = seccion.querySelector(`[name="fecha_${v.value}${sufijo}"]`);
+                if (fechaInp) {
+                    crearHiddenTort(form, `fecha_v_tort_forzado_${v.value}_${num}`, fechaInp.value);
+                }
+            });
+        }
+    });
+}
+
+function crearHiddenTort(form, name, value) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    input.setAttribute('data-tortuga-hidden', '1');
+    form.appendChild(input);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const originalContainer = document.getElementById('lista-vacunas-checkbox6');
-    if (originalContainer) {
-        cargarVacunasTortuga(originalContainer);
-    }
+    if (originalContainer) cargarVacunasTortuga(originalContainer);
+
+    const form = document.querySelector('form');
+    if (form) form.addEventListener('submit', procesarTortugasAntesDeEnviar);
 });
