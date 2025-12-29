@@ -165,7 +165,7 @@ try {
         }
     }
 
- // 5. PROCESAR GATOS
+  // 5. PROCESAR GATOS
 // 5. PROCESAR GATOS
 // ==============================================
 // 5. PROCESAR GATOS - VERSIÓN CORREGIDA COMPLETA
@@ -462,9 +462,222 @@ if (empty($todosLosGatos)) {
     }
 }
 
-error_log("=== FIN PROCESAMIENTO GATOS ===");
-error_log("Total gatos procesados exitosamente: " . count($todosLosGatos));
+if (isset($_POST['tipo_mascota']) && $_POST['tipo_mascota'] === 'Ave') {
+// ==============================================
+// 6. PROCESAR AVES - VERSIÓN CORREGIDA PARA MÚLTIPLES AVES
+// ==============================================
 
+error_log("=== INICIANDO PROCESAMIENTO AVES ===");
+
+// FUNCIÓN AUXILIAR - DECLARADA UNA SOLA VEZ FUERA DEL BUCLE
+function obtenerDatoAve($campoBase, $sufijo) {
+    $campoCompleto = $campoBase . $sufijo;
+    
+    if (isset($_POST[$campoCompleto]) && !empty(trim($_POST[$campoCompleto]))) {
+        $valor = trim($_POST[$campoCompleto]);
+        error_log("   ✅ $campoCompleto = '$valor'");
+        return $valor;
+    } else {
+        error_log("   ⚠️ $campoCompleto NO encontrado o vacío");
+        return null;
+    }
+}
+
+// 1. BUSCAR TODAS LAS AVES
+$todosLasAves = [];
+
+// Método 1: Buscar campos forzados
+for ($i = 1; $i <= 10; $i++) {
+    $campoForzado = 'nombre_ave_forzado_' . $i;
+    if (isset($_POST[$campoForzado]) && !empty(trim($_POST[$campoForzado]))) {
+        $nombreLimpio = trim($_POST[$campoForzado]);
+        $todosLasAves[] = [
+            'nombre' => $nombreLimpio,
+            'indice' => $i - 1,
+            'tipo' => 'forzado'
+        ];
+        error_log("✅ Ave forzada $i: '$nombreLimpio'");
+    }
+}
+
+// Método 2: Buscar primera ave (sin sufijo)
+if (isset($_POST['nombre_mascota']) && !empty(trim($_POST['nombre_mascota']))) {
+    $nombreLimpio = trim($_POST['nombre_mascota']);
+    
+    $existe = false;
+    foreach ($todosLasAves as $ave) {
+        if ($ave['nombre'] === $nombreLimpio) $existe = true;
+    }
+    
+    if (!$existe) {
+        $todosLasAves[] = [
+            'nombre' => $nombreLimpio,
+            'indice' => 0,
+            'tipo' => 'primera'
+        ];
+        error_log("✅ Ave 1 (nombre_mascota): '$nombreLimpio'");
+    }
+}
+
+// Método 3: Buscar aves adicionales (con sufijo _2, _3, etc.)
+for ($i = 2; $i <= 10; $i++) {
+    $campoAve = 'nombre_mascota_' . $i;
+    
+    if (isset($_POST[$campoAve]) && !empty(trim($_POST[$campoAve]))) {
+        $nombreLimpio = trim($_POST[$campoAve]);
+        
+        $existe = false;
+        foreach ($todosLasAves as $ave) {
+            if ($ave['nombre'] === $nombreLimpio) $existe = true;
+        }
+        
+        if (!$existe) {
+            $todosLasAves[] = [
+                'nombre' => $nombreLimpio,
+                'indice' => $i - 1,
+                'tipo' => 'adicional'
+            ];
+            error_log("✅ Ave $i ($campoAve): '$nombreLimpio'");
+        }
+    }
+}
+
+// Ordenar por índice
+usort($todosLasAves, function($a, $b) {
+    return $a['indice'] - $b['indice'];
+});
+
+error_log("📊 Total aves encontradas: " . count($todosLasAves));
+
+if (empty($todosLasAves)) {
+    error_log("⚠️ NO SE ENCONTRARON AVES PARA PROCESAR");
+} else {
+    // Procesar cada ave
+    foreach ($todosLasAves as $ave) {
+        $nombreLimpio = $ave['nombre'];
+        $indice = $ave['indice'];
+        
+        // Determinar sufijo
+        $sufijo = ($indice === 0) ? "" : "_" . ($indice + 1);
+        
+        error_log("\n✅ PROCESANDO AVE " . ($indice + 1) . " '$nombreLimpio' (sufijo: '$sufijo')");
+        
+        try {
+            // ====================
+            // A. OBTENER DATOS BÁSICOS
+            // ====================
+            $fecha_v_a = obtenerDatoAve("fecha_nacimiento_ave", $sufijo);
+            $sexo_v_a = obtenerDatoAve("sexo_ave", $sufijo);
+            
+            // ====================
+            // B. INSERTAR MASCOTA
+            // ====================
+            $sqlMascotaA = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota, foto_url)
+                            VALUES (:dueno, :nom, :fecha, :sexo, :tipo, :foto) RETURNING idmascota";
+            $stmtMascotaA = $pdo->prepare($sqlMascotaA);
+            
+            $stmtMascotaA->execute([
+                ':dueno' => $fk_id_dueno,
+                ':nom'   => $nombreLimpio,
+                ':fecha' => $fecha_v_a,
+                ':sexo'  => $sexo_v_a,
+                ':tipo'  => 'Ave',
+                ':foto'  => NULL
+            ]);
+            
+            $idAve = $stmtMascotaA->fetchColumn();
+            error_log("   ✅ Ave insertada con ID: $idAve");
+            
+            // ====================
+            // C. INSERTAR DETALLES
+            // ====================
+            $sqlDetAve = "INSERT INTO detalles_aves (
+                fk_id_mascota, especie_ave, grupo_taxonomico, estatus_conservacion, 
+                clasificacion_autoridades, tamano_ave, convive_animales, tipo_alimento, 
+                marca_alimento, veces_come_dia, tratamientos_recibidos, tipo_jaula, 
+                dimensiones_jaula, tipo_plumas, color_principal, color_secundario, 
+                tiene_chip, numero_chip, tipo_chip
+            ) VALUES (
+                :id, :especie, :grupo_tax, :conservacion, :clasificacion, 
+                :tamano, :convive, :alimento, :marca, :veces, :tratamientos, 
+                :tipo_jaula, :dimensiones, :tipo_plumas, :color_prim, :color_sec, 
+                :t_chip, :n_chip, :tipo_chip
+            )";
+            
+            $stmtDetA = $pdo->prepare($sqlDetAve);
+            
+            // Obtener todos los datos específicos de ESTA ave (con su sufijo)
+            $valoresDetalles = [
+                ':id' => $idAve,
+                ':especie' => obtenerDatoAve("especie_ave", $sufijo),
+                ':grupo_tax' => obtenerDatoAve("grupo_taxonomico", $sufijo),
+                ':conservacion' => obtenerDatoAve("estatus_conservacion", $sufijo),
+                ':clasificacion' => obtenerDatoAve("clasificacion_autoridades", $sufijo),
+                ':tamano' => obtenerDatoAve("tamano_ave", $sufijo),
+                ':convive' => obtenerDatoAve("convive_ave", $sufijo),
+                ':alimento' => obtenerDatoAve("alimento_ave", $sufijo),
+                ':marca' => obtenerDatoAve("marca_alimento_ave", $sufijo),
+                ':veces' => obtenerDatoAve("veces_comida_ave", $sufijo),
+                ':tratamientos' => obtenerDatoAve("tratamientos_ave", $sufijo),
+                ':tipo_jaula' => obtenerDatoAve("tipo_jaula_ave", $sufijo),
+                ':dimensiones' => obtenerDatoAve("dimensiones_jaula_ave", $sufijo),
+                ':tipo_plumas' => obtenerDatoAve("tipo_plumas_ave", $sufijo),
+                ':color_prim' => obtenerDatoAve("color_principal_ave", $sufijo),
+                ':color_sec' => obtenerDatoAve("color_secundario_ave", $sufijo),
+                ':t_chip' => obtenerDatoAve("chip_del_ave", $sufijo),
+                ':n_chip' => obtenerDatoAve("numero_chip_ave", $sufijo),
+                ':tipo_chip' => obtenerDatoAve("tipo_chip_ave", $sufijo)
+            ];
+            
+            $stmtDetA->execute($valoresDetalles);
+            error_log("   ✅ Detalles insertados para ave $idAve");
+            
+            // ====================
+            // D. PROCESAR VACUNAS
+            // ====================
+            $nombreClaveVacunas = "vacunas_ave" . $sufijo;
+            
+            if (isset($_POST[$nombreClaveVacunas]) && is_array($_POST[$nombreClaveVacunas])) {
+                $vacunasSeleccionadas = $_POST[$nombreClaveVacunas];
+                $vacunasCount = count($vacunasSeleccionadas);
+                
+                error_log("   💉 Vacunas encontradas: $vacunasCount (" . implode(', ', $vacunasSeleccionadas) . ")");
+                
+                foreach ($vacunasSeleccionadas as $idVacuna) {
+                    $campoFecha = "fecha_{$idVacuna}{$sufijo}";
+                    
+                    if (isset($_POST[$campoFecha]) && !empty(trim($_POST[$campoFecha]))) {
+                        $fechaVacuna = trim($_POST[$campoFecha]);
+                        
+                        $sqlVacuna = "INSERT INTO historial_vacunacion (fk_id_mascota, fk_id_vacuna, fecha_aplicacion) 
+                                      VALUES (:idm, :idv, :fec)";
+                        $stmtVacuna = $pdo->prepare($sqlVacuna);
+                        $stmtVacuna->execute([
+                            ':idm' => $idAve,
+                            ':idv' => $idVacuna,
+                            ':fec' => $fechaVacuna
+                        ]);
+                        
+                        error_log("     ✅ Vacuna $idVacuna insertada: $fechaVacuna");
+                    } else {
+                        error_log("     ⚠️ Vacuna $idVacuna sin fecha ($campoFecha)");
+                    }
+                }
+            } else {
+                error_log("   ℹ️ No hay vacunas para esta ave ($nombreClaveVacunas)");
+            }
+            
+            error_log("--- Ave '$nombreLimpio' procesada correctamente ---\n");
+            
+        } catch (PDOException $e) {
+            error_log("❌ ERROR procesando ave '$nombreLimpio': " . $e->getMessage());
+        }
+    }
+}
+
+error_log("=== FIN PROCESAMIENTO AVES ===");
+error_log("Total aves procesadas exitosamente: " . count($todosLasAves));
+}
     // 6. FINALIZAR TRANSACCIÓN
     $pdo->commit();
 

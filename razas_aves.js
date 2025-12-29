@@ -1,63 +1,99 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. SELECTORES DE ELEMENTOS HTML
-    // Se selecciona el <select>
-    const selectAve = document.querySelector("select[name='especie_ave']");
+    // 1. CARGAR EL ARCHIVO JSON DE AVES (una sola vez)
+    let datosAves = null;
 
-    // Se seleccionan los <input> de solo lectura por su ID
-    const grupoInput = document.getElementById("grupo_taxonomico");
-    const conservacionInput = document.getElementById("conservacion_ave");
-    const clasificacionInput = document.getElementById("clasificacion_autoridades");
-
-    // Verificar que el SELECT existe para evitar errores
-    if (!selectAve) {
-        console.error("Error: El elemento SELECT con name='especie_ave' no fue encontrado.");
-        return;
-    }
-
-    // 2. CARGAR EL ARCHIVO JSON DE AVES
-    // NOTA: La ruta '../razas_aves.json' debe ser correcta
     fetch("../razas_aves.json")
         .then(response => {
             if (!response.ok) throw new Error("No se pudo cargar el archivo de razas (Estado: " + response.status + ")");
             return response.json();
         })
         .then(data => {
-            // 'data' es el array completo de todas las aves
+            datosAves = data;
 
-            // 3. LLENAR EL SELECT CON LAS AVES
-            data.forEach(ave => {
-                const option = document.createElement("option");
-                option.value = ave.id_ave;
-                option.textContent = ave.ave;
-                selectAve.appendChild(option);
-            });
+            // 2. INICIALIZAR EL SELECT ORIGINAL
+            inicializarSelectAve(document.querySelector("select[name='especie_ave']"), data);
 
-            // 4. EVENTO AL SELECCIONAR UN AVE (RELLENAR CAMPOS)
-            selectAve.addEventListener("change", function() {
-                // El valor seleccionado es el ID del ave
-                const idSeleccionado = this.value;
+            // 3. DELEGACIÓN DE EVENTOS PARA CLONES FUTUROS
+            document.addEventListener('change', function(e) {
+                // Detectar cuando se selecciona una especie en CUALQUIER select de ave
+                if (e.target && e.target.name && e.target.name.startsWith('especie_ave')) {
+                    const select = e.target;
 
-                // Buscar el objeto de ave que coincida con ese ID
-                const aveSeleccionada = data.find(a => a.id_ave == idSeleccionado);
-
-                if (aveSeleccionada) {
-                    // ASIGNACIÓN CORRECTA DE VALORES USANDO LOS NOMBRES DEL JSON
-                    grupoInput.value = aveSeleccionada.grupo_taxonómico || "";
-                    conservacionInput.value = aveSeleccionada.estatus_conservación || "";
-                    clasificacionInput.value = aveSeleccionada.clasificación_autoridades || "";
-                } else {
-                    // Limpiar los campos si se selecciona la opción "Selecciona especie"
-                    grupoInput.value = "";
-                    conservacionInput.value = "";
-                    clasificacionInput.value = "";
+                    // Si el select ya tiene opciones (fue clonado), no hacer nada
+                    if (select.querySelector('option[value]')) {
+                        // Solo procesar el cambio si tenemos datos
+                        if (datosAves) {
+                            procesarCambioEspecie(select, datosAves);
+                        }
+                    } else {
+                        // Si está vacío (nuevo clon), inicializarlo
+                        inicializarSelectAve(select, datosAves);
+                    }
                 }
             });
 
-            // Opcional: Ejecutar el evento 'change' una vez si ya hay un valor seleccionado al cargar la página
-            if (selectAve.value) {
-                selectAve.dispatchEvent(new Event('change'));
-            }
+            // 4. INICIALIZAR SELECTS QUE YA EXISTAN (por si hay clones al recargar)
+            const selectsExistentes = document.querySelectorAll("select[name^='especie_ave']");
+            selectsExistentes.forEach((select, index) => {
+                if (index > 0) { // El primero ya se inicializó
+                    inicializarSelectAve(select, data);
+                }
+            });
 
         })
         .catch(error => console.error("Error al cargar o procesar las razas:", error));
+
+    // FUNCIÓN PARA INICIALIZAR UN SELECT DE AVE
+    function inicializarSelectAve(selectElement, data) {
+        if (!selectElement || !data) return;
+
+        // Limpiar opciones existentes (excepto la primera)
+        while (selectElement.options.length > 1) {
+            selectElement.remove(1);
+        }
+
+        // Agregar opciones de aves
+        data.forEach(ave => {
+            const option = document.createElement("option");
+            option.value = ave.id_ave;
+            option.textContent = ave.ave;
+            selectElement.appendChild(option);
+        });
+
+        // Si ya tiene un valor seleccionado, procesarlo
+        if (selectElement.value) {
+            procesarCambioEspecie(selectElement, data);
+        }
+    }
+
+    // FUNCIÓN PARA PROCESAR EL CAMBIO DE ESPECIE
+    function procesarCambioEspecie(selectElement, data) {
+        const idSeleccionado = selectElement.value;
+        const seccionPadre = selectElement.closest('.section');
+
+        if (!seccionPadre) return;
+
+        // Buscar los inputs de esta sección específica
+        // Usamos IDs relativos o buscamos por nombre con sufijo
+        const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
+
+        // Buscar los inputs correctos para esta sección
+        const grupoInput = seccionPadre.querySelector('[id="grupo_taxonomico"], [name="grupo_taxonomico' + sufijo + '"]');
+        const conservacionInput = seccionPadre.querySelector('[id="conservacion_ave"], [name="estatus_conservacion' + sufijo + '"]');
+        const clasificacionInput = seccionPadre.querySelector('[id="clasificacion_autoridades"], [name="clasificacion_autoridades' + sufijo + '"]');
+
+        if (!datosAves) return;
+
+        const aveSeleccionada = datosAves.find(a => a.id_ave == idSeleccionado);
+
+        if (aveSeleccionada) {
+            if (grupoInput) grupoInput.value = aveSeleccionada.grupo_taxonómico || "";
+            if (conservacionInput) conservacionInput.value = aveSeleccionada.estatus_conservación || "";
+            if (clasificacionInput) clasificacionInput.value = aveSeleccionada.clasificación_autoridades || "";
+        } else {
+            if (grupoInput) grupoInput.value = "";
+            if (conservacionInput) conservacionInput.value = "";
+            if (clasificacionInput) clasificacionInput.value = "";
+        }
+    }
 });

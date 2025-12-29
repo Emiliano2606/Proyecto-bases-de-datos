@@ -1,3 +1,6 @@
+// =======================
+// VACUNAS GATO
+// =======================
 const vacunasGato = [
     { nombre: "Herpesvirus felino-1 (FHV)", valor: 16 },
     { nombre: "Calicivirus felino (FCV)", valor: 17 },
@@ -15,24 +18,34 @@ const vacunasGato = [
     { nombre: "Enfermedad de Marek", valor: 29 }
 ];
 
+// =======================
+// OBTENER SUFIJO CORRECTO
+// =======================
+function obtenerSufijoGato(seccion) {
+    const partes = seccion.id.split('_');
+    return partes.length > 1 ? '_' + partes.pop() : '';
+}
+
+// =======================
+// CARGAR VACUNAS
+// =======================
 function cargarVacunasGato(contenedor) {
     if (!contenedor) return;
 
     contenedor.innerHTML = '';
-
-    const seccionPadre = contenedor.closest('.section');
-    const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
+    const seccion = contenedor.closest('.section');
+    const sufijo = obtenerSufijoGato(seccion);
 
     vacunasGato.forEach(vacuna => {
         const div = document.createElement('div');
         div.className = 'checkbox-vacuna';
         div.innerHTML = `
-            <input type="checkbox" 
-                   name="vacunas_gato${sufijo}[]" 
-                   value="${vacuna.valor}" 
-                   class="vacuna-gato-checkbox-input"
-                   id="vacuna_gato_${vacuna.valor}${sufijo}">
-            <label for="vacuna_gato_${vacuna.valor}${sufijo}" style="margin-left: 8px;">
+            <input type="checkbox"
+                class="vacuna-gato-checkbox-input"
+                name="vacunas_gato${sufijo}[]"
+                id="vacuna_gato_${vacuna.valor}${sufijo}"
+                value="${vacuna.valor}">
+            <label for="vacuna_gato_${vacuna.valor}${sufijo}">
                 ${vacuna.nombre}
             </label>
         `;
@@ -40,126 +53,223 @@ function cargarVacunasGato(contenedor) {
     });
 }
 
-function actualizarFechasGato(seccion, contenedor, sufijo) {
-    const seleccionados = seccion.querySelectorAll('.vacuna-gato-checkbox-input:checked');
+// =======================
+// FECHAS DINÁMICAS
+// =======================
+function actualizarFechasGato(seccion, contenedor) {
     contenedor.innerHTML = '';
+    const sufijo = obtenerSufijoGato(seccion);
 
-    seleccionados.forEach(checkbox => {
-        const vacunaInfo = vacunasGato.find(v => v.valor === Number(checkbox.value));
+    seccion.querySelectorAll('.vacuna-gato-checkbox-input:checked')
+        .forEach(check => {
+            const vacuna = vacunasGato.find(v => v.valor === Number(check.value));
+            if (!vacuna) return;
 
-        if (vacunaInfo) {
             const div = document.createElement('div');
-            div.className = 'mt-2';
             div.innerHTML = `
-                <label class="label-select d-block">Fecha de ${vacunaInfo.nombre} *</label>
-                <input type="date" class="namee" 
-                       name="fecha_${vacunaInfo.valor}${sufijo}" 
-                       required>
+                <label>Fecha de ${vacuna.nombre}</label>
+                <input type="date" name="fecha_${vacuna.valor}${sufijo}">
             `;
             contenedor.appendChild(div);
-        }
-    });
+        });
 }
 
-// Función específica para procesar vacunas de GATOS
+// =======================
+// PROCESAR VACUNAS ANTES DE ENVIAR
+// =======================
 function procesarVacunasGatoAntesDeEnviar() {
-    console.log('😺 Procesando vacunas de GATOS...');
+    const form = document.querySelector('form');
+    if (!form) return true;
+
+    // Eliminar hidden previos
+    form.querySelectorAll('[data-gato-hidden]').forEach(e => e.remove());
+
+    document.querySelectorAll('div[name="seccion_gato"]').forEach(seccion => {
+
+        const sufijo = obtenerSufijoGato(seccion);
+
+        seccion.querySelectorAll('.vacuna-gato-checkbox-input:checked')
+            .forEach(check => {
+
+                // Hidden vacuna
+                const hVacuna = document.createElement('input');
+                hVacuna.type = 'hidden';
+                hVacuna.name = `vacunas_gato${sufijo}[]`;
+                hVacuna.value = check.value;
+                hVacuna.dataset.gatoHidden = '1';
+                form.appendChild(hVacuna);
+
+                // Hidden fecha
+                const fecha = seccion.querySelector(
+                    `input[name="fecha_${check.value}${sufijo}"]`
+                );
+
+                if (fecha && fecha.value) {
+                    const hFecha = document.createElement('input');
+                    hFecha.type = 'hidden';
+                    hFecha.name = fecha.name;
+                    hFecha.value = fecha.value;
+                    hFecha.dataset.gatoHidden = '1';
+                    form.appendChild(hFecha);
+                }
+            });
+    });
+
+    return true;
+}
+
+// =======================
+// INIT
+// =======================
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Cargar vacunas en todos los contenedores
+    document.querySelectorAll('[id^="lista-vacunas-checkbox"]')
+        .forEach(c => cargarVacunasGato(c));
+
+    // Actualizar fechas al marcar / desmarcar
+    document.addEventListener('change', e => {
+        if (e.target.classList.contains('vacuna-gato-checkbox-input')) {
+            const seccion = e.target.closest('.section');
+            const fechas = seccion.querySelector('.fechas-vacunas-dinamicas');
+            if (fechas) {
+                actualizarFechasGato(seccion, fechas);
+            }
+        }
+    });
+
+});
+
+// =======================
+// FORZAR NOMBRES DE GATOS ANTES DE ENVIAR
+// =======================
+function forzarNombresGatosAntesDeEnviar() {
+    console.log('😺 Forzando nombres de gatos...');
 
     const form = document.querySelector('form');
-    if (!form) return false;
+    if (!form) return true;
 
-    // Eliminar inputs hidden anteriores de GATOS
-    const hiddensAnterioresGatos = form.querySelectorAll('input[name^="vacunas_gato"]');
-    hiddensAnterioresGatos.forEach(hidden => hidden.remove());
+    // Eliminar hidden previos de nombres forzados
+    form.querySelectorAll('input[name^="nombre_gato_forzado_"]').forEach(e => e.remove());
 
-    // Procesar TODOS los checkboxes marcados de GATOS
-    const checksMarcados = document.querySelectorAll('.vacuna-gato-checkbox-input:checked');
+    // Buscar TODAS las secciones de gatos
+    const seccionesGatos = document.querySelectorAll('div[name="seccion_gato"]');
 
-    checksMarcados.forEach(checkbox => {
-        const seccion = checkbox.closest('.section');
-        const sufijo = seccion.id.includes('_') ? '_' + seccion.id.split('_').pop() : '';
+    seccionesGatos.forEach((seccion, index) => {
+        const numeroGato = index + 1; // 1, 2, 3...
 
-        // Agregar vacuna como hidden
-        const hiddenVacuna = document.createElement('input');
-        hiddenVacuna.type = 'hidden';
-        hiddenVacuna.name = `vacunas_gato${sufijo}[]`;
-        hiddenVacuna.value = checkbox.value;
-        form.appendChild(hiddenVacuna);
+        console.log(`🔍 Procesando gato ${numeroGato}...`);
 
-        // Buscar y agregar la fecha correspondiente
-        const idVacuna = checkbox.value;
-        const nombreCampoFecha = `fecha_${idVacuna}${sufijo}`;
-        const inputFecha = seccion.querySelector(`input[name="${nombreCampoFecha}"]`);
+        // Buscar el campo de nombre en esta sección
+        // IMPORTANTE: El primer gato usa nombre_gato[], el segundo usa nombre_gato[] pero es el mismo name
+        // Necesitamos una forma diferente de identificarlos
 
-        if (inputFecha && inputFecha.value) {
-            const hiddenFecha = document.createElement('input');
-            hiddenFecha.type = 'hidden';
-            hiddenFecha.name = nombreCampoFecha;
-            hiddenFecha.value = inputFecha.value;
-            form.appendChild(hiddenFecha);
+        // Método 1: Buscar por ID de sección
+        let nombreInput;
+        if (numeroGato === 1) {
+            // Primer gato: #sectionGato
+            nombreInput = document.querySelector('#sectionGato [name="nombre_gato[]"]');
+        } else {
+            // Segundo gato: #sectionGato_2
+            nombreInput = document.querySelector(`#sectionGato_${numeroGato} [name="nombre_gato[]"]`);
+        }
+
+        if (nombreInput && nombreInput.value.trim()) {
+            // Crear campo forzado para este gato
+            const hiddenNombre = document.createElement('input');
+            hiddenNombre.type = 'hidden';
+            hiddenNombre.name = 'nombre_gato_forzado_' + numeroGato;
+            hiddenNombre.value = nombreInput.value.trim();
+            form.appendChild(hiddenNombre);
+
+            console.log(`✅ Gato ${numeroGato} forzado: "${hiddenNombre.value}"`);
+
+            // También forzar otros campos importantes
+            // Fecha de nacimiento
+            let fechaInput;
+            if (numeroGato === 1) {
+                fechaInput = document.querySelector('#sectionGato [name="fecha_nacimiento_gato"]');
+            } else {
+                fechaInput = document.querySelector(`#sectionGato_${numeroGato} [name="fecha_nacimiento_gato_${numeroGato}"]`);
+            }
+
+            if (fechaInput && fechaInput.value) {
+                const hiddenFecha = document.createElement('input');
+                hiddenFecha.type = 'hidden';
+                hiddenFecha.name = `fecha_nacimiento_gato_${numeroGato}_forzado`;
+                hiddenFecha.value = fechaInput.value;
+                form.appendChild(hiddenFecha);
+                console.log(`   📅 Fecha forzada: ${fechaInput.value}`);
+            }
+
+            // Sexo
+            let sexoInput;
+            if (numeroGato === 1) {
+                sexoInput = document.querySelector('#sectionGato [name="sexo_gato"]');
+            } else {
+                sexoInput = document.querySelector(`#sectionGato_${numeroGato} [name="sexo_gato_${numeroGato}"]`);
+            }
+
+            if (sexoInput && sexoInput.value) {
+                const hiddenSexo = document.createElement('input');
+                hiddenSexo.type = 'hidden';
+                hiddenSexo.name = `sexo_gato_${numeroGato}_forzado`;
+                hiddenSexo.value = sexoInput.value;
+                form.appendChild(hiddenSexo);
+                console.log(`   ⚥ Sexo forzado: ${sexoInput.value}`);
+            }
+        } else {
+            console.log(`⚠️ Gato ${numeroGato}: Nombre no encontrado o vacío`);
         }
     });
 
     return true;
 }
 
-// Función modificada para forzar envío
-function forzarEnvioCamposGatos() {
+// =======================
+// INTERCEPTAR ENVÍO DEL FORMULARIO - VERSIÓN CORREGIDA
+// =======================
+function interceptarEnvioGatos() {
     const form = document.querySelector('form');
     if (!form) return;
 
-    const forzadosAnteriores = form.querySelectorAll('[name^="nombre_gato_forzado_"]');
-    forzadosAnteriores.forEach(el => el.remove());
+    form.addEventListener('submit', function(e) {
+        console.log('📤 Interceptando envío para gatos...');
 
-    const todosCampos = document.querySelectorAll('[name*="nombre_gato"]');
+        // 1. Forzar nombres de gatos
+        forzarNombresGatosAntesDeEnviar();
 
-    todosCampos.forEach((campo, index) => {
-        const valor = campo.value.trim();
+        // 2. Procesar vacunas de gatos
+        procesarVacunasGatoAntesDeEnviar();
 
-        if (valor !== '') {
-            const hiddenForzado = document.createElement('input');
-            hiddenForzado.type = 'hidden';
-            hiddenForzado.name = 'nombre_gato_forzado_' + (index + 1);
-            hiddenForzado.value = valor;
-            form.appendChild(hiddenForzado);
-        }
+        console.log('✅ Gatos procesados correctamente');
+        return true;
     });
 }
 
-// Inicialización específica para GATOS
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🐈 Sistema de vacunas para GATOS cargado');
+// =======================
+// ACTUALIZAR INIT
+// =======================
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🐈 Sistema de gatos cargado');
 
-    // Cargar vacunas en el contenedor de GATOS
-    const contGato = document.getElementById('lista-vacunas-checkbox2');
-    if (contGato) {
-        cargarVacunasGato(contGato);
+    // 1. Cargar vacunas en todos los contenedores
+    document.querySelectorAll('[id^="lista-vacunas-checkbox"]')
+        .forEach(c => cargarVacunasGato(c));
 
-        setTimeout(() => {
-            const checksIniciales = contGato.querySelectorAll('.vacuna-gato-checkbox-input:checked');
-            if (checksIniciales.length > 0) {
-                const seccionPadre = contGato.closest('.section');
-                const containerFechas = seccionPadre.querySelector('.fechas-vacunas-dinamicas');
-                const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
-
-                if (containerFechas) {
-                    actualizarFechasGato(seccionPadre, containerFechas, sufijo);
-                }
-            }
-        }, 500);
-    }
-
-    // Configurar listener para cambios en checkboxes de GATOS
-    document.addEventListener('change', function(e) {
+    // 2. Actualizar fechas al marcar / desmarcar
+    document.addEventListener('change', e => {
         if (e.target.classList.contains('vacuna-gato-checkbox-input')) {
-            const checkbox = e.target;
-            const seccionPadre = checkbox.closest('.section');
-            const containerFechas = seccionPadre.querySelector('.fechas-vacunas-dinamicas');
-            const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
-
-            if (containerFechas) {
-                actualizarFechasGato(seccionPadre, containerFechas, sufijo);
+            const seccion = e.target.closest('.section');
+            const fechas = seccion.querySelector('.fechas-vacunas-dinamicas');
+            if (fechas) {
+                actualizarFechasGato(seccion, fechas);
             }
         }
     });
+
+    // 3. Interceptar envío del formulario
+    interceptarEnvioGatos();
+
+    console.log(`🔍 Secciones de gatos encontradas: ${document.querySelectorAll('div[name="seccion_gato"]').length}`);
 });
