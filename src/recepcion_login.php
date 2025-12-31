@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['recep_id'] = $user['id_recepcionista'];
         $_SESSION['recep_nombre'] = $user['nombre'];
         $_SESSION['rol'] = 'recepcionista';
-        header("Location: dashboard.php");
+        header("Location: recepcion_dashboard.php");
         exit;
     } else {
         $error = "Correo o contraseña incorrectos.";

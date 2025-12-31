@@ -22,13 +22,17 @@ try {
                    du.nombre AS nombre_tutor, du.apellido1 AS apellido_tutor
             FROM public.citas c
             JOIN public.mascotas m ON c.fk_id_mascota = m.idmascota
-            /* Unimos mascotas con usuarios y luego con sus datos personales */
             JOIN public.usuarios u ON m.fk_id_dueno = u.idusuario 
             JOIN public.datosusuario du ON u.idusuario = du.fk_id_usuario
             JOIN public.doctor_asignacion da ON c.fk_id_asignacion = da.id_asignacion
             JOIN public.especialidades e ON da.fk_id_especialidad = e.id_especialidad
             WHERE da.fk_id_doctor = :id_doc 
-            AND (c.estatus_cita = 'Programada' OR c.estatus_cita = 'En Proceso') 
+            /* Incluimos TODOS los estados que significan 'pendiente' o 'en curso' */
+            AND (
+                c.estatus_cita = 'Programada' OR 
+                c.estatus_cita = 'Agendada' OR 
+                c.estatus_cita = 'En Proceso'
+            ) 
             ORDER BY c.fecha_cita ASC, c.hora_cita ASC";
             
     $stmt = $pdo->prepare($sql);
