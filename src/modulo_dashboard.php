@@ -125,7 +125,9 @@ $mascotas_js = json_encode($mis_mascotas);
                 <div class="card" style="margin-top: 20px; border-top: 4px solid #2ecc71;">
     <h3><i class="fa-solid fa-file-medical"></i> Consultas y Recetas</h3>
     <div id="lista-consultas-recetas" style="max-height: 400px; overflow-y: auto; margin-top: 10px;">
+        
         </div>
+        
 </div>
             </aside>
         </div>
@@ -544,10 +546,22 @@ $mascotas_js = json_encode($mis_mascotas);
                         </div>
                         <div style="background: #f9f9f9; padding: 5px 15px; font-size: 0.7rem; color: #888; text-align: right;">
                             Médico Responsable: Dr. ${c.nombre_doctor}
+                            
                         </div>
+                        <div style="background: #f9f9f9; padding: 10px 15px; font-size: 0.7rem; color: #888; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee;">
+    <span>Médico Responsable: Dr. ${c.nombre_doctor}</span>
+    
+    <a href="generar_receta.php?id_cita=${c.fk_id_cita}" 
+       target="_blank" 
+       style="background: #e74c3c; color: white; padding: 6px 12px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 0.75rem; display: flex; align-items: center; gap: 5px; transition: 0.3s;">
+       <i class="fa-solid fa-file-pdf"></i> DESCARGAR RECETA
+    </a>
+</div>
                     </div>
+                    
                 `;
                 contenedor.appendChild(card);
+                
             });
         } catch (e) {
             console.error("Error fatal:", e);

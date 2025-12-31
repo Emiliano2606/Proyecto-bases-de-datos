@@ -12,14 +12,18 @@ if (!$id_mascota) {
 
 try {
     // Agregamos los nuevos campos a la consulta SQL
-    $sql = "SELECT c.id_consulta, c.sintomas, c.prediagnostico, c.diagnostico, c.tratamiento_general,
-                   c.peso, c.temperatura, c.frecuencia_cardiaca, c.frecuencia_respiratoria, c.proxima_cita,
-                   d.nombre_doctor, ci.fecha_cita
-            FROM public.consultas_medicas c
-            JOIN public.citas ci ON c.fk_id_cita = ci.id_cita
-            JOIN public.doctores d ON c.fk_id_doctor = d.id_doctor
-            WHERE c.fk_id_mascota = :id
-            ORDER BY ci.fecha_cita DESC";
+ // Cambia tu línea de SELECT por esta:
+$sql = "SELECT c.id_consulta, c.fk_id_cita, c.sintomas, c.prediagnostico, c.diagnostico, -- Agregamos fk_id_cita
+               c.tratamiento_general, c.peso, c.temperatura, 
+               c.frecuencia_cardiaca, c.frecuencia_respiratoria, c.proxima_cita,
+               d.nombre_doctor, ci.fecha_cita
+        FROM public.consultas_medicas c
+        JOIN public.citas ci ON c.fk_id_cita = ci.id_cita
+        JOIN public.doctores d ON c.fk_id_doctor = d.id_doctor
+        WHERE c.fk_id_mascota = :id
+        ORDER BY ci.fecha_cita DESC";
+
+
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $id_mascota]);
