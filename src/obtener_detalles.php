@@ -1,15 +1,14 @@
 <?php
-// 1. Conexión a la base de datos
 require_once '../includes/db_connection.php';
-
-// 2. Establecer el encabezado para que el navegador sepa que enviamos un JSON
 header('Content-Type: application/json');
+
+// Evitar que cualquier mensaje de error previo ensucie el JSON
+ob_clean(); 
 
 if (isset($_GET['id']) && isset($_GET['tipo'])) {
     $id = intval($_GET['id']);
     $tipo = $_GET['tipo'];
     
-    // 3. Mapeo de tablas según el tipo de mascota registrado en la tabla general
     $tablas = [
         'Perro'     => 'detalles_perros',
         'Gato'      => 'detalles_gatos',
@@ -20,26 +19,35 @@ if (isset($_GET['id']) && isset($_GET['tipo'])) {
     ];
 
     $tabla = $tablas[$tipo] ?? null;
+    $respuesta = [
+        'detalles' => [],
+        'vacunas'  => []
+    ];
 
-    if ($tabla) {
-        try {
-            // 4. Consulta a la tabla específica (polimorfismo)
-            $sql = "SELECT * FROM public.$tabla WHERE fk_id_mascota = :id";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([':id' => $id]);
-            $detalles = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            // Si existe la fila, la devuelve; si no, devuelve un objeto vacío
-            echo json_encode($detalles ?: []);
-        } catch (PDOException $e) {
-            // En caso de error de SQL, enviamos el error en formato JSON para debug
-            echo json_encode(['error' => $e->getMessage()]);
+    try {
+        // 1. Obtener detalles de la especie
+        if ($tabla) {
+            $sql_d = "SELECT * FROM public.$tabla WHERE fk_id_mascota = :id";
+            $stmt_d = $pdo->prepare($sql_d);
+            $stmt_d->execute([':id' => $id]);
+            $respuesta['detalles'] = $stmt_d->fetch(PDO::FETCH_ASSOC) ?: [];
         }
-    } else {
-        // Si el tipo no está en nuestro mapa, enviamos vacío
-        echo json_encode([]);
+
+        // 2. Obtener historial de vacunas con JOIN al catálogo
+        $sql_v = "SELECT V.nombre_vacuna, H.fecha_aplicacion 
+                  FROM public.historial_vacunacion H
+                  INNER JOIN public.catalogo_vacunas V ON H.fk_id_vacuna = V.id_vacuna
+                  WHERE H.fk_id_mascota = :id
+                  ORDER BY H.fecha_aplicacion DESC";
+        $stmt_v = $pdo->prepare($sql_v);
+        $stmt_v->execute([':id' => $id]);
+        $respuesta['vacunas'] = $stmt_v->fetchAll(PDO::FETCH_ASSOC);
+
+        echo json_encode($respuesta);
+
+    } catch (PDOException $e) {
+        echo json_encode(['error' => $e->getMessage()]);
     }
 } else {
-    // Si faltan parámetros en la URL
-    echo json_encode(['error' => 'Faltan parámetros id o tipo']);
+    echo json_encode(['error' => 'Faltan parámetros']);
 }

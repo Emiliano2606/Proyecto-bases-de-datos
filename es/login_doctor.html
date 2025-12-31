@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Doctores - Paw Care Clinic</title>
+    <link rel="stylesheet" href="../es/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #fdfaf8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #d4c8bf;
+        }
+        
+        .login-container h2 {
+            color: #03ff03;
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #03ff03;
+            font-weight: bold;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d4c8bf;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .btn-login {
+            background: #03ff03;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .btn-login:hover {
+            background: #03ff03;
+        }
+        
+        .footer-link {
+            margin-top: 20px;
+            display: block;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <img src="../css/img2/icon_carnet.png" class=" mt-5 mb-2 juju" style="width: 100px; height: 100px;">
+        <h2>Portal Médico</h2>
+        <form action="../src/procesar_login_doctor.php" method="POST">
+            <div class="input-group">
+                <label>Correo Electrónico:</label>
+                <input type="email" name="email" placeholder="ejemplo@medicare.com" required>
+            </div>
+            <div class="input-group">
+                <label>Contraseña:</label>
+                <input type="password" name="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-login">Ingresar al Sistema</button>
+        </form>
+        <a href="../index.html" class="footer-link">Regresar al inicio</a>
+    </div>
+</body>
+
+</html>

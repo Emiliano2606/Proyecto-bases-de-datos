@@ -1,0 +1,101 @@
+listado de pendientes
+5. Normalizar la base de datos hasta su quinta forma normal.
+
+7. Elaborar el reporte t´ecnico que se describe a continuaci´on.
+
+Lugar y fecha: La presentaci´on ser´a en el sal´on y horario de clases el d´ıa mi´ercoles
+7 de Enero del 2026.
+
+Tiempo: Cada equipo contar´a con exactamente 15 minutos. Se deber´a llegar
+puntual a la presentaci´on.
+• Contenido: Se deber´a presentar el sistema funcionando mostrando la funcionalidad de cada uno de los requerimientos y se dar´a explicaci´on a cada una de las
+suposiciones o decisiones tomadas durante el dise˜no de la base de datos. Debe
+mostrarse la base de datos (diagrama) en una herramienta CASE as´ı como las
+consultas solicitadas en SQL y ´algebra relacional. 5 minutos para mostrar el sistema, 5 minutos para discutir la Base de datos, 5 minutos para ejecutar en vivo las
+consultas solicitadas.
+
+
+• Evaluaci´on: Se evaluar´a puntualidad, presentaci´on (vestimenta formal, lenguaje
+verbal y corporal) funcionalidad de la aplicaci´on (est´etica no) y dise˜no de la base
+de datos. Solo tendr´an calificaci´on los miembros del equipo que se presenten y
+participen de la presentaci´on y atiendan las preguntas. Se solicitar´a ejecutar consultas espec´ıficas desde la consola a cualquier miembro del equipo. Se preguntar´a
+sobre la estructura y funcionamiento de la base de datos.
+
+
+• Recomendaciones:
+• Prevenir cualquier fallo de conectividad o de aspecto t´ecnico.
+• Traer el sistema funcionando instalado en la m´aquina local.
+• Considere tener el sistema funcionando en m´as de un equipo.
+• Verifique que las pantallas sean claramente visibles en un proyector.
+• Verifique que los equipos se puedan conectar al proyector.
+
+
+2.2. Componente 2: Reporte T´ecnico
+Documento en PDF hecho con LATEX 2ε. Cada integrante del equipo debe subir el
+documento y su nombre debe aparecer en la portada de todos los integrantes.
+
+2.2.1. Contenido
+1. Portada. Con los datos del proyecto, el curso y los nombres de los integrantes del
+equipo.
+2. ´Indices. de contenido, tablas y figuras.
+3. Definici´on del proyecto. El cual debe contener:
+a) Datos de la consultora: Definir Nombre de la empresa, Misi´on y visi´on. Nombre del proyecto.
+b) Objetivo del proyecto.
+c) Perfiles de usuario.
+d) Las funciones que deber´a realizar cada usuario.
+e) La informaci´on que debe contemplarse para las principales entidades del mundo real que almacenar´a la base de datos.
+f ) Arquitectura: Tipo de aplicaci´on y tecnolog´ıa a utilizar.
+4. Dise˜no de la base de datos: Diagrama Relacional utilizando el procedimiento y
+la notaci´on vista en clase indicando:
+a) Entidades: Con sus atributos, tipo de cada atributo, llave primaria y llaves
+for´aneas.
+b) Relaciones: Con cardinalidad y nombre.
+5. Diccionario de datos: Descripci´on detallada de cada campo de la base de datos
+(nombre del campo, tipo, si es nulo, si es llave, si es foranea, si tiene un default o
+check, significado del dato).
+6. Dise˜no de interfaces: Dise˜no (en wireframe, mockups o versi´on final) de las
+pantallas con su explicaci´on y mapa de navegaci´on.
+7. Dise˜no de consultas: Resoluci´on de los ejercicios en ´algebra relacional y en SQL
+de las consultas que se indican al final de este documento.
+2.3. Componente 3: Software
+Se deber´a entregar el sistema de la siguiente forma:
+• Sistema: Archivo sistema.tgz que contenga el c´odigo fuente, im´agenes, documentos HTML, CSS, Javascript y todo lo necesario para construir y ejecutar el
+proyecto desde un IDE.
+• Entorno de desarrollo y producci´on: Archivo README.md con la especificaci´on
+del contenido de sistema.tgz y las especificaciones del software y hardware necesario para modificar el sistema en un IDE, desplegar la aplicaci´on en un servidor
+y para crear la base de datos. Incluye los comandos necesarios para configurar y
+ejecutar el sistema.
+• Base de Datos: archivo basededatos.sql que contiene los comandos sql para
+crear la base de datos. Archivo datos.sql co los comandos para poblar una base
+de datos inicial.
+• Coevaluaci´on: Formato de coeavaluaci´on llenada individualmente.
+• Retrospectiva: Din´amica de retrospectiva llenada en equipo.
+• Opcionalmente agregar una liga a un servidor en l´ınea en donde se est´e ejecutando
+el sistema para su evaluaci´on o un video que demuestre la ejecuci´on del sistema.
+Este sirve en caso de que por alguna raz´on no se pueda instalar y ejecutar el
+sistema.
+
+
+3.3. Paw Care Clinic (Cadena de cl´ınicas veterinarias)
+3.3.1. Funcionalidad m´ınima
+• Registro de due˜nos. Crear cuenta, ver perfil, inicio de sesi´on.
+• Registro de Mascotas. Cada due˜no debe poder registrar a sus mascotas con todos
+los datos vistos en clase.
+• Consultar horarios de consulta, agendar cita, consultar doctores disponibles horarios y especialidades de cada sucursal.
+• Consultar los precios de las consultas.
+• El recepcionista y el due˜no pueden agendar una cita, el due˜no desde su casas en el
+horario y d´ıa que mejor le acomoden, el recepcionista desde las instalaciones cada
+que llega un cliente a consulta.
+• El doctor podr´a iniciar sesi´on y registrar los datos de las mascotas atendidas:
+signos, s´ıntomas, prediagn´ostico, diagn´ostico, medicamentos y tratamientos, procedimientos, vacunas aplicadas, etc.
+3.3.2. Consultas
+1. Lista de Doctores que seg´un su horario laboral laboran hoy.
+2. Lista de Doctores que trabajan en la sucursal “Lindavista”.
+3. Lista de Pacientes que han sido atendidos en m´as de una cl´ınica.
+4. Lista de pacientes que fueron diagn´osticados con “Parbovirus”.
+5. Lista de mascotas que han sido inoculadas con vacuna “antivirus”.
+6. Lista de mascotas regisatradas en el sistema que nunca han sido vacunadas.
+7. Lista de mascotas que han sido atendidas por m´as de tres veces en el ´ultimo mes.
+8. Lista de doctores con el n´umero de consultas realizadas en el ´ultimo mes.
+9. Lista de doctores que han faltado a laborar en esta semana.
+10. Lista de mascotas que tienen sus vacunas al corriente.s
