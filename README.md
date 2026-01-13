@@ -141,6 +141,12 @@ Por defecto, XAMPP trae desactivadas las funciones para conectar con PostgreSQL.
 2. Pégala en: `C:\xampp\htdocs\`
 3. Accede desde tu navegador a: `http://localhost/nombre_de_tu_carpeta`
 
+## En el video se explica a dtalle el contendiod de las carpetas pero aquis e dara infromacion breve
+La carpeta es contien los html principales lo que seria el index el login del doctor y lso mdoulos, pero el sistema se debe abrir desde le index para usuarios, desde login doctor para el doctor y el php del secretario, ahora la capreta src contiene los php del sistema las pagiasn dinamicas que se actualizan esta se ejecutan depdniendo loq ue se quiera hacer y los catlogos del js de las vacunas y las razas que estan almacenado en json
+
+# Contrasenas admin del sistema
+doctor login:pass123
+repecion login:password
 
 
 ## 🔗 AQUI PUEDES OBTENER EL REPOSITORIO
