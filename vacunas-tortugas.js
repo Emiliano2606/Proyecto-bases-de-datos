@@ -1,7 +1,3 @@
-// ==============================================
-// SISTEMA DE TORTUGAS - JS FINAL
-// ==============================================
-
 const vacunasTortuga = [
     { nombre: "Chequeo Parasitario (Coprológico)", valor: 62 },
     { nombre: "Desparasitación Interna", valor: 63 },

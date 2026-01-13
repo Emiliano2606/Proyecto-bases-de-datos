@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Validación de sesión para recepción
 if (!isset($_SESSION['recep_id'])) { header("Location: login_recepcion.php"); exit; }
 ?>
 <!DOCTYPE html>
@@ -11,7 +10,6 @@ if (!isset($_SESSION['recep_id'])) { header("Location: login_recepcion.php"); ex
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css"> 
     <style>
-        /* Estilos base manteniendo tu diseño original */
         .header-recepcion {
             background: linear-gradient(0.25turn, #81e84e, #16f21d, #d5ff02, #00fbee, #3400ce);
             animation: fanimado 10s infinite;
@@ -149,14 +147,12 @@ if (!isset($_SESSION['recep_id'])) { header("Location: login_recepcion.php"); ex
 document.addEventListener('DOMContentLoaded', () => {
     cargarCitasMaestras();
 
-    // Buscador en tiempo real
     document.getElementById('busquedaGlobal').addEventListener('input', (e) => {
         const texto = e.target.value.trim();
         if (texto.length >= 2) buscarMascotas(texto);
         else document.getElementById('resultadosBusqueda').innerHTML = '<p>Escribe para buscar...</p>';
     });
 
-    // Envío del formulario Agendar
     document.getElementById('formNuevaCita').addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(this);
@@ -173,8 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.reset();
                 cargarCitasMaestras();
             } else {
-                // Mejora: Ahora capturamos el mensaje de error personalizado enviado desde PHP
-                // Esto mostrará "El médico ya tiene una cita agendada..." en lugar del error de SQL
+              
                 alert("⚠️ ATENCIÓN: " + (res.error || "No se pudo guardar la cita"));
             }
         })
@@ -205,7 +200,7 @@ function cargarCitasMaestras() {
             const tabla = document.getElementById('tablaMaestraCitas');
             tabla.innerHTML = '';
             data.forEach(c => {
-                let badgeColor = '#f1c40f'; // Por defecto: Agendada/Pendiente
+                let badgeColor = '#f1c40f'; 
                 if(c.estatus_cita === 'Finalizada') badgeColor = '#2ecc71';
                 if(c.estatus_cita === 'Cancelada') badgeColor = '#e74c3c';
 

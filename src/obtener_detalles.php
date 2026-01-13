@@ -2,7 +2,6 @@
 require_once '../includes/db_connection.php';
 header('Content-Type: application/json');
 
-// Evitar que cualquier mensaje de error previo ensucie el JSON
 ob_clean(); 
 
 if (isset($_GET['id']) && isset($_GET['tipo'])) {
@@ -25,7 +24,6 @@ if (isset($_GET['id']) && isset($_GET['tipo'])) {
     ];
 
     try {
-        // 1. Obtener detalles de la especie
         if ($tabla) {
             $sql_d = "SELECT * FROM public.$tabla WHERE fk_id_mascota = :id";
             $stmt_d = $pdo->prepare($sql_d);
@@ -33,7 +31,6 @@ if (isset($_GET['id']) && isset($_GET['tipo'])) {
             $respuesta['detalles'] = $stmt_d->fetch(PDO::FETCH_ASSOC) ?: [];
         }
 
-        // 2. Obtener historial de vacunas con JOIN al catálogo
         $sql_v = "SELECT V.nombre_vacuna, H.fecha_aplicacion 
                   FROM public.historial_vacunacion H
                   INNER JOIN public.catalogo_vacunas V ON H.fk_id_vacuna = V.id_vacuna

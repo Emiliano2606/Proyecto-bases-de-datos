@@ -8,7 +8,7 @@
        let cpData = [];
 
        // Cargar JSON
-       fetch('cp.json') // Ajusta la ruta si tu json está en otra carpeta
+       fetch('cp.json')
            .then(response => response.json())
            .then(data => {
                cpData = data;

@@ -2,10 +2,8 @@
 session_start();
 require_once '../includes/db_connection.php';
 
-// 1. Inicializar la variable siempre para evitar el error de "Undefined variable"
 $citas = []; 
 
-// Seguridad: Solo doctores
 if (!isset($_SESSION['id_doctor']) || $_SESSION['rol'] !== 'doctor') {
     header("Location: login_doctor.html");
     exit();
@@ -14,7 +12,6 @@ if (!isset($_SESSION['id_doctor']) || $_SESSION['rol'] !== 'doctor') {
 $idDoctor = $_SESSION['id_doctor'];
 $nombreDoctor = $_SESSION['nombre_doctor'];
 
-// 2. Ejecutar la consulta
 try {
     $sql = "SELECT c.id_cita, c.fecha_cita, c.hora_cita, c.motivo_cliente, c.estatus_cita,
                    m.nombre AS nombre_mascota, m.tipo_mascota,
@@ -27,7 +24,6 @@ try {
             JOIN public.doctor_asignacion da ON c.fk_id_asignacion = da.id_asignacion
             JOIN public.especialidades e ON da.fk_id_especialidad = e.id_especialidad
             WHERE da.fk_id_doctor = :id_doc 
-            /* Incluimos TODOS los estados que significan 'pendiente' o 'en curso' */
             AND (
                 c.estatus_cita = 'Programada' OR 
                 c.estatus_cita = 'Agendada' OR 

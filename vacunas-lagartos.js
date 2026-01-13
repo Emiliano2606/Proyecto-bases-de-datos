@@ -1,7 +1,3 @@
-// ==============================================
-// SISTEMA DE LAGARTOS - JS ACTUALIZADO
-// ==============================================
-
 const vacunasLagarto = [
     { nombre: "Chequeo Parasitario (Coprológico)", valor: 40 },
     { nombre: "Desparasitación Interna", valor: 41 },
@@ -65,7 +61,7 @@ function actualizarFechasLagarto(seccion, contenedor, sufijo) {
     });
 }
 
-// PRE-PROCESAMIENTO PARA ENVÍO (IGUAL QUE AVES)
+
 function procesarLagartosAntesDeEnviar() {
     const form = document.querySelector('form');
     if (!form) return;

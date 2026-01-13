@@ -25,15 +25,15 @@ try {
 
     if (!$cita) die("Cita no encontrada.");
 
-    // 2. Mapeo de Especie Individual para el filtro de medicamentos
+    // 2.  Especie Individual para el filtro de medicamentos
     $tipo_texto = strtolower($cita['tipo_mascota']);
-    $id_especie_busqueda = 17; // Por defecto "Todas las especies"
+    $id_especie_busqueda = 17; 
 
     if (strpos($tipo_texto, 'perro') !== false) $id_especie_busqueda = 5;
     elseif (strpos($tipo_texto, 'gato') !== false) $id_especie_busqueda = 6;
     elseif (strpos($tipo_texto, 'ave') !== false) $id_especie_busqueda = 150;
     elseif (strpos($tipo_texto, 'tortuga') !== false || strpos($tipo_texto, 'serpiente') !== false || strpos($tipo_texto, 'lagarto') !== false) {
-        $id_especie_busqueda = 9; // Peces/Reptiles según tu lógica
+        $id_especie_busqueda = 9; 
     }
 
     // 3. CONSULTA DE MEDICAMENTOS FILTRADOS POR ESPECIE
@@ -270,7 +270,6 @@ $tipo_mascota_db = $cita['tipo_mascota'];
 </div>
 
 <script>
-// 1. CARGA DE DETALLES Y VACUNAS (AJAX)
 async function cargarInformacionMascota() {
     const idMascota = "<?php echo $cita['idmascota']; ?>";
     const tipoMascota = "<?php echo $cita['tipo_mascota']; ?>";
@@ -281,7 +280,6 @@ async function cargarInformacionMascota() {
         const response = await fetch(`obtener_detalles.php?id=${idMascota}&tipo=${tipoMascota}`);
         const data = await response.json();
 
-        // Renderizar Detalles
         contenedorDetalles.innerHTML = "";
         if (data.detalles && Object.keys(data.detalles).length > 0) {
             for (const [key, value] of Object.entries(data.detalles)) {
@@ -318,21 +316,18 @@ async function cargarInformacionMascota() {
     }
 }
 
-// 2. FUNCIÓN PARA AGREGAR FILAS DE MEDICAMENTOS
 document.getElementById('btn-agregar').addEventListener('click', function() {
     const contenedor = document.getElementById('contenedor-receta');
     const filas = document.querySelectorAll('.fila-med');
     
     if (filas.length > 0) {
         const nuevaFila = filas[0].cloneNode(true);
-        // Limpiar inputs
         nuevaFila.querySelector('select').value = "";
         nuevaFila.querySelector('input').value = "";
         contenedor.appendChild(nuevaFila);
     }
 });
 
-// 3. FUNCIÓN PARA ELIMINAR FILA
 function eliminarFila(btn) {
     const filas = document.querySelectorAll('.fila-med');
     if (filas.length > 1) {
@@ -342,32 +337,26 @@ function eliminarFila(btn) {
     }
 }
 
-// Ejecutar al cargar
 window.onload = cargarInformacionMascota;
 </script>
 <script>
-    // Agregar nueva fila de vacuna
 document.getElementById('btn-nueva-vacuna').addEventListener('click', function() {
     const contenedor = document.getElementById('contenedor-vacunas-dinamico');
     const filas = document.querySelectorAll('.fila-vacuna');
     
     if (filas.length > 0) {
         const nuevaFila = filas[0].cloneNode(true);
-        // Limpiar la selección previa
         nuevaFila.querySelector('select').value = "";
-        // Asegurar que la fecha sea la de hoy
         nuevaFila.querySelector('input[type="date"]').value = "<?php echo date('Y-m-d'); ?>";
         contenedor.appendChild(nuevaFila);
     }
 });
 
-// Eliminar fila de vacuna
 function eliminarFilaVacuna(btn) {
     const filas = document.querySelectorAll('.fila-vacuna');
     if (filas.length > 1) {
         btn.closest('.fila-vacuna').remove();
     } else {
-        // Si solo queda una, solo la vaciamos
         btn.closest('.fila-vacuna').querySelector('select').value = "";
     }
 }

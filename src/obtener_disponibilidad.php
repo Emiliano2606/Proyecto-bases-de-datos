@@ -1,7 +1,6 @@
 <?php
 require_once '../includes/db_connection.php';
 
-// Capturamos variables
 $id_especialidad = isset($_GET['id_especialidad']) ? $_GET['id_especialidad'] : null;
 $fecha_elegida = isset($_GET['fecha']) ? $_GET['fecha'] : null;
 
@@ -11,7 +10,7 @@ if (!$id_especialidad) {
 }
 
 try {
-    // 1. Buscamos TODOS los horarios para esa especialidad (sin importar la fecha aún)
+    // 1. Buscamos TODOS los horarios para esa especialidad 
     $query = "SELECT hd.dia_semana, hd.hora_entrada, hd.hora_salida, 
                      s.nombre_sucursal, e.precio_base, e.duracion_minutos,
                      d.nombre_doctor, da.id_asignacion
@@ -31,7 +30,6 @@ try {
         exit;
     }
 
-    // Traducir el día de la fecha seleccionada a Español (porque tu tabla probablemente está en español)
     $dias_traduccion = [
         'Monday' => 'Lunes', 'Tuesday' => 'Martes', 'Wednesday' => 'Miércoles',
         'Thursday' => 'Jueves', 'Friday' => 'Viernes', 'Saturday' => 'Sábado', 'Sunday' => 'Domingo'
@@ -45,13 +43,11 @@ try {
         $nombre_dia_es = $dias_traduccion[$nombre_dia_en];    // Ej: Lunes
 
         foreach ($horariosDisponibles as $h) {
-            // Comparamos ignorando mayúsculas/minúsculas y espacios
             if (trim(strtolower($h['dia_semana'])) == trim(strtolower($nombre_dia_es)) || 
                 trim(strtolower($h['dia_semana'])) == trim(strtolower($nombre_dia_en))) {
                 
                 $infoFinal = $h;
                 
-                // Buscar citas ya ocupadas
                $qCitas = "SELECT hora_cita FROM public.citas 
            WHERE fk_id_asignacion = :id 
            AND fecha_cita = :f 
@@ -60,7 +56,6 @@ try {
                 $stmtCitas->execute(['id' => $h['id_asignacion'], 'f' => $fecha_elegida]);
                 $ocupados = $stmtCitas->fetchAll(PDO::FETCH_COLUMN);
 
-                // Generar los bloques
                 $inicio = strtotime($h['hora_entrada']);
                 $fin = strtotime($h['hora_salida']);
                 $duracion = ($h['duracion_minutos'] > 0 ? $h['duracion_minutos'] : 30) * 60;
@@ -77,13 +72,11 @@ try {
         }
     }
 
-    // Extraer qué días atiende el doctor para avisar al usuario
     $dias_que_atiende = array_unique(array_column($horariosDisponibles, 'dia_semana'));
 
-  // Al final de obtener_disponibilidad.php, en el echo json_encode:
-// Al final de obtener_disponibilidad.php
+
 echo json_encode([
-    'dias_permitidos' => $dias_que_atiende, // Asegúrate que sea un array ['Lunes', 'Martes']
+    'dias_permitidos' => $dias_que_atiende, 
     'precio' => $horariosDisponibles[0]['precio_base'],
     'sucursal' => $horariosDisponibles[0]['nombre_sucursal'],
     'doctor' => $horariosDisponibles[0]['nombre_doctor'],

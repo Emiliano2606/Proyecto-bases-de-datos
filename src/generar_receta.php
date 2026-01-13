@@ -4,13 +4,12 @@ require_once 'libs/fpdf186/fpdf.php';
 
 $id_cita = $_GET['id_cita'] ?? null;
 if (!$id_cita) die("ID de cita no proporcionado.");
-// VALIDACIÓN DE SEGURIDAD
 if (!$id_cita || $id_cita === 'undefined' || !is_numeric($id_cita)) {
     die("Error: El ID de la cita no es válido o no se recibió correctamente.");
 }
 try {
     // 1. Obtener los datos de la consulta uniendo con citas, mascotas y doctores
-    // Usamos la tabla consultas_medicas que es la que tiene los signos vitales
+   
     $sql = "SELECT c.*, ci.fecha_cita, m.nombre as mascota, m.tipo_mascota, 
                    du.nombre as dueno_nombre, du.apellido1, d.nombre_doctor
             FROM public.consultas_medicas c
@@ -28,11 +27,10 @@ try {
     if (!$con) die("No se encontró el registro clínico de esta cita.");
 
     // 2. Obtener Medicamentos (Recetas)
- // Dentro de generar_receta.php
 $sqlM = "SELECT p.nombre_producto, r.dosis_instrucciones 
          FROM public.recetas_medicamentos r
          JOIN public.producto p ON r.fk_id_producto = p.id_producto
-         WHERE r.fk_id_consulta = :id_c"; // Usamos el ID de la consulta medica
+         WHERE r.fk_id_consulta = :id_c"; 
 $stmtM = $pdo->prepare($sqlM);
 $stmtM->execute(['id_c' => $con['id_consulta']]);
 $medicamentos = $stmtM->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +39,6 @@ $medicamentos = $stmtM->fetchAll(PDO::FETCH_ASSOC);
     die("Error: " . $e->getMessage());
 }
 
-// --- GENERACIÓN DEL PDF ---
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 16);

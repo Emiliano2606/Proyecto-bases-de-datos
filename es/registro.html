@@ -191,7 +191,6 @@
                     estadoInput.value = resultado.estado;
                     municipioInput.value = resultado.municipio;
 
-                    // Llenar select de colonias
                     coloniaSelect.innerHTML = '<option value="">-- Seleccione Colonia --</option>';
                     resultado.colonias.forEach(col => {
                         const opt = document.createElement('option');
@@ -201,7 +200,6 @@
                     });
                     coloniaSelect.disabled = false;
 
-                    // Seleccionar la primera colonia automáticamente
                     if (resultado.colonias.length > 0) {
                         coloniaSelect.value = resultado.colonias[0];
                     }
@@ -215,7 +213,6 @@
                 actualizarDireccion();
             }
 
-            // Función para actualizar la dirección final
             function actualizarDireccion() {
                 const numeroExterior = numeroExteriorInput.value.trim();
                 const numeroInterior = numeroInteriorInput.value.trim();
@@ -234,7 +231,6 @@
                 direccionFinal.textContent = `Dirección seleccionada: ${direccion}`;
             }
 
-            // Event listeners
             cpInput.addEventListener('blur', () => buscarCP(cpInput.value));
             coloniaSelect.addEventListener('change', actualizarDireccion);
             calleInput.addEventListener('input', actualizarDireccion);

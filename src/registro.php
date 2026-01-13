@@ -1,10 +1,9 @@
 
 <?php
-// 1. INICIAR SESIÓN (Solo una vez al principio)
+
 session_start();
 require_once '../includes/db_connection.php'; 
 
-// Función para mostrar errores
 function display_error_and_exit($error_array) {
     echo "<h1>Errores de Validación</h1>";
     foreach ($error_array as $error) {
@@ -15,7 +14,6 @@ function display_error_and_exit($error_array) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // 2. OBTENER Y SANITIZAR DATOS
     $email = htmlspecialchars(trim($_POST['email'] ?? ''));
     $password = $_POST['password'] ?? ''; 
     $nombre = htmlspecialchars(trim($_POST['nombre'] ?? ''));
@@ -36,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numero_interior = htmlspecialchars(trim($_POST['numero_interior'] ?? ''));
     $referencias = htmlspecialchars(trim($_POST['referencias'] ?? ''));
     
-    // 3. VALIDACIONES
     $errores = [];
 
     if (empty($nombre) || empty($apellido1) || empty($email) || empty($password) || empty($fecha_nacimiento)) {
@@ -57,11 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $password_hash = password_hash($password, PASSWORD_DEFAULT); 
 
-    // 4. INICIAR TRANSACCIÓN
     $pdo->beginTransaction(); 
     
     try {
-        // === INSERCIÓN 1: Usuarios ===
         $sql_usuarios = "INSERT INTO Usuarios (email, password) VALUES (:email, :password_hash) RETURNING idUsuario";
         $stmt_usuarios = $pdo->prepare($sql_usuarios);
         $stmt_usuarios->execute([
@@ -71,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $idUsuario = $stmt_usuarios->fetchColumn(); 
         
-        // === INSERCIÓN 2: DatosUsuario ===
         $sql_datos = "INSERT INTO DatosUsuario (fk_id_usuario, nombre, apellido1, apellido2, sexo_dueno, fecha_nacimiento, procedencia_mascota, telefono_principal, telefono_emergencia) 
                       VALUES (:id, :nombre, :apellido1, :apellido2, :sexo, :fecha_nac, :procedencia, :tel_princ, :tel_emerg)";
         $stmt_datos = $pdo->prepare($sql_datos);
@@ -87,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ':tel_emerg' => $telefono_emergencia
         ]);
         
-        // === INSERCIÓN 3: Domicilio ===
         $sql_domicilio = "INSERT INTO Domicilio (fk_usuario_id, calle, numero_exterior, numero_interior, colonia, municipio, estado, cp, referencias)
                           VALUES (:id, :calle, :num_ext, :num_int, :colonia, :municipio, :estado, :cp, :referencias)";
         $stmt_domicilio = $pdo->prepare($sql_domicilio);
@@ -103,12 +96,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ':referencias' => $referencias
         ]);
         
-        // 5. CONFIRMAR Y GUARDAR EN SESIÓN
         $pdo->commit(); 
         
-        $_SESSION['idUsuario'] = $idUsuario; // Importante para el siguiente formulario
+        $_SESSION['idUsuario'] = $idUsuario; 
 
-        // Usamos la ruta absoluta que confirmamos antes para evitar el error 404
         header("Location: ../es/registro_mascota.html?success=1");
         exit();
         

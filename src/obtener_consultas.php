@@ -11,9 +11,8 @@ if (!$id_mascota) {
 }
 
 try {
-    // Agregamos los nuevos campos a la consulta SQL
- // Cambia tu línea de SELECT por esta:
-$sql = "SELECT c.id_consulta, c.fk_id_cita, c.sintomas, c.prediagnostico, c.diagnostico, -- Agregamos fk_id_cita
+  
+$sql = "SELECT c.id_consulta, c.fk_id_cita, c.sintomas, c.prediagnostico, c.diagnostico, 
                c.tratamiento_general, c.peso, c.temperatura, 
                c.frecuencia_cardiaca, c.frecuencia_respiratoria, c.proxima_cita,
                d.nombre_doctor, ci.fecha_cita

@@ -1,7 +1,3 @@
-// ==============================================
-// SISTEMA DE GATOS - UNIFICADO (ESTILO AVES)
-// ==============================================
-
 const vacunasGato = [
     { nombre: "Herpesvirus felino-1 (FHV)", valor: 16 },
     { nombre: "Calicivirus felino (FCV)", valor: 17 },

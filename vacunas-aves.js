@@ -1,8 +1,3 @@
-// ==============================================
-// SISTEMA DE AVES - COMPLETO Y FUNCIONAL (FIX)
-// ==============================================
-
-// Array de vacunas de aves
 const vacunasAve = [
     { nombre: "Newcastle (NDV)", valor: 30 },
     { nombre: "Viruela Aviar", valor: 31 },
@@ -16,9 +11,7 @@ const vacunasAve = [
     { nombre: "Pacheco's Disease", valor: 39 }
 ];
 
-// =============================
-// 1. CARGAR VACUNAS
-// =============================
+//aqui voy a cargar las avcunas anotado para las chicas
 function cargarVacunasAve(contenedor) {
     if (!contenedor) return;
 
@@ -46,9 +39,7 @@ function cargarVacunasAve(contenedor) {
     });
 }
 
-// =============================
-// 2. ACTUALIZAR FECHAS DE VACUNAS
-// =============================
+
 function actualizarFechasAve(seccion, contenedor, sufijo) {
     const seleccionados = seccion.querySelectorAll('.vacuna-ave-checkbox-input:checked');
     contenedor.innerHTML = '';
@@ -70,11 +61,9 @@ function actualizarFechasAve(seccion, contenedor, sufijo) {
     });
 }
 
-// =============================
-// 3. DOM READY
-// =============================
+
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🦜 Sistema de aves cargado');
+    console.log(' Sistema de aves cargado');
 
     const contAve = document.getElementById('lista-vacunas-checkbox3');
     if (contAve) {
@@ -104,34 +93,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// =============================
-// 4. PROCESAR AVES ANTES DE ENVIAR (FIX FINAL)
-// =============================
+
 function procesarAvesAntesDeEnviar() {
     const form = document.querySelector('form');
     if (!form) return true;
 
-    // Limpiar hiddens previos
     form.querySelectorAll('input[data-ave-hidden]').forEach(e => e.remove());
 
-    // TODAS las secciones de aves
     const sectionsAves = document.querySelectorAll('#sectionAve, [id^="sectionAve_"]');
 
     sectionsAves.forEach((section, index) => {
         const numeroAve = index + 1;
         const sufijo = numeroAve === 1 ? '' : `_${numeroAve}`;
 
-        // =============================
-        // NOMBRE DEL AVE
-        // =============================
+
         const nombreInput = section.querySelector(`[name="nombre_mascota${sufijo}"], [name="nombre_mascota"]`);
         if (nombreInput && nombreInput.value.trim()) {
             crearHidden(form, `nombre_ave_forzado_${numeroAve}`, nombreInput.value.trim());
         }
 
-        // =============================
-        // CAMPOS GENERALES DEL AVE
-        // =============================
+
         const camposAve = [
             'fecha_nacimiento_ave',
             'sexo_ave',
@@ -162,9 +143,7 @@ function procesarAvesAntesDeEnviar() {
             }
         });
 
-        // =============================
-        // VACUNAS
-        // =============================
+
         const vacunas = section.querySelectorAll('.vacuna-ave-checkbox-input:checked');
 
         vacunas.forEach(vacuna => {
@@ -177,13 +156,11 @@ function procesarAvesAntesDeEnviar() {
         });
     });
 
-    console.log('✅ Aves serializadas correctamente');
+    console.log(' Aves serializadas correctamente');
     return true;
 }
 
-// =============================
-// UTILIDAD
-// =============================
+
 function crearHidden(form, name, value) {
     const input = document.createElement('input');
     input.type = 'hidden';

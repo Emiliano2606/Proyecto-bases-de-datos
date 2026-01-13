@@ -1,5 +1,4 @@
 <?php
-// obtener_todo_recepcion.php
 error_reporting(E_ALL);
 ini_set('display_errors', 0); 
 
@@ -77,14 +76,12 @@ try {
         exit;
     }
 
-    // --- ACCIÓN DE GUARDADO CON VALIDACIÓN DE DISPONIBILIDAD ---
     if ($accion === 'guardar_cita') {
         try {
             $id_asig = $_POST['fk_id_asignacion'];
             $fecha   = $_POST['fecha_cita'];
             $hora    = $_POST['hora_cita'];
 
-            // 1. Verificar si hay una cita ACTIVA (no finalizada ni cancelada) en ese horario
             $sql_val = "SELECT COUNT(*) FROM public.citas 
                         WHERE fk_id_asignacion = :asig 
                         AND fecha_cita = :fecha 
@@ -106,7 +103,6 @@ try {
                 exit;
             }
 
-            // 2. Si el horario está libre (o la cita anterior ya terminó), procedemos al INSERT
             $sql = "INSERT INTO public.citas 
                     (fk_id_mascota, fk_id_asignacion, fecha_cita, hora_cita, motivo_cliente, monto_base_congelado, estatus_cita) 
                     VALUES 
@@ -124,7 +120,6 @@ try {
             
             echo json_encode(["success" => true]);
         } catch (Exception $e) {
-            // Si el error es por el UNIQUE de la DB (por si acaso), enviamos mensaje amigable
             if (strpos($e->getMessage(), 'cita_unica_bloque') !== false) {
                 echo json_encode(["success" => false, "error" => "El horario seleccionado ya no está disponible."]);
             } else {

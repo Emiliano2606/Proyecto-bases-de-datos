@@ -20,7 +20,6 @@ function cargarVacunasEnContenedor(contenedor) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
 
-    // En lugar de usar document.getElementById, usamos el contenedor que ya recibimos
     const seccionPadre = contenedor.closest('.section');
     const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
 
@@ -35,13 +34,11 @@ function cargarVacunasEnContenedor(contenedor) {
     });
 }
 
-// DELEGACIÓN DE EVENTOS: Esto hace que funcione en clones automáticamente
 document.addEventListener('change', function(e) {
     if (e.target.classList.contains('vacuna-checkbox-input')) {
         const checkbox = e.target;
         const seccionPadre = checkbox.closest('.section');
 
-        // BUSQUEDA CLAVE: Buscamos por CLASE dentro de esta sección específica
         const containerFechas = seccionPadre.querySelector('.fechas-vacunas-dinamicas');
 
         const sufijo = seccionPadre.id.includes('_') ? '_' + seccionPadre.id.split('_').pop() : '';
@@ -57,7 +54,6 @@ function actualizarFechasDeEstaMascota(seccion, contenedor, sufijo) {
     contenedor.innerHTML = '';
 
     seleccionados.forEach(checkbox => {
-        // CORRECCIÓN: Convertimos checkbox.value a Number para que coincida con la lista
         const vacunaInfo = vacunasPerro.find(v => v.valor === Number(checkbox.value));
 
         if (vacunaInfo) {

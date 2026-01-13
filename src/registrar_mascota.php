@@ -1,17 +1,13 @@
 <?php
-// 1. INICIAR SESIÓN Y CONEXIÓN
 session_start();
 
-// ==============================================
-// DEBUG COMPLETO - QUÉ DATOS ESTÁN LLEGANDO actuallllllllllllllll
-// ==============================================
+
 
 error_log("\n\n");
 error_log("==========================================");
 error_log("=== DEBUG DE DATOS RECIBIDOS - GATOS ===");
 error_log("==========================================");
 
-// 1. Mostrar TODOS los datos POST recibidos relacionados con gatos
 error_log("=== TODOS LOS CAMPOS POST CON 'gato' o 'vacuna' ===");
 foreach ($_POST as $key => $value) {
     if (strpos($key, 'gato') !== false || strpos($key, 'vacuna') !== false) {
@@ -23,29 +19,24 @@ foreach ($_POST as $key => $value) {
     }
 }
 
-// 2. Contador específico para ver cuántos gatos vienen
 error_log("\n=== CONTEO DE GATOS ===");
 
-// Método 1: Buscar por nombres de campo
 $gatosEncontrados = 0;
 
-// Primero el gato 1 (sin sufijo)
 if (isset($_POST['nombre_gato[]']) && !empty(trim($_POST['nombre_gato[]']))) {
     $gatosEncontrados++;
-    error_log("✅ Gato 1 encontrado (nombre_gato[]): " . $_POST['nombre_gato[]']);
+    error_log(" Gato 1 encontrado (nombre_gato[]): " . $_POST['nombre_gato[]']);
 }
 
-// Luego buscar gatos 2, 3, 4, etc.
 for ($i = 2; $i <= 10; $i++) {
     $campoNombre = "nombre_gato_$i";
     if (isset($_POST[$campoNombre]) && !empty(trim($_POST[$campoNombre]))) {
         $gatosEncontrados++;
-        error_log("✅ Gato $i encontrado ($campoNombre): " . $_POST[$campoNombre]);
+        error_log(" Gato $i encontrado ($campoNombre): " . $_POST[$campoNombre]);
     }
 }
 
-// Método 2: Buscar por patrones
-error_log("\n=== BUSQUEDA POR PATRONES ===");
+error_log(message: "\n=== BUSQUEDA POR PATRONES ===");
 foreach ($_POST as $key => $value) {
     if (preg_match('/nombre_gato/', $key)) {
         $valor = is_array($value) ? implode(',', $value) : $value;
@@ -53,14 +44,12 @@ foreach ($_POST as $key => $value) {
     }
 }
 
-// 3. Mostrar resumen final
 error_log("\n=== RESUMEN FINAL ===");
 error_log("Total de gatos detectados: $gatosEncontrados");
 
 if ($gatosEncontrados === 0) {
-    error_log("🚨 ALERTA: ¡NO SE ENCONTRARON GATOS EN LOS DATOS!");
+    error_log(" ALERTA: ¡NO SE ENCONTRARON GATOS EN LOS DATOS!");
     
-    // Mostrar TODOS los datos POST para debug completo
     error_log("\n=== TODOS LOS DATOS POST (completo) ===");
     foreach ($_POST as $key => $value) {
         if (is_array($value)) {
@@ -76,14 +65,12 @@ error_log("==========================================");
 require_once '../includes/db_connection.php'; 
 
 try {
-    // 2. VERIFICAR QUE EXISTA UN DUEÑO EN SESIÓN
     $fk_id_dueno = $_SESSION['idUsuario'] ?? null;
 
     if (!$fk_id_dueno) {
         die("Error: No se encontró una sesión de usuario activa. Por favor, regístrese primero.");
     }
 
-    // 3. INICIAR TRANSACCIÓN (PostgreSQL)
     $pdo->beginTransaction(); 
 
 
@@ -95,7 +82,6 @@ try {
 
             $sufijo = ($index === 0) ? "" : "_" . ($index + 1);
 
-            // A. INSERTAR EN TABLA MASCOTAS
             $sqlMascota = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota) 
                            VALUES (:dueno, :nom, :fecha, :sexo, :tipo) RETURNING idmascota";
 
@@ -113,7 +99,6 @@ try {
             
             $idNuevoMascota = $stmtMascota->fetchColumn(); 
 
-            // B. INSERTAR EN DETALLES_PERROS
             $sqlDetalle = "INSERT INTO detalles_perros (
                 fk_id_mascota, raza_perro, grupo_perro, seccion_perro, pais_perro, 
                 color_principal, color_secundario, tipo_pelo, patron_pelo, 
@@ -151,7 +136,6 @@ try {
                 ':tipo_chip'    => $_POST["tipo_chip_perro$sufijo"] ?? null
             ]);
 
-            // C. VACUNAS PERROS
             $nombrePostVacunas = "vacunas_perro$sufijo";
             if (isset($_POST[$nombrePostVacunas])) {
                 foreach ((array)$_POST[$nombrePostVacunas] as $idVacuna) {
@@ -166,7 +150,7 @@ try {
     }
 
  // ==============================================
-// PROCESAR GATOS - VERSIÓN CORREGIDA (ESTILO AVES)
+// PROCESAR GATOS 
 // ==============================================
 error_log("=== INICIANDO PROCESAMIENTO GATOS ===");
 
@@ -195,7 +179,6 @@ foreach ($todosLosGatos as $gato) {
     $sufijo = ($indice === 0) ? "" : "_" . ($indice + 1);
 
     try {
-        // 1. Insertar Mascota
         $fecha_n = obtenerDatoGato("fecha_nacimiento_gato", $sufijo);
         $sexo_n = obtenerDatoGato("sexo_gato", $sufijo);
 
@@ -211,7 +194,6 @@ foreach ($todosLosGatos as $gato) {
         ]);
         $idGato = $stmt->fetchColumn();
 
-        // 2. Insertar Detalles
         $sqlDet = "INSERT INTO detalles_gatos (
             fk_id_mascota, raza_gato, grupo_gato, registro_principal_gato, tamano_gato, 
             peso_gato, tipo_pelaje_especifico, caracteristicas_fisicas, color_principal, 
@@ -250,7 +232,6 @@ foreach ($todosLosGatos as $gato) {
             ':tipo_chip' => obtenerDatoGato("tipo_chip_gato", $sufijo)
         ]);
 
-        // 3. Vacunas
         $claveVacunas = "vacunas_gato" . $sufijo;
         if (isset($_POST[$claveVacunas]) && is_array($_POST[$claveVacunas])) {
             foreach ($_POST[$claveVacunas] as $idVacuna) {
@@ -282,12 +263,11 @@ foreach ($todosLosGatos as $gato) {
 
 if (isset($_POST['tipo_mascota']) && $_POST['tipo_mascota'] === 'Ave') {
 // ==============================================
-// 6. PROCESAR AVES - VERSIÓN CORREGIDA PARA MÚLTIPLES AVES
+// . PROCESAR AVES -
 // ==============================================
 
 error_log("=== INICIANDO PROCESAMIENTO AVES ===");
 
-// FUNCIÓN AUXILIAR - DECLARADA UNA SOLA VEZ FUERA DEL BUCLE
 function obtenerDatoAve($campoBase, $sufijo) {
     $campoCompleto = $campoBase . $sufijo;
     
@@ -301,10 +281,8 @@ function obtenerDatoAve($campoBase, $sufijo) {
     }
 }
 
-// 1. BUSCAR TODAS LAS AVES
 $todosLasAves = [];
 
-// Método 1: Buscar campos forzados
 for ($i = 1; $i <= 10; $i++) {
     $campoForzado = 'nombre_ave_forzado_' . $i;
     if (isset($_POST[$campoForzado]) && !empty(trim($_POST[$campoForzado]))) {
@@ -314,11 +292,10 @@ for ($i = 1; $i <= 10; $i++) {
             'indice' => $i - 1,
             'tipo' => 'forzado'
         ];
-        error_log("✅ Ave forzada $i: '$nombreLimpio'");
+        error_log(" Ave forzada $i: '$nombreLimpio'");
     }
 }
 
-// Método 2: Buscar primera ave (sin sufijo)
 if (isset($_POST['nombre_mascota']) && !empty(trim($_POST['nombre_mascota']))) {
     $nombreLimpio = trim($_POST['nombre_mascota']);
     
@@ -333,11 +310,10 @@ if (isset($_POST['nombre_mascota']) && !empty(trim($_POST['nombre_mascota']))) {
             'indice' => 0,
             'tipo' => 'primera'
         ];
-        error_log("✅ Ave 1 (nombre_mascota): '$nombreLimpio'");
+        error_log(" Ave 1 (nombre_mascota): '$nombreLimpio'");
     }
 }
 
-// Método 3: Buscar aves adicionales (con sufijo _2, _3, etc.)
 for ($i = 2; $i <= 10; $i++) {
     $campoAve = 'nombre_mascota_' . $i;
     
@@ -355,41 +331,34 @@ for ($i = 2; $i <= 10; $i++) {
                 'indice' => $i - 1,
                 'tipo' => 'adicional'
             ];
-            error_log("✅ Ave $i ($campoAve): '$nombreLimpio'");
+            error_log(" Ave $i ($campoAve): '$nombreLimpio'");
         }
     }
 }
 
-// Ordenar por índice
 usort($todosLasAves, function($a, $b) {
     return $a['indice'] - $b['indice'];
 });
 
-error_log("📊 Total aves encontradas: " . count($todosLasAves));
+error_log(" Total aves encontradas: " . count($todosLasAves));
 
 if (empty($todosLasAves)) {
-    error_log("⚠️ NO SE ENCONTRARON AVES PARA PROCESAR");
+    error_log(" NO SE ENCONTRARON AVES PARA PROCESAR");
 } else {
-    // Procesar cada ave
     foreach ($todosLasAves as $ave) {
         $nombreLimpio = $ave['nombre'];
         $indice = $ave['indice'];
         
-        // Determinar sufijo
         $sufijo = ($indice === 0) ? "" : "_" . ($indice + 1);
         
-        error_log("\n✅ PROCESANDO AVE " . ($indice + 1) . " '$nombreLimpio' (sufijo: '$sufijo')");
+        error_log("\n PROCESANDO AVE " . ($indice + 1) . " '$nombreLimpio' (sufijo: '$sufijo')");
         
         try {
-            // ====================
-            // A. OBTENER DATOS BÁSICOS
-            // ====================
+       
             $fecha_v_a = obtenerDatoAve("fecha_nacimiento_ave", $sufijo);
             $sexo_v_a = obtenerDatoAve("sexo_ave", $sufijo);
             
-            // ====================
-            // B. INSERTAR MASCOTA
-            // ====================
+   
             $sqlMascotaA = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota, foto_url)
                             VALUES (:dueno, :nom, :fecha, :sexo, :tipo, :foto) RETURNING idmascota";
             $stmtMascotaA = $pdo->prepare($sqlMascotaA);
@@ -404,11 +373,8 @@ if (empty($todosLasAves)) {
             ]);
             
             $idAve = $stmtMascotaA->fetchColumn();
-            error_log("   ✅ Ave insertada con ID: $idAve");
-            
-            // ====================
-            // C. INSERTAR DETALLES
-            // ====================
+            error_log("    Ave insertada con ID: $idAve");
+
             $sqlDetAve = "INSERT INTO detalles_aves (
                 fk_id_mascota, especie_ave, grupo_taxonomico, estatus_conservacion, 
                 clasificacion_autoridades, tamano_ave, convive_animales, tipo_alimento, 
@@ -424,7 +390,6 @@ if (empty($todosLasAves)) {
             
             $stmtDetA = $pdo->prepare($sqlDetAve);
             
-            // Obtener todos los datos específicos de ESTA ave (con su sufijo)
             $valoresDetalles = [
                 ':id' => $idAve,
                 ':especie' => obtenerDatoAve("especie_ave", $sufijo),
@@ -448,11 +413,9 @@ if (empty($todosLasAves)) {
             ];
             
             $stmtDetA->execute($valoresDetalles);
-            error_log("   ✅ Detalles insertados para ave $idAve");
+            error_log("    Detalles insertados para ave $idAve");
             
-            // ====================
-            // D. PROCESAR VACUNAS
-            // ====================
+
             $nombreClaveVacunas = "vacunas_ave" . $sufijo;
             
             if (isset($_POST[$nombreClaveVacunas]) && is_array($_POST[$nombreClaveVacunas])) {
@@ -476,19 +439,19 @@ if (empty($todosLasAves)) {
                             ':fec' => $fechaVacuna
                         ]);
                         
-                        error_log("     ✅ Vacuna $idVacuna insertada: $fechaVacuna");
+                        error_log("      Vacuna $idVacuna insertada: $fechaVacuna");
                     } else {
-                        error_log("     ⚠️ Vacuna $idVacuna sin fecha ($campoFecha)");
+                        error_log("      Vacuna $idVacuna sin fecha ($campoFecha)");
                     }
                 }
             } else {
-                error_log("   ℹ️ No hay vacunas para esta ave ($nombreClaveVacunas)");
+                error_log("   ℹ No hay vacunas para esta ave ($nombreClaveVacunas)");
             }
             
             error_log("--- Ave '$nombreLimpio' procesada correctamente ---\n");
             
         } catch (PDOException $e) {
-            error_log("❌ ERROR procesando ave '$nombreLimpio': " . $e->getMessage());
+            error_log(" ERROR procesando ave '$nombreLimpio': " . $e->getMessage());
         }
     }
 }
@@ -501,9 +464,6 @@ error_log("Total aves procesadas exitosamente: " . count($todosLasAves));
 
 
 
-// ==============================================
-// GUARDAR LAGARTOS (Lógica de Forzados)
-// ==============================================
 error_log("=== PROCESANDO SECCIÓN LAGARTOS ===");
 
 for ($i = 1; $i <= 10; $i++) {
@@ -511,7 +471,6 @@ for ($i = 1; $i <= 10; $i++) {
 
     if ($nombreForzado) {
         try {
-            // 1. Insertar en MASCOTAS
             $sqlM = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota) 
                      VALUES (:dueno, :nom, :fec, :sex, :tipo) RETURNING idmascota";
             $stmtM = $pdo->prepare($sqlM);
@@ -524,7 +483,6 @@ for ($i = 1; $i <= 10; $i++) {
             ]);
             $idLagarto = $stmtM->fetchColumn();
 
-            // 2. Insertar en DETALLES_LAGARTOS (Usa idLagarto como Primary Key)
             $sqlD = "INSERT INTO detalles_lagartos (
                 fk_id_mascota, especie_lagarto, tamano_lagarto, clasificacion_lagarto,
                 estatus_lagarto, requerimientos_ambientales_lagarto, fuente_calor_lagarto,
@@ -551,7 +509,6 @@ for ($i = 1; $i <= 10; $i++) {
                 ':tra' => $_POST["tratamientos_lagarto_lag_forzado_$i"] ?: null
             ]);
 
-            // 3. Insertar Vacunas en HISTORIAL_VACUNACION
             $vacunas = $_POST["vacunas_lag_forzado_$i"] ?? [];
             foreach ($vacunas as $idVac) {
                 $fechaVac = $_POST["fecha_vacuna_lag_forzado_{$idVac}_{$i}"] ?? null;
@@ -561,19 +518,16 @@ for ($i = 1; $i <= 10; $i++) {
                     $pdo->prepare($sqlV)->execute([$idLagarto, $idVac, $fechaVac]);
                 }
             }
-            error_log("✅ Lagarto $i guardado con éxito.");
+            error_log(" Lagarto $i guardado con éxito.");
 
         } catch (Exception $e) {
-            error_log("❌ Error en Lagarto $i: " . $e->getMessage());
+            error_log(" Error en Lagarto $i: " . $e->getMessage());
         }
     }
 }
 
 
 
-// ==============================================
-// PROCESAR SERPIENTES (Lógica de Forzados)
-// ==============================================
 error_log("=== INICIANDO PROCESAMIENTO SERPIENTES ===");
 
 for ($i = 1; $i <= 10; $i++) {
@@ -581,7 +535,6 @@ for ($i = 1; $i <= 10; $i++) {
 
     if ($nombreForzado) {
         try {
-            // 1. Insertar en tabla principal MASCOTAS
             $sqlM = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota) 
                      VALUES (:dueno, :nom, :fec, :sex, :tipo) RETURNING idmascota";
             $stmtM = $pdo->prepare($sqlM);
@@ -594,7 +547,6 @@ for ($i = 1; $i <= 10; $i++) {
             ]);
             $idMascota = $stmtM->fetchColumn();
 
-            // 2. Insertar en DETALLES_SERPIENTES (Orden exacto del formulario)
             $sqlD = "INSERT INTO detalles_serpientes (
                 fk_id_mascota, especie_serpiente, tamano_serpiente, clasificacion_serpiente,
                 estatus_serpiente, fuente_calor_serpiente, tipo_terrario_serpiente,
@@ -620,7 +572,6 @@ for ($i = 1; $i <= 10; $i++) {
                 ':dim' => $_POST["dimensiones_terrario_serpiente_serp_forzado_$i"] ?: null
             ]);
 
-            // 3. Insertar Vacunas en HISTORIAL_VACUNACION
             $vacunas = $_POST["vacunas_serp_forzado_$i"] ?? [];
             foreach ($vacunas as $idVac) {
                 $fechaVac = $_POST["fecha_v_serp_forzado_{$idVac}_{$i}"] ?? null;
@@ -630,25 +581,22 @@ for ($i = 1; $i <= 10; $i++) {
                     $pdo->prepare($sqlV)->execute([$idMascota, $idVac, $fechaVac]);
                 }
             }
-            error_log("✅ Serpiente $i guardada correctamente.");
+            error_log(" Serpiente $i guardada correctamente.");
 
         } catch (Exception $e) {
-            error_log("❌ Error en Serpiente $i: " . $e->getMessage());
+            error_log(" Error en Serpiente $i: " . $e->getMessage());
         }
     }
 }
 
 
-// ==============================================
-// PROCESAR TORTUGAS (PHP)
-// ==============================================
+
 
 for ($i = 1; $i <= 10; $i++) {
     $nombreForzado = $_POST["nombre_tort_forzado_$i"] ?? null;
 
     if ($nombreForzado) {
         try {
-            // 1. Insertar en tabla principal MASCOTAS
             $sqlM = "INSERT INTO mascotas (fk_id_dueno, nombre, fecha_nacimiento, sexo, tipo_mascota) 
                      VALUES (:dueno, :nom, :fec, :sex, :tipo) RETURNING idmascota";
             $stmtM = $pdo->prepare($sqlM);
@@ -661,7 +609,6 @@ for ($i = 1; $i <= 10; $i++) {
             ]);
             $idMascota = $stmtM->fetchColumn();
 
-            // 2. Insertar en DETALLES_TORTUGAS (Orden del Formulario)
             $sqlD = "INSERT INTO detalles_tortugas (
                 fk_id_mascota, especie_tortuga, tamano_tortuga, clasificacion_tortuga,
                 estatus_tortuga, fuente_calor_tortuga, alimentos_tortuga, 
@@ -684,7 +631,6 @@ for ($i = 1; $i <= 10; $i++) {
                 $_POST["dimensiones_terrario_tortuga_tort_forzado_$i"] ?: null
             ]);
 
-            // 3. Insertar Vacunas en HISTORIAL_VACUNACION
             $vacunasSeleccionadas = $_POST["vacunas_tort_forzado_$i"] ?? [];
             foreach ($vacunasSeleccionadas as $idVacuna) {
                 $fechaVacuna = $_POST["fecha_v_tort_forzado_{$idVacuna}_{$i}"] ?? null;
@@ -716,21 +662,18 @@ for ($i = 1; $i <= 10; $i++) {
 
 
 
-    // 6. FINALIZAR TRANSACCIÓN
     $pdo->commit();
 
-    // Redirigir a una página de éxito
     header("Location: ../vistas/perfil_usuario.php?msg=registro_exitoso");
     exit();
 
 } catch (Exception $e) {
-    // Si algo falla, deshacemos todos los inserts
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }
     
-    error_log("❌ ERROR CRÍTICO: " . $e->getMessage());
-    error_log("❌ STACK TRACE: " . $e->getTraceAsString());
+    error_log(" ERROR CRÍTICO: " . $e->getMessage());
+    error_log(" STACK TRACE: " . $e->getTraceAsString());
     
     die("Error crítico al guardar las mascotas: " . $e->getMessage());
 }

@@ -29,7 +29,6 @@ $mascotas_js = json_encode($mis_mascotas);
         .detalle-valor { color: #333; text-align: right; font-size: 0.9rem; }
         .vacuna-fecha { font-size: 0.8rem; color: #777; font-style: italic; }
 
-        /* MODALES */
         .modal-personalizado { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(3px); }
         .modal-contenido { background-color: white; margin: 5% auto; padding: 25px; border-radius: 15px; width: 90%; max-width: 450px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; }
         .cerrar-modal { position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; color: #5d4037; cursor: pointer; }
@@ -45,7 +44,6 @@ $mascotas_js = json_encode($mis_mascotas);
         .btn-confirmar { background: #2ecc71; color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 15px; }
         textarea { width: 100%; border-radius: 8px; border: 1px solid #d4c8bf; padding: 10px; resize: none; margin-top: 5px; }
 
-        /* Estilo para items de la lista de citas */
         .cita-card-mini { background: #fdfaf8; border: 1px solid #d4c8bf; padding: 12px; border-radius: 10px; margin-bottom: 10px; transition: 0.3s; }
         .cita-card-mini:hover { border-color: #5d4037; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     </style>
@@ -208,21 +206,17 @@ $mascotas_js = json_encode($mis_mascotas);
         const mascotas = <?php echo $mascotas_js; ?>;
         let horaSeleccionada = null;
 
-        // --- 1. LÓGICA PRINCIPAL DEL DASHBOARD ---
         async function actualizarDashboard(index) {
             if (mascotas.length === 0) return;
             const m = mascotas[index];
 
-            // Datos básicos
             document.getElementById('display-nombre-mascota').innerText = m.nombre;
             document.getElementById('display-especie-top').innerText = m.tipo_mascota;
             document.getElementById('nombre-agendar').innerText = m.nombre;
 
-            // Foto perfil
             const carpetaMap = { 'Perro': 'perro.jfif', 'Gato': 'gato.jfif', 'Ave': 'ave.jfif', 'Lagarto': 'lagarto.webp', 'Serpiente': 'serpiente.jfif', 'Tortuga': 'tortuga.jfif' };
             document.getElementById('profile-image').src = 'uploads/' + (carpetaMap[m.tipo_mascota] || 'enproceso.jpg');
 
-            // Cargar Detalles
             try {
                 const response = await fetch(`obtener_detalles.php?id=${m.idmascota}&tipo=${m.tipo_mascota}`);
                 const data = await response.json();
@@ -242,13 +236,11 @@ $mascotas_js = json_encode($mis_mascotas);
 
             } catch (e) { console.error("Error cargando detalles:", e); }
 
-            // IMPORTANTE: Cargar las citas, consultas y el NUEVO CARNET DE VACUNAS
             cargarCitasMascota();
             cargarConsultasRecetas(m.idmascota);
             cargarVacunasMascota(m.idmascota); // Nueva función integrada
         }
 
-        // --- FUNCIÓN PARA CARGAR EL CARNET DE VACUNACIÓN ---
        async function cargarVacunasMascota(idMascota) {
     const lista = document.getElementById('lista-vacunas');
     if(!lista) return;
@@ -256,14 +248,12 @@ $mascotas_js = json_encode($mis_mascotas);
     try {
         const res = await fetch(`obtener_vacunas_mascota.php?id_mascota=${idMascota}`);
         
-        // Verificamos si la respuesta es OK (200)
         if (!res.ok) throw new Error('Error en el servidor');
 
         const vacunas = await res.json();
         
         lista.innerHTML = "";
 
-        // Si el JSON trae un error del PHP
         if (vacunas.error) {
             console.error("Error desde PHP:", vacunas.error);
             lista.innerHTML = "<li>Error al obtener vacunas.</li>";
@@ -294,7 +284,6 @@ $mascotas_js = json_encode($mis_mascotas);
         lista.innerHTML = "<li>No se pudo cargar el carnet.</li>";
     }
 }
-        // --- 2. LÓGICA DE AGENDAR CITA ---
         async function abrirModalCita() {
             const index = document.getElementById('selectorMascota').value;
             const m = mascotas[index];
@@ -377,12 +366,11 @@ $mascotas_js = json_encode($mis_mascotas);
                 if (r.success) {
                     alert("¡Cita registrada!");
                     cerrarModal();
-                    cargarCitasMascota(); // Refrescar lista lateral
+                    cargarCitasMascota(); 
                 } else alert("Error: " + r.error);
             } catch (e) { console.error(e); }
         };
 
-        // --- 3. LÓGICA DE VER CITAS ---
         async function cargarCitasMascota() {
             const index = document.getElementById('selectorMascota').value;
             const m = mascotas[index];
@@ -464,7 +452,6 @@ $mascotas_js = json_encode($mis_mascotas);
             } catch (e) { console.error(e); }
         }
 
-        // --- CERRAR MODALES ---
         function cerrarModal() { 
             document.getElementById('modalCita').style.display = "none"; 
             document.getElementById('formAgendar').reset();

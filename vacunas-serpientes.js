@@ -1,7 +1,3 @@
-// ==============================================
-// SISTEMA DE SERPIENTES - JS FINAL
-// ==============================================
-
 const vacunasSerpiente = [
     { nombre: "Chequeo Parasitario (Coprológico)", valor: 52 },
     { nombre: "Desparasitación Interna", valor: 53 },
