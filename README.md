@@ -1,3 +1,35 @@
+
+# README.md
+
+En este documento se narrara como instalar el sistema y todos los complementos asi como versiones para ejecutar el sistema
+
+
+
+## Authors
+
+- [@Emiliano2606](https://github.com/Emiliano2606)
+- [@danayaziel](https://github.com/danayaziel)
+- [@Magaly-Uribe](https://github.com/Magaly-Uribe)
+
+
+## Lenguajes usados
+
+**Frontend:** HTML , CSS , JS 
+
+**Server:** PHP
+
+**Database:** POSTRESQL
+
+## Versiones
+| Lenguaje | Version | 
+|------------|---------|
+| **PHP** | 8.2.12 |  |
+| **PostgreSQL** |  PostgreSQL 17.6 |
+| **HTML** | HTML5 |
+| **CSS** | CSS3 |
+| **JS** | ES6+ Node.js 6.0+ |
+
+
 # Instrucciones para Cargar la Base de Datos
 
 Sigue estos pasos para restaurar la base de datos `sistema_mascotas` en tu servidor local de PostgreSQL.
@@ -109,4 +141,8 @@ Por defecto, XAMPP trae desactivadas las funciones para conectar con PostgreSQL.
 2. Pégala en: `C:\xampp\htdocs\`
 3. Accede desde tu navegador a: `http://localhost/nombre_de_tu_carpeta`
 
+
+
+## 🔗 AQUI PUEDES OBTENER EL REPOSITORIO
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Emiliano2606/Proyecto-bases-de-datos.git/)
 
